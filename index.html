@@ -58,24 +58,32 @@ var addTable = function() {
 var updateTable = function() {
     var starlevel = document.getElementById("starlevel").value;
     var gearlevel = document.getElementById("gearlevel").value;
+    var levelStatFactor = Math.pow(1.25205, gearlevel)*(1+0.1*starlevel);
     var opponentarmor = document.getElementById("opponentarmor").value;
     var eldryondamage = Math.round(document.getElementById("eldryon-level").value);
     Object.keys(tb_chars).forEach(function callback(key) {
         var comment = "";
         entryId = characterTableEntryId(key);
         var char = tb_chars[key];
-        var health = char.health;
-        health = Math.round(health*((1.25205^gearlevel)*(1+0.1*starlevel)));
-        var armour = char.armour;
-        armour = Math.round(armour*((1.25205^gearlevel)*(1+0.1*starlevel)));
-        var dmg = Math.round(char.damage*((1.25205^gearlevel)*(1+0.1*starlevel)));
+        var health = char.health*levelStatFactor;
+        var armour = char.armour*levelStatFactor;
+        var dmg = char.damage*levelStatFactor;
+
+        if (key == "Incisus") {
+          var incisusFactor = 1+Math.min(0.05*gearlevel,0.3);
+          health *= incisusFactor;
+          armour *= incisusFactor;
+          dmg *= incisusFactor;
+        }
+
+        health = Math.round(health);
+        armour = Math.round(armour);
+        dmg = Math.round(dmg);
+
         var meleeDmg = Math.round(char.melee.hits * Math.max(dmg+eldryondamage-opponentarmor, (dmg+eldryondamage)*char.melee.pierce));
         var totalDmg = meleeDmg;
         if (char.hasOwnProperty("ranged")) {
             totalDmg = Math.round(char.ranged.hits * Math.max(dmg+eldryondamage-opponentarmor, (dmg+eldryondamage)*char.ranged.pierce));
-        }
-        if (key == "Incisus") {
-            comment += "TODO: Increase Incisus growth";
         }
         document.getElementById(entryId+"-health").innerHTML=health;
         document.getElementById(entryId+"-armour").innerHTML=armour;
