@@ -1,6 +1,7 @@
 {
   "characters": {
     "Varro Tigurius": {
+      "faction": "Ultramarines",
       "health": 65.0,
       "damage": 30.0,
       "armour": 14.0,
@@ -14,6 +15,7 @@
       }
     },
     "Certus": {
+      "faction": "Ultramarines",
       "health": 60.0,
       "damage": 55.0,
       "armour": 18.0,
@@ -27,6 +29,7 @@
       }
     },
     "Bellator": {
+      "faction": "Ultramarines",
       "health": 85.0,
       "damage": 10.0,
       "armour": 13.0,
@@ -36,6 +39,7 @@
       }
     },
     "Incisus": {
+      "faction": "Ultramarines",
       "health": 75.0,
       "damage": 35.0,
       "armour": 17.0,
@@ -45,6 +49,7 @@
       }
     },
     "Marneus Calgar": {
+      "faction": "Ultramarines",
       "health": 95.0,
       "damage": 20.0,
       "armour": 20.0,
@@ -54,6 +59,7 @@
       }
     },
     "Angrax": {
+      "faction": "Black Legion",
       "health": 110.0,
       "damage": 12.0,
       "armour": 30.0,
@@ -63,6 +69,7 @@
       }
     },
     "Volk": {
+      "faction": "Black Legion",
       "health": 65.0,
       "damage": 9.0,
       "armour": 10.0,
@@ -76,6 +83,7 @@
       }
     },
     "Archimatos": {
+      "faction": "Black Legion",
       "health": 70.0,
       "damage": 15.0,
       "armour": 14.0,
@@ -89,6 +97,7 @@
       }
     },
     "Haarken Worldclaimer": {
+      "faction": "Black Legion",
       "health": 78.0,
       "damage": 11.0,
       "armour": 18.0,
@@ -98,6 +107,7 @@
       }
     },
     "Abaddon the despolier": {
+      "faction": "Black Legion",
       "health": 80.0,
       "damage": 15.0,
       "armour": 16.0,
@@ -111,6 +121,7 @@
       }
     },
     "Snotflogga": {
+      "faction": "Orks",
       "health": 110.0,
       "damage": 25.0,
       "armour": 25.0,
@@ -120,6 +131,7 @@
       }
     },
     "Gibbascrapz": {
+      "faction": "Orks",
       "health": 75.0,
       "damage": 25.0,
       "armour": 30.0,
@@ -129,6 +141,7 @@
       }
     },
     "Snappawrecka": {
+      "faction": "Orks",
       "health": 80.0,
       "damage": 20.0,
       "armour": 15.0,
@@ -142,6 +155,7 @@
       }
     },
     "Tanksmasha": {
+      "faction": "Orks",
       "health": 85.0,
       "damage": 30.0,
       "armour": 15.0,
@@ -151,6 +165,7 @@
       }
     },
     "Boss Gulgortz": {
+      "faction": "Orks",
       "health": 100.0,
       "damage": 12.0,
       "armour": 15.0,
@@ -164,6 +179,7 @@
       }
     },
     "Vindicta": {
+      "faction": "ADEPTA SOROITAS",
       "health": 70.0,
       "damage": 20.0,
       "armour": 12.0,
@@ -177,6 +193,7 @@
       }
     },
     "Isabella": {
+      "faction": "ADEPTA SOROITAS",
       "health": 85.0,
       "damage": 18.0,
       "armour": 20.0,
@@ -186,6 +203,7 @@
       }
     },
     "Morvenn Vahl": {
+      "faction": "ADEPTA SOROITAS",
       "health": 85.0,
       "damage": 12.0,
       "armour": 19.0,
@@ -199,6 +217,7 @@
       }
     },
     "Roswitha": {
+      "faction": "ADEPTA SOROITAS",
       "health": 85.0,
       "damage": 30.0,
       "armour": 17.0,
@@ -212,6 +231,7 @@
       }
     },
     "Celestine": {
+      "faction": "ADEPTA SOROITAS",
       "health": 60.0,
       "damage": 25.0,
       "armour": 20.0,
@@ -221,6 +241,7 @@
       }
     },
     "Makhotep": {
+      "faction": "Necrons",
       "health": 80.0,
       "damage": 18.0,
       "armour": 18.0,
@@ -234,6 +255,7 @@
       }
     },
     "Imospekh": {
+      "faction": "Necrons",
       "health": 60.0,
       "damage": 8.0,
       "armour": 13.0,
@@ -247,6 +269,7 @@
       }
     },
     "Aleph-null": {
+      "faction": "Necrons",
       "health": 75.0,
       "damage": 12.0,
       "armour": 22.0,
@@ -256,6 +279,7 @@
       }
     },
     "Thutmose": {
+      "faction": "Necrons",
       "health": 70.0,
       "damage": 30.0,
       "armour": 16.0,
@@ -269,6 +293,7 @@
       }
     },
     "Anuphet": {
+      "faction": "Necrons",
       "health": 85.0,
       "damage": 17.0,
       "armour": 29.0,
@@ -282,6 +307,7 @@
       }
     },
     "Sibyll": {
+      "faction": "Astra militarum",
       "health": 55.0,
       "damage": 30.0,
       "armour": 20.0,
@@ -295,6 +321,7 @@
       }
     },
     "Commissar Yarrick": {
+      "faction": "Astra militarum",
       "health": 60.0,
       "damage": 30.0,
       "armour": 15.0,
@@ -308,6 +335,7 @@
       }
     },
     "Kut skoden": {
+      "faction": "Astra militarum",
       "health": 95.0,
       "damage": 30.0,
       "armour": 35.0,
@@ -317,6 +345,7 @@
       }
     },
     "Thaddeus noble": {
+      "faction": "Astra militarum",
       "health": 50.0,
       "damage": 38.0,
       "armour": 18.0,
@@ -330,6 +359,7 @@
       }
     },
     "Castellan creed": {
+      "faction": "Astra militarum",
       "health": 90.0,
       "damage": 38.0,
       "armour": 21.0,
@@ -339,6 +369,7 @@
       }
     },
     "Typhus": {
+      "faction": "Death guard",
       "health": 120.0,
       "damage": 18.0,
       "armour": 25.08,
@@ -352,6 +383,7 @@
       }
     },
     "Maladus": {
+      "faction": "Death guard",
       "health": 120.0,
       "damage": 26.0,
       "armour": 27.0,
@@ -361,6 +393,7 @@
       }
     },
     "Nauseous rotbone": {
+      "faction": "Death guard",
       "health": 120.0,
       "damage": 14.0,
       "armour": 27.0,
@@ -370,6 +403,7 @@
       }
     },
     "Pestillian": {
+      "faction": "Death guard",
       "health": 109.8,
       "damage": 35.0,
       "armour": 33.0,
@@ -379,6 +413,7 @@
       }
     },
     "Corrodius": {
+      "faction": "Death guard",
       "health": 100.0,
       "damage": 11.0,
       "armour": 30.0,
@@ -388,6 +423,7 @@
       }
     },
     "Sword Brother Godswyl": {
+      "faction": "Black templars",
       "health": 95.0,
       "damage": 55.0,
       "armour": 22.0,
@@ -397,6 +433,7 @@
       }
     },
     "Brother Burchard": {
+      "faction": "Black templars",
       "health": 120.0,
       "damage": 9.03,
       "armour": 24.0,
@@ -410,6 +447,7 @@
       }
     },
     "Ancient Thoread": {
+      "faction": "Black templars",
       "health": 100.0,
       "damage": 32.0,
       "armour": 22.0,
@@ -419,6 +457,7 @@
       }
     },
     "Brother Jaeger": {
+      "faction": "Black templars",
       "health": 110.0,
       "damage": 25.0,
       "armour": 25.0,
@@ -428,6 +467,7 @@
       }
     },
     "High Marshal Helbrecht": {
+      "faction": "Black templars",
       "health": 80.0,
       "damage": 15.0,
       "armour": 20.0,
@@ -441,6 +481,7 @@
       }
     },
     "Calandis": {
+      "faction": "Aeldari",
       "health": 70.0,
       "damage": 45.0,
       "armour": 18.04,
@@ -454,6 +495,7 @@
       }
     },
     "Aethana": {
+      "faction": "Aeldari",
       "health": 80.0,
       "damage": 14.0,
       "armour": 17.0,
@@ -463,6 +505,7 @@
       }
     },
     "Eldryon": {
+      "faction": "Aeldari",
       "health": 75.0,
       "damage": 16.0,
       "armour": 16.0,
@@ -476,6 +519,7 @@
       }
     },
     "Maugan Ra": {
+      "faction": "Aeldari",
       "health": 55.0,
       "damage": 9.0,
       "armour": 12.0,
@@ -489,6 +533,7 @@
       }
     },
     "Jain Zar": {
+      "faction": "Aeldari",
       "health": 75.0,
       "damage": 19.0,
       "armour": 18.0,
@@ -498,6 +543,7 @@
       }
     },
     "Sho'Syl": {
+      "faction": "T'au Empire",
       "health": 65.0,
       "damage": 53.0,
       "armour": 16.0,
@@ -511,6 +557,7 @@
       }
     },
     "Re'Vas": {
+      "faction": "T'au Empire",
       "health": 105.0,
       "damage": 10.0,
       "armour": 25.0,
@@ -524,6 +571,7 @@
       }
     },
     "Darkstrider": {
+      "faction": "T'au Empire",
       "health": 68.2,
       "damage": 31.8,
       "armour": 15.45,
@@ -539,6 +587,7 @@
   },
   "bosses": {
     "L1 KRONOS TERVIGON": {
+      "faction": "KRONOS",
       "health": 1500000.0,
       "damage": 888.0,
       "armour": 543.0,
@@ -552,6 +601,7 @@
       }
     },
     "L2 LEVIATHAN TERVIGON": {
+      "faction": "LEVIATHAN",
       "health": 2000000.0,
       "damage": 1557.0,
       "armour": 640.0,
@@ -565,6 +615,7 @@
       }
     },
     "L2 KRONOS TERVIGON": {
+      "faction": "KRONOS",
       "health": 2000000.0,
       "damage": 1557.0,
       "armour": 640.0,
@@ -578,6 +629,7 @@
       }
     },
     "L3 LEVIATHAN TERVIGON": {
+      "faction": "LEVIATHAN",
       "health": 2500000.0,
       "damage": 2379.0,
       "armour": 978.0,
@@ -591,6 +643,7 @@
       }
     },
     "L1 LEVIATHAN TYRANT": {
+      "faction": "LEVIATHAN",
       "health": 1500000.0,
       "damage": 1016.0,
       "armour": 418.0,
@@ -604,6 +657,7 @@
       }
     },
     "L1 GORGON TYRANT": {
+      "faction": "GORGON",
       "health": 1500000.0,
       "damage": 780.0,
       "armour": 645.0,
@@ -617,6 +671,7 @@
       }
     },
     "L2 LEVIATHAN TYRANT": {
+      "faction": "LEVIATHAN",
       "health": 2000000.0,
       "damage": 1557.0,
       "armour": 640.0,
@@ -630,6 +685,7 @@
       }
     },
     "L3 KRONOS TYRANT": {
+      "faction": "KRONOS",
       "health": 2500000.0,
       "damage": 2078.0,
       "armour": 635.0,
@@ -643,6 +699,7 @@
       }
     },
     "L3 GORGON TYRANT": {
+      "faction": "GORGON",
       "health": 2500000.0,
       "damage": 1826.0,
       "armour": 1510.0,
@@ -656,6 +713,7 @@
       }
     },
     "L3 LEVIATHAN TYRANT": {
+      "faction": "LEVIATHAN",
       "health": 2500000.0,
       "damage": 2078.0,
       "armour": 1271.0,
@@ -669,6 +727,7 @@
       }
     },
     "L1 Szarekh": {
+      "faction": "MAIN",
       "health": 1500000.0,
       "damage": 449.0,
       "armour": 449.0,
@@ -682,6 +741,7 @@
       }
     },
     "L1 Hapthatra ": {
+      "faction": "LEFT",
       "health": 12274.0,
       "damage": 311.0,
       "armour": 625.0,
@@ -697,6 +757,7 @@
   },
   "summons": {
     "Inceptor": {
+      "faction": "Ultramarines",
       "health": 55.0,
       "damage": 10.0,
       "armour": 12.0,
@@ -706,6 +767,7 @@
       }
     },
     "Bloodletter": {
+      "faction": "Black Legion",
       "health": 35.0,
       "damage": 32.0,
       "armour": 0.0,
@@ -715,6 +777,7 @@
       }
     },
     "Grot": {
+      "faction": "Ork",
       "health": 65.5,
       "damage": 33.0,
       "armour": 0.0,
@@ -724,6 +787,7 @@
       }
     },
     "Grot Tank": {
+      "faction": "Ork",
       "health": 70.0,
       "damage": 25.0,
       "armour": 20.0,
@@ -737,6 +801,7 @@
       }
     },
     "Cadian Guardsman": {
+      "faction": "Astra Miltarum",
       "health": 40.0,
       "damage": 24.0,
       "armour": 8.0,
@@ -750,6 +815,7 @@
       }
     },
     "Colour Sergeant Kell": {
+      "faction": "Astra Miltarum",
       "health": 90.0,
       "damage": 18.0,
       "armour": 15.0,
@@ -759,6 +825,7 @@
       }
     },
     "Geminae Superia": {
+      "faction": "ADEPTA SOROITAS",
       "health": 60.0,
       "damage": 25.0,
       "armour": 20.0,
@@ -768,6 +835,7 @@
       }
     },
     "Pox Walkers": {
+      "faction": "Death guard",
       "health": 30.0,
       "damage": 35.0,
       "armour": 0.0,
@@ -777,6 +845,7 @@
       }
     },
     "MV71 Sniper Drone": {
+      "faction": "T'au Empire",
       "health": 20.0,
       "damage": 28.0,
       "armour": 4.8,

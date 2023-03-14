@@ -75,7 +75,7 @@ def toJSON(rows):
     for index, row in rows.iterrows():
         if row.Name is None or np.isnan(row["Melee Hits"]) or np.isnan(row.Health):
             continue
-        data = {"health": row.Health, "damage": row.Damage, "armour": row.Armour, "melee": {"pierce": pierce[row["Melee Damage"].lower()], "hits": int(row["Melee Hits"])}}
+        data = {"faction": row.Faction, "health": row.Health, "damage": row.Damage, "armour": row.Armour, "melee": {"pierce": pierce[row["Melee Damage"].lower()], "hits": int(row["Melee Hits"])}}
         if row["Ranged Hits"] > 0:
             data["ranged"] = {"pierce": pierce[row["Ranged Damage"].lower()], "hits": int(row["Ranged Hits"])}
         if row["Initial rarity"] in ["Common", "Uncommon", "Rare", "Epic", "Legendary"]:

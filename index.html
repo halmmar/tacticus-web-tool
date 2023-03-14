@@ -68,6 +68,7 @@ var updateTable = function() {
         var health = char.health*levelStatFactor;
         var armour = char.armour*levelStatFactor;
         var dmg = char.damage*levelStatFactor;
+        var eldryondamageModifiedByFaction = eldryondamage * (char.faction == "Aeldari" ? 1.3 : 1.0);
 
         if (key == "Incisus") {
           var incisusFactor = 1+Math.min(0.05*gearlevel,0.3);
@@ -80,10 +81,12 @@ var updateTable = function() {
         armour = Math.round(armour);
         dmg = Math.round(dmg);
 
-        var meleeDmg = Math.round(char.melee.hits * Math.max(dmg+eldryondamage-opponentarmor, (dmg+eldryondamage)*char.melee.pierce));
+        var dmgBuffs = eldryondamageModifiedByFaction;
+
+        var meleeDmg = Math.round(char.melee.hits * Math.max(dmg+dmgBuffs-opponentarmor, (dmg+dmgBuffs)*char.melee.pierce));
         var totalDmg = meleeDmg;
         if (char.hasOwnProperty("ranged")) {
-            totalDmg = Math.round(char.ranged.hits * Math.max(dmg+eldryondamage-opponentarmor, (dmg+eldryondamage)*char.ranged.pierce));
+            totalDmg = Math.round(char.ranged.hits * Math.max(dmg+dmgBuffs-opponentarmor, (dmg+dmgBuffs)*char.ranged.pierce));
         }
         document.getElementById(entryId+"-health").innerHTML=health;
         document.getElementById(entryId+"-armour").innerHTML=armour;
