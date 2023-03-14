@@ -86,6 +86,6 @@ def toJSON(rows):
             summons[row.Name] = data
         else:
             continue
-    return {"characters": characters, "bosses": bosses, "summons": summons, "gear": gear}
+    return {"characters": characters, "bosses": bosses, "summons": summons, "gear": gear, "version": file.split("-")[1].strip().replace(".xlsx", "")}
 with open("tacticus.json", "w") as fout:
-    fout.write(json.dumps(toJSON(tb_Characters)))
+    fout.write(json.dumps(toJSON(tb_Characters), indent=2))

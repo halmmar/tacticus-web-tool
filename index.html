@@ -28,6 +28,7 @@ function(err, data) {
     tb_chars = data.characters;
     tb_gear = data.gear;
     // updateGear(); // Hard-coded into the HTML
+    document.getElementById("tacticus-version").innerHTML=data.version;
     addTable();
     sortTable(0);
   }
@@ -190,7 +191,7 @@ function sortTable(n) {
     <table id="ch-table"></table>
   <footer>
     <p>This web application was created by Rilak (MOP-06-FAX)<br>
-    Based on data and formulas in <a href="https://docs.google.com/spreadsheets/d/1al2IWwvTP3QOhHtfr6P8stdlA48ED4JFrtK8wDKznrk/edit#gid=2104934925">Towen's Awesome Calculator To Infer Cool Useful Stuff -  T.A.C.T.I.C.U.S</a> (NOD-08-POD)</p>
+    Based on data and formulas in <a href="https://docs.google.com/spreadsheets/d/1al2IWwvTP3QOhHtfr6P8stdlA48ED4JFrtK8wDKznrk/edit#gid=2104934925">Towen's Awesome Calculator To Infer Cool Useful Stuff -  T.A.C.T.I.C.U.S</a> <span id="tacticus-version">v???</span> (NOD-08-POD)</p>
   </footer>
 </body>
 

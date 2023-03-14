@@ -1,1 +1,868 @@
-{"characters": {"Varro Tigurius": {"health": 65.0, "damage": 30.0, "armour": 14.0, "melee": {"pierce": 0.01, "hits": 1}, "ranged": {"pierce": 1.0, "hits": 1}}, "Certus": {"health": 60.0, "damage": 55.0, "armour": 18.0, "melee": {"pierce": 0.01, "hits": 1}, "ranged": {"pierce": 0.2, "hits": 1}}, "Bellator": {"health": 85.0, "damage": 10.0, "armour": 13.0, "melee": {"pierce": 0.2, "hits": 6}}, "Incisus": {"health": 75.0, "damage": 35.0, "armour": 17.0, "melee": {"pierce": 0.8, "hits": 1}}, "Marneus Calgar": {"health": 95.0, "damage": 20.0, "armour": 20.0, "melee": {"pierce": 0.4, "hits": 2}}, "Angrax": {"health": 110.0, "damage": 12.0, "armour": 30.0, "melee": {"pierce": 0.4, "hits": 4}}, "Volk": {"health": 65.0, "damage": 9.0, "armour": 10.0, "melee": {"pierce": 0.4, "hits": 4}, "ranged": {"pierce": 0.55, "hits": 6}}, "Archimatos": {"health": 70.0, "damage": 15.0, "armour": 14.0, "melee": {"pierce": 1.0, "hits": 2}, "ranged": {"pierce": 1.0, "hits": 1}}, "Haarken Worldclaimer": {"health": 78.0, "damage": 11.0, "armour": 18.0, "melee": {"pierce": 0.8, "hits": 4}}, "Abaddon the despolier": {"health": 80.0, "damage": 15.0, "armour": 16.0, "melee": {"pierce": 0.4, "hits": 5}, "ranged": {"pierce": 0.2, "hits": 3}}, "Snotflogga": {"health": 110.0, "damage": 25.0, "armour": 25.0, "melee": {"pierce": 0.01, "hits": 3}}, "Gibbascrapz": {"health": 75.0, "damage": 25.0, "armour": 30.0, "melee": {"pierce": 0.01, "hits": 4}}, "Snappawrecka": {"health": 80.0, "damage": 20.0, "armour": 15.0, "melee": {"pierce": 0.2, "hits": 2}, "ranged": {"pierce": 0.15, "hits": 3}}, "Tanksmasha": {"health": 85.0, "damage": 30.0, "armour": 15.0, "melee": {"pierce": 0.2, "hits": 3}}, "Boss Gulgortz": {"health": 100.0, "damage": 12.0, "armour": 15.0, "melee": {"pierce": 0.2, "hits": 5}, "ranged": {"pierce": 0.15, "hits": 3}}, "Vindicta": {"health": 70.0, "damage": 20.0, "armour": 12.0, "melee": {"pierce": 0.01, "hits": 1}, "ranged": {"pierce": 0.25, "hits": 4}}, "Isabella": {"health": 85.0, "damage": 18.0, "armour": 20.0, "melee": {"pierce": 0.2, "hits": 3}}, "Morvenn Vahl": {"health": 85.0, "damage": 12.0, "armour": 19.0, "melee": {"pierce": 0.4, "hits": 5}, "ranged": {"pierce": 0.2, "hits": 3}}, "Roswitha": {"health": 85.0, "damage": 30.0, "armour": 17.0, "melee": {"pierce": 0.2, "hits": 3}, "ranged": {"pierce": 0.2, "hits": 2}}, "Celestine": {"health": 60.0, "damage": 25.0, "armour": 20.0, "melee": {"pierce": 0.4, "hits": 3}}, "Makhotep": {"health": 80.0, "damage": 18.0, "armour": 18.0, "melee": {"pierce": 0.01, "hits": 1}, "ranged": {"pierce": 0.6, "hits": 2}}, "Imospekh": {"health": 60.0, "damage": 8.0, "armour": 13.0, "melee": {"pierce": 0.6, "hits": 1}, "ranged": {"pierce": 0.6, "hits": 6}}, "Aleph-null": {"health": 75.0, "damage": 12.0, "armour": 22.0, "melee": {"pierce": 0.35, "hits": 5}}, "Thutmose": {"health": 70.0, "damage": 30.0, "armour": 16.0, "melee": {"pierce": 0.65, "hits": 1}, "ranged": {"pierce": 0.65, "hits": 2}}, "Anuphet": {"health": 85.0, "damage": 17.0, "armour": 29.0, "melee": {"pierce": 0.3, "hits": 4}, "ranged": {"pierce": 0.3, "hits": 3}}, "Sibyll": {"health": 55.0, "damage": 30.0, "armour": 20.0, "melee": {"pierce": 1.0, "hits": 1}, "ranged": {"pierce": 1.0, "hits": 1}}, "Commissar Yarrick": {"health": 60.0, "damage": 30.0, "armour": 15.0, "melee": {"pierce": 0.4, "hits": 3}, "ranged": {"pierce": 0.2, "hits": 2}}, "Kut skoden": {"health": 95.0, "damage": 30.0, "armour": 35.0, "melee": {"pierce": 0.01, "hits": 4}}, "Thaddeus noble": {"health": 50.0, "damage": 38.0, "armour": 18.0, "melee": {"pierce": 0.1, "hits": 1}, "ranged": {"pierce": 0.15, "hits": 3}}, "Castellan creed": {"health": 90.0, "damage": 38.0, "armour": 21.0, "melee": {"pierce": 0.1, "hits": 2}}, "Typhus": {"health": 120.0, "damage": 18.0, "armour": 25.08, "melee": {"pierce": 0.4, "hits": 1}, "ranged": {"pierce": 1.0, "hits": 1}}, "Maladus": {"health": 120.0, "damage": 26.0, "armour": 27.0, "melee": {"pierce": 0.4, "hits": 3}}, "Nauseous rotbone": {"health": 120.0, "damage": 14.0, "armour": 27.0, "melee": {"pierce": 0.4, "hits": 4}}, "Pestillian": {"health": 109.8, "damage": 35.0, "armour": 33.0, "melee": {"pierce": 1.0, "hits": 1}}, "Corrodius": {"health": 100.0, "damage": 11.0, "armour": 30.0, "melee": {"pierce": 0.65, "hits": 2}}, "Sword Brother Godswyl": {"health": 95.0, "damage": 55.0, "armour": 22.0, "melee": {"pierce": 0.4, "hits": 1}}, "Brother Burchard": {"health": 120.0, "damage": 9.03, "armour": 24.0, "melee": {"pierce": 0.4, "hits": 4}, "ranged": {"pierce": 0.2, "hits": 6}}, "Ancient Thoread": {"health": 100.0, "damage": 32.0, "armour": 22.0, "melee": {"pierce": 0.4, "hits": 2}}, "Brother Jaeger": {"health": 110.0, "damage": 25.0, "armour": 25.0, "melee": {"pierce": 0.4, "hits": 2}}, "High Marshal Helbrecht": {"health": 80.0, "damage": 15.0, "armour": 20.0, "melee": {"pierce": 0.4, "hits": 6}, "ranged": {"pierce": 0.2, "hits": 3}}, "Calandis": {"health": 70.0, "damage": 45.0, "armour": 18.04, "melee": {"pierce": 0.01, "hits": 1}, "ranged": {"pierce": 0.3, "hits": 1}}, "Aethana": {"health": 80.0, "damage": 14.0, "armour": 17.0, "melee": {"pierce": 0.8, "hits": 3}}, "Eldryon": {"health": 75.0, "damage": 16.0, "armour": 16.0, "melee": {"pierce": 0.8, "hits": 2}, "ranged": {"pierce": 1.0, "hits": 2}}, "Maugan Ra": {"health": 55.0, "damage": 9.0, "armour": 12.0, "melee": {"pierce": 0.4, "hits": 5}, "ranged": {"pierce": 0.55, "hits": 6}}, "Jain Zar": {"health": 75.0, "damage": 19.0, "armour": 18.0, "melee": {"pierce": 0.8, "hits": 3}}, "Sho'Syl": {"health": 65.0, "damage": 53.0, "armour": 16.0, "melee": {"pierce": 0.2, "hits": 1}, "ranged": {"pierce": 0.8, "hits": 1}}, "Re'Vas": {"health": 105.0, "damage": 10.0, "armour": 25.0, "melee": {"pierce": 0.25, "hits": 6}, "ranged": {"pierce": 0.2, "hits": 6}}, "Darkstrider": {"health": 68.2, "damage": 31.8, "armour": 15.45, "melee": {"pierce": 0.01, "hits": 3}, "ranged": {"pierce": 0.2, "hits": 2}}}, "bosses": {"L1 KRONOS TERVIGON": {"health": 1500000.0, "damage": 888.0, "armour": 543.0, "melee": {"pierce": 0.3, "hits": 3}, "ranged": {"pierce": 1.0, "hits": 2}}, "L2 LEVIATHAN TERVIGON": {"health": 2000000.0, "damage": 1557.0, "armour": 640.0, "melee": {"pierce": 0.3, "hits": 3}, "ranged": {"pierce": 1.0, "hits": 2}}, "L2 KRONOS TERVIGON": {"health": 2000000.0, "damage": 1557.0, "armour": 640.0, "melee": {"pierce": 0.3, "hits": 3}, "ranged": {"pierce": 1.0, "hits": 2}}, "L3 LEVIATHAN TERVIGON": {"health": 2500000.0, "damage": 2379.0, "armour": 978.0, "melee": {"pierce": 0.3, "hits": 3}, "ranged": {"pierce": 1.0, "hits": 2}}, "L1 LEVIATHAN TYRANT": {"health": 1500000.0, "damage": 1016.0, "armour": 418.0, "melee": {"pierce": 0.3, "hits": 5}, "ranged": {"pierce": 1.0, "hits": 2}}, "L1 GORGON TYRANT": {"health": 1500000.0, "damage": 780.0, "armour": 645.0, "melee": {"pierce": 0.3, "hits": 5}, "ranged": {"pierce": 1.0, "hits": 2}}, "L2 LEVIATHAN TYRANT": {"health": 2000000.0, "damage": 1557.0, "armour": 640.0, "melee": {"pierce": 0.3, "hits": 3}, "ranged": {"pierce": 1.0, "hits": 2}}, "L3 KRONOS TYRANT": {"health": 2500000.0, "damage": 2078.0, "armour": 635.0, "melee": {"pierce": 0.3, "hits": 5}, "ranged": {"pierce": 1.0, "hits": 2}}, "L3 GORGON TYRANT": {"health": 2500000.0, "damage": 1826.0, "armour": 1510.0, "melee": {"pierce": 0.3, "hits": 5}, "ranged": {"pierce": 1.0, "hits": 2}}, "L3 LEVIATHAN TYRANT": {"health": 2500000.0, "damage": 2078.0, "armour": 1271.0, "melee": {"pierce": 0.3, "hits": 5}, "ranged": {"pierce": 1.0, "hits": 2}}, "L1 Szarekh": {"health": 1500000.0, "damage": 449.0, "armour": 449.0, "melee": {"pierce": 0.3, "hits": 3}, "ranged": {"pierce": 0.3, "hits": 6}}, "L1 Hapthatra ": {"health": 12274.0, "damage": 311.0, "armour": 625.0, "melee": {"pierce": 0.3, "hits": 3}, "ranged": {"pierce": 0.3, "hits": 9}}}, "summons": {"Inceptor": {"health": 55.0, "damage": 10.0, "armour": 12.0, "melee": {"pierce": 0.2, "hits": 6}}, "Bloodletter": {"health": 35.0, "damage": 32.0, "armour": 0.0, "melee": {"pierce": 0.8, "hits": 1}}, "Grot": {"health": 65.5, "damage": 33.0, "armour": 0.0, "melee": {"pierce": 0.15, "hits": 1}}, "Grot Tank": {"health": 70.0, "damage": 25.0, "armour": 20.0, "melee": {"pierce": 0.01, "hits": 1}, "ranged": {"pierce": 0.15, "hits": 3}}, "Cadian Guardsman": {"health": 40.0, "damage": 24.0, "armour": 8.0, "melee": {"pierce": 0.01, "hits": 1}, "ranged": {"pierce": 0.1, "hits": 2}}, "Colour Sergeant Kell": {"health": 90.0, "damage": 18.0, "armour": 15.0, "melee": {"pierce": 0.4, "hits": 2}}, "Geminae Superia": {"health": 60.0, "damage": 25.0, "armour": 20.0, "melee": {"pierce": 0.4, "hits": 2}}, "Pox Walkers": {"health": 30.0, "damage": 35.0, "armour": 0.0, "melee": {"pierce": 0.01, "hits": 2}}, "MV71 Sniper Drone": {"health": 20.0, "damage": 28.0, "armour": 4.8, "melee": {"pierce": 0.01, "hits": 1}, "ranged": {"pierce": 0.8, "hits": 1}}}, "gear": [["Stone Rank I", 0], ["Stone Rank II", 1], ["Stone Rank III", 2], ["Iron Rank I", 3], ["Iron Rank II", 4], ["Iron Rank III", 5], ["Bronze Rank I", 6], ["Bronze Rank II", 7], ["Bronze Rank III", 8], ["Silver Rank I", 9], ["Silver Rank II", 10], ["Silver Rank III", 11], ["Gold Rank I", 12], ["Gold Rank II", 13], ["Gold Rank III", 14], ["Diamond Rank I", 15], ["Diamond Rank II", 16], ["Diamond Rank III", 17]]}
+{
+  "characters": {
+    "Varro Tigurius": {
+      "health": 65.0,
+      "damage": 30.0,
+      "armour": 14.0,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 1
+      }
+    },
+    "Certus": {
+      "health": 60.0,
+      "damage": 55.0,
+      "armour": 18.0,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.2,
+        "hits": 1
+      }
+    },
+    "Bellator": {
+      "health": 85.0,
+      "damage": 10.0,
+      "armour": 13.0,
+      "melee": {
+        "pierce": 0.2,
+        "hits": 6
+      }
+    },
+    "Incisus": {
+      "health": 75.0,
+      "damage": 35.0,
+      "armour": 17.0,
+      "melee": {
+        "pierce": 0.8,
+        "hits": 1
+      }
+    },
+    "Marneus Calgar": {
+      "health": 95.0,
+      "damage": 20.0,
+      "armour": 20.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 2
+      }
+    },
+    "Angrax": {
+      "health": 110.0,
+      "damage": 12.0,
+      "armour": 30.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 4
+      }
+    },
+    "Volk": {
+      "health": 65.0,
+      "damage": 9.0,
+      "armour": 10.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 4
+      },
+      "ranged": {
+        "pierce": 0.55,
+        "hits": 6
+      }
+    },
+    "Archimatos": {
+      "health": 70.0,
+      "damage": 15.0,
+      "armour": 14.0,
+      "melee": {
+        "pierce": 1.0,
+        "hits": 2
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 1
+      }
+    },
+    "Haarken Worldclaimer": {
+      "health": 78.0,
+      "damage": 11.0,
+      "armour": 18.0,
+      "melee": {
+        "pierce": 0.8,
+        "hits": 4
+      }
+    },
+    "Abaddon the despolier": {
+      "health": 80.0,
+      "damage": 15.0,
+      "armour": 16.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 5
+      },
+      "ranged": {
+        "pierce": 0.2,
+        "hits": 3
+      }
+    },
+    "Snotflogga": {
+      "health": 110.0,
+      "damage": 25.0,
+      "armour": 25.0,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 3
+      }
+    },
+    "Gibbascrapz": {
+      "health": 75.0,
+      "damage": 25.0,
+      "armour": 30.0,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 4
+      }
+    },
+    "Snappawrecka": {
+      "health": 80.0,
+      "damage": 20.0,
+      "armour": 15.0,
+      "melee": {
+        "pierce": 0.2,
+        "hits": 2
+      },
+      "ranged": {
+        "pierce": 0.15,
+        "hits": 3
+      }
+    },
+    "Tanksmasha": {
+      "health": 85.0,
+      "damage": 30.0,
+      "armour": 15.0,
+      "melee": {
+        "pierce": 0.2,
+        "hits": 3
+      }
+    },
+    "Boss Gulgortz": {
+      "health": 100.0,
+      "damage": 12.0,
+      "armour": 15.0,
+      "melee": {
+        "pierce": 0.2,
+        "hits": 5
+      },
+      "ranged": {
+        "pierce": 0.15,
+        "hits": 3
+      }
+    },
+    "Vindicta": {
+      "health": 70.0,
+      "damage": 20.0,
+      "armour": 12.0,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.25,
+        "hits": 4
+      }
+    },
+    "Isabella": {
+      "health": 85.0,
+      "damage": 18.0,
+      "armour": 20.0,
+      "melee": {
+        "pierce": 0.2,
+        "hits": 3
+      }
+    },
+    "Morvenn Vahl": {
+      "health": 85.0,
+      "damage": 12.0,
+      "armour": 19.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 5
+      },
+      "ranged": {
+        "pierce": 0.2,
+        "hits": 3
+      }
+    },
+    "Roswitha": {
+      "health": 85.0,
+      "damage": 30.0,
+      "armour": 17.0,
+      "melee": {
+        "pierce": 0.2,
+        "hits": 3
+      },
+      "ranged": {
+        "pierce": 0.2,
+        "hits": 2
+      }
+    },
+    "Celestine": {
+      "health": 60.0,
+      "damage": 25.0,
+      "armour": 20.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 3
+      }
+    },
+    "Makhotep": {
+      "health": 80.0,
+      "damage": 18.0,
+      "armour": 18.0,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.6,
+        "hits": 2
+      }
+    },
+    "Imospekh": {
+      "health": 60.0,
+      "damage": 8.0,
+      "armour": 13.0,
+      "melee": {
+        "pierce": 0.6,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.6,
+        "hits": 6
+      }
+    },
+    "Aleph-null": {
+      "health": 75.0,
+      "damage": 12.0,
+      "armour": 22.0,
+      "melee": {
+        "pierce": 0.35,
+        "hits": 5
+      }
+    },
+    "Thutmose": {
+      "health": 70.0,
+      "damage": 30.0,
+      "armour": 16.0,
+      "melee": {
+        "pierce": 0.65,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.65,
+        "hits": 2
+      }
+    },
+    "Anuphet": {
+      "health": 85.0,
+      "damage": 17.0,
+      "armour": 29.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 4
+      },
+      "ranged": {
+        "pierce": 0.3,
+        "hits": 3
+      }
+    },
+    "Sibyll": {
+      "health": 55.0,
+      "damage": 30.0,
+      "armour": 20.0,
+      "melee": {
+        "pierce": 1.0,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 1
+      }
+    },
+    "Commissar Yarrick": {
+      "health": 60.0,
+      "damage": 30.0,
+      "armour": 15.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 3
+      },
+      "ranged": {
+        "pierce": 0.2,
+        "hits": 2
+      }
+    },
+    "Kut skoden": {
+      "health": 95.0,
+      "damage": 30.0,
+      "armour": 35.0,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 4
+      }
+    },
+    "Thaddeus noble": {
+      "health": 50.0,
+      "damage": 38.0,
+      "armour": 18.0,
+      "melee": {
+        "pierce": 0.1,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.15,
+        "hits": 3
+      }
+    },
+    "Castellan creed": {
+      "health": 90.0,
+      "damage": 38.0,
+      "armour": 21.0,
+      "melee": {
+        "pierce": 0.1,
+        "hits": 2
+      }
+    },
+    "Typhus": {
+      "health": 120.0,
+      "damage": 18.0,
+      "armour": 25.08,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 1
+      }
+    },
+    "Maladus": {
+      "health": 120.0,
+      "damage": 26.0,
+      "armour": 27.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 3
+      }
+    },
+    "Nauseous rotbone": {
+      "health": 120.0,
+      "damage": 14.0,
+      "armour": 27.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 4
+      }
+    },
+    "Pestillian": {
+      "health": 109.8,
+      "damage": 35.0,
+      "armour": 33.0,
+      "melee": {
+        "pierce": 1.0,
+        "hits": 1
+      }
+    },
+    "Corrodius": {
+      "health": 100.0,
+      "damage": 11.0,
+      "armour": 30.0,
+      "melee": {
+        "pierce": 0.65,
+        "hits": 2
+      }
+    },
+    "Sword Brother Godswyl": {
+      "health": 95.0,
+      "damage": 55.0,
+      "armour": 22.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 1
+      }
+    },
+    "Brother Burchard": {
+      "health": 120.0,
+      "damage": 9.03,
+      "armour": 24.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 4
+      },
+      "ranged": {
+        "pierce": 0.2,
+        "hits": 6
+      }
+    },
+    "Ancient Thoread": {
+      "health": 100.0,
+      "damage": 32.0,
+      "armour": 22.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 2
+      }
+    },
+    "Brother Jaeger": {
+      "health": 110.0,
+      "damage": 25.0,
+      "armour": 25.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 2
+      }
+    },
+    "High Marshal Helbrecht": {
+      "health": 80.0,
+      "damage": 15.0,
+      "armour": 20.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 6
+      },
+      "ranged": {
+        "pierce": 0.2,
+        "hits": 3
+      }
+    },
+    "Calandis": {
+      "health": 70.0,
+      "damage": 45.0,
+      "armour": 18.04,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.3,
+        "hits": 1
+      }
+    },
+    "Aethana": {
+      "health": 80.0,
+      "damage": 14.0,
+      "armour": 17.0,
+      "melee": {
+        "pierce": 0.8,
+        "hits": 3
+      }
+    },
+    "Eldryon": {
+      "health": 75.0,
+      "damage": 16.0,
+      "armour": 16.0,
+      "melee": {
+        "pierce": 0.8,
+        "hits": 2
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "Maugan Ra": {
+      "health": 55.0,
+      "damage": 9.0,
+      "armour": 12.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 5
+      },
+      "ranged": {
+        "pierce": 0.55,
+        "hits": 6
+      }
+    },
+    "Jain Zar": {
+      "health": 75.0,
+      "damage": 19.0,
+      "armour": 18.0,
+      "melee": {
+        "pierce": 0.8,
+        "hits": 3
+      }
+    },
+    "Sho'Syl": {
+      "health": 65.0,
+      "damage": 53.0,
+      "armour": 16.0,
+      "melee": {
+        "pierce": 0.2,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.8,
+        "hits": 1
+      }
+    },
+    "Re'Vas": {
+      "health": 105.0,
+      "damage": 10.0,
+      "armour": 25.0,
+      "melee": {
+        "pierce": 0.25,
+        "hits": 6
+      },
+      "ranged": {
+        "pierce": 0.2,
+        "hits": 6
+      }
+    },
+    "Darkstrider": {
+      "health": 68.2,
+      "damage": 31.8,
+      "armour": 15.45,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 3
+      },
+      "ranged": {
+        "pierce": 0.2,
+        "hits": 2
+      }
+    }
+  },
+  "bosses": {
+    "L1 KRONOS TERVIGON": {
+      "health": 1500000.0,
+      "damage": 888.0,
+      "armour": 543.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 3
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "L2 LEVIATHAN TERVIGON": {
+      "health": 2000000.0,
+      "damage": 1557.0,
+      "armour": 640.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 3
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "L2 KRONOS TERVIGON": {
+      "health": 2000000.0,
+      "damage": 1557.0,
+      "armour": 640.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 3
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "L3 LEVIATHAN TERVIGON": {
+      "health": 2500000.0,
+      "damage": 2379.0,
+      "armour": 978.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 3
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "L1 LEVIATHAN TYRANT": {
+      "health": 1500000.0,
+      "damage": 1016.0,
+      "armour": 418.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 5
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "L1 GORGON TYRANT": {
+      "health": 1500000.0,
+      "damage": 780.0,
+      "armour": 645.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 5
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "L2 LEVIATHAN TYRANT": {
+      "health": 2000000.0,
+      "damage": 1557.0,
+      "armour": 640.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 3
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "L3 KRONOS TYRANT": {
+      "health": 2500000.0,
+      "damage": 2078.0,
+      "armour": 635.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 5
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "L3 GORGON TYRANT": {
+      "health": 2500000.0,
+      "damage": 1826.0,
+      "armour": 1510.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 5
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "L3 LEVIATHAN TYRANT": {
+      "health": 2500000.0,
+      "damage": 2078.0,
+      "armour": 1271.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 5
+      },
+      "ranged": {
+        "pierce": 1.0,
+        "hits": 2
+      }
+    },
+    "L1 Szarekh": {
+      "health": 1500000.0,
+      "damage": 449.0,
+      "armour": 449.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 3
+      },
+      "ranged": {
+        "pierce": 0.3,
+        "hits": 6
+      }
+    },
+    "L1 Hapthatra ": {
+      "health": 12274.0,
+      "damage": 311.0,
+      "armour": 625.0,
+      "melee": {
+        "pierce": 0.3,
+        "hits": 3
+      },
+      "ranged": {
+        "pierce": 0.3,
+        "hits": 9
+      }
+    }
+  },
+  "summons": {
+    "Inceptor": {
+      "health": 55.0,
+      "damage": 10.0,
+      "armour": 12.0,
+      "melee": {
+        "pierce": 0.2,
+        "hits": 6
+      }
+    },
+    "Bloodletter": {
+      "health": 35.0,
+      "damage": 32.0,
+      "armour": 0.0,
+      "melee": {
+        "pierce": 0.8,
+        "hits": 1
+      }
+    },
+    "Grot": {
+      "health": 65.5,
+      "damage": 33.0,
+      "armour": 0.0,
+      "melee": {
+        "pierce": 0.15,
+        "hits": 1
+      }
+    },
+    "Grot Tank": {
+      "health": 70.0,
+      "damage": 25.0,
+      "armour": 20.0,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.15,
+        "hits": 3
+      }
+    },
+    "Cadian Guardsman": {
+      "health": 40.0,
+      "damage": 24.0,
+      "armour": 8.0,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.1,
+        "hits": 2
+      }
+    },
+    "Colour Sergeant Kell": {
+      "health": 90.0,
+      "damage": 18.0,
+      "armour": 15.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 2
+      }
+    },
+    "Geminae Superia": {
+      "health": 60.0,
+      "damage": 25.0,
+      "armour": 20.0,
+      "melee": {
+        "pierce": 0.4,
+        "hits": 2
+      }
+    },
+    "Pox Walkers": {
+      "health": 30.0,
+      "damage": 35.0,
+      "armour": 0.0,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 2
+      }
+    },
+    "MV71 Sniper Drone": {
+      "health": 20.0,
+      "damage": 28.0,
+      "armour": 4.8,
+      "melee": {
+        "pierce": 0.01,
+        "hits": 1
+      },
+      "ranged": {
+        "pierce": 0.8,
+        "hits": 1
+      }
+    }
+  },
+  "gear": [
+    [
+      "Stone Rank I",
+      0
+    ],
+    [
+      "Stone Rank II",
+      1
+    ],
+    [
+      "Stone Rank III",
+      2
+    ],
+    [
+      "Iron Rank I",
+      3
+    ],
+    [
+      "Iron Rank II",
+      4
+    ],
+    [
+      "Iron Rank III",
+      5
+    ],
+    [
+      "Bronze Rank I",
+      6
+    ],
+    [
+      "Bronze Rank II",
+      7
+    ],
+    [
+      "Bronze Rank III",
+      8
+    ],
+    [
+      "Silver Rank I",
+      9
+    ],
+    [
+      "Silver Rank II",
+      10
+    ],
+    [
+      "Silver Rank III",
+      11
+    ],
+    [
+      "Gold Rank I",
+      12
+    ],
+    [
+      "Gold Rank II",
+      13
+    ],
+    [
+      "Gold Rank III",
+      14
+    ],
+    [
+      "Diamond Rank I",
+      15
+    ],
+    [
+      "Diamond Rank II",
+      16
+    ],
+    [
+      "Diamond Rank III",
+      17
+    ]
+  ],
+  "version": "Beta 0.0.3.3"
+}
