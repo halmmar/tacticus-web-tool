@@ -1,0 +1,197 @@
+<html>
+<head>
+    <script>
+        
+var getJSON = function(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.responseType = 'json';
+  xhr.onload = function() {
+  var status = xhr.status;
+  if (status === 200) {
+    callback(null, xhr.response);
+  } else {
+    callback(status, xhr.response);
+  }
+  };
+  xhr.send();
+};
+
+tb_chars = {};
+tb_gear = [];
+
+getJSON('tacticus.json',
+function(err, data) {
+  if (err !== null) {
+    console.log('Something went wrong: ' + err);
+  } else {
+    tb_chars = data.characters;
+    tb_gear = data.gear;
+    // updateGear(); // Hard-coded into the HTML
+    addTable();
+    sortTable(0);
+  }
+});
+
+var updateGear = function() {
+    res = "";
+    tb_gear.forEach(function callback(v) {
+        res += '<option value="'+v[1]+'"'+(v[1]==12 ? ' selected="selected"' : "")+'>'+v[0]+'</option>';
+    });
+    document.getElementById("gearlevel").innerHTML=res;
+}
+
+var characterTableEntryId = function(str) {
+    return str.toLowerCase().replace(" ","");
+}
+
+var addTable = function() {
+    res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">Health</th><th onclick="sortTable(2)">Armour</th><th title="Damage stat" onclick="sortTable(3)">Damage</th><th title="Average damage for an attack, without passives or crit" onclick="sortTable(4)">Damage dealt</th></tr>';
+    Object.keys(tb_chars).forEach(function callback(key) {
+        var id = characterTableEntryId(key);
+        res += '<tr id="'+id+'"><td>'+key+'</td><td id="'+id+'-health"></td><td id="'+id+'-armour"></td><td id="'+id+'-dmg"></td><td id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
+    });
+    document.getElementById("ch-table").innerHTML=res;
+    updateTable();
+}
+var updateTable = function() {
+    var starlevel = document.getElementById("starlevel").value;
+    var gearlevel = document.getElementById("gearlevel").value;
+    var opponentarmor = document.getElementById("opponentarmor").value;
+    var eldryondamage = Math.round(document.getElementById("eldryon-level").value);
+    Object.keys(tb_chars).forEach(function callback(key) {
+        var comment = "";
+        entryId = characterTableEntryId(key);
+        var char = tb_chars[key];
+        var health = char.health;
+        health = Math.round(health*((1.25205^gearlevel)*(1+0.1*starlevel)));
+        var armour = char.armour;
+        armour = Math.round(armour*((1.25205^gearlevel)*(1+0.1*starlevel)));
+        var dmg = Math.round(char.damage*((1.25205^gearlevel)*(1+0.1*starlevel)));
+        var meleeDmg = Math.round(char.melee.hits * Math.max(dmg+eldryondamage-opponentarmor, (dmg+eldryondamage)*char.melee.pierce));
+        var totalDmg = meleeDmg;
+        if (char.hasOwnProperty("ranged")) {
+            totalDmg = Math.round(char.ranged.hits * Math.max(dmg+eldryondamage-opponentarmor, (dmg+eldryondamage)*char.ranged.pierce));
+        }
+        if (key == "Incisus") {
+            comment += "TODO: Increase Incisus growth";
+        }
+        document.getElementById(entryId+"-health").innerHTML=health;
+        document.getElementById(entryId+"-armour").innerHTML=armour;
+        document.getElementById(entryId+"-dmg").innerHTML=dmg;
+        document.getElementById(entryId+"-dmg-dealt").innerHTML=totalDmg;
+        document.getElementById(entryId+"-comment").innerHTML=comment;
+    });
+}
+
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("ch-table");
+  switching = true;
+  // Set the sorting direction to ascending:
+  dir = "asc";
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /* Check if the two rows should switch place,
+      based on the direction, asc or desc: */
+      if (dir == "asc") {
+        if (1==x.innerHTML.localeCompare(y.innerHTML, undefined, {numeric: true, sensitivity: 'base'})) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (-1==x.innerHTML.localeCompare(y.innerHTML, undefined, {numeric: true, sensitivity: 'base'})) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      // Each time a switch is done, increase this count by 1:
+      switchcount ++;
+    } else {
+      /* If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again. */
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+    </script>
+</head>
+<body>
+  <select onchange="updateTable()" name="gearlevel" id="gearlevel">
+    <option value="0">Stone Rank I</option>
+    <option value="1">Stone Rank II</option>
+    <option value="2">Stone Rank III</option>
+    <option value="3">Iron Rank I</option>
+    <option value="4">Iron Rank II</option>
+    <option value="5">Iron Rank III</option>
+    <option value="6">Bronze Rank I</option>
+    <option value="7">Bronze Rank II</option>
+    <option value="8">Bronze Rank III</option>
+    <option value="9">Silver Rank I</option>
+    <option value="10">Silver Rank II</option>
+    <option value="11">Silver Rank III</option>
+    <option value="12" selected="selected">Gold Rank I</option>
+    <option value="13">Gold Rank II</option>
+    <option value="14">Gold Rank III</option>
+    <option value="15">Diamond Rank I</option>
+    <option value="16">Diamond Rank II</option>
+    <option value="17">Diamond Rank III</option>
+  </select>
+
+    <select onChange="updateTable()" name="starlevel" id="starlevel">
+      <option value="1">1 gold star</option>
+      <option value="2">2 gold star</option>
+      <option value="3">3 gold star</option>
+      <option value="4">4 gold star</option>
+      <option value="5">5 gold star</option>
+      <option value="6">1 red star</option>
+      <option value="7">2 red star</option>  
+      <option selected="selected" value="8">3 red star</option>
+      <option value="9">4 red star</option>
+      <option value="10">5 red star</option>
+      <option value="11">1 winged star</option>
+    </select>
+    <br>
+    TODO: Equipment?
+    <br>
+    <label>Opponent armor</label>
+    <input onChange="updateTable()" type="number" id="opponentarmor" name="opponentarmor" min="0" max="3000" value="300">
+    <br>
+    <label>Eldryon damage</label>
+    <input onChange="updateTable()" type="number" id="eldryon-level" name="eldryon-level" min="0" max="1500" value="256">
+    <br>
+    TODO: More buffs
+    <br>
+
+    <table id="ch-table"></table>
+  <footer>
+    <p>This web application was created by Rilak (MOP-06-FAX)<br>
+    Based on data and formulas in <a href="https://docs.google.com/spreadsheets/d/1al2IWwvTP3QOhHtfr6P8stdlA48ED4JFrtK8wDKznrk/edit#gid=2104934925">Towen's Awesome Calculator To Infer Cool Useful Stuff -  T.A.C.T.I.C.U.S</a> (NOD-08-POD)</p>
+  </footer>
+</body>
+
+</html>
