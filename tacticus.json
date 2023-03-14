@@ -1,861 +1,1050 @@
 {
-  "characters": {
-    "Varro Tigurius": {
-      "faction": "Ultramarines",
-      "health": 65.0,
-      "damage": 30.0,
-      "armour": 14.0,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 1
-      }
-    },
-    "Certus": {
-      "faction": "Ultramarines",
-      "health": 60.0,
-      "damage": 55.0,
-      "armour": 18.0,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 0.2,
-        "hits": 1
-      }
-    },
-    "Bellator": {
-      "faction": "Ultramarines",
-      "health": 85.0,
-      "damage": 10.0,
-      "armour": 13.0,
-      "melee": {
-        "pierce": 0.2,
-        "hits": 6
-      }
-    },
-    "Incisus": {
-      "faction": "Ultramarines",
-      "health": 75.0,
-      "damage": 35.0,
-      "armour": 17.0,
-      "melee": {
-        "pierce": 0.8,
-        "hits": 1
-      }
-    },
-    "Marneus Calgar": {
-      "faction": "Ultramarines",
-      "health": 95.0,
-      "damage": 20.0,
-      "armour": 20.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 2
-      }
-    },
-    "Angrax": {
-      "faction": "Black Legion",
-      "health": 110.0,
-      "damage": 12.0,
-      "armour": 30.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 4
-      }
-    },
-    "Volk": {
-      "faction": "Black Legion",
-      "health": 65.0,
-      "damage": 9.0,
-      "armour": 10.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 4
-      },
-      "ranged": {
-        "pierce": 0.55,
-        "hits": 6
-      }
-    },
-    "Archimatos": {
-      "faction": "Black Legion",
-      "health": 70.0,
-      "damage": 15.0,
-      "armour": 14.0,
-      "melee": {
-        "pierce": 1.0,
-        "hits": 2
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 1
-      }
-    },
-    "Haarken Worldclaimer": {
-      "faction": "Black Legion",
-      "health": 78.0,
-      "damage": 11.0,
-      "armour": 18.0,
-      "melee": {
-        "pierce": 0.8,
-        "hits": 4
-      }
-    },
-    "Abaddon the despolier": {
-      "faction": "Black Legion",
-      "health": 80.0,
-      "damage": 15.0,
-      "armour": 16.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 5
-      },
-      "ranged": {
-        "pierce": 0.2,
-        "hits": 3
-      }
-    },
-    "Snotflogga": {
-      "faction": "Orks",
-      "health": 110.0,
-      "damage": 25.0,
-      "armour": 25.0,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 3
-      }
-    },
-    "Gibbascrapz": {
-      "faction": "Orks",
-      "health": 75.0,
-      "damage": 25.0,
-      "armour": 30.0,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 4
-      }
-    },
-    "Snappawrecka": {
-      "faction": "Orks",
-      "health": 80.0,
-      "damage": 20.0,
-      "armour": 15.0,
-      "melee": {
-        "pierce": 0.2,
-        "hits": 2
-      },
-      "ranged": {
-        "pierce": 0.15,
-        "hits": 3
-      }
-    },
-    "Tanksmasha": {
-      "faction": "Orks",
-      "health": 85.0,
-      "damage": 30.0,
-      "armour": 15.0,
-      "melee": {
-        "pierce": 0.2,
-        "hits": 3
-      }
-    },
-    "Boss Gulgortz": {
-      "faction": "Orks",
-      "health": 100.0,
-      "damage": 12.0,
-      "armour": 15.0,
-      "melee": {
-        "pierce": 0.2,
-        "hits": 5
-      },
-      "ranged": {
-        "pierce": 0.15,
-        "hits": 3
-      }
-    },
-    "Vindicta": {
-      "faction": "ADEPTA SOROITAS",
-      "health": 70.0,
-      "damage": 20.0,
-      "armour": 12.0,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 0.25,
-        "hits": 4
-      }
-    },
-    "Isabella": {
-      "faction": "ADEPTA SOROITAS",
-      "health": 85.0,
-      "damage": 18.0,
-      "armour": 20.0,
-      "melee": {
-        "pierce": 0.2,
-        "hits": 3
-      }
-    },
-    "Morvenn Vahl": {
-      "faction": "ADEPTA SOROITAS",
-      "health": 85.0,
-      "damage": 12.0,
-      "armour": 19.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 5
-      },
-      "ranged": {
-        "pierce": 0.2,
-        "hits": 3
-      }
-    },
-    "Roswitha": {
-      "faction": "ADEPTA SOROITAS",
-      "health": 85.0,
-      "damage": 30.0,
-      "armour": 17.0,
-      "melee": {
-        "pierce": 0.2,
-        "hits": 3
-      },
-      "ranged": {
-        "pierce": 0.2,
-        "hits": 2
-      }
-    },
-    "Celestine": {
-      "faction": "ADEPTA SOROITAS",
-      "health": 60.0,
-      "damage": 25.0,
-      "armour": 20.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 3
-      }
-    },
-    "Makhotep": {
-      "faction": "Necrons",
-      "health": 80.0,
-      "damage": 18.0,
-      "armour": 18.0,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 0.6,
-        "hits": 2
-      }
-    },
-    "Imospekh": {
-      "faction": "Necrons",
-      "health": 60.0,
-      "damage": 8.0,
-      "armour": 13.0,
-      "melee": {
-        "pierce": 0.6,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 0.6,
-        "hits": 6
-      }
-    },
-    "Aleph-null": {
-      "faction": "Necrons",
-      "health": 75.0,
-      "damage": 12.0,
-      "armour": 22.0,
-      "melee": {
-        "pierce": 0.35,
-        "hits": 5
-      }
-    },
-    "Thutmose": {
-      "faction": "Necrons",
-      "health": 70.0,
-      "damage": 30.0,
-      "armour": 16.0,
-      "melee": {
-        "pierce": 0.65,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 0.65,
-        "hits": 2
-      }
-    },
-    "Anuphet": {
-      "faction": "Necrons",
-      "health": 85.0,
-      "damage": 17.0,
-      "armour": 29.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 4
-      },
-      "ranged": {
-        "pierce": 0.3,
-        "hits": 3
-      }
-    },
-    "Sibyll": {
-      "faction": "Astra militarum",
-      "health": 55.0,
-      "damage": 30.0,
-      "armour": 20.0,
-      "melee": {
-        "pierce": 1.0,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 1
-      }
-    },
-    "Commissar Yarrick": {
-      "faction": "Astra militarum",
-      "health": 60.0,
-      "damage": 30.0,
-      "armour": 15.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 3
-      },
-      "ranged": {
-        "pierce": 0.2,
-        "hits": 2
-      }
-    },
-    "Kut skoden": {
-      "faction": "Astra militarum",
-      "health": 95.0,
-      "damage": 30.0,
-      "armour": 35.0,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 4
-      }
-    },
-    "Thaddeus noble": {
-      "faction": "Astra militarum",
-      "health": 50.0,
-      "damage": 38.0,
-      "armour": 18.0,
-      "melee": {
-        "pierce": 0.1,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 0.15,
-        "hits": 3
-      }
-    },
-    "Castellan creed": {
-      "faction": "Astra militarum",
-      "health": 90.0,
-      "damage": 38.0,
-      "armour": 21.0,
-      "melee": {
-        "pierce": 0.1,
-        "hits": 2
-      }
-    },
-    "Typhus": {
-      "faction": "Death guard",
-      "health": 120.0,
-      "damage": 18.0,
-      "armour": 25.08,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 1
-      }
-    },
-    "Maladus": {
-      "faction": "Death guard",
-      "health": 120.0,
-      "damage": 26.0,
-      "armour": 27.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 3
-      }
-    },
-    "Nauseous rotbone": {
-      "faction": "Death guard",
-      "health": 120.0,
-      "damage": 14.0,
-      "armour": 27.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 4
-      }
-    },
-    "Pestillian": {
-      "faction": "Death guard",
-      "health": 109.8,
-      "damage": 35.0,
-      "armour": 33.0,
-      "melee": {
-        "pierce": 1.0,
-        "hits": 1
-      }
-    },
-    "Corrodius": {
-      "faction": "Death guard",
-      "health": 100.0,
-      "damage": 11.0,
-      "armour": 30.0,
-      "melee": {
-        "pierce": 0.65,
-        "hits": 2
-      }
-    },
-    "Sword Brother Godswyl": {
-      "faction": "Black templars",
-      "health": 95.0,
-      "damage": 55.0,
-      "armour": 22.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 1
-      }
-    },
-    "Brother Burchard": {
-      "faction": "Black templars",
-      "health": 120.0,
-      "damage": 9.03,
-      "armour": 24.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 4
-      },
-      "ranged": {
-        "pierce": 0.2,
-        "hits": 6
-      }
-    },
-    "Ancient Thoread": {
-      "faction": "Black templars",
-      "health": 100.0,
-      "damage": 32.0,
-      "armour": 22.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 2
-      }
-    },
-    "Brother Jaeger": {
-      "faction": "Black templars",
-      "health": 110.0,
-      "damage": 25.0,
-      "armour": 25.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 2
-      }
-    },
-    "High Marshal Helbrecht": {
-      "faction": "Black templars",
-      "health": 80.0,
-      "damage": 15.0,
-      "armour": 20.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 6
-      },
-      "ranged": {
-        "pierce": 0.2,
-        "hits": 3
-      }
-    },
-    "Calandis": {
-      "faction": "Aeldari",
-      "health": 70.0,
-      "damage": 45.0,
-      "armour": 18.04,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 0.3,
-        "hits": 1
-      }
-    },
-    "Aethana": {
-      "faction": "Aeldari",
-      "health": 80.0,
-      "damage": 14.0,
-      "armour": 17.0,
-      "melee": {
-        "pierce": 0.8,
-        "hits": 3
-      }
-    },
-    "Eldryon": {
-      "faction": "Aeldari",
-      "health": 75.0,
-      "damage": 16.0,
-      "armour": 16.0,
-      "melee": {
-        "pierce": 0.8,
-        "hits": 2
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
-    "Maugan Ra": {
-      "faction": "Aeldari",
-      "health": 55.0,
-      "damage": 9.0,
-      "armour": 12.0,
-      "melee": {
-        "pierce": 0.4,
-        "hits": 5
-      },
-      "ranged": {
-        "pierce": 0.55,
-        "hits": 6
-      }
-    },
-    "Jain Zar": {
-      "faction": "Aeldari",
-      "health": 75.0,
-      "damage": 19.0,
-      "armour": 18.0,
-      "melee": {
-        "pierce": 0.8,
-        "hits": 3
-      }
-    },
-    "Sho'Syl": {
-      "faction": "T'au Empire",
-      "health": 65.0,
-      "damage": 53.0,
-      "armour": 16.0,
-      "melee": {
-        "pierce": 0.2,
-        "hits": 1
-      },
-      "ranged": {
-        "pierce": 0.8,
-        "hits": 1
-      }
-    },
-    "Re'Vas": {
-      "faction": "T'au Empire",
-      "health": 105.0,
-      "damage": 10.0,
-      "armour": 25.0,
-      "melee": {
-        "pierce": 0.25,
-        "hits": 6
-      },
-      "ranged": {
-        "pierce": 0.2,
-        "hits": 6
-      }
-    },
-    "Darkstrider": {
-      "faction": "T'au Empire",
-      "health": 68.2,
-      "damage": 31.8,
-      "armour": 15.45,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 3
-      },
-      "ranged": {
-        "pierce": 0.2,
-        "hits": 2
-      }
-    }
-  },
+  "abilities_factor": [
+    1.0,
+    1.2,
+    1.4,
+    1.5999999999999999,
+    1.815,
+    2.0439,
+    2.2727999999999997,
+    2.5016999999999996,
+    2.7305999999999995,
+    2.9594999999999994,
+    3.1883999999999992,
+    3.417299999999999,
+    3.646199999999999,
+    3.875099999999999,
+    4.103999999999999,
+    4.3328999999999995,
+    4.5618,
+    4.7907,
+    5.0196000000000005,
+    5.248500000000001,
+    5.548500000000001,
+    5.998500000000001,
+    6.907300000000001,
+    7.816100000000001,
+    8.724900000000002,
+    9.633700000000001,
+    10.5425,
+    11.4513,
+    12.3601,
+    13.268899999999999,
+    14.177699999999998,
+    15.086499999999997,
+    15.995299999999997,
+    16.904099999999996,
+    17.812899999999996,
+    18.721699999999995,
+    19.630499999999994,
+    20.539299999999994,
+    21.448099999999993,
+    22.748099999999994,
+    24.548099999999994,
+    26.448099999999993,
+    28.448099999999993,
+    30.737099999999995,
+    34.8454,
+    38.9537,
+    43.062,
+    43.062,
+    47.1703,
+    51.2786
+  ],
   "bosses": {
-    "L1 KRONOS TERVIGON": {
-      "faction": "KRONOS",
-      "health": 1500000.0,
-      "damage": 888.0,
-      "armour": 543.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 3
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
-    "L2 LEVIATHAN TERVIGON": {
-      "faction": "LEVIATHAN",
-      "health": 2000000.0,
-      "damage": 1557.0,
-      "armour": 640.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 3
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
-    "L2 KRONOS TERVIGON": {
-      "faction": "KRONOS",
-      "health": 2000000.0,
-      "damage": 1557.0,
-      "armour": 640.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 3
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
-    "L3 LEVIATHAN TERVIGON": {
-      "faction": "LEVIATHAN",
-      "health": 2500000.0,
-      "damage": 2379.0,
-      "armour": 978.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 3
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
-    "L1 LEVIATHAN TYRANT": {
-      "faction": "LEVIATHAN",
-      "health": 1500000.0,
-      "damage": 1016.0,
-      "armour": 418.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 5
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
     "L1 GORGON TYRANT": {
-      "faction": "GORGON",
-      "health": 1500000.0,
-      "damage": 780.0,
+      "alliance": "TYRANT",
       "armour": 645.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 5
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
-    "L2 LEVIATHAN TYRANT": {
-      "faction": "LEVIATHAN",
-      "health": 2000000.0,
-      "damage": 1557.0,
-      "armour": 640.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 3
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
-    "L3 KRONOS TYRANT": {
-      "faction": "KRONOS",
-      "health": 2500000.0,
-      "damage": 2078.0,
-      "armour": 635.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 5
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
-    "L3 GORGON TYRANT": {
+      "damage": 780.0,
       "faction": "GORGON",
-      "health": 2500000.0,
-      "damage": 1826.0,
-      "armour": 1510.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 5
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
-    "L3 LEVIATHAN TYRANT": {
-      "faction": "LEVIATHAN",
-      "health": 2500000.0,
-      "damage": 2078.0,
-      "armour": 1271.0,
-      "melee": {
-        "pierce": 0.3,
-        "hits": 5
-      },
-      "ranged": {
-        "pierce": 1.0,
-        "hits": 2
-      }
-    },
-    "L1 Szarekh": {
-      "faction": "MAIN",
       "health": 1500000.0,
-      "damage": 449.0,
-      "armour": 449.0,
       "melee": {
-        "pierce": 0.3,
-        "hits": 3
+        "hits": 5,
+        "pierce": 0.3
       },
       "ranged": {
-        "pierce": 0.3,
-        "hits": 6
+        "hits": 2,
+        "pierce": 1.0
       }
     },
     "L1 Hapthatra ": {
+      "alliance": "NECRONS",
+      "armour": 625.0,
+      "damage": 311.0,
       "faction": "LEFT",
       "health": 12274.0,
-      "damage": 311.0,
-      "armour": 625.0,
       "melee": {
-        "pierce": 0.3,
-        "hits": 3
+        "hits": 3,
+        "pierce": 0.3
       },
       "ranged": {
-        "pierce": 0.3,
-        "hits": 9
+        "hits": 9,
+        "pierce": 0.3
+      }
+    },
+    "L1 KRONOS TERVIGON": {
+      "alliance": "TERVIGON",
+      "armour": 543.0,
+      "damage": 888.0,
+      "faction": "KRONOS",
+      "health": 1500000.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
+      }
+    },
+    "L1 LEVIATHAN TYRANT": {
+      "alliance": "TYRANT",
+      "armour": 418.0,
+      "damage": 1016.0,
+      "faction": "LEVIATHAN",
+      "health": 1500000.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
+      }
+    },
+    "L1 Szarekh": {
+      "alliance": "NECRONS",
+      "armour": 449.0,
+      "damage": 449.0,
+      "faction": "MAIN",
+      "health": 1500000.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 6,
+        "pierce": 0.3
+      }
+    },
+    "L1 Triarchal Menhir": {
+      "alliance": "NECRONS",
+      "armour": 826.0,
+      "damage": 1219.0,
+      "faction": "LEFT",
+      "health": 0.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.3
+      }
+    },
+    "L2 KRONOS TERVIGON": {
+      "alliance": "TERVIGON",
+      "armour": 640.0,
+      "damage": 1557.0,
+      "faction": "KRONOS",
+      "health": 2000000.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
+      }
+    },
+    "L2 LEVIATHAN TERVIGON": {
+      "alliance": "TERVIGON",
+      "armour": 640.0,
+      "damage": 1557.0,
+      "faction": "LEVIATHAN",
+      "health": 2000000.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
+      }
+    },
+    "L2 LEVIATHAN TYRANT": {
+      "alliance": "TYRANT",
+      "armour": 640.0,
+      "damage": 1557.0,
+      "faction": "LEVIATHAN",
+      "health": 2000000.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
+      }
+    },
+    "L3 GORGON TYRANT": {
+      "alliance": "TYRANT",
+      "armour": 1510.0,
+      "damage": 1826.0,
+      "faction": "GORGON",
+      "health": 2500000.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
+      }
+    },
+    "L3 KRONOS TYRANT": {
+      "alliance": "TYRANT",
+      "armour": 635.0,
+      "damage": 2078.0,
+      "faction": "KRONOS",
+      "health": 2500000.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
+      }
+    },
+    "L3 LEVIATHAN TERVIGON": {
+      "alliance": "TERVIGON",
+      "armour": 978.0,
+      "damage": 2379.0,
+      "faction": "LEVIATHAN",
+      "health": 2500000.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
+      }
+    },
+    "L3 LEVIATHAN TYRANT": {
+      "alliance": "TYRANT",
+      "armour": 1271.0,
+      "damage": 2078.0,
+      "faction": "LEVIATHAN",
+      "health": 2500000.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
       }
     }
   },
-  "summons": {
-    "Inceptor": {
-      "faction": "Ultramarines",
-      "health": 55.0,
-      "damage": 10.0,
-      "armour": 12.0,
-      "melee": {
-        "pierce": 0.2,
-        "hits": 6
-      }
-    },
-    "Bloodletter": {
+  "characters": {
+    "Abaddon the despolier": {
+      "alliance": "Chaos",
+      "armour": 16.0,
+      "damage": 15.0,
       "faction": "Black Legion",
-      "health": 35.0,
+      "health": 80.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.4
+      },
+      "passive": [
+        5.0
+      ],
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.2
+      }
+    },
+    "Aethana": {
+      "alliance": "Xenos",
+      "armour": 17.0,
+      "damage": 14.0,
+      "faction": "Aeldari",
+      "health": 80.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.8
+      },
+      "passive": [
+        4.0,
+        3.0,
+        16.0
+      ]
+    },
+    "Aleph-null": {
+      "alliance": "Xenos",
+      "armour": 22.0,
+      "damage": 12.0,
+      "faction": "Necrons",
+      "health": 75.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.35
+      },
+      "passive": [
+        40.0
+      ]
+    },
+    "Ancient Thoread": {
+      "alliance": "Imperial",
+      "armour": 22.0,
       "damage": 32.0,
-      "armour": 0.0,
+      "faction": "Black templars",
+      "health": 100.0,
       "melee": {
-        "pierce": 0.8,
-        "hits": 1
+        "hits": 2,
+        "pierce": 0.4
+      },
+      "passive": []
+    },
+    "Angrax": {
+      "alliance": "Chaos",
+      "armour": 30.0,
+      "damage": 12.0,
+      "faction": "Black Legion",
+      "health": 110.00000000000001,
+      "melee": {
+        "hits": 4,
+        "pierce": 0.4
+      },
+      "passive": [
+        18.0,
+        25.0,
+        6.0
+      ]
+    },
+    "Anuphet": {
+      "alliance": "Xenos",
+      "armour": 29.0,
+      "damage": 17.0,
+      "faction": "Necrons",
+      "health": 85.0,
+      "melee": {
+        "hits": 4,
+        "pierce": 0.3
+      },
+      "passive": [
+        15.0,
+        19.0
+      ],
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.3
       }
     },
-    "Grot": {
-      "faction": "Ork",
-      "health": 65.5,
-      "damage": 33.0,
-      "armour": 0.0,
-      "melee": {
-        "pierce": 0.15,
-        "hits": 1
-      }
-    },
-    "Grot Tank": {
-      "faction": "Ork",
+    "Archimatos": {
+      "alliance": "Chaos",
+      "armour": 14.0,
+      "damage": 15.0,
+      "faction": "Black Legion",
       "health": 70.0,
-      "damage": 25.0,
-      "armour": 20.0,
       "melee": {
-        "pierce": 0.01,
-        "hits": 1
+        "hits": 2,
+        "pierce": 1.0
       },
+      "passive": [
+        39.0,
+        35.0
+      ],
       "ranged": {
-        "pierce": 0.15,
-        "hits": 3
+        "hits": 1,
+        "pierce": 1.0
       }
     },
-    "Cadian Guardsman": {
-      "faction": "Astra Miltarum",
-      "health": 40.0,
-      "damage": 24.0,
-      "armour": 8.0,
+    "Bellator": {
+      "alliance": "Imperial",
+      "armour": 13.0,
+      "damage": 10.0,
+      "faction": "Ultramarines",
+      "health": 85.0,
       "melee": {
-        "pierce": 0.01,
-        "hits": 1
+        "hits": 6,
+        "pierce": 0.2
       },
-      "ranged": {
-        "pierce": 0.1,
-        "hits": 2
-      }
+      "passive": [
+        5.0
+      ]
     },
-    "Colour Sergeant Kell": {
-      "faction": "Astra Miltarum",
-      "health": 90.0,
-      "damage": 18.0,
+    "Boss Gulgortz": {
+      "alliance": "Xenos",
       "armour": 15.0,
+      "damage": 12.0,
+      "faction": "Orks",
+      "health": 100.0,
       "melee": {
-        "pierce": 0.4,
-        "hits": 2
+        "hits": 5,
+        "pierce": 0.2
+      },
+      "passive": [
+        11.0,
+        13.0
+      ],
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.15
       }
     },
-    "Geminae Superia": {
+    "Brother Burchard": {
+      "alliance": "Imperial",
+      "armour": 24.0,
+      "damage": 9.030000000000001,
+      "faction": "Black templars",
+      "health": 120.0,
+      "melee": {
+        "hits": 4,
+        "pierce": 0.4
+      },
+      "passive": [
+        21.0
+      ],
+      "ranged": {
+        "hits": 6,
+        "pierce": 0.2
+      }
+    },
+    "Brother Jaeger": {
+      "alliance": "Imperial",
+      "armour": 25.0,
+      "damage": 25.0,
+      "faction": "Black templars",
+      "health": 110.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.4
+      },
+      "passive": [
+        8.0,
+        14.0
+      ]
+    },
+    "Calandis": {
+      "alliance": "Xenos",
+      "armour": 18.04,
+      "damage": 45.0,
+      "faction": "Aeldari",
+      "health": 70.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "passive": [
+        12.0,
+        18.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 0.3
+      }
+    },
+    "Castellan creed": {
+      "alliance": "Imperial",
+      "armour": 21.0,
+      "damage": 38.0,
+      "faction": "Astra militarum",
+      "health": 90.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.1
+      },
+      "passive": [
+        90.0,
+        18.0,
+        15.0
+      ]
+    },
+    "Celestine": {
+      "alliance": "Imperial",
+      "armour": 20.0,
+      "damage": 25.0,
       "faction": "ADEPTA SOROITAS",
       "health": 60.0,
-      "damage": 25.0,
-      "armour": 20.0,
       "melee": {
-        "pierce": 0.4,
-        "hits": 2
-      }
-    },
-    "Pox Walkers": {
-      "faction": "Death guard",
-      "health": 30.0,
-      "damage": 35.0,
-      "armour": 0.0,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 2
-      }
-    },
-    "MV71 Sniper Drone": {
-      "faction": "T'au Empire",
-      "health": 20.0,
-      "damage": 28.0,
-      "armour": 4.8,
-      "melee": {
-        "pierce": 0.01,
-        "hits": 1
+        "hits": 3,
+        "pierce": 0.4
       },
+      "passive": [
+        60.0,
+        25.0,
+        20.0
+      ]
+    },
+    "Certus": {
+      "alliance": "Imperial",
+      "armour": 18.0,
+      "damage": 55.0,
+      "faction": "Ultramarines",
+      "health": 60.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "passive": [
+        -5.0
+      ],
       "ranged": {
-        "pierce": 0.8,
-        "hits": 1
+        "hits": 1,
+        "pierce": 0.2
+      }
+    },
+    "Commissar Yarrick": {
+      "alliance": "Imperial",
+      "armour": 15.0,
+      "damage": 30.0,
+      "faction": "Astra militarum",
+      "health": 60.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.4
+      },
+      "passive": [
+        5.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.2
+      }
+    },
+    "Corrodius": {
+      "alliance": "Chaos",
+      "armour": 30.0,
+      "damage": 11.0,
+      "faction": "Death guard",
+      "health": 100.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.65
+      },
+      "passive": [
+        18.0
+      ]
+    },
+    "Darkstrider": {
+      "alliance": "Xenos",
+      "armour": 15.45,
+      "damage": 31.8,
+      "faction": "T'au Empire",
+      "health": 68.2,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.01
+      },
+      "passive": [
+        10.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.2
+      }
+    },
+    "Eldryon": {
+      "alliance": "Xenos",
+      "armour": 16.0,
+      "damage": 16.0,
+      "faction": "Aeldari",
+      "health": 75.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.8
+      },
+      "passive": [
+        9.0,
+        3.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
+      }
+    },
+    "Gibbascrapz": {
+      "alliance": "Xenos",
+      "armour": 30.0,
+      "damage": 25.0,
+      "faction": "Orks",
+      "health": 75.0,
+      "melee": {
+        "hits": 4,
+        "pierce": 0.01
+      },
+      "passive": [
+        5.8
+      ]
+    },
+    "Haarken Worldclaimer": {
+      "alliance": "Chaos",
+      "armour": 18.0,
+      "damage": 11.0,
+      "faction": "Black Legion",
+      "health": 78.0,
+      "melee": {
+        "hits": 4,
+        "pierce": 0.8
+      },
+      "passive": [
+        2.975
+      ]
+    },
+    "High Marshal Helbrecht": {
+      "alliance": "Imperial",
+      "armour": 20.0,
+      "damage": 15.0,
+      "faction": "Black templars",
+      "health": 80.0,
+      "melee": {
+        "hits": 6,
+        "pierce": 0.4
+      },
+      "passive": [
+        15.0
+      ],
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.2
+      }
+    },
+    "Imospekh": {
+      "alliance": "Xenos",
+      "armour": 13.0,
+      "damage": 8.0,
+      "faction": "Necrons",
+      "health": 60.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.6
+      },
+      "passive": [
+        5.0
+      ],
+      "ranged": {
+        "hits": 6,
+        "pierce": 0.6
+      }
+    },
+    "Incisus": {
+      "alliance": "Imperial",
+      "armour": 17.0,
+      "damage": 35.0,
+      "faction": "Ultramarines",
+      "health": 75.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.8
+      },
+      "passive": [
+        40.0
+      ]
+    },
+    "Isabella": {
+      "alliance": "Imperial",
+      "armour": 20.0,
+      "damage": 18.0,
+      "faction": "ADEPTA SOROITAS",
+      "health": 85.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.2
+      },
+      "passive": [
+        12.0
+      ]
+    },
+    "Jain Zar": {
+      "alliance": "Xenos",
+      "armour": 18.0,
+      "damage": 19.0,
+      "faction": "Aeldari",
+      "health": 75.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.8
+      },
+      "passive": [
+        -8.0,
+        1.0
+      ]
+    },
+    "Kut skoden": {
+      "alliance": "Imperial",
+      "armour": 35.0,
+      "damage": 30.0,
+      "faction": "Astra militarum",
+      "health": 95.0,
+      "melee": {
+        "hits": 4,
+        "pierce": 0.01
+      },
+      "passive": [
+        6.0
+      ]
+    },
+    "Makhotep": {
+      "alliance": "Xenos",
+      "armour": 18.0,
+      "damage": 18.0,
+      "faction": "Necrons",
+      "health": 80.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "passive": [
+        20.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.6
+      }
+    },
+    "Maladus": {
+      "alliance": "Chaos",
+      "armour": 27.0,
+      "damage": 26.0,
+      "faction": "Death guard",
+      "health": 120.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.4
+      },
+      "passive": [
+        7.0
+      ]
+    },
+    "Marneus Calgar": {
+      "alliance": "Imperial",
+      "armour": 20.0,
+      "damage": 20.0,
+      "faction": "Ultramarines",
+      "health": 95.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.4
+      },
+      "passive": [
+        3.0,
+        5.0
+      ]
+    },
+    "Maugan Ra": {
+      "alliance": "Xenos",
+      "armour": 12.0,
+      "damage": 9.0,
+      "faction": "Aeldari",
+      "health": 55.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.4
+      },
+      "passive": [
+        10.0,
+        11.0
+      ],
+      "ranged": {
+        "hits": 6,
+        "pierce": 0.55
+      }
+    },
+    "Morvenn Vahl": {
+      "alliance": "Imperial",
+      "armour": 19.0,
+      "damage": 12.0,
+      "faction": "ADEPTA SOROITAS",
+      "health": 85.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.4
+      },
+      "passive": [
+        7.0,
+        10.0
+      ],
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.2
+      }
+    },
+    "Nauseous rotbone": {
+      "alliance": "Chaos",
+      "armour": 27.0,
+      "damage": 14.0,
+      "faction": "Death guard",
+      "health": 120.0,
+      "melee": {
+        "hits": 4,
+        "pierce": 0.4
+      },
+      "passive": [
+        49.0
+      ]
+    },
+    "Pestillian": {
+      "alliance": "Chaos",
+      "armour": 33.0,
+      "damage": 35.0,
+      "faction": "Death guard",
+      "health": 109.8,
+      "melee": {
+        "hits": 1,
+        "pierce": 1.0
+      },
+      "passive": [
+        30.0
+      ]
+    },
+    "Re'Vas": {
+      "alliance": "Xenos",
+      "armour": 25.0,
+      "damage": 10.0,
+      "faction": "T'au Empire",
+      "health": 105.0,
+      "melee": {
+        "hits": 6,
+        "pierce": 0.25
+      },
+      "passive": [
+        8.0,
+        12.0,
+        4.0
+      ],
+      "ranged": {
+        "hits": 6,
+        "pierce": 0.2
+      }
+    },
+    "Roswitha": {
+      "alliance": "Imperial",
+      "armour": 17.0,
+      "damage": 30.0,
+      "faction": "ADEPTA SOROITAS",
+      "health": 85.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.2
+      },
+      "passive": [
+        30.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.2
+      }
+    },
+    "Sho'Syl": {
+      "alliance": "Xenos",
+      "armour": 16.0,
+      "damage": 53.0,
+      "faction": "T'au Empire",
+      "health": 65.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.2
+      },
+      "passive": [
+        20.0,
+        28.0,
+        4.8
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 0.8
+      }
+    },
+    "Sibyll": {
+      "alliance": "Imperial",
+      "armour": 20.0,
+      "damage": 30.0,
+      "faction": "Astra militarum",
+      "health": 55.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 1.0
+      },
+      "passive": [
+        5.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 1.0
+      }
+    },
+    "Snappawrecka": {
+      "alliance": "Xenos",
+      "armour": 15.0,
+      "damage": 20.0,
+      "faction": "Orks",
+      "health": 80.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.2
+      },
+      "passive": [
+        8.0,
+        4.0
+      ],
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.15
+      }
+    },
+    "Snotflogga": {
+      "alliance": "Xenos",
+      "armour": 25.0,
+      "damage": 25.0,
+      "faction": "Orks",
+      "health": 110.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.01
+      },
+      "passive": [
+        18.0,
+        22.0
+      ]
+    },
+    "Sword Brother Godswyl": {
+      "alliance": "Imperial",
+      "armour": 22.0,
+      "damage": 55.0,
+      "faction": "Black templars",
+      "health": 95.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.4
+      },
+      "passive": [
+        10.0
+      ]
+    },
+    "Tanksmasha": {
+      "alliance": "Xenos",
+      "armour": 15.0,
+      "damage": 30.0,
+      "faction": "Orks",
+      "health": 85.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.2
+      },
+      "passive": [
+        26.0,
+        30.0
+      ]
+    },
+    "Thaddeus noble": {
+      "alliance": "Imperial",
+      "armour": 18.0,
+      "damage": 38.0,
+      "faction": "Astra militarum",
+      "health": 50.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.1
+      },
+      "passive": [
+        8.0
+      ],
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.15
+      }
+    },
+    "Thutmose": {
+      "alliance": "Xenos",
+      "armour": 16.0,
+      "damage": 30.0,
+      "faction": "Necrons",
+      "health": 70.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.65
+      },
+      "passive": [
+        14.0,
+        17.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.65
+      }
+    },
+    "Typhus": {
+      "alliance": "Chaos",
+      "armour": 25.08,
+      "damage": 18.0,
+      "faction": "Death guard",
+      "health": 120.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.4
+      },
+      "passive": [
+        14.0,
+        16.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 1.0
+      }
+    },
+    "Varro Tigurius": {
+      "alliance": "Imperial",
+      "armour": 14.0,
+      "damage": 30.0,
+      "faction": "Ultramarines",
+      "health": 65.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "passive": [
+        6.0,
+        12.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 1.0
+      }
+    },
+    "Vindicta": {
+      "alliance": "Imperial",
+      "armour": 12.0,
+      "damage": 20.0,
+      "faction": "ADEPTA SOROITAS",
+      "health": 70.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "passive": [
+        22.0
+      ],
+      "ranged": {
+        "hits": 4,
+        "pierce": 0.25
+      }
+    },
+    "Volk": {
+      "alliance": "Chaos",
+      "armour": 10.0,
+      "damage": 9.0,
+      "faction": "Black Legion",
+      "health": 65.0,
+      "melee": {
+        "hits": 4,
+        "pierce": 0.4
+      },
+      "passive": [
+        10.0
+      ],
+      "ranged": {
+        "hits": 6,
+        "pierce": 0.55
       }
     }
   },
@@ -933,5 +1122,118 @@
       17
     ]
   ],
+  "summons": {
+    "Bloodletter": {
+      "alliance": 0,
+      "armour": 0.0,
+      "damage": 32.0,
+      "faction": "Black Legion",
+      "health": 35.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.8
+      }
+    },
+    "Cadian Guardsman": {
+      "alliance": 0,
+      "armour": 8.0,
+      "damage": 24.0,
+      "faction": "Astra Miltarum",
+      "health": 40.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.1
+      }
+    },
+    "Colour Sergeant Kell": {
+      "alliance": 0,
+      "armour": 15.0,
+      "damage": 18.0,
+      "faction": "Astra Miltarum",
+      "health": 90.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.4
+      }
+    },
+    "Geminae Superia": {
+      "alliance": 0,
+      "armour": 20.0,
+      "damage": 25.0,
+      "faction": "ADEPTA SOROITAS",
+      "health": 60.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.4
+      }
+    },
+    "Grot": {
+      "alliance": 0,
+      "armour": 0.0,
+      "damage": 33.0,
+      "faction": "Ork",
+      "health": 65.5,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.15
+      }
+    },
+    "Grot Tank": {
+      "alliance": 0,
+      "armour": 20.0,
+      "damage": 25.0,
+      "faction": "Ork",
+      "health": 70.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.15
+      }
+    },
+    "Inceptor": {
+      "alliance": 0,
+      "armour": 12.0,
+      "damage": 10.0,
+      "faction": "Ultramarines",
+      "health": 55.0,
+      "melee": {
+        "hits": 6,
+        "pierce": 0.2
+      }
+    },
+    "MV71 Sniper Drone": {
+      "alliance": 0,
+      "armour": 4.8,
+      "damage": 28.0,
+      "faction": "T'au Empire",
+      "health": 20.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "ranged": {
+        "hits": 1,
+        "pierce": 0.8
+      }
+    },
+    "Pox Walkers": {
+      "alliance": 0,
+      "armour": 0.0,
+      "damage": 35.0,
+      "faction": "Death guard",
+      "health": 30.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.01
+      }
+    }
+  },
   "version": "Beta 0.0.3.3"
 }
