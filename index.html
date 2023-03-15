@@ -38,12 +38,14 @@ function(err, data) {
     document.getElementById("thaddeus-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     document.getElementById("calgar-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     document.getElementById("abaddon-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
+    document.getElementById("aethana-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     document.getElementById("equipment-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     addTable();
     updateEldryon();
     updateAbaddon();
     updateThaddeus();
     updateCalgar();
+    updateAethana();
   }
 });
 
@@ -104,6 +106,21 @@ var updateCalgar = function() {
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("calgar-buff-rarity").value*0.2);
   document.getElementById("calgar-buff-all").innerHTML = Math.round(tb_chars["Marneus Calgar"].passive[0]*factor);
   document.getElementById("calgar-buff-imperial").innerHTML = Math.round(tb_chars["Marneus Calgar"].passive[1]*factor);
+  updateTable();
+}
+var updateAethana = function() {
+  if (!document.getElementById("aethana-buff-enabled").checked) {
+    document.getElementById("aethana-buff-all").innerHTML = 0;
+    document.getElementById("aethana-buff-aeldari").innerHTML = 0;
+    document.getElementById("aethana-buff-crit").innerHTML = 0;
+    updateTable();
+    return;
+  }
+  var level = document.getElementById("aethana-buff-level").value;
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("calgar-buff-rarity").value*0.2);
+  document.getElementById("aethana-buff-all").innerHTML = Math.round(tb_chars["Aethana"].passive[0]*factor);
+  document.getElementById("aethana-buff-aeldari").innerHTML = Math.round(tb_chars["Aethana"].passive[1]*factor);
+  document.getElementById("aethana-buff-crit").innerHTML = Math.round(tb_chars["Aethana"].passive[2]+levelToRarityInt(level));
   updateTable();
 }
 
@@ -173,6 +190,9 @@ var updateTable = function() {
     var thaddeusBonusDmg = +document.getElementById("thaddeus-buff-dmg").innerHTML;
     var calgarBonusDmg = +document.getElementById("calgar-buff-all").innerHTML;
     var calgarBonusDmgImperial = +document.getElementById("calgar-buff-imperial").innerHTML;
+    var aethanaBonusDmg = +document.getElementById("aethana-buff-all").innerHTML;
+    var aethanaBonusDmgAeldar = +document.getElementById("aethana-buff-aeldari").innerHTML;
+    var aethanaBonusCritChance = +document.getElementById("aethana-buff-crit").innerHTML;
     
     Object.keys(tb_chars).forEach(function callback(key) {
         var comment = "";
@@ -191,6 +211,11 @@ var updateTable = function() {
         var dmgFactorMelee = 1.0;
         var eldryondamageModifiedByFaction = eldryondamage + (char.faction == "Aeldari" ? eldryondamageAeldari : 0.0);
         var calgardamageModifiedByFaction = (char.alliance == "Imperial" ? calgarBonusDmgImperial : calgarBonusDmg)
+        var aethanadamageModifiedByFaction = aethanaBonusDmg + (char.faction == "Aeldari" ? aethanaBonusDmgAeldar : 0.0);
+
+        if (key != "Aethana") {
+          critChance += aethanaBonusCritChance*0.01;
+        }
 
         if (opponentHasMarkerlight && char.faction == "T'au Empire") {
           dmgFactor *= 1.15;
@@ -277,8 +302,14 @@ var updateTable = function() {
         case 'Abaddon the despolier':
           abaddonBonusDmg = 0;
           break;
+        case 'Aethana':
+          aethanaBonusDmg = 0;
+          break;
         case 'Marneus Calgar':
           calgardamageModifiedByFaction = 0;
+          break;
+        case 'Aethana':
+          aethanadamageModifiedByFaction = 0;
           break;
         case 'Aleph-null':
         case 'Ancient Thoread':
@@ -310,6 +341,7 @@ var updateTable = function() {
         case 'Snappawrecka':
         case 'Snotflogga':
         case 'Tanksmasha':
+        case 'Thaddeus noble':
         case 'Thutmose':
         case 'Typhus':
         case 'Varro Tigurius':
@@ -319,10 +351,8 @@ var updateTable = function() {
         case 'Eldryon':
           eldryondamageModifiedByFaction = 0;
           break;
-        case 'Aethana':
         case 'Darkstrider':
         case 'Pestillian':
-        case 'Thaddeus noble':
           comment += "TODO: Buff missing";
           break;
         default:
@@ -369,7 +399,7 @@ var updateTable = function() {
           });
         }
 
-        buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmg;
+        buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmg + aethanadamageModifiedByFaction;
        
         if (heavyWeaponEnabled && char.traits.includes("heavy weapon")) {
           dmgFactor *= 1.25;
@@ -579,6 +609,13 @@ function sortTable(n) {
     </select>
     <input onChange="updateCalgar()" type="number" id="calgar-buff-level" min="0" max="50" value="35">
     +<span id="calgar-buff-all"></span> damage [All] +<span id="calgar-buff-imperial"></span> damage [Imperial]
+    <br>
+    <label>Aethana</label>
+    <input onChange="updateAethana()" type="checkbox" id="aethana-buff-enabled"></input>
+    <select onchange="updateAethana()" id="aethana-buff-rarity">
+    </select>
+    <input onChange="updateAethana()" type="number" id="aethana-buff-level" min="0" max="50" value="35">
+    +<span id="aethana-buff-all"></span> damage [All] +<span id="aethana-buff-aeldari"></span> damage [Aeldari], +<span id="aethana-buff-crit"></span>% crit
     <br>
     <label>Heavy Weapon</label>
     <input title="Heavy Weapon and similar passives (Maugan Ra) are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
