@@ -20,6 +20,8 @@ var getJSON = function(url, callback) {
 tb_chars = {};
 tb_gear = [];
 tb_abilities_factor = [];
+tb_equipment = {};
+intToRarity = ["common", "uncommon", "rare", "epic", "legendary"]
 
 getJSON('tacticus.json',
 function(err, data) {
@@ -29,10 +31,12 @@ function(err, data) {
     tb_chars = data.characters;
     tb_gear = data.gear;
     tb_abilities_factor = data.abilities_factor;
+    tb_equipment = data.equipment;
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
-    addTable();
     document.getElementById("eldryon-buff-rarity").innerHTML=document.getElementById("legendarylevel").innerHTML;
+    document.getElementById("equipment-rarity").innerHTML=document.getElementById("legendarylevel").innerHTML;
+    addTable();
     updateEldryon();
   }
 });
@@ -64,13 +68,26 @@ var characterTableEntryId = function(str) {
 }
 
 var addTable = function() {
-    res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">Health</th><th onclick="sortTable(2)">Armour</th><th title="Damage stat" onclick="sortTable(3)">Damage</th><th title="Average damage for an attack, without passives or crit" onclick="sortTable(4)">Damage dealt</th></tr>';
+    res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">Crit %</th><th onclick="sortTable(5)">Crit dmg</th><th onclick="sortTable(6)">Block %</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Average dmg</th></tr>';
     Object.keys(tb_chars).forEach(function callback(key) {
         var id = characterTableEntryId(key);
-        res += '<tr id="'+id+'"><td>'+key+'</td><td id="'+id+'-health"></td><td id="'+id+'-armour"></td><td id="'+id+'-dmg"></td><td id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
+        res += '<tr id="'+id+'"><td>'+key+'</td><td id="'+id+'-health"></td><td id="'+id+'-armour"></td><td id="'+id+'-dmg"></td><td id="'+id+'-crit-chance"></td><td id="'+id+'-crit-dmg"></td><td id="'+id+'-block-chance"></td><td id="'+id+'-block"></td><td id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
     });
     document.getElementById("ch-table").innerHTML=res;
     updateTable();
+}
+var round2 = function(num) {
+  return Math.round( num * 100 + Number.EPSILON ) / 100;
+}
+var calcDmg = function(dmg, hits, armour, pierce, critChance, crit) {
+    var perNonCrit = Math.max(dmg-armour, dmg*pierce);
+    var perCrit = Math.max(dmg+crit-armour, (dmg+crit)*pierce);
+    var total = 0;
+    for (n=1; n<=hits; n++) {
+      var critCurHit = Math.pow(critChance, n);
+      total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
+    };
+    return Math.round(total);
 }
 var updateTable = function() {
     var starlevel = document.getElementById("starlevel").value;
@@ -80,6 +97,10 @@ var updateTable = function() {
     // Tyrant max debuff is 60%
     var eldryondamage = Math.round(document.getElementById("eldryon-buff-all").innerHTML);
     var eldryondamageAeldari = Math.round(document.getElementById("eldryon-buff-aeldari").innerHTML);
+    var equipmentEnabled = document.getElementById("equipment-enabled").checked;
+    var equipmentRarityInt = +(document.getElementById("equipment-rarity").value);
+    var equipmentRarity = intToRarity[equipmentRarityInt];
+    var equipmentLevel = Math.min(equipmentRarityInt*2+3, document.getElementById("equipment-level").value) - 1;
     Object.keys(tb_chars).forEach(function callback(key) {
         var comment = "";
         entryId = characterTableEntryId(key);
@@ -87,6 +108,10 @@ var updateTable = function() {
         var health = char.health*levelStatFactor;
         var armour = char.armour*levelStatFactor;
         var dmg = char.damage*levelStatFactor;
+        var critChance = 0;
+        var critDamage = 0;
+        var blockChance = 0;
+        var block = 0;
         var eldryondamageModifiedByFaction = eldryondamage + (char.faction == "Aeldari" ? eldryondamageAeldari : 0.0);
 
         switch (key) {
@@ -96,30 +121,94 @@ var updateTable = function() {
           armour *= incisusFactor;
           dmg *= incisusFactor;
           break;
+        case 'Ancient Thoread':
+        case 'Anuphet':
         case 'Boss Gulgortz':
+        case 'Brother Burchard':
+        case 'Brother Jaeger':
+        case 'Calandis':
+        case 'Castellan creed':
+        case 'Celestine':
+        case 'Commissar Yarrick':
+        case 'Gibbascrapz':
+        case 'Haarken Worldclaimer':
+        case 'Imospekh':
+        case 'Jain Zar':
         case 'Makhotep':
+        case 'Morvenn Vahl':
+        case 'Sibyll':
+        case 'Snappawrecka':
+        case 'Snotflogga':
+        case 'Tanksmasha':
         case 'Thutmose':
         case 'Typhus':
+        case 'Varro Tigurius':
         case 'Vindicta':
           break;
         case 'Eldryon':
           eldryondamageModifiedByFaction = 0;
           break;
+        case 'High Marshal Helbrecht':
+        case 'Marneus Calgar':
+        case 'Thaddeus noble':
+          comment += "TODO: Buff missing";
+          break;
         case 'Archimatos':
+        case 'Aleph-null':
         case 'Bellator':
           comment += "Summons not included";
           break;
         default:
           comment += "TODO: Add passive";
         }
+        
+        if (equipmentEnabled) {
+          Object.keys(char.equipment).forEach(function equip(key) {
+            var eqCount = char.equipment[key];
+            var curEq = tb_equipment[key];
+            var curChance = Object.keys(curEq).filter(function (chance) { return curEq[chance]["factions"].includes(char.faction); });
+            selectedChance = Math.max(...curChance);
+            eqStats = curEq[selectedChance][equipmentRarity];
+            if (key=="crit") {
+              critChance += 1.0 - Math.pow((100-selectedChance)/100, eqCount);
+            }
+            if (key=="crit_booster") {
+              critChance += (equipmentRarityInt+1)/100;
+            }
+            if (key=="block") {
+              blockChance += 1.0 - Math.pow((100-selectedChance)/100, eqCount);
+            }
+            if (key=="block_booster") {
+              blockChance += (equipmentRarityInt+1)/100;
+            }
+            Object.keys(eqStats).forEach(function (stat) {
+              switch (stat) {
+              case "health":
+                health += eqCount*eqStats[stat][equipmentLevel];
+                break;
+              case "armour":
+                armour += eqCount*eqStats[stat][equipmentLevel];
+                break;
+              case "block":
+                block += eqCount*eqStats[stat][equipmentLevel];
+                break;
+              case "crit-dmg":
+                critDamage += eqCount*eqStats[stat][equipmentLevel];
+                break;
+              default:
+                console.log("Unknown stat in equipment:", stat);
+              }
+            });
+          });
+        }
 
-        var dmgBuffs = eldryondamageModifiedByFaction;
+        dmg += eldryondamageModifiedByFaction;
 
         health = Math.round(health);
         armour = Math.round(armour);
         dmg = Math.round(dmg);
 
-        var meleeDmg = Math.round(char.melee.hits * Math.max(dmg+dmgBuffs-opponentarmor, (dmg+dmgBuffs)*char.melee.pierce));
+        var meleeDmg = calcDmg(dmg, char.melee.hits, opponentarmor, char.melee.pierce, critChance, critDamage);
         var totalDmg = meleeDmg;
         switch (key) {
           case 'Boss Gulgortz':
@@ -127,12 +216,17 @@ var updateTable = function() {
             break;
         }
         if (char.hasOwnProperty("ranged")) {
-            totalDmg = Math.round(char.ranged.hits * Math.max(dmg+dmgBuffs-opponentarmor, (dmg+dmgBuffs)*char.ranged.pierce));
+          var rangedDmg = calcDmg(dmg, char.ranged.hits, opponentarmor, char.ranged.pierce, critChance, critDamage);
+          totalDmg = Math.max(totalDmg, rangedDmg);
         }
         document.getElementById(entryId+"-health").innerHTML=health;
         document.getElementById(entryId+"-armour").innerHTML=armour;
         document.getElementById(entryId+"-dmg").innerHTML=dmg;
         document.getElementById(entryId+"-dmg-dealt").innerHTML=totalDmg;
+        document.getElementById(entryId+"-crit-chance").innerHTML=round2(critChance);
+        document.getElementById(entryId+"-crit-dmg").innerHTML=critDamage;
+        document.getElementById(entryId+"-block-chance").innerHTML=round2(blockChance);
+        document.getElementById(entryId+"-block").innerHTML=block;
         document.getElementById(entryId+"-comment").innerHTML=comment;
     });
 }
@@ -239,7 +333,11 @@ function sortTable(n) {
     <label>Skill level</label>
     <input onChange="updateTable()" type="number" id="skill-level" name="opponentarmor" min="1" max="50" value="35">
     <br>
-    TODO: Equipment?
+    <label>Equipment</label>
+    <input onChange="updateTable()" type="checkbox" id="equipment-enabled" checked></input>
+    <select onchange="updateTable()" name="equipment-rarity" id="equipment-rarity">
+    </select>
+    <input onChange="updateTable()" type="number" id="equipment-level" name="opponentarmor" min="0" max="11" value="9">
     <br>
     <label>Opponent armor</label>
     <input onChange="updateTable()" type="number" id="opponentarmor" name="opponentarmor" min="0" max="3000" value="300">

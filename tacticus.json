@@ -249,6 +249,11 @@
       "alliance": "Chaos",
       "armour": 16.0,
       "damage": 15.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Black Legion",
       "health": 80.0,
       "melee": {
@@ -267,6 +272,11 @@
       "alliance": "Xenos",
       "armour": 17.0,
       "damage": 14.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Aeldari",
       "health": 80.0,
       "melee": {
@@ -283,6 +293,11 @@
       "alliance": "Xenos",
       "armour": 22.0,
       "damage": 12.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Necrons",
       "health": 75.0,
       "melee": {
@@ -297,6 +312,11 @@
       "alliance": "Imperial",
       "armour": 22.0,
       "damage": 32.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Black templars",
       "health": 100.0,
       "melee": {
@@ -309,6 +329,11 @@
       "alliance": "Chaos",
       "armour": 30.0,
       "damage": 12.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Black Legion",
       "health": 110.00000000000001,
       "melee": {
@@ -325,6 +350,11 @@
       "alliance": "Xenos",
       "armour": 29.0,
       "damage": 17.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Necrons",
       "health": 85.0,
       "melee": {
@@ -344,6 +374,11 @@
       "alliance": "Chaos",
       "armour": 14.0,
       "damage": 15.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
       "faction": "Black Legion",
       "health": 70.0,
       "melee": {
@@ -363,6 +398,11 @@
       "alliance": "Imperial",
       "armour": 13.0,
       "damage": 10.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Ultramarines",
       "health": 85.0,
       "melee": {
@@ -377,6 +417,11 @@
       "alliance": "Xenos",
       "armour": 15.0,
       "damage": 12.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Orks",
       "health": 100.0,
       "melee": {
@@ -396,6 +441,11 @@
       "alliance": "Imperial",
       "armour": 24.0,
       "damage": 9.030000000000001,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Black templars",
       "health": 120.0,
       "melee": {
@@ -414,6 +464,11 @@
       "alliance": "Imperial",
       "armour": 25.0,
       "damage": 25.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Black templars",
       "health": 110.0,
       "melee": {
@@ -429,6 +484,10 @@
       "alliance": "Xenos",
       "armour": 18.04,
       "damage": 45.0,
+      "equipment": {
+        "crit": 2,
+        "crit_booster": 1
+      },
       "faction": "Aeldari",
       "health": 70.0,
       "melee": {
@@ -448,6 +507,11 @@
       "alliance": "Imperial",
       "armour": 21.0,
       "damage": 38.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Astra militarum",
       "health": 90.0,
       "melee": {
@@ -464,6 +528,11 @@
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 25.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "ADEPTA SOROITAS",
       "health": 60.0,
       "melee": {
@@ -480,6 +549,11 @@
       "alliance": "Imperial",
       "armour": 18.0,
       "damage": 55.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Ultramarines",
       "health": 60.0,
       "melee": {
@@ -498,6 +572,11 @@
       "alliance": "Imperial",
       "armour": 15.0,
       "damage": 30.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Astra militarum",
       "health": 60.0,
       "melee": {
@@ -516,6 +595,11 @@
       "alliance": "Chaos",
       "armour": 30.0,
       "damage": 11.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Death guard",
       "health": 100.0,
       "melee": {
@@ -530,6 +614,11 @@
       "alliance": "Xenos",
       "armour": 15.45,
       "damage": 31.8,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "T'au Empire",
       "health": 68.2,
       "melee": {
@@ -548,6 +637,11 @@
       "alliance": "Xenos",
       "armour": 16.0,
       "damage": 16.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Aeldari",
       "health": 75.0,
       "melee": {
@@ -567,6 +661,11 @@
       "alliance": "Xenos",
       "armour": 30.0,
       "damage": 25.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Orks",
       "health": 75.0,
       "melee": {
@@ -581,6 +680,11 @@
       "alliance": "Chaos",
       "armour": 18.0,
       "damage": 11.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
       "faction": "Black Legion",
       "health": 78.0,
       "melee": {
@@ -595,6 +699,11 @@
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 15.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Black templars",
       "health": 80.0,
       "melee": {
@@ -613,6 +722,11 @@
       "alliance": "Xenos",
       "armour": 13.0,
       "damage": 8.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Necrons",
       "health": 60.0,
       "melee": {
@@ -631,6 +745,11 @@
       "alliance": "Imperial",
       "armour": 17.0,
       "damage": 35.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Ultramarines",
       "health": 75.0,
       "melee": {
@@ -645,6 +764,11 @@
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 18.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "ADEPTA SOROITAS",
       "health": 85.0,
       "melee": {
@@ -659,6 +783,11 @@
       "alliance": "Xenos",
       "armour": 18.0,
       "damage": 19.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Aeldari",
       "health": 75.0,
       "melee": {
@@ -674,6 +803,10 @@
       "alliance": "Imperial",
       "armour": 35.0,
       "damage": 30.0,
+      "equipment": {
+        "crit": 1,
+        "defense": 2
+      },
       "faction": "Astra militarum",
       "health": 95.0,
       "melee": {
@@ -688,6 +821,11 @@
       "alliance": "Xenos",
       "armour": 18.0,
       "damage": 18.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Necrons",
       "health": 80.0,
       "melee": {
@@ -706,6 +844,11 @@
       "alliance": "Chaos",
       "armour": 27.0,
       "damage": 26.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Death guard",
       "health": 120.0,
       "melee": {
@@ -720,6 +863,11 @@
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 20.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Ultramarines",
       "health": 95.0,
       "melee": {
@@ -735,6 +883,11 @@
       "alliance": "Xenos",
       "armour": 12.0,
       "damage": 9.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Aeldari",
       "health": 55.0,
       "melee": {
@@ -754,6 +907,11 @@
       "alliance": "Imperial",
       "armour": 19.0,
       "damage": 12.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "ADEPTA SOROITAS",
       "health": 85.0,
       "melee": {
@@ -773,6 +931,11 @@
       "alliance": "Chaos",
       "armour": 27.0,
       "damage": 14.0,
+      "equipment": {
+        "block_booster": 1,
+        "crit": 1,
+        "defense": 1
+      },
       "faction": "Death guard",
       "health": 120.0,
       "melee": {
@@ -787,6 +950,11 @@
       "alliance": "Chaos",
       "armour": 33.0,
       "damage": 35.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Death guard",
       "health": 109.8,
       "melee": {
@@ -801,6 +969,11 @@
       "alliance": "Xenos",
       "armour": 25.0,
       "damage": 10.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "T'au Empire",
       "health": 105.0,
       "melee": {
@@ -821,6 +994,11 @@
       "alliance": "Imperial",
       "armour": 17.0,
       "damage": 30.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "ADEPTA SOROITAS",
       "health": 85.0,
       "melee": {
@@ -839,6 +1017,11 @@
       "alliance": "Xenos",
       "armour": 16.0,
       "damage": 53.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "T'au Empire",
       "health": 65.0,
       "melee": {
@@ -859,6 +1042,11 @@
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 30.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Astra militarum",
       "health": 55.0,
       "melee": {
@@ -877,6 +1065,11 @@
       "alliance": "Xenos",
       "armour": 15.0,
       "damage": 20.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Orks",
       "health": 80.0,
       "melee": {
@@ -896,6 +1089,11 @@
       "alliance": "Xenos",
       "armour": 25.0,
       "damage": 25.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Orks",
       "health": 110.0,
       "melee": {
@@ -911,6 +1109,11 @@
       "alliance": "Imperial",
       "armour": 22.0,
       "damage": 55.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Black templars",
       "health": 95.0,
       "melee": {
@@ -925,6 +1128,11 @@
       "alliance": "Xenos",
       "armour": 15.0,
       "damage": 30.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Orks",
       "health": 85.0,
       "melee": {
@@ -940,6 +1148,11 @@
       "alliance": "Imperial",
       "armour": 18.0,
       "damage": 38.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Astra militarum",
       "health": 50.0,
       "melee": {
@@ -958,6 +1171,11 @@
       "alliance": "Xenos",
       "armour": 16.0,
       "damage": 30.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Necrons",
       "health": 70.0,
       "melee": {
@@ -977,6 +1195,11 @@
       "alliance": "Chaos",
       "armour": 25.08,
       "damage": 18.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
       "faction": "Death guard",
       "health": 120.0,
       "melee": {
@@ -996,6 +1219,11 @@
       "alliance": "Imperial",
       "armour": 14.0,
       "damage": 30.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Ultramarines",
       "health": 65.0,
       "melee": {
@@ -1015,6 +1243,11 @@
       "alliance": "Imperial",
       "armour": 12.0,
       "damage": 20.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "ADEPTA SOROITAS",
       "health": 70.0,
       "melee": {
@@ -1033,6 +1266,11 @@
       "alliance": "Chaos",
       "armour": 10.0,
       "damage": 9.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
       "faction": "Black Legion",
       "health": 65.0,
       "melee": {
@@ -1045,6 +1283,739 @@
       "ranged": {
         "hits": 6,
         "pierce": 0.55
+      }
+    }
+  },
+  "equipment": {
+    "block": {
+      "20": {
+        "common": {
+          "block": [
+            23,
+            35,
+            53
+          ]
+        },
+        "epic": {
+          "block": [
+            245,
+            316,
+            387,
+            458,
+            529,
+            599,
+            678,
+            873,
+            1049
+          ]
+        },
+        "factions": [
+          "ADEPTA SOROITAS",
+          "Astra militarum",
+          "Black Legion",
+          "Death guard",
+          "Necrons",
+          "Aeldari"
+        ],
+        "legendary": {
+          "block": [
+            600,
+            679,
+            865,
+            1051,
+            1144,
+            1237,
+            1330,
+            1423,
+            1516,
+            1609,
+            1807
+          ]
+        },
+        "rare": {
+          "block": [
+            115,
+            138,
+            161,
+            184,
+            210,
+            244,
+            315
+          ]
+        },
+        "uncommon": {
+          "block": [
+            51,
+            65,
+            81,
+            104,
+            127
+          ]
+        }
+      },
+      "25": {
+        "factions": [
+          "Astra militarum"
+        ],
+        "rare": {
+          "block": [
+            90,
+            108,
+            126,
+            144,
+            165,
+            191,
+            246
+          ]
+        }
+      },
+      "30": {
+        "common": {
+          "block": [
+            15,
+            20,
+            34
+          ]
+        },
+        "epic": {
+          "block": [
+            165,
+            213,
+            261,
+            308,
+            356,
+            404,
+            457,
+            582,
+            707
+          ]
+        },
+        "factions": [
+          "Ultramarines",
+          "ADEPTA SOROITAS",
+          "Astra militarum",
+          "Black Legion",
+          "Black templars",
+          "Death guard",
+          "Orks",
+          "Necrons",
+          "Aeldari",
+          "T'au Empire"
+        ],
+        "legendary": {
+          "block": [
+            400,
+            453,
+            577,
+            701,
+            763,
+            825,
+            887,
+            949,
+            1011,
+            1073,
+            1205
+          ]
+        },
+        "rare": {
+          "block": [
+            77,
+            93,
+            108,
+            123,
+            141,
+            164,
+            211
+          ]
+        },
+        "uncommon": {
+          "block": [
+            34,
+            43,
+            54,
+            70,
+            85
+          ]
+        }
+      },
+      "35": {
+        "common": {
+          "block": [
+            13,
+            20,
+            30
+          ]
+        },
+        "epic": {
+          "block": [
+            140,
+            181,
+            221,
+            262,
+            302,
+            343,
+            388,
+            494,
+            600
+          ]
+        },
+        "factions": [
+          "Ultramarines",
+          "Black templars",
+          "Necrons"
+        ],
+        "legendary": {
+          "block": [
+            340,
+            385,
+            491,
+            596,
+            649,
+            701,
+            754,
+            807,
+            859,
+            912,
+            1024
+          ]
+        },
+        "rare": {
+          "block": [
+            66,
+            80,
+            93,
+            106,
+            126,
+            140,
+            181
+          ]
+        },
+        "uncommon": {
+          "block": [
+            29,
+            37,
+            46,
+            59,
+            72
+          ]
+        }
+      }
+    },
+    "block_booster": {
+      "1": {
+        "common": {
+          "block": [
+            5,
+            8,
+            12
+          ]
+        },
+        "epic": {
+          "block": [
+            48,
+            62,
+            76,
+            90,
+            104,
+            118,
+            133,
+            170,
+            206
+          ]
+        },
+        "factions": [
+          "Ultramarines",
+          "ADEPTA SOROITAS",
+          "Astra militarum",
+          "Black Legion",
+          "Black templars",
+          "Death guard",
+          "Orks",
+          "Necrons",
+          "Aeldari",
+          "T'au Empire"
+        ],
+        "legendary": {
+          "block": [
+            110,
+            125,
+            159,
+            193,
+            210,
+            227,
+            244,
+            261,
+            278,
+            295,
+            332
+          ]
+        },
+        "rare": {
+          "block": [
+            25,
+            30,
+            35,
+            40,
+            46,
+            54,
+            69
+          ]
+        },
+        "uncommon": {
+          "block": [
+            11,
+            14,
+            18,
+            23,
+            28
+          ]
+        }
+      }
+    },
+    "crit": {
+      "20": {
+        "common": {
+          "crit-dmg": [
+            22,
+            33,
+            50
+          ]
+        },
+        "epic": {
+          "crit-dmg": [
+            245,
+            316,
+            387,
+            458,
+            529,
+            599,
+            678,
+            863,
+            1049
+          ]
+        },
+        "factions": [
+          "Necrons",
+          "Ultramarines",
+          "ADEPTA SOROITAS",
+          "Astra militarum",
+          "Black Legion",
+          "Black templars",
+          "Death guard",
+          "Orks"
+        ],
+        "legendary": {
+          "crit-dmg": [
+            600,
+            679,
+            865,
+            1051,
+            1144,
+            1237,
+            1330,
+            1423,
+            1516,
+            1609,
+            1807
+          ]
+        },
+        "rare": {
+          "crit-dmg": [
+            115,
+            138,
+            161,
+            184,
+            210,
+            244,
+            315
+          ]
+        },
+        "uncommon": {
+          "crit-dmg": [
+            51,
+            65,
+            81,
+            104,
+            127
+          ]
+        }
+      },
+      "30": {
+        "factions": [],
+        "uncommon": {
+          "crit-dmg": [
+            36,
+            46,
+            57,
+            73,
+            90
+          ]
+        }
+      },
+      "35": {
+        "common": {
+          "crit-dmg": [
+            13,
+            20,
+            30
+          ]
+        },
+        "epic": {
+          "crit-dmg": [
+            140,
+            181,
+            221,
+            262,
+            302,
+            343,
+            388,
+            494,
+            600
+          ]
+        },
+        "factions": [
+          "Ultramarines",
+          "ADEPTA SOROITAS",
+          "Astra militarum",
+          "Black templars",
+          "Black Legion",
+          "Death guard",
+          "Necrons",
+          "Orks",
+          "Aeldari",
+          "T'au Empire"
+        ],
+        "legendary": {
+          "crit-dmg": [
+            340,
+            385,
+            491,
+            596,
+            649,
+            701,
+            754,
+            807,
+            859,
+            912,
+            1024
+          ]
+        },
+        "rare": {
+          "crit-dmg": [
+            66,
+            80,
+            93,
+            106,
+            126,
+            140,
+            181
+          ]
+        },
+        "uncommon": {
+          "crit-dmg": [
+            29,
+            37,
+            46,
+            59,
+            72
+          ]
+        }
+      }
+    },
+    "crit_booster": {
+      "1": {
+        "common": {
+          "crit-dmg": [
+            5,
+            8,
+            12
+          ]
+        },
+        "epic": {
+          "crit-dmg": [
+            48,
+            62,
+            76,
+            90,
+            104,
+            118,
+            133,
+            170,
+            206
+          ]
+        },
+        "factions": [
+          "Ultramarines",
+          "ADEPTA SOROITAS",
+          "Astra militarum",
+          "Black templars",
+          "Black Legion",
+          "Death guard",
+          "Necrons",
+          "Orks",
+          "Aeldari",
+          "T'au Empire"
+        ],
+        "legendary": {
+          "crit-dmg": [
+            110,
+            125,
+            159,
+            193,
+            210,
+            227,
+            244,
+            261,
+            278,
+            295,
+            332
+          ]
+        },
+        "rare": {
+          "crit-dmg": [
+            25,
+            30,
+            35,
+            40,
+            46,
+            54,
+            69
+          ]
+        },
+        "uncommon": {
+          "crit-dmg": [
+            11,
+            14,
+            18,
+            23,
+            28
+          ]
+        }
+      }
+    },
+    "defense": {
+      "0": {
+        "common": {
+          "armour": [
+            6,
+            9,
+            14
+          ],
+          "health": [
+            0,
+            0,
+            0
+          ]
+        },
+        "epic": {
+          "armour": [
+            60,
+            78,
+            95,
+            112,
+            130,
+            147,
+            166,
+            212,
+            257
+          ],
+          "health": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "factions": [
+          "Necrons",
+          "T'au Empire",
+          "Ultramarines",
+          "ADEPTA SOROITAS",
+          "Astra militarum",
+          "Black Legion",
+          "Black templars",
+          "Death guard",
+          "Orks",
+          "Aeldari"
+        ],
+        "legendary": {
+          "armour": [
+            145,
+            165,
+            209,
+            254,
+            277,
+            299,
+            322,
+            344,
+            367,
+            389,
+            437
+          ],
+          "health": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "rare": {
+          "armour": [
+            28,
+            34,
+            40,
+            45,
+            52,
+            60,
+            77
+          ],
+          "health": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "uncommon": {
+          "armour": [
+            12,
+            16,
+            20,
+            25,
+            30
+          ],
+          "health": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "1": {
+        "common": {
+          "armour": [
+            4,
+            6,
+            10
+          ],
+          "health": [
+            7,
+            11,
+            16
+          ]
+        },
+        "epic": {
+          "armour": [
+            43,
+            56,
+            68,
+            81,
+            93,
+            106,
+            119,
+            152,
+            185
+          ],
+          "health": [
+            77,
+            100,
+            122,
+            144,
+            166,
+            189,
+            213,
+            272,
+            330
+          ]
+        },
+        "factions": [
+          "Ultramarines",
+          "Black templars",
+          "ADEPTA SOROITAS",
+          "Astra militarum",
+          "Aeldari"
+        ],
+        "legendary": {
+          "armour": [
+            105,
+            119,
+            152,
+            184,
+            201,
+            217,
+            233,
+            249,
+            266,
+            282,
+            317
+          ],
+          "health": [
+            188,
+            213,
+            271,
+            330,
+            359,
+            388,
+            417,
+            446,
+            475,
+            504,
+            567
+          ]
+        },
+        "rare": {
+          "armour": [
+            20,
+            24,
+            28,
+            32,
+            37,
+            43,
+            55
+          ],
+          "health": [
+            38,
+            46,
+            54,
+            61,
+            70,
+            81,
+            104
+          ]
+        },
+        "uncommon": {
+          "armour": [
+            9,
+            12,
+            15,
+            19,
+            23
+          ],
+          "health": [
+            16,
+            21,
+            26,
+            33,
+            40
+          ]
+        }
       }
     }
   },
