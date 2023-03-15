@@ -78,7 +78,7 @@ var characterTableEntryId = function(str) {
 }
 
 var addTable = function() {
-    res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">Crit %</th><th onclick="sortTable(5)">Crit dmg</th><th onclick="sortTable(6)">Block %</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Avg dmg</th></tr>';
+    res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">Crit %</th><th onclick="sortTable(5)">Crit dmg</th><th onclick="sortTable(6)">Block %</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Avg dmg</th><th onclick="sortTable(9)">Comment</th></tr>';
     Object.keys(tb_chars).forEach(function callback(key) {
         var id = characterTableEntryId(key);
         res += '<tr id="'+id+'"><td>'+key+'</td><td id="'+id+'-health"></td><td id="'+id+'-armour"></td><td id="'+id+'-dmg"></td><td id="'+id+'-crit-chance"></td><td id="'+id+'-crit-dmg"></td><td id="'+id+'-block-chance"></td><td id="'+id+'-block"></td><td id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
@@ -119,6 +119,7 @@ var updateTable = function() {
     var charRarity = +document.getElementById("rarity-level").value;
     var passiveLevel = +document.getElementById("skill-level").value;
     var passiveLevelAsRarityInt = levelToRarityInt(passiveLevel)
+    var madeContact = document.getElementById("made-contact").checked;
     
     Object.keys(tb_chars).forEach(function callback(key) {
         var comment = "";
@@ -132,6 +133,8 @@ var updateTable = function() {
         var blockChance = 0;
         var block = 0;
         var dakka = 0;
+        var buffDmg = 0;
+        var dmgFactor = 1.0;
         var eldryondamageModifiedByFaction = eldryondamage + (char.faction == "Aeldari" ? eldryondamageAeldari : 0.0);
 
         char.traits.forEach(function (trait) {
@@ -178,22 +181,44 @@ var updateTable = function() {
           armour *= incisusFactor;
           dmg *= incisusFactor;
           break;
+        case 'Kut skoden':
+        case 'Angrax':
+          if (madeContact) {
+            var passiveDmg = char.passive[key=="Kut skoden" ? 0 : 2] * passiveFactor;
+            buffDmg += passiveDmg;
+            comment += ", passive working (" + Math.round(passiveDmg) + ")";
+          }
+          break;
+        case 'Sword Brother Godswyl':
+          var passiveDmg = char.passive[0] * passiveFactor;
+          critDamage += passiveDmg;
+          comment += ", passive working (crit +" + Math.round(passiveDmg) + ")";
+          break;
+        case 'Aleph-null':
         case 'Ancient Thoread':
         case 'Anuphet':
+        case 'Archimatos':
+        case 'Bellator':
         case 'Boss Gulgortz':
         case 'Brother Burchard':
         case 'Brother Jaeger':
         case 'Calandis':
         case 'Castellan creed':
         case 'Celestine':
+        case 'Certus':
         case 'Commissar Yarrick':
+        case 'Corrodius':
         case 'Gibbascrapz':
         case 'Haarken Worldclaimer':
         case 'Imospekh':
+        case 'Isabella':
         case 'Jain Zar':
         case 'Makhotep':
         case 'Maugan Ra':
+        case 'Maladus':
         case 'Morvenn Vahl':
+        case 'Nauseous rotbone':
+        case 'Sho\'Syl':
         case 'Sibyll':
         case 'Snappawrecka':
         case 'Snotflogga':
@@ -202,19 +227,16 @@ var updateTable = function() {
         case 'Typhus':
         case 'Varro Tigurius':
         case 'Vindicta':
+        case 'Volk':
           break;
         case 'Eldryon':
           eldryondamageModifiedByFaction = 0;
           break;
         case 'High Marshal Helbrecht':
         case 'Marneus Calgar':
+        case 'Pestillian':
         case 'Thaddeus noble':
           comment += "TODO: Buff missing";
-          break;
-        case 'Archimatos':
-        case 'Aleph-null':
-        case 'Bellator':
-          comment += "Summons not included";
           break;
         default:
           comment += "TODO: Add passive";
@@ -260,19 +282,18 @@ var updateTable = function() {
           });
         }
 
-        buffDmg = eldryondamageModifiedByFaction;
-
-        dmgFactor = 1.0;
+        buffDmg += eldryondamageModifiedByFaction;
+       
         if (heavyWeaponEnabled && char.traits.includes("heavy weapon")) {
           dmgFactor *= 1.25;
           comment += "heavy weapon working"
-        }
-        if (heavyWeaponEnabled && key=="Maugan Ra") {
-          var mauganCritChance = (char.passive[1] + passiveLevelAsRarityInt - (passiveLevelAsRarityInt==0 ? 1 : 0)) / 100;
-          var mauganCritDamage = char.passive[0] * passiveFactor;
-          critChance += mauganCritChance;
-          critDamage += mauganCritDamage;
-          comment += ", passive working" // + mauganCritChance + " " + mauganCritDamage
+          if (key=="Maugan Ra") {
+            var mauganCritChance = (char.passive[1] + passiveLevelAsRarityInt - (passiveLevelAsRarityInt==0 ? 1 : 0)) / 100;
+            var mauganCritDamage = char.passive[0] * passiveFactor;
+            critChance += mauganCritChance;
+            critDamage += mauganCritDamage;
+            comment += ", passive working";
+          }
         }
 
         var meleeDmg = calcDmg(dmg+buffDmg, dmgFactor, char.melee.hits, opponentarmor, char.melee.pierce, critChance, critDamage);
@@ -285,6 +306,12 @@ var updateTable = function() {
         }
         if (char.hasOwnProperty("ranged")) {
           var rangedDmg = calcDmg(dmg+buffDmg, dmgFactor, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
+          if (key=='Volk') {
+            var volkDamageBuff = passiveFactor*char.passive[0];
+            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance, critDamage);
+            comment += ", passive working ("+Math.round(volkDamageBuff)+")";
+            rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
+          }
           totalDmg = Math.max(totalDmg, rangedDmg);
         }
         document.getElementById(entryId+"-health").innerHTML=Math.round(health);
@@ -399,16 +426,17 @@ function sortTable(n) {
       <option value="11">1 winged star</option>
     </select>
     <label>Skill level</label>
-    <input onChange="updateTable()" type="number" id="skill-level" name="opponentarmor" min="1" max="50" value="35">
+    <input onChange="updateTable()" type="number" id="skill-level" min="1" max="50" value="35">
     <br>
     <label>Equipment</label>
     <input onChange="updateTable()" type="checkbox" id="equipment-enabled" checked></input>
     <select onchange="updateTable()" name="equipment-rarity" id="equipment-rarity">
     </select>
-    <input onChange="updateTable()" type="number" id="equipment-level" name="opponentarmor" min="0" max="11" value="9">
+    <input onChange="updateTable()" type="number" id="equipment-level" min="0" max="11" value="9">
+    TODO: Allow to select equipment (currently chooses max crit chance, block chance, health over armor)
     <br>
     <label>Opponent armor</label>
-    <input onChange="updateTable()" type="number" id="opponentarmor" name="opponentarmor" min="0" max="3000" value="300">
+    <input onChange="updateTable()" type="number" id="opponentarmor" min="0" max="3000" value="300">
     <br>
     <label>Eldryon</label>
     <input onChange="updateEldryon()" type="checkbox" id="eldryon-buff-enabled" checked></input>
@@ -418,7 +446,9 @@ function sortTable(n) {
     +<span id="eldryon-buff-all"></span> damage [All] +<span id="eldryon-buff-aeldari"></span> damage [Aeldari]
     <br>
     <label>Heavy Weapon</label>
-    <input title="Heavy Weapon and similar passives are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
+    <input title="Heavy Weapon and similar passives (Maugan Ra) are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
+    <label>Made Contact</label>
+    <input title="Made contact with the target this turn (does not work well on bosses that you pin down or that reduce the number of hits when moving into contact)" onChange="updateTable()" type="checkbox" id="made-contact"></input>
     <br>
     TODO: More buffs
     <br>
