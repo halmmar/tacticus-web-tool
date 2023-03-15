@@ -185,7 +185,6 @@ var updateTable = function() {
     var opponentBeastSnagga = document.getElementById("opponent-beast-snagga").checked;
     var abaddonPassive = document.getElementById("abaddon-buff-enabled").checked;
     var abaddonBonusDmg = +document.getElementById("abaddon-buff-dmg").innerHTML;
-    var ltgbHits = abaddonPassive ? 2 : 1;
     var thaddeusPassive = document.getElementById("thaddeus-buff-enabled").checked;
     var thaddeusBonusDmg = +document.getElementById("thaddeus-buff-dmg").innerHTML;
     var calgarBonusDmg = +document.getElementById("calgar-buff-all").innerHTML;
@@ -209,9 +208,11 @@ var updateTable = function() {
         var buffDmg = 0;
         var dmgFactor = 1.0;
         var dmgFactorMelee = 1.0;
+        var abaddonBonusDmgModifiedByFaction = (char.alliance == "Chaos" ? abaddonBonusDmg : 0)
         var eldryondamageModifiedByFaction = eldryondamage + (char.faction == "Aeldari" ? eldryondamageAeldari : 0.0);
         var calgardamageModifiedByFaction = (char.alliance == "Imperial" ? calgarBonusDmgImperial : calgarBonusDmg)
         var aethanadamageModifiedByFaction = aethanaBonusDmg + (char.faction == "Aeldari" ? aethanaBonusDmgAeldar : 0.0);
+        var ltgbHits = (abaddonPassive || key=="Abaddon the despolier") ? 2 : 1;
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
@@ -300,7 +301,7 @@ var updateTable = function() {
           comment += ", passive working (crit +" + Math.round(passiveDmg) + ")";
           break;
         case 'Abaddon the despolier':
-          abaddonBonusDmg = 0;
+          abaddonBonusDmgModifiedByFaction = 0;
           break;
         case 'Aethana':
           aethanaBonusDmg = 0;
@@ -399,7 +400,7 @@ var updateTable = function() {
           });
         }
 
-        buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmg + aethanadamageModifiedByFaction;
+        buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmgModifiedByFaction + aethanadamageModifiedByFaction;
        
         if (heavyWeaponEnabled && char.traits.includes("heavy weapon")) {
           dmgFactor *= 1.25;
