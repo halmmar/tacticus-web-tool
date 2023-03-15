@@ -41,6 +41,10 @@ function(err, data) {
   }
 });
 
+var levelToRarityInt = function(level) {
+  return Math.min(Math.floor(level / 9), 4);
+}
+
 var passiveFactorActiveCharacter = function() {
   var level = +document.getElementById("skill-level").value;
   var rarity = +document.getElementById("rarity-level").value;
@@ -74,7 +78,7 @@ var characterTableEntryId = function(str) {
 }
 
 var addTable = function() {
-    res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">Crit %</th><th onclick="sortTable(5)">Crit dmg</th><th onclick="sortTable(6)">Block %</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Average dmg</th></tr>';
+    res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">Crit %</th><th onclick="sortTable(5)">Crit dmg</th><th onclick="sortTable(6)">Block %</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Avg dmg</th></tr>';
     Object.keys(tb_chars).forEach(function callback(key) {
         var id = characterTableEntryId(key);
         res += '<tr id="'+id+'"><td>'+key+'</td><td id="'+id+'-health"></td><td id="'+id+'-armour"></td><td id="'+id+'-dmg"></td><td id="'+id+'-crit-chance"></td><td id="'+id+'-crit-dmg"></td><td id="'+id+'-block-chance"></td><td id="'+id+'-block"></td><td id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
@@ -85,19 +89,18 @@ var addTable = function() {
 var round2 = function(num) {
   return Math.round( num * 100 + Number.EPSILON ) / 100;
 }
-var calcDmgLowHigh = function(dmgLow, dmgHigh, hits, armour, pierce, critChance, crit) {
-  var perNonCrit = Math.max(dmgLow-armour, dmgLow*pierce)*0.5 + Math.max(dmgHigh-armour, dmgHigh*pierce)*0.5;
-  var perCrit =  Math.max(dmgLow+crit-armour, (dmgLow+crit)*pierce)*0.5 + Math.max(dmgHigh+crit-armour, (dmgHigh+crit)*pierce)*0.5;
+var calcDmgLowHigh = function(dmgLow, dmgHigh, dmgFactor, hits, armour, pierce, critChance, crit) {
+  var perNonCrit = Math.max(dmgFactor*dmgLow-armour, dmgFactor*dmgLow*pierce)*0.5 + Math.max(dmgFactor*dmgHigh-armour, dmgFactor*dmgHigh*pierce)*0.5;
+  var perCrit =  Math.max(dmgFactor*(dmgLow+crit)-armour, dmgFactor*(dmgLow+crit)*pierce)*0.5 + Math.max(dmgFactor*(dmgHigh+crit)-armour, dmgFactor*(dmgHigh+crit)*pierce)*0.5;
   var total = 0;
   for (n=1; n<=hits; n++) {
     var critCurHit = Math.pow(critChance, n);
     total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
-    console.log(total,n,hits)
   };
   return Math.round(total);
 }
-var calcDmg = function(dmg, hits, armour, pierce, critChance, crit) {
-  return calcDmgLowHigh(dmg*0.8, dmg*1.2, hits, armour, pierce, critChance, crit);
+var calcDmg = function(dmg, dmgFactor, hits, armour, pierce, critChance, crit) {
+  return calcDmgLowHigh(dmg*0.8, dmg*1.2, dmgFactor, hits, armour, pierce, critChance, crit);
 }
 var updateTable = function() {
     var starlevel = document.getElementById("starlevel").value;
@@ -112,6 +115,10 @@ var updateTable = function() {
     var equipmentRarity = intToRarity[equipmentRarityInt];
     var equipmentLevel = Math.min(equipmentRarityInt*2+3, document.getElementById("equipment-level").value) - 1;
     var passiveFactor = passiveFactorActiveCharacter();
+    var heavyWeaponEnabled = document.getElementById("heavy-weapon-enabled").checked;
+    var charRarity = +document.getElementById("rarity-level").value;
+    var passiveLevel = +document.getElementById("skill-level").value;
+    var passiveLevelAsRarityInt = levelToRarityInt(passiveLevel)
     
     Object.keys(tb_chars).forEach(function callback(key) {
         var comment = "";
@@ -185,6 +192,7 @@ var updateTable = function() {
         case 'Imospekh':
         case 'Jain Zar':
         case 'Makhotep':
+        case 'Maugan Ra':
         case 'Morvenn Vahl':
         case 'Sibyll':
         case 'Snappawrecka':
@@ -254,29 +262,37 @@ var updateTable = function() {
 
         buffDmg = eldryondamageModifiedByFaction;
 
-        health = Math.round(health);
-        armour = Math.round(armour);
-        dmg = Math.round(dmg);
+        dmgFactor = 1.0;
+        if (heavyWeaponEnabled && char.traits.includes("heavy weapon")) {
+          dmgFactor *= 1.25;
+          comment += "heavy weapon working"
+        }
+        if (heavyWeaponEnabled && key=="Maugan Ra") {
+          var mauganCritChance = (char.passive[1] + passiveLevelAsRarityInt - (passiveLevelAsRarityInt==0 ? 1 : 0)) / 100;
+          var mauganCritDamage = char.passive[0] * passiveFactor;
+          critChance += mauganCritChance;
+          critDamage += mauganCritDamage;
+          comment += ", passive working" // + mauganCritChance + " " + mauganCritDamage
+        }
 
-        var meleeDmg = calcDmg(dmg+buffDmg, char.melee.hits, opponentarmor, char.melee.pierce, critChance, critDamage);
+        var meleeDmg = calcDmg(dmg+buffDmg, dmgFactor, char.melee.hits, opponentarmor, char.melee.pierce, critChance, critDamage);
         var totalDmg = meleeDmg;
         switch (key) {
           case 'Boss Gulgortz':
-            console.log("Boss");
-            totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], 3, opponentarmor, char.ranged.pierce, critChance, critDamage);
+            totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 3, opponentarmor, char.ranged.pierce, critChance, critDamage);
             comment += ", passive working";
             break;
         }
         if (char.hasOwnProperty("ranged")) {
-          var rangedDmg = calcDmg(dmg+buffDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
+          var rangedDmg = calcDmg(dmg+buffDmg, dmgFactor, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
           totalDmg = Math.max(totalDmg, rangedDmg);
         }
-        document.getElementById(entryId+"-health").innerHTML=health;
-        document.getElementById(entryId+"-armour").innerHTML=armour;
-        document.getElementById(entryId+"-dmg").innerHTML=dmg;
-        document.getElementById(entryId+"-dmg-dealt").innerHTML=totalDmg;
+        document.getElementById(entryId+"-health").innerHTML=Math.round(health);
+        document.getElementById(entryId+"-armour").innerHTML=Math.round(armour);
+        document.getElementById(entryId+"-dmg").innerHTML=Math.round(dmg);
+        document.getElementById(entryId+"-dmg-dealt").innerHTML=Math.round(totalDmg);
         document.getElementById(entryId+"-crit-chance").innerHTML=round2(critChance);
-        document.getElementById(entryId+"-crit-dmg").innerHTML=critDamage;
+        document.getElementById(entryId+"-crit-dmg").innerHTML=Math.round(critDamage);
         document.getElementById(entryId+"-block-chance").innerHTML=round2(blockChance);
         document.getElementById(entryId+"-block").innerHTML=block;
         document.getElementById(entryId+"-comment").innerHTML=comment;
@@ -400,6 +416,9 @@ function sortTable(n) {
     </select>
     <input onChange="updateEldryon()" type="number" id="eldryon-buff-level" name="eldryon-level" min="0" max="50" value="35">
     +<span id="eldryon-buff-all"></span> damage [All] +<span id="eldryon-buff-aeldari"></span> damage [Aeldari]
+    <br>
+    <label>Heavy Weapon</label>
+    <input title="Heavy Weapon and similar passives are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
     <br>
     TODO: More buffs
     <br>
