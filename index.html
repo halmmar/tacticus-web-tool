@@ -149,14 +149,14 @@ var round2 = function(num) {
   return Math.round( num * 100 + Number.EPSILON ) / 100;
 }
 var calcDmgLowHigh = function(dmgLow, dmgHigh, dmgFactor, hits, armour, pierce, critChance, crit) {
-  var perNonCrit = Math.max(dmgFactor*dmgLow-armour, dmgFactor*dmgLow*pierce)*0.5 + Math.max(dmgFactor*dmgHigh-armour, dmgFactor*dmgHigh*pierce)*0.5;
-  var perCrit =  Math.max(dmgFactor*(dmgLow+crit)-armour, dmgFactor*(dmgLow+crit)*pierce)*0.5 + Math.max(dmgFactor*(dmgHigh+crit)-armour, dmgFactor*(dmgHigh+crit)*pierce)*0.5;
+  var perNonCrit = Math.max(dmgLow-armour, dmgLow*pierce)*0.5 + Math.max(dmgHigh-armour, dmgHigh*pierce)*0.5;
+  var perCrit =  Math.max((dmgLow+crit)-armour, (dmgLow+crit)*pierce)*0.5 + Math.max((dmgHigh+crit)-armour, (dmgHigh+crit)*pierce)*0.5;
   var total = 0;
   for (n=1; n<=hits; n++) {
     var critCurHit = Math.pow(critChance, n);
     total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
   };
-  return Math.round(total);
+  return Math.round(dmgFactor*total);
 }
 var calcDmg = function(dmg, dmgFactor, hits, armour, pierce, critChance, crit) {
   return calcDmgLowHigh(dmg*0.8, dmg*1.2, dmgFactor, hits, armour, pierce, critChance, crit);
