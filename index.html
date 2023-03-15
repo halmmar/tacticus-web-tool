@@ -35,9 +35,15 @@ function(err, data) {
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
     document.getElementById("eldryon-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
+    document.getElementById("thaddeus-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
+    document.getElementById("calgar-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
+    document.getElementById("abaddon-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     document.getElementById("equipment-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     addTable();
     updateEldryon();
+    updateAbaddon();
+    updateThaddeus();
+    updateCalgar();
   }
 });
 
@@ -65,6 +71,42 @@ var updateEldryon = function() {
   updateTable();
 };
 
+var updateAbaddon = function() {
+  if (!document.getElementById("abaddon-buff-enabled").checked) {
+    document.getElementById("abaddon-buff-dmg").innerHTML = 0;
+    updateTable();
+    return;
+  }
+  var level = document.getElementById("abaddon-buff-level").value;
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("abaddon-buff-rarity").value*0.2);
+  document.getElementById("abaddon-buff-dmg").innerHTML = Math.round(tb_chars["Abaddon the despolier"].passive[0]*factor);
+  updateTable();
+};
+var updateThaddeus = function() {
+  if (!document.getElementById("thaddeus-buff-enabled").checked) {
+    document.getElementById("thaddeus-buff-dmg").innerHTML = 0;
+    updateTable();
+    return;
+  }
+  var level = document.getElementById("thaddeus-buff-level").value;
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("thaddeus-buff-rarity").value*0.2);
+  document.getElementById("thaddeus-buff-dmg").innerHTML = Math.round(tb_chars["Thaddeus noble"].passive[0]*factor);
+  updateTable();
+}
+var updateCalgar = function() {
+  if (!document.getElementById("calgar-buff-enabled").checked) {
+    document.getElementById("calgar-buff-all").innerHTML = 0;
+    document.getElementById("calgar-buff-imperial").innerHTML = 0;
+    updateTable();
+    return;
+  }
+  var level = document.getElementById("calgar-buff-level").value;
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("calgar-buff-rarity").value*0.2);
+  document.getElementById("calgar-buff-all").innerHTML = Math.round(tb_chars["Marneus Calgar"].passive[0]*factor);
+  document.getElementById("calgar-buff-imperial").innerHTML = Math.round(tb_chars["Marneus Calgar"].passive[1]*factor);
+  updateTable();
+}
+
 var updateGear = function() {
     res = "";
     tb_gear.forEach(function callback(v) {
@@ -78,7 +120,7 @@ var characterTableEntryId = function(str) {
 }
 
 var addTable = function() {
-    res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">Crit %</th><th onclick="sortTable(5)">Crit dmg</th><th onclick="sortTable(6)">Block %</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Avg dmg</th><th onclick="sortTable(9)">Comment</th></tr>';
+    res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">%</th><th onclick="sortTable(5)">Crit</th><th onclick="sortTable(6)">%</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Avg dmg</th><th onclick="sortTable(9)">Comment</th></tr>';
     Object.keys(tb_chars).forEach(function callback(key) {
         var id = characterTableEntryId(key);
         res += '<tr id="'+id+'"><td>'+key+'</td><td id="'+id+'-health"></td><td id="'+id+'-armour"></td><td id="'+id+'-dmg"></td><td id="'+id+'-crit-chance"></td><td id="'+id+'-crit-dmg"></td><td id="'+id+'-block-chance"></td><td id="'+id+'-block"></td><td id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
@@ -108,8 +150,8 @@ var updateTable = function() {
     var levelStatFactor = Math.pow(1.25205, gearlevel)*(1+0.1*starlevel);
     var opponentarmor = document.getElementById("opponentarmor").value;
     // Tyrant max debuff is 60%
-    var eldryondamage = Math.round(document.getElementById("eldryon-buff-all").innerHTML);
-    var eldryondamageAeldari = Math.round(document.getElementById("eldryon-buff-aeldari").innerHTML);
+    var eldryondamage = +document.getElementById("eldryon-buff-all").innerHTML;
+    var eldryondamageAeldari = +document.getElementById("eldryon-buff-aeldari").innerHTML;
     var equipmentEnabled = document.getElementById("equipment-enabled").checked;
     var equipmentRarityInt = +(document.getElementById("equipment-rarity").value);
     var equipmentRarity = intToRarity[equipmentRarityInt];
@@ -120,6 +162,17 @@ var updateTable = function() {
     var passiveLevel = +document.getElementById("skill-level").value;
     var passiveLevelAsRarityInt = levelToRarityInt(passiveLevel)
     var madeContact = document.getElementById("made-contact").checked;
+    var opponentIsMech = document.getElementById("opponent-is-mech").checked;
+    var opponentIsPsyker = document.getElementById("opponent-is-psyker").checked;
+    var opponentHasMarkerlight = document.getElementById("opponent-has-markerlight").checked;
+    var opponentBeastSnagga = document.getElementById("opponent-beast-snagga").checked;
+    var abaddonPassive = document.getElementById("abaddon-buff-enabled").checked;
+    var abaddonBonusDmg = +document.getElementById("abaddon-buff-dmg").innerHTML;
+    var ltgbHits = abaddonPassive ? 2 : 1;
+    var thaddeusPassive = document.getElementById("thaddeus-buff-enabled").checked;
+    var thaddeusBonusDmg = +document.getElementById("thaddeus-buff-dmg").innerHTML;
+    var calgarBonusDmg = +document.getElementById("calgar-buff-all").innerHTML;
+    var calgarBonusDmgImperial = +document.getElementById("calgar-buff-imperial").innerHTML;
     
     Object.keys(tb_chars).forEach(function callback(key) {
         var comment = "";
@@ -135,7 +188,22 @@ var updateTable = function() {
         var dakka = 0;
         var buffDmg = 0;
         var dmgFactor = 1.0;
+        var dmgFactorMelee = 1.0;
         var eldryondamageModifiedByFaction = eldryondamage + (char.faction == "Aeldari" ? eldryondamageAeldari : 0.0);
+        var calgardamageModifiedByFaction = (char.alliance == "Imperial" ? calgarBonusDmgImperial : calgarBonusDmg)
+
+        if (opponentHasMarkerlight && char.faction == "T'au Empire") {
+          dmgFactor *= 1.15;
+        }
+        if (opponentBeastSnagga && char.traits.includes("beast snagga")) {
+          dmgFactorMelee *= 1.20;
+        }
+        if (opponentBeastSnagga && char.traits.includes("close combat weakness")) {
+          dmgFactorMelee *= 0.50;
+        }
+        if (thaddeusPassive && char.traits.includes("heavy weapon")) {
+          dmg += thaddeusBonusDmg;
+        }
 
         char.traits.forEach(function (trait) {
           switch (trait) {
@@ -143,6 +211,10 @@ var updateTable = function() {
               dakka = 2;
               comment += "dakka working";
               break;
+            case "let the galaxy burn":
+            case "close combat weakness":
+            case "heavy weapon":
+            case "beast snagga":
             case "terminator armour":
             case "resilient":
             case "flying":
@@ -181,6 +253,14 @@ var updateTable = function() {
           armour *= incisusFactor;
           dmg *= incisusFactor;
           break;
+        case 'High Marshal Helbrecht':
+          comment += "TODO: Buff missing";
+        case 'Roswitha':
+          if (opponentIsPsyker) {
+            buffDmg += passiveFactor*char.passive[0];
+            comment += "psyker +" + Math.round(buffDmg);
+          }
+          break;
         case 'Kut skoden':
         case 'Angrax':
           if (madeContact) {
@@ -193,6 +273,12 @@ var updateTable = function() {
           var passiveDmg = char.passive[0] * passiveFactor;
           critDamage += passiveDmg;
           comment += ", passive working (crit +" + Math.round(passiveDmg) + ")";
+          break;
+        case 'Abaddon the despolier':
+          abaddonBonusDmg = 0;
+          break;
+        case 'Marneus Calgar':
+          calgardamageModifiedByFaction = 0;
           break;
         case 'Aleph-null':
         case 'Ancient Thoread':
@@ -218,7 +304,8 @@ var updateTable = function() {
         case 'Maladus':
         case 'Morvenn Vahl':
         case 'Nauseous rotbone':
-        case 'Sho\'Syl':
+        case "Re'Vas":
+        case "Sho'Syl":
         case 'Sibyll':
         case 'Snappawrecka':
         case 'Snotflogga':
@@ -232,8 +319,8 @@ var updateTable = function() {
         case 'Eldryon':
           eldryondamageModifiedByFaction = 0;
           break;
-        case 'High Marshal Helbrecht':
-        case 'Marneus Calgar':
+        case 'Aethana':
+        case 'Darkstrider':
         case 'Pestillian':
         case 'Thaddeus noble':
           comment += "TODO: Buff missing";
@@ -282,7 +369,7 @@ var updateTable = function() {
           });
         }
 
-        buffDmg += eldryondamageModifiedByFaction;
+        buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmg;
        
         if (heavyWeaponEnabled && char.traits.includes("heavy weapon")) {
           dmgFactor *= 1.25;
@@ -296,7 +383,7 @@ var updateTable = function() {
           }
         }
 
-        var meleeDmg = calcDmg(dmg+buffDmg, dmgFactor, char.melee.hits, opponentarmor, char.melee.pierce, critChance, critDamage);
+        var meleeDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, char.melee.hits, opponentarmor, char.melee.pierce, critChance, critDamage);
         var totalDmg = meleeDmg;
         switch (key) {
           case 'Boss Gulgortz':
@@ -304,16 +391,35 @@ var updateTable = function() {
             comment += ", passive working";
             break;
         }
+        if (char.traits.includes("let the galaxy burn")) {
+          var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage);
+          totalDmg += galaxyDmg * 0.5;
+          comment += "LtGB assumes hits on target"
+        }
         if (char.hasOwnProperty("ranged")) {
           var rangedDmg = calcDmg(dmg+buffDmg, dmgFactor, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
-          if (key=='Volk') {
+          switch (key) {
+          case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
             var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance, critDamage);
             comment += ", passive working ("+Math.round(volkDamageBuff)+")";
             rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
+            break;
+          case "Re'Vas":
+            var revasPassiveDmgLow = passiveFactor*char.passive[0];
+            var revasPassiveDmgHigh = passiveFactor*char.passive[1];
+            var revasPassiveOverload = (opponentHasMarkerlight || opponentIsMech) ? passiveFactor*char.passive[2] : 0;
+            rangedDmg += calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor, 3, opponentarmor, 0.35, critChance, critDamage);
+            comment += ", passive 3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
+            break;
+          }
+          if (char.traits.includes("let the galaxy burn")) {
+            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor, ltgbHits, opponentarmor, char.ranged.pierce, critChance, critDamage);
+            rangedDmg += galaxyDmg * 0.5;
           }
           totalDmg = Math.max(totalDmg, rangedDmg);
         }
+
         document.getElementById(entryId+"-health").innerHTML=Math.round(health);
         document.getElementById(entryId+"-armour").innerHTML=Math.round(armour);
         document.getElementById(entryId+"-dmg").innerHTML=Math.round(dmg);
@@ -437,13 +543,42 @@ function sortTable(n) {
     <br>
     <label>Opponent armor</label>
     <input onChange="updateTable()" type="number" id="opponentarmor" min="0" max="3000" value="300">
+    <label>Mech</label>
+    <input onChange="updateTable()" type="checkbox" id="opponent-is-mech"></input>
+    <label>Psyker</label>
+    <input onChange="updateTable()" type="checkbox" id="opponent-is-psyker"></input>
+    <label>Markerlight</label>
+    <input onChange="updateTable()" type="checkbox" id="opponent-has-markerlight"></input>
+    <label>Big Target/Vehicle</label>
+    <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
     <br>
     <label>Eldryon</label>
     <input onChange="updateEldryon()" type="checkbox" id="eldryon-buff-enabled" checked></input>
     <select onchange="updateEldryon()" name="eldryon-buff-rarity" id="eldryon-buff-rarity">
     </select>
-    <input onChange="updateEldryon()" type="number" id="eldryon-buff-level" name="eldryon-level" min="0" max="50" value="35">
+    <input onChange="updateEldryon()" type="number" id="eldryon-buff-level" min="0" max="50" value="35">
     +<span id="eldryon-buff-all"></span> damage [All] +<span id="eldryon-buff-aeldari"></span> damage [Aeldari]
+    <br>
+    <label>Abaddon</label>
+    <input onChange="updateAbaddon()" type="checkbox" id="abaddon-buff-enabled"></input>
+    <select onchange="updateAbaddon()" id="abaddon-buff-rarity">
+    </select>
+    <input onChange="updateAbaddon()" type="number" id="abaddon-buff-level" min="0" max="50" value="35">
+    +<span id="abaddon-buff-dmg"></span> damage [Chaos]
+    <br>
+    <label>Thaddeus</label>
+    <input onChange="updateThaddeus()" type="checkbox" id="thaddeus-buff-enabled"></input>
+    <select onchange="updateThaddeus()" id="thaddeus-buff-rarity">
+    </select>
+    <input onChange="updateThaddeus()" type="number" id="thaddeus-buff-level" min="0" max="50" value="35">
+    +<span id="thaddeus-buff-dmg"></span> damage [Heavy Weapon]
+    <br>
+    <label>Calgar</label>
+    <input onChange="updateCalgar()" type="checkbox" id="calgar-buff-enabled"></input>
+    <select onchange="updateCalgar()" id="calgar-buff-rarity">
+    </select>
+    <input onChange="updateCalgar()" type="number" id="calgar-buff-level" min="0" max="50" value="35">
+    +<span id="calgar-buff-all"></span> damage [All] +<span id="calgar-buff-imperial"></span> damage [Imperial]
     <br>
     <label>Heavy Weapon</label>
     <input title="Heavy Weapon and similar passives (Maugan Ra) are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
