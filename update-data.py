@@ -154,13 +154,18 @@ def toJSON(rows):
             eq = row[eqNum].lower().replace(" ", "_")
             if eq in eqCount:
                 eqCount[eq] += 1
+        traits = []
+        for trait in ["Trait %d" % n for n in range(1,6)]:
+            if row[trait] is None or type(row[trait]) is not str:
+                continue
+            traits += [row[trait].lower()]
         toDelete = []
         for key in eqCount.keys():
             if not eqCount[key]:
                 toDelete += [key]
         for key in toDelete:
             del eqCount[key]
-        data = {"faction": row.Faction, "alliance": row.Alliance, "health": row.Health, "damage": row.Damage, "armour": row.Armour, "melee": {"pierce": pierce[row["Melee Damage"].lower()], "hits": int(row["Melee Hits"])}}
+        data = {"faction": row.Faction, "alliance": row.Alliance, "health": row.Health, "damage": row.Damage, "traits": traits, "armour": row.Armour, "melee": {"pierce": pierce[row["Melee Damage"].lower()], "hits": int(row["Melee Hits"])}}
         if row["Ranged Hits"] > 0:
             data["ranged"] = {"pierce": pierce[row["Ranged Damage"].lower()], "hits": int(row["Ranged Hits"])}
         if row["Initial rarity"] in ["Common", "Uncommon", "Rare", "Epic", "Legendary"]:

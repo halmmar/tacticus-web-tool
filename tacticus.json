@@ -65,7 +65,8 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": []
     },
     "L1 Hapthatra ": {
       "alliance": "NECRONS",
@@ -80,7 +81,8 @@
       "ranged": {
         "hits": 9,
         "pierce": 0.3
-      }
+      },
+      "traits": []
     },
     "L1 KRONOS TERVIGON": {
       "alliance": "TERVIGON",
@@ -95,7 +97,8 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": []
     },
     "L1 LEVIATHAN TYRANT": {
       "alliance": "TYRANT",
@@ -110,7 +113,8 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": []
     },
     "L1 Szarekh": {
       "alliance": "NECRONS",
@@ -125,7 +129,8 @@
       "ranged": {
         "hits": 6,
         "pierce": 0.3
-      }
+      },
+      "traits": []
     },
     "L1 Triarchal Menhir": {
       "alliance": "NECRONS",
@@ -136,7 +141,8 @@
       "melee": {
         "hits": 1,
         "pierce": 0.3
-      }
+      },
+      "traits": []
     },
     "L2 KRONOS TERVIGON": {
       "alliance": "TERVIGON",
@@ -151,7 +157,8 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": []
     },
     "L2 LEVIATHAN TERVIGON": {
       "alliance": "TERVIGON",
@@ -166,7 +173,8 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": []
     },
     "L2 LEVIATHAN TYRANT": {
       "alliance": "TYRANT",
@@ -181,7 +189,8 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": []
     },
     "L3 GORGON TYRANT": {
       "alliance": "TYRANT",
@@ -196,7 +205,8 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": []
     },
     "L3 KRONOS TYRANT": {
       "alliance": "TYRANT",
@@ -211,7 +221,8 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": []
     },
     "L3 LEVIATHAN TERVIGON": {
       "alliance": "TERVIGON",
@@ -226,7 +237,8 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": []
     },
     "L3 LEVIATHAN TYRANT": {
       "alliance": "TYRANT",
@@ -241,7 +253,8 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": []
     }
   },
   "characters": {
@@ -266,7 +279,12 @@
       "ranged": {
         "hits": 3,
         "pierce": 0.2
-      }
+      },
+      "traits": [
+        "let the galaxy burn",
+        "terminator armour",
+        "resilient"
+      ]
     },
     "Aethana": {
       "alliance": "Xenos",
@@ -287,6 +305,10 @@
         4.0,
         3.0,
         16.0
+      ],
+      "traits": [
+        "flying",
+        "deep strike"
       ]
     },
     "Aleph-null": {
@@ -306,6 +328,12 @@
       },
       "passive": [
         40.0
+      ],
+      "traits": [
+        "living metal",
+        "explodes",
+        "flying",
+        "mechanic"
       ]
     },
     "Ancient Thoread": {
@@ -323,7 +351,11 @@
         "hits": 2,
         "pierce": 0.4
       },
-      "passive": []
+      "passive": [],
+      "traits": [
+        "final vengeance",
+        "parry"
+      ]
     },
     "Angrax": {
       "alliance": "Chaos",
@@ -344,6 +376,11 @@
         18.0,
         25.0,
         6.0
+      ],
+      "traits": [
+        "let the galaxy burn",
+        "deep strike",
+        "terminator armour"
       ]
     },
     "Anuphet": {
@@ -368,7 +405,10 @@
       "ranged": {
         "hits": 3,
         "pierce": 0.3
-      }
+      },
+      "traits": [
+        "living metal"
+      ]
     },
     "Archimatos": {
       "alliance": "Chaos",
@@ -392,7 +432,11 @@
       "ranged": {
         "hits": 1,
         "pierce": 1.0
-      }
+      },
+      "traits": [
+        "let the galaxy burn",
+        "psyker"
+      ]
     },
     "Bellator": {
       "alliance": "Imperial",
@@ -411,6 +455,10 @@
       },
       "passive": [
         5.0
+      ],
+      "traits": [
+        "flying",
+        "mk x gravis"
       ]
     },
     "Boss Gulgortz": {
@@ -435,7 +483,13 @@
       "ranged": {
         "hits": 3,
         "pierce": 0.15
-      }
+      },
+      "traits": [
+        "mechanical",
+        "big target",
+        "final vengeance",
+        "dakka"
+      ]
     },
     "Brother Burchard": {
       "alliance": "Imperial",
@@ -458,7 +512,11 @@
       "ranged": {
         "hits": 6,
         "pierce": 0.2
-      }
+      },
+      "traits": [
+        "mk x gravis",
+        "suppressive fire"
+      ]
     },
     "Brother Jaeger": {
       "alliance": "Imperial",
@@ -478,6 +536,10 @@
       "passive": [
         8.0,
         14.0
+      ],
+      "traits": [
+        "final vengeance",
+        "parry"
       ]
     },
     "Calandis": {
@@ -501,7 +563,11 @@
       "ranged": {
         "hits": 1,
         "pierce": 0.3
-      }
+      },
+      "traits": [
+        "heavy weapon",
+        "overwatch"
+      ]
     },
     "Castellan creed": {
       "alliance": "Imperial",
@@ -522,7 +588,8 @@
         90.0,
         18.0,
         15.0
-      ]
+      ],
+      "traits": []
     },
     "Celestine": {
       "alliance": "Imperial",
@@ -543,6 +610,10 @@
         60.0,
         25.0,
         20.0
+      ],
+      "traits": [
+        "act of faith",
+        "flying"
       ]
     },
     "Certus": {
@@ -566,7 +637,12 @@
       "ranged": {
         "hits": 1,
         "pierce": 0.2
-      }
+      },
+      "traits": [
+        "overwatch",
+        "heavy weapon",
+        "infiltrate"
+      ]
     },
     "Commissar Yarrick": {
       "alliance": "Imperial",
@@ -589,7 +665,10 @@
       "ranged": {
         "hits": 2,
         "pierce": 0.2
-      }
+      },
+      "traits": [
+        "resilient"
+      ]
     },
     "Corrodius": {
       "alliance": "Chaos",
@@ -608,6 +687,10 @@
       },
       "passive": [
         18.0
+      ],
+      "traits": [
+        "contagions of nurgle",
+        "resilient"
       ]
     },
     "Darkstrider": {
@@ -631,7 +714,11 @@
       "ranged": {
         "hits": 2,
         "pierce": 0.2
-      }
+      },
+      "traits": [
+        "close combat weakness",
+        "infiltrate"
+      ]
     },
     "Eldryon": {
       "alliance": "Xenos",
@@ -655,7 +742,10 @@
       "ranged": {
         "hits": 2,
         "pierce": 1.0
-      }
+      },
+      "traits": [
+        "psyker"
+      ]
     },
     "Gibbascrapz": {
       "alliance": "Xenos",
@@ -674,6 +764,9 @@
       },
       "passive": [
         5.8
+      ],
+      "traits": [
+        "mechanic"
       ]
     },
     "Haarken Worldclaimer": {
@@ -693,6 +786,10 @@
       },
       "passive": [
         2.975
+      ],
+      "traits": [
+        "let the galaxy burn",
+        "flying"
       ]
     },
     "High Marshal Helbrecht": {
@@ -716,7 +813,10 @@
       "ranged": {
         "hits": 3,
         "pierce": 0.2
-      }
+      },
+      "traits": [
+        "parry"
+      ]
     },
     "Imospekh": {
       "alliance": "Xenos",
@@ -739,7 +839,11 @@
       "ranged": {
         "hits": 6,
         "pierce": 0.6
-      }
+      },
+      "traits": [
+        "living metal",
+        "overwatch"
+      ]
     },
     "Incisus": {
       "alliance": "Imperial",
@@ -758,6 +862,9 @@
       },
       "passive": [
         40.0
+      ],
+      "traits": [
+        "healer"
       ]
     },
     "Isabella": {
@@ -777,6 +884,10 @@
       },
       "passive": [
         12.0
+      ],
+      "traits": [
+        "act of faith",
+        "healer"
       ]
     },
     "Jain Zar": {
@@ -797,6 +908,9 @@
       "passive": [
         -8.0,
         1.0
+      ],
+      "traits": [
+        "infiltrate"
       ]
     },
     "Kut skoden": {
@@ -815,6 +929,9 @@
       },
       "passive": [
         6.0
+      ],
+      "traits": [
+        "big target"
       ]
     },
     "Makhotep": {
@@ -838,7 +955,10 @@
       "ranged": {
         "hits": 2,
         "pierce": 0.6
-      }
+      },
+      "traits": [
+        "living metal"
+      ]
     },
     "Maladus": {
       "alliance": "Chaos",
@@ -857,6 +977,11 @@
       },
       "passive": [
         7.0
+      ],
+      "traits": [
+        "contagions of nurgle",
+        "resilient",
+        "terminator armour"
       ]
     },
     "Marneus Calgar": {
@@ -877,6 +1002,10 @@
       "passive": [
         3.0,
         5.0
+      ],
+      "traits": [
+        "mk x gravis",
+        "final vengeance"
       ]
     },
     "Maugan Ra": {
@@ -901,7 +1030,12 @@
       "ranged": {
         "hits": 6,
         "pierce": 0.55
-      }
+      },
+      "traits": [
+        "terrifying",
+        "heavy weapon",
+        "overwatch"
+      ]
     },
     "Morvenn Vahl": {
       "alliance": "Imperial",
@@ -925,7 +1059,13 @@
       "ranged": {
         "hits": 3,
         "pierce": 0.2
-      }
+      },
+      "traits": [
+        "act of faith",
+        "mechanical",
+        "explodes",
+        "big target"
+      ]
     },
     "Nauseous rotbone": {
       "alliance": "Chaos",
@@ -944,6 +1084,11 @@
       },
       "passive": [
         49.0
+      ],
+      "traits": [
+        "contagions of nurgle",
+        "resilient",
+        "healer"
       ]
     },
     "Pestillian": {
@@ -963,6 +1108,11 @@
       },
       "passive": [
         30.0
+      ],
+      "traits": [
+        "contagions of nurgle",
+        "resilient",
+        "putrid explosion"
       ]
     },
     "Re'Vas": {
@@ -988,7 +1138,13 @@
       "ranged": {
         "hits": 6,
         "pierce": 0.2
-      }
+      },
+      "traits": [
+        "close combat weakness",
+        "big target",
+        "flying",
+        "mechanical"
+      ]
     },
     "Roswitha": {
       "alliance": "Imperial",
@@ -1011,7 +1167,10 @@
       "ranged": {
         "hits": 2,
         "pierce": 0.2
-      }
+      },
+      "traits": [
+        "act of faith"
+      ]
     },
     "Sho'Syl": {
       "alliance": "Xenos",
@@ -1036,7 +1195,11 @@
       "ranged": {
         "hits": 1,
         "pierce": 0.8
-      }
+      },
+      "traits": [
+        "camouflage",
+        "close combat weakness"
+      ]
     },
     "Sibyll": {
       "alliance": "Imperial",
@@ -1059,7 +1222,10 @@
       "ranged": {
         "hits": 1,
         "pierce": 1.0
-      }
+      },
+      "traits": [
+        "psyker"
+      ]
     },
     "Snappawrecka": {
       "alliance": "Xenos",
@@ -1083,7 +1249,13 @@
       "ranged": {
         "hits": 3,
         "pierce": 0.15
-      }
+      },
+      "traits": [
+        "mechanical",
+        "big target",
+        "explodes",
+        "dakka"
+      ]
     },
     "Snotflogga": {
       "alliance": "Xenos",
@@ -1103,6 +1275,9 @@
       "passive": [
         18.0,
         22.0
+      ],
+      "traits": [
+        "beast snagga"
       ]
     },
     "Sword Brother Godswyl": {
@@ -1122,6 +1297,9 @@
       },
       "passive": [
         10.0
+      ],
+      "traits": [
+        "parry"
       ]
     },
     "Tanksmasha": {
@@ -1142,6 +1320,10 @@
       "passive": [
         26.0,
         30.0
+      ],
+      "traits": [
+        "mounted",
+        "beast snagga"
       ]
     },
     "Thaddeus noble": {
@@ -1165,7 +1347,11 @@
       "ranged": {
         "hits": 3,
         "pierce": 0.15
-      }
+      },
+      "traits": [
+        "suppressive fire",
+        "indirect fire"
+      ]
     },
     "Thutmose": {
       "alliance": "Xenos",
@@ -1189,7 +1375,10 @@
       "ranged": {
         "hits": 2,
         "pierce": 0.65
-      }
+      },
+      "traits": [
+        "living metal"
+      ]
     },
     "Typhus": {
       "alliance": "Chaos",
@@ -1213,7 +1402,13 @@
       "ranged": {
         "hits": 1,
         "pierce": 1.0
-      }
+      },
+      "traits": [
+        "contagions of nurgle",
+        "resilient",
+        "psyker",
+        "terminator armour"
+      ]
     },
     "Varro Tigurius": {
       "alliance": "Imperial",
@@ -1237,7 +1432,10 @@
       "ranged": {
         "hits": 1,
         "pierce": 1.0
-      }
+      },
+      "traits": [
+        "psyker"
+      ]
     },
     "Vindicta": {
       "alliance": "Imperial",
@@ -1260,7 +1458,11 @@
       "ranged": {
         "hits": 4,
         "pierce": 0.25
-      }
+      },
+      "traits": [
+        "act of faith",
+        "heavy weapon"
+      ]
     },
     "Volk": {
       "alliance": "Chaos",
@@ -1283,7 +1485,13 @@
       "ranged": {
         "hits": 6,
         "pierce": 0.55
-      }
+      },
+      "traits": [
+        "let the galaxy burn",
+        "suppressive fire",
+        "daemon",
+        "big target"
+      ]
     }
   },
   "equipment": {
@@ -2103,7 +2311,11 @@
       "melee": {
         "hits": 1,
         "pierce": 0.8
-      }
+      },
+      "traits": [
+        "daemon",
+        "summon"
+      ]
     },
     "Cadian Guardsman": {
       "alliance": 0,
@@ -2118,7 +2330,11 @@
       "ranged": {
         "hits": 2,
         "pierce": 0.1
-      }
+      },
+      "traits": [
+        "battle fatigue",
+        "summon"
+      ]
     },
     "Colour Sergeant Kell": {
       "alliance": 0,
@@ -2129,7 +2345,10 @@
       "melee": {
         "hits": 2,
         "pierce": 0.4
-      }
+      },
+      "traits": [
+        "summon"
+      ]
     },
     "Geminae Superia": {
       "alliance": 0,
@@ -2140,7 +2359,11 @@
       "melee": {
         "hits": 2,
         "pierce": 0.4
-      }
+      },
+      "traits": [
+        "flying",
+        "summon"
+      ]
     },
     "Grot": {
       "alliance": 0,
@@ -2151,7 +2374,12 @@
       "melee": {
         "hits": 1,
         "pierce": 0.15
-      }
+      },
+      "traits": [
+        "diminutive",
+        "battle fatigue",
+        "summon"
+      ]
     },
     "Grot Tank": {
       "alliance": 0,
@@ -2166,7 +2394,13 @@
       "ranged": {
         "hits": 3,
         "pierce": 0.15
-      }
+      },
+      "traits": [
+        "mechanical",
+        "battle fatigue",
+        "vehicle",
+        "summon"
+      ]
     },
     "Inceptor": {
       "alliance": 0,
@@ -2177,7 +2411,12 @@
       "melee": {
         "hits": 6,
         "pierce": 0.2
-      }
+      },
+      "traits": [
+        "flying",
+        "mk x gravis",
+        "summon"
+      ]
     },
     "MV71 Sniper Drone": {
       "alliance": 0,
@@ -2192,7 +2431,14 @@
       "ranged": {
         "hits": 1,
         "pierce": 0.8
-      }
+      },
+      "traits": [
+        "flying",
+        "mechanical",
+        "networked targeting",
+        "close combat weakness",
+        "summon"
+      ]
     },
     "Pox Walkers": {
       "alliance": 0,
@@ -2203,7 +2449,11 @@
       "melee": {
         "hits": 2,
         "pierce": 0.01
-      }
+      },
+      "traits": [
+        "contagions of nurgle",
+        "summon"
+      ]
     }
   },
   "version": "Beta 0.0.3.3"

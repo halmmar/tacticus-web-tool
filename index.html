@@ -34,12 +34,18 @@ function(err, data) {
     tb_equipment = data.equipment;
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
-    document.getElementById("eldryon-buff-rarity").innerHTML=document.getElementById("legendarylevel").innerHTML;
-    document.getElementById("equipment-rarity").innerHTML=document.getElementById("legendarylevel").innerHTML;
+    document.getElementById("eldryon-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
+    document.getElementById("equipment-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     addTable();
     updateEldryon();
   }
 });
+
+var passiveFactorActiveCharacter = function() {
+  var level = +document.getElementById("skill-level").value;
+  var rarity = +document.getElementById("rarity-level").value;
+  return tb_abilities_factor[level-1] * (1 + rarity*0.2);
+}
 
 var updateEldryon = function() {
   if (!document.getElementById("eldryon-buff-enabled").checked) {
@@ -79,15 +85,19 @@ var addTable = function() {
 var round2 = function(num) {
   return Math.round( num * 100 + Number.EPSILON ) / 100;
 }
+var calcDmgLowHigh = function(dmgLow, dmgHigh, hits, armour, pierce, critChance, crit) {
+  var perNonCrit = Math.max(dmgLow-armour, dmgLow*pierce)*0.5 + Math.max(dmgHigh-armour, dmgHigh*pierce)*0.5;
+  var perCrit =  Math.max(dmgLow+crit-armour, (dmgLow+crit)*pierce)*0.5 + Math.max(dmgHigh+crit-armour, (dmgHigh+crit)*pierce)*0.5;
+  var total = 0;
+  for (n=1; n<=hits; n++) {
+    var critCurHit = Math.pow(critChance, n);
+    total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
+    console.log(total,n,hits)
+  };
+  return Math.round(total);
+}
 var calcDmg = function(dmg, hits, armour, pierce, critChance, crit) {
-    var perNonCrit = Math.max(dmg-armour, dmg*pierce);
-    var perCrit = Math.max(dmg+crit-armour, (dmg+crit)*pierce);
-    var total = 0;
-    for (n=1; n<=hits; n++) {
-      var critCurHit = Math.pow(critChance, n);
-      total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
-    };
-    return Math.round(total);
+  return calcDmgLowHigh(dmg*0.8, dmg*1.2, hits, armour, pierce, critChance, crit);
 }
 var updateTable = function() {
     var starlevel = document.getElementById("starlevel").value;
@@ -101,6 +111,8 @@ var updateTable = function() {
     var equipmentRarityInt = +(document.getElementById("equipment-rarity").value);
     var equipmentRarity = intToRarity[equipmentRarityInt];
     var equipmentLevel = Math.min(equipmentRarityInt*2+3, document.getElementById("equipment-level").value) - 1;
+    var passiveFactor = passiveFactorActiveCharacter();
+    
     Object.keys(tb_chars).forEach(function callback(key) {
         var comment = "";
         entryId = characterTableEntryId(key);
@@ -112,7 +124,45 @@ var updateTable = function() {
         var critDamage = 0;
         var blockChance = 0;
         var block = 0;
+        var dakka = 0;
         var eldryondamageModifiedByFaction = eldryondamage + (char.faction == "Aeldari" ? eldryondamageAeldari : 0.0);
+
+        char.traits.forEach(function (trait) {
+          switch (trait) {
+            case "dakka":
+              dakka = 2;
+              comment += "dakka working";
+              break;
+            case "terminator armour":
+            case "resilient":
+            case "flying":
+            case "deep strike":
+            case "living metal":
+            case "mechanic":
+            case "final vengeance":
+            case "terrifying":
+            case "act of faith":
+            case "big target":
+            case "infiltrate":
+            case "mk x gravis":
+            case "healer":
+            case "suppressive fire":
+            case "indirect fire":
+            case "psyker":
+            case "daemon":
+            case "explodes":
+            case "overwatch":
+            case "contagions of nurgle":
+            case "mechanical":
+            case "mounted":
+            case "parry":
+            case "camouflage":
+            case "putrid explosion":
+              break;
+            default:
+              console.log("Unknown trait:", trait);
+          }
+        });
 
         switch (key) {
         case 'Incisus':
@@ -202,21 +252,23 @@ var updateTable = function() {
           });
         }
 
-        dmg += eldryondamageModifiedByFaction;
+        buffDmg = eldryondamageModifiedByFaction;
 
         health = Math.round(health);
         armour = Math.round(armour);
         dmg = Math.round(dmg);
 
-        var meleeDmg = calcDmg(dmg, char.melee.hits, opponentarmor, char.melee.pierce, critChance, critDamage);
+        var meleeDmg = calcDmg(dmg+buffDmg, char.melee.hits, opponentarmor, char.melee.pierce, critChance, critDamage);
         var totalDmg = meleeDmg;
         switch (key) {
           case 'Boss Gulgortz':
-            comment += "TODO: Add Gulgortz passive here";
+            console.log("Boss");
+            totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], 3, opponentarmor, char.ranged.pierce, critChance, critDamage);
+            comment += ", passive working";
             break;
         }
         if (char.hasOwnProperty("ranged")) {
-          var rangedDmg = calcDmg(dmg, char.ranged.hits, opponentarmor, char.ranged.pierce, critChance, critDamage);
+          var rangedDmg = calcDmg(dmg+buffDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
           totalDmg = Math.max(totalDmg, rangedDmg);
         }
         document.getElementById(entryId+"-health").innerHTML=health;
@@ -309,7 +361,7 @@ function sortTable(n) {
     <option value="17">Diamond Rank III</option>
   </select>
 
-  <select onchange="updateTable()" name="legendarylevel" id="legendarylevel">
+  <select onchange="updateTable()" name="rarity-level" id="rarity-level">
     <option value="0">Common</option>
     <option value="1">Uncommon</option>
     <option value="2">Rare</option>
