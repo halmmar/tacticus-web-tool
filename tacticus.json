@@ -2472,10 +2472,10 @@
     },
     "MV71 Sniper Drone": {
       "alliance": 0,
-      "armour": 0,
-      "damage": 85.0,
+      "armour": 5.0,
+      "damage": 28.0,
       "faction": "T'au Empire",
-      "health": 75.0,
+      "health": 20.0,
       "melee": {
         "hits": 1,
         "pierce": 0.01

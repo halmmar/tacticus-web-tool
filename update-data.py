@@ -168,7 +168,7 @@ def toJSON(rows):
             del eqCount[key]
         passiveData = []
         if row.Name in characterAbilities:
-            passiveData = [x for x in characterAbilities[row.Name][17:20] if not np.isnan(x)]
+            passiveData = [x for x in characterAbilities[row.Name][17:20] if not (x is None or np.isnan(x))]
         data = {"faction": row.Faction, "alliance": row.Alliance, "health": row.Health, "damage": row.Damage, "traits": traits, "armour": row.Armour, "melee": {"pierce": pierce[row["Melee Damage"].lower()], "hits": int(row["Melee Hits"])}}
         if row["Ranged Hits"] > 0:
             data["ranged"] = {"pierce": pierce[row["Ranged Damage"].lower()], "hits": int(row["Ranged Hits"])}
