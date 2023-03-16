@@ -181,6 +181,7 @@ var updateTable = function() {
     var gearlevel = document.getElementById("gearlevel").value;
     var levelStatFactor = Math.pow(1.25205, gearlevel)*(1+0.1*starlevel);
     var opponentarmor = document.getElementById("opponentarmor").value;
+    var preferEqCritDmg = +document.getElementById("prefer-eq-crit-dmg").value;
     // Tyrant max debuff is 60%
     var eldryondamage = +document.getElementById("eldryon-buff-all").innerHTML;
     var eldryondamageAeldari = +document.getElementById("eldryon-buff-aeldari").innerHTML;
@@ -414,7 +415,11 @@ var updateTable = function() {
             var eqCount = char.equipment[key];
             var curEq = tb_equipment[key];
             var curChance = Object.keys(curEq).filter(function (chance) { return curEq[chance]["factions"].includes(char.faction); });
-            selectedChance = Math.max(...curChance);
+            if (preferEqCritDmg && key=="crit") {
+              selectedChance = Math.min(...curChance);
+            } else {
+              selectedChance = Math.max(...curChance);
+            }
             eqStats = curEq[selectedChance][equipmentRarity];
             if (key=="crit") {
               critChance += 1.0 - Math.pow((100-selectedChance)/100, eqCount);
@@ -586,7 +591,7 @@ function sortTable(n) {
     <option value="4">Legendary</option>
   </select>
 
-    <select onChange="updateTable()" name="starlevel" id="starlevel">
+    <select onChange="updateTable()" id="starlevel">
       <option value="1">1 gold star</option>
       <option value="2">2 gold star</option>
       <option value="3">3 gold star</option>
@@ -607,7 +612,16 @@ function sortTable(n) {
     <select onchange="updateTable()" name="equipment-rarity" id="equipment-rarity">
     </select>
     <input onChange="updateTable()" type="number" id="equipment-level" min="0" max="11" value="9">
-    TODO: Allow to select equipment (currently chooses max crit chance, block chance, health over armor)
+    <select onChange="updateTable()" id="prefer-eq-crit-dmg">
+      <option value="0" selected>Gun</option>
+      <option value="1">Knife</option>
+    </select>
+    <select onChange="updateTable()" id="prefer-block-chance">
+      <option value="0" selected>Block %</option>
+    </select>
+    <select onChange="updateTable()" id="prefer-eq-armour">
+      <option value="0" selected>Health</option>
+    </select>
     <br>
     <label>Opponent armor</label>
     <input onChange="updateTable()" type="number" id="opponentarmor" min="0" max="3000" value="300">
