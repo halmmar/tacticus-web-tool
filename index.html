@@ -18,8 +18,11 @@ var getJSON = function(url, callback) {
 };
 
 tb_chars = {};
+tb_summons = {};
+tb_chars_and_summons = {};
 tb_gear = [];
 tb_abilities_factor = [];
+tb_archimatos_ability_factor = [];
 tb_equipment = {};
 intToRarity = ["common", "uncommon", "rare", "epic", "legendary"]
 
@@ -29,9 +32,12 @@ function(err, data) {
     console.log('Something went wrong: ' + err);
   } else {
     tb_chars = data.characters;
+    tb_summons = data.summons;
     tb_gear = data.gear;
     tb_abilities_factor = data.abilities_factor;
+    tb_archimatos_ability_factor = data.archimatos_ability_factor;
     tb_equipment = data.equipment;
+    tb_chars_and_summons = Object.assign(tb_chars,tb_summons)
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
     document.getElementById("eldryon-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
@@ -53,10 +59,19 @@ var levelToRarityInt = function(level) {
   return Math.min(Math.floor(level / 9), 4);
 }
 
-var passiveFactorActiveCharacter = function() {
+var passiveFactorActiveCharacterWithTable = function(tb_factor) {
   var level = +document.getElementById("skill-level").value;
   var rarity = +document.getElementById("rarity-level").value;
-  return tb_abilities_factor[level-1] * (1 + rarity*0.2);
+  return tb_factor[level-1] * (1 + rarity*0.2);
+}
+
+var passiveFactorCharacter = function(name) {
+  switch (name) {
+    case 'Bloodletter':
+    case 'Archimatos':
+      return passiveFactorActiveCharacterWithTable(tb_archimatos_ability_factor);
+  }
+  return passiveFactorActiveCharacterWithTable(tb_abilities_factor);
 }
 
 var updateEldryon = function() {
@@ -173,7 +188,6 @@ var updateTable = function() {
     var equipmentRarityInt = +(document.getElementById("equipment-rarity").value);
     var equipmentRarity = intToRarity[equipmentRarityInt];
     var equipmentLevel = Math.min(equipmentRarityInt*2+3, document.getElementById("equipment-level").value) - 1;
-    var passiveFactor = passiveFactorActiveCharacter();
     var heavyWeaponEnabled = document.getElementById("heavy-weapon-enabled").checked;
     var charRarity = +document.getElementById("rarity-level").value;
     var passiveLevel = +document.getElementById("skill-level").value;
@@ -193,13 +207,16 @@ var updateTable = function() {
     var aethanaBonusDmgAeldar = +document.getElementById("aethana-buff-aeldari").innerHTML;
     var aethanaBonusCritChance = +document.getElementById("aethana-buff-crit").innerHTML;
     
-    Object.keys(tb_chars).forEach(function callback(key) {
+    Object.keys(tb_chars_and_summons).forEach(function callback(key) {
         var comment = "";
         entryId = characterTableEntryId(key);
         var char = tb_chars[key];
-        var health = char.health*levelStatFactor;
-        var armour = char.armour*levelStatFactor;
-        var dmg = char.damage*levelStatFactor;
+        var passiveFactor = passiveFactorCharacter(key);
+        var levelStatFactorCurUnit = char.traits.includes("summon") ? passiveFactor : levelStatFactor;
+        var health = char.health*levelStatFactorCurUnit;
+        var armour = char.armour*levelStatFactorCurUnit;
+        var dmg = char.damage*levelStatFactorCurUnit;
+        var meleeHits = char.melee.hits;
         var critChance = 0;
         var critDamage = 0;
         var blockChance = 0;
@@ -221,15 +238,6 @@ var updateTable = function() {
         if (opponentHasMarkerlight && char.faction == "T'au Empire") {
           dmgFactor *= 1.15;
         }
-        if (opponentBeastSnagga && char.traits.includes("beast snagga")) {
-          dmgFactorMelee *= 1.20;
-        }
-        if (opponentBeastSnagga && char.traits.includes("close combat weakness")) {
-          dmgFactorMelee *= 0.50;
-        }
-        if (thaddeusPassive && char.traits.includes("heavy weapon")) {
-          dmg += thaddeusBonusDmg;
-        }
 
         char.traits.forEach(function (trait) {
           switch (trait) {
@@ -237,10 +245,35 @@ var updateTable = function() {
               dakka = 2;
               comment += "dakka working";
               break;
-            case "let the galaxy burn":
-            case "close combat weakness":
-            case "heavy weapon":
             case "beast snagga":
+              if (opponentBeastSnagga) {
+                dmgFactorMelee *= 1.20;
+              }
+              break;
+            case "close combat weakness":
+              if (opponentBeastSnagga) {
+                dmgFactorMelee *= 0.50;
+              }
+              break;
+            case "heavy weapon":
+              if (thaddeusPassive) {
+                dmg += thaddeusBonusDmg;
+              }
+              if (heavyWeaponEnabled) {
+                dmgFactor *= 1.25;
+                comment += "heavy weapon working"
+                if (key=="Maugan Ra") {
+                  var mauganCritChance = (char.passive[1] + passiveLevelAsRarityInt - (passiveLevelAsRarityInt==0 ? 1 : 0)) / 100;
+                  var mauganCritDamage = char.passive[0] * passiveFactor;
+                  critChance += mauganCritChance;
+                  critDamage += mauganCritDamage;
+                  comment += ", passive working";
+                }
+              }
+              break;
+            case "battle fatigue":
+            case "diminutive":
+            case "let the galaxy burn":
             case "terminator armour":
             case "resilient":
             case "flying":
@@ -256,6 +289,7 @@ var updateTable = function() {
             case "healer":
             case "suppressive fire":
             case "indirect fire":
+            case "networked targeting":
             case "psyker":
             case "daemon":
             case "explodes":
@@ -263,7 +297,9 @@ var updateTable = function() {
             case "contagions of nurgle":
             case "mechanical":
             case "mounted":
+            case "vehicle":
             case "parry":
+            case "summon":
             case "camouflage":
             case "putrid explosion":
               break;
@@ -312,6 +348,11 @@ var updateTable = function() {
         case 'Aethana':
           aethanadamageModifiedByFaction = 0;
           break;
+        case 'Bloodletter':
+          if (madeContact) {
+            meleeHits += 1;
+          }
+          break;
         case 'Aleph-null':
         case 'Ancient Thoread':
         case 'Anuphet':
@@ -320,22 +361,30 @@ var updateTable = function() {
         case 'Boss Gulgortz':
         case 'Brother Burchard':
         case 'Brother Jaeger':
+        case 'Cadian Guardsman':
+        case 'Colour Sergeant Kell':
         case 'Calandis':
         case 'Castellan creed':
         case 'Celestine':
         case 'Certus':
         case 'Commissar Yarrick':
         case 'Corrodius':
+        case 'Geminae Superia':
         case 'Gibbascrapz':
+        case 'Grot':
+        case 'Grot Tank':
         case 'Haarken Worldclaimer':
         case 'Imospekh':
+        case 'Inceptor':
         case 'Isabella':
         case 'Jain Zar':
         case 'Makhotep':
         case 'Maugan Ra':
         case 'Maladus':
         case 'Morvenn Vahl':
+        case 'MV71 Sniper Drone':
         case 'Nauseous rotbone':
+        case 'Pox Walkers':
         case "Re'Vas":
         case "Sho'Syl":
         case 'Sibyll':
@@ -360,7 +409,7 @@ var updateTable = function() {
           comment += "TODO: Add passive";
         }
         
-        if (equipmentEnabled) {
+        if (equipmentEnabled && char.equipment) {
           Object.keys(char.equipment).forEach(function equip(key) {
             var eqCount = char.equipment[key];
             var curEq = tb_equipment[key];
@@ -402,19 +451,7 @@ var updateTable = function() {
 
         buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmgModifiedByFaction + aethanadamageModifiedByFaction;
        
-        if (heavyWeaponEnabled && char.traits.includes("heavy weapon")) {
-          dmgFactor *= 1.25;
-          comment += "heavy weapon working"
-          if (key=="Maugan Ra") {
-            var mauganCritChance = (char.passive[1] + passiveLevelAsRarityInt - (passiveLevelAsRarityInt==0 ? 1 : 0)) / 100;
-            var mauganCritDamage = char.passive[0] * passiveFactor;
-            critChance += mauganCritChance;
-            critDamage += mauganCritDamage;
-            comment += ", passive working";
-          }
-        }
-
-        var meleeDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, char.melee.hits, opponentarmor, char.melee.pierce, critChance, critDamage);
+        var meleeDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage);
         var totalDmg = meleeDmg;
         switch (key) {
           case 'Boss Gulgortz':

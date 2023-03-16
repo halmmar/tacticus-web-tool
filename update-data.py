@@ -66,8 +66,22 @@ file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.0.3.3.xlsx'
 tb_Characters = data_frame_from_xlsx(file, 'tb_Characters', 1)
 tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$W$3:$X$21', True)
 tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
-tb_Abilities = data_frame_from_xlsx(file, 'wb_abilities!$AB$3:$AD$52', True)
 tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AP$124', 2)
+tb_Abilities = data_frame_from_xlsx(file, 'wb_abilities!$AB$3:$AJ$52', True)
+tb_Abilities_1_50 = [level for (level,growth,factor,_,_,_,_,_,_) in tb_Abilities.itertuples(index=False)]
+for i in range(1,51):
+    if tb_Abilities_1_50[i-1] != i:
+        raise Exception("Did not find the correct table. i=%d, tb_Abilities=%d" % ( i, tb_Abilities_1_50[i-1]))
+tb_Abilities_factor = [factor for (level,growth,factor,_,_,_,_,_,_) in tb_Abilities.itertuples(index=False)]
+tb_Abilities_factor_archimatos = [factor for (level,growth,_,_,_,_,_,factor,_) in tb_Abilities.itertuples(index=False)]
+
+# Passives
+tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$63', True)
+characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.itertuples(index=False)])
+
+pierce = dict([(k.lower(),v) for (k,v) in tb_Pierce.itertuples(index=False)])
+gear = [(rank,int(gearLevel)) for (rarity,rank,rankMetal,rankLevel,gearLevel) in tb_Gear.itertuples(index=False)]
+
 factionMap = {
     "ULTRAMARINES": "Ultramarines",
     "ADEPTA SOROITAS": "ADEPTA SOROITAS",
@@ -127,19 +141,6 @@ for index, eq in tb_Equipment.iterrows():
                 }[itemTypeStr]: stat1
             }
 
-tb_Abilities = data_frame_from_xlsx(file, 'wb_abilities!$AB$3:$AD$52', True)
-tb_Abilities_1_50 = [level for (level,growth,factor) in tb_Abilities.itertuples(index=False)]
-for i in range(1,51):
-    if tb_Abilities_1_50[i-1] != i:
-        raise Exception("Did not find the correct table. i=%d, tb_Abilities=%d" % ( i, tb_Abilities_1_50[i-1]))
-tb_Abilities_factor = [factor for (level,growth,factor) in tb_Abilities.itertuples(index=False)]
-
-tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$51', True)
-characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.itertuples(index=False)])
-
-pierce = dict([(k.lower(),v) for (k,v) in tb_Pierce.itertuples(index=False)])
-gear = [(rank,int(gearLevel)) for (rarity,rank,rankMetal,rankLevel,gearLevel) in tb_Gear.itertuples(index=False)]
-
 def toJSON(rows):
     characters = {}
     bosses = {}
@@ -165,19 +166,25 @@ def toJSON(rows):
                 toDelete += [key]
         for key in toDelete:
             del eqCount[key]
+        passiveData = []
+        if row.Name in characterAbilities:
+            passiveData = [x for x in characterAbilities[row.Name][17:20] if not np.isnan(x)]
         data = {"faction": row.Faction, "alliance": row.Alliance, "health": row.Health, "damage": row.Damage, "traits": traits, "armour": row.Armour, "melee": {"pierce": pierce[row["Melee Damage"].lower()], "hits": int(row["Melee Hits"])}}
         if row["Ranged Hits"] > 0:
             data["ranged"] = {"pierce": pierce[row["Ranged Damage"].lower()], "hits": int(row["Ranged Hits"])}
         if row["Initial rarity"] in ["Common", "Uncommon", "Rare", "Epic", "Legendary"]:
-            data["passive"] = [x for x in characterAbilities[row.Name][17:20] if not np.isnan(x)]
+            data["passive"] = passiveData
             data["equipment"] = eqCount
             characters[row.Name] = data
         elif row.Name[0:2] in ["L1", "L2", "L3", "L4"]:
             bosses[row.Name] = data
         elif row["Trait 5"] == "Summon":
+            data["health"] = passiveData[0]
+            data["damage"] = passiveData[1]
+            data["armour"] = passiveData[2] if len(passiveData)==3 else 0
             summons[row.Name] = data
         else:
             continue
-    return {"characters": characters, "bosses": bosses, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "equipment": eqDict, "version": file.split("-")[1].strip().replace(".xlsx", "")}
+    return {"characters": characters, "bosses": bosses, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "archimatos_ability_factor": tb_Abilities_factor_archimatos, "equipment": eqDict, "version": file.split("-")[1].strip().replace(".xlsx", "")}
 with open("tacticus.json", "w") as fout:
     fout.write(json.dumps(toJSON(tb_Characters), sort_keys=True, indent=2))
