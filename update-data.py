@@ -6,6 +6,7 @@ import xlsxwriter
 import subprocess
 import openpyxl
 import json
+import copy
 from collections import OrderedDict 
 
 def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
@@ -69,14 +70,19 @@ tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
 tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AP$124', 2)
 tb_Abilities = data_frame_from_xlsx(file, 'wb_abilities!$AB$3:$AJ$52', True)
 tb_Abilities_1_50 = [level for (level,growth,factor,_,_,_,_,_,_) in tb_Abilities.itertuples(index=False)]
+tb_SummonsList = data_frame_from_xlsx(file, 'SummonsData!$B$2:$B$30', True)
 for i in range(1,51):
     if tb_Abilities_1_50[i-1] != i:
         raise Exception("Did not find the correct table. i=%d, tb_Abilities=%d" % ( i, tb_Abilities_1_50[i-1]))
 tb_Abilities_factor = [factor for (level,growth,factor,_,_,_,_,_,_) in tb_Abilities.itertuples(index=False)]
 tb_Abilities_factor_archimatos = [factor for (level,growth,_,_,_,_,_,factor,_) in tb_Abilities.itertuples(index=False)]
+summonsNames = set()
+for index, row in tb_SummonsList.iterrows():
+    if row["Name"]:
+        summonsNames.add(row["Name"])
 
 # Passives
-tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$63', True)
+tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$65', True)
 characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.itertuples(index=False)])
 
 pierce = dict([(k.lower(),v) for (k,v) in tb_Pierce.itertuples(index=False)])
@@ -159,7 +165,10 @@ def toJSON(rows):
         for trait in ["Trait %d" % n for n in range(1,6)]:
             if row[trait] is None or type(row[trait]) is not str:
                 continue
-            traits += [row[trait].lower()]
+            traitStripped = row[trait].lower().strip().replace("living metsl", "living metal")
+            if traitStripped in traits:
+                continue
+            traits += [traitStripped]
         toDelete = []
         for key in eqCount.keys():
             if not eqCount[key]:
@@ -178,13 +187,26 @@ def toJSON(rows):
             characters[row.Name] = data
         elif row.Name[0:2] in ["L1", "L2", "L3", "L4"]:
             bosses[row.Name] = data
-        elif row["Trait 5"] == "Summon":
+        elif "summon" in traits:
             data["health"] = passiveData[0]
             data["damage"] = passiveData[1]
             data["armour"] = passiveData[2] if len(passiveData)==3 else 0
             summons[row.Name] = data
+            if row.Name == "Bloodletter":
+                data = copy.deepcopy(data)
+                data["damage"] *= 0.71
+                data["traits"] += ["bloodletter_1.6_extra_hit"]
+                summons[row.Name + " (v1.6)"] = data
+            elif row.Name == "Scarab Swarm":
+                data = copy.deepcopy(data)
+                data["melee"]["pierce"] = 0.3
+                data["traits"] += ["flying"]
+                summons[row.Name + " (v1.6)"] = data
         else:
             continue
+    for name in summonsNames:
+        if name not in summons:
+            raise Exception("%s is not in the list of summons" % name)
     return {"characters": characters, "bosses": bosses, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "archimatos_ability_factor": tb_Abilities_factor_archimatos, "equipment": eqDict, "version": file.split("-")[1].strip().replace(".xlsx", "")}
 with open("tacticus.json", "w") as fout:
     fout.write(json.dumps(toJSON(tb_Characters), sort_keys=True, indent=2))

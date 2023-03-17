@@ -68,6 +68,7 @@ var passiveFactorActiveCharacterWithTable = function(tb_factor) {
 var passiveFactorCharacter = function(name) {
   switch (name) {
     case 'Bloodletter':
+    case 'Bloodletter (v1.6)':
     case 'Archimatos':
       return passiveFactorActiveCharacterWithTable(tb_archimatos_ability_factor);
   }
@@ -272,6 +273,11 @@ var updateTable = function() {
                 }
               }
               break;
+            case "bloodletter_1.6_extra_hit":
+              if (opponentIsPsyker) {
+                meleeHits += 1;
+              }
+              break;
             case "battle fatigue":
             case "diminutive":
             case "let the galaxy burn":
@@ -301,6 +307,7 @@ var updateTable = function() {
             case "vehicle":
             case "parry":
             case "summon":
+            case "swarm":
             case "camouflage":
             case "putrid explosion":
               break;
@@ -350,6 +357,7 @@ var updateTable = function() {
           aethanadamageModifiedByFaction = 0;
           break;
         case 'Bloodletter':
+        case 'Bloodletter (v1.6)':
           if (madeContact) {
             meleeHits += 1;
           }
@@ -384,9 +392,13 @@ var updateTable = function() {
         case 'Maladus':
         case 'Morvenn Vahl':
         case 'MV71 Sniper Drone':
+        case 'Necron warrior':
         case 'Nauseous rotbone':
         case 'Pox Walkers':
         case "Re'Vas":
+        case "Scarab Swarm":
+        case "Scarab Swarm (v1.6)":
+        case "Shield Drone":
         case "Sho'Syl":
         case 'Sibyll':
         case 'Snappawrecka':
