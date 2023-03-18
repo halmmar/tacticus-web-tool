@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <style type="text/css">
     table {
       font-size: 11pt;
@@ -76,7 +77,7 @@ function(err, data) {
     tb_chars_and_summons = Object.assign(tb_chars,tb_summons)
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
-    ["eldryon-buff", "thaddeus-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "equipment"].forEach(function (key) {
+    ["eldryon-buff", "thaddeus-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "helbrecht-buff", "equipment"].forEach(function (key) {
       document.getElementById(key + "-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     });
     addTable();
@@ -87,6 +88,7 @@ function(err, data) {
     updateAethana(1);
     updateAunShi(1);
     updateDarkstrider(1);
+    updateHelbrecht(1);
     updateTable();
   }
 });
@@ -197,6 +199,17 @@ var updateDarkstrider = function(skipUpdate) {
   document.getElementById("darkstrider-buff-dmg").innerHTML = Math.round(tb_chars["Darkstrider"].passive[0]*factor);
   if (1 != skipUpdate) updateTable();
 }
+var updateHelbrecht = function(skipUpdate) {
+  if (!document.getElementById("helbrecht-buff-enabled").checked) {
+    document.getElementById("helbrecht-buff-dmg").innerHTML = 0;
+    if (1 != skipUpdate) updateTable();
+    return;
+  }
+  var level = document.getElementById("helbrecht-buff-level").value;
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("helbrecht-buff-rarity").value*0.2);
+  document.getElementById("helbrecht-buff-dmg").innerHTML = Math.round(tb_chars["High Marshal Helbrecht"].passive[0]*factor);
+  if (1 != skipUpdate) updateTable();
+}
 
 var updateGear = function() {
     res = "";
@@ -273,6 +286,7 @@ var updateTable = function() {
     var aethanaBonusCritChance = +document.getElementById("aethana-buff-crit").innerHTML;
     var aunshiBonusDmgRawData = +document.getElementById("aunshi-buff-dmg").innerHTML;
     var darkstriderBonusDmgRawData = +document.getElementById("darkstrider-buff-dmg").innerHTML;
+    var helbrechtBonusDmgRawData = opponentIsPsyker ? +document.getElementById("helbrecht-buff-dmg").innerHTML : 0;
     var ltgbEnabled = document.getElementById("ltgb-enabled").checked;
     
     Object.keys(tb_chars_and_summons).forEach(function callback(key) {
@@ -301,7 +315,9 @@ var updateTable = function() {
         var ltgbHits = (abaddonPassive || key=="Abaddon the despolier") ? 2 : 1;
         var aunshiBonusDmg = key.includes("Aun'Shi")  ? 0 : aunshiBonusDmgRawData;
         var darkstriderBonusDmg = (key.includes("Darkstrider") || !opponentHasMarkerlight) ? 0 : darkstriderBonusDmgRawData;
+        var helbrechtBonusDmg = key.includes("Helbrecht") ? 0 : helbrechtBonusDmgRawData;
         var buffDmgRanged = 0;
+        var buffDmgMelee = 0;
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
@@ -531,10 +547,11 @@ var updateTable = function() {
         }
 
         buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmgModifiedByFaction + aethanadamageModifiedByFaction;
+        buffDmgMelee += helbrechtBonusDmg;
         buffDmgRanged += darkstriderBonusDmg;
        
         // Melee damage
-        var meleeDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage);
+        var meleeDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage);
         var totalDmg = meleeDmg;
         switch (key) {
           case 'Boss Gulgortz':
@@ -542,7 +559,7 @@ var updateTable = function() {
             break;
         }
         if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
-          var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage);
+          var galaxyDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage);
           totalDmg += galaxyDmg * 0.5;
           // comment += "LtGB assumes hits on target"
         }
@@ -573,7 +590,12 @@ var updateTable = function() {
             if (dakka) {
               comment += "dakka";
             }
+            comment = "⚔" + comment;
+          } else {
+            comment = "🥆" + comment;
           }
+        } else {
+          comment = "⚔" + comment;
         }
 
         document.getElementById(entryId+"-health").innerHTML=Math.round(health);
@@ -729,33 +751,12 @@ function sortTable(n) {
     </fieldset>
     <fieldset>
     <legend>Buffs</legend>
-    <label>Eldryon</label>
-    <input onChange="updateEldryon()" type="checkbox" id="eldryon-buff-enabled" checked></input>
-    <select onchange="updateEldryon()" name="eldryon-buff-rarity" id="eldryon-buff-rarity">
-    </select>
-    <input onChange="updateEldryon()" type="number" id="eldryon-buff-level" min="0" max="50" value="35">
-    +<span id="eldryon-buff-all"></span> damage [All] +<span id="eldryon-buff-aeldari"></span> damage [Aeldari]
-    <br>
     <label>Abaddon</label>
     <input onChange="updateAbaddon()" type="checkbox" id="abaddon-buff-enabled"></input>
     <select onchange="updateAbaddon()" id="abaddon-buff-rarity">
     </select>
     <input onChange="updateAbaddon()" type="number" id="abaddon-buff-level" min="0" max="50" value="35">
     +<span id="abaddon-buff-dmg"></span> damage [Chaos]
-    <br>
-    <label>Thaddeus</label>
-    <input onChange="updateThaddeus()" type="checkbox" id="thaddeus-buff-enabled"></input>
-    <select onchange="updateThaddeus()" id="thaddeus-buff-rarity">
-    </select>
-    <input onChange="updateThaddeus()" type="number" id="thaddeus-buff-level" min="0" max="50" value="35">
-    +<span id="thaddeus-buff-dmg"></span> damage [Heavy Weapon]
-    <br>
-    <label>Calgar</label>
-    <input onChange="updateCalgar()" type="checkbox" id="calgar-buff-enabled"></input>
-    <select onchange="updateCalgar()" id="calgar-buff-rarity">
-    </select>
-    <input onChange="updateCalgar()" type="number" id="calgar-buff-level" min="0" max="50" value="35">
-    +<span id="calgar-buff-all"></span> damage [All] +<span id="calgar-buff-imperial"></span> damage [Imperial]
     <br>
     <label>Aethana</label>
     <input onChange="updateAethana()" type="checkbox" id="aethana-buff-enabled"></input>
@@ -771,6 +772,13 @@ function sortTable(n) {
     <input onChange="updateAunShi()" type="number" id="aunshi-buff-level" min="0" max="50" value="35">
     +<span id="aunshi-buff-dmg"></span> damage [All] (every third turn)
     <br>
+    <label>Calgar</label>
+    <input onChange="updateCalgar()" type="checkbox" id="calgar-buff-enabled"></input>
+    <select onchange="updateCalgar()" id="calgar-buff-rarity">
+    </select>
+    <input onChange="updateCalgar()" type="number" id="calgar-buff-level" min="0" max="50" value="35">
+    +<span id="calgar-buff-all"></span> damage [All] +<span id="calgar-buff-imperial"></span> damage [Imperial]
+    <br>
     <label>Darkstrider</label>
     <input onChange="updateDarkstrider()" type="checkbox" id="darkstrider-buff-enabled"></input>
     <select onchange="updateDarkstrider()" id="darkstrider-buff-rarity">
@@ -778,9 +786,28 @@ function sortTable(n) {
     <input onChange="updateDarkstrider()" type="number" id="darkstrider-buff-level" min="0" max="50" value="35">
     +<span id="darkstrider-buff-dmg"></span> damage [Ranged; Markerlight]
     <br>
-    TODO: High Marshal Helbrecht missing
+    <label>Eldryon</label>
+    <input onChange="updateEldryon()" type="checkbox" id="eldryon-buff-enabled" checked></input>
+    <select onchange="updateEldryon()" name="eldryon-buff-rarity" id="eldryon-buff-rarity">
+    </select>
+    <input onChange="updateEldryon()" type="number" id="eldryon-buff-level" min="0" max="50" value="35">
+    +<span id="eldryon-buff-all"></span> damage [All] +<span id="eldryon-buff-aeldari"></span> damage [Aeldari]
+    <br>
+    <label>Helbrecht</label>
+    <input onChange="updateHelbrecht()" type="checkbox" id="helbrecht-buff-enabled"></input>
+    <select onchange="updateHelbrecht()" id="helbrecht-buff-rarity">
+    </select>
+    <input onChange="updateHelbrecht()" type="number" id="helbrecht-buff-level" min="0" max="50" value="35">
+    +<span id="helbrecht-buff-dmg"></span> damage [vs. Psyker]
     <br>
     TODO: Pestillian missing
+    <br>
+    <label>Thaddeus</label>
+    <input onChange="updateThaddeus()" type="checkbox" id="thaddeus-buff-enabled"></input>
+    <select onchange="updateThaddeus()" id="thaddeus-buff-rarity">
+    </select>
+    <input onChange="updateThaddeus()" type="number" id="thaddeus-buff-level" min="0" max="50" value="35">
+    +<span id="thaddeus-buff-dmg"></span> damage [Heavy Weapon]
     </fieldset>
     <fieldset>
     <legend>Conditional</legend>
