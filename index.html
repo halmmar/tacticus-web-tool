@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style type="text/css">
+    @media (min-width: 1280px) {
+      header {
+        max-width: 640px;
+        position: fixed;
+        top: 0;
+        right: 0;
+      }
+    }
+    table {
+      max-width: 640px;
+    }
+    input[type='number']{
+      width: 25pt;
+    }
+    .armorBox {
+      width: 36pt !important
+    }
+  </style>
     <script>
         
 var getJSON = function(url, callback) {
@@ -176,7 +195,6 @@ var round2 = function(num) {
   return Math.round( num * 100 + Number.EPSILON ) / 100;
 }
 var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit) {
-  console.log(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit)
   numRounds = aunshiBonusDmg > 0 ? 3 : 1;
   var total = 0;
   for (i=0; i<numRounds; i++) {
@@ -265,7 +283,7 @@ var updateTable = function() {
           switch (trait) {
             case "dakka":
               dakka = 2;
-              comment += "dakka working";
+              comment += "dakka";
               break;
             case "beast snagga":
               if (opponentBeastSnagga) {
@@ -283,13 +301,12 @@ var updateTable = function() {
               }
               if (heavyWeaponEnabled) {
                 dmgFactor *= 1.25;
-                comment += "heavy weapon working"
+                comment += "heavy weapon"
                 if (key=="Maugan Ra") {
                   var mauganCritChance = (char.passive[1] + passiveLevelAsRarityInt - (passiveLevelAsRarityInt==0 ? 1 : 0)) / 100;
                   var mauganCritDamage = char.passive[0] * passiveFactor;
                   critChance += mauganCritChance;
                   critDamage += mauganCritDamage;
-                  comment += ", passive working";
                 }
               }
               break;
@@ -356,13 +373,13 @@ var updateTable = function() {
           if (madeContact) {
             var passiveDmg = char.passive[key=="Kut skoden" ? 0 : 2] * passiveFactor;
             buffDmg += passiveDmg;
-            comment += ", passive working (" + Math.round(passiveDmg) + ")";
+            comment += "passive (" + Math.round(passiveDmg) + ")";
           }
           break;
         case 'Sword Brother Godswyl':
           var passiveDmg = char.passive[0] * passiveFactor;
           critDamage += passiveDmg;
-          comment += ", passive working (crit +" + Math.round(passiveDmg) + ")";
+          comment += "passive (crit +" + Math.round(passiveDmg) + ")";
           break;
         case 'Abaddon the despolier':
           abaddonBonusDmgModifiedByFaction = 0;
@@ -492,13 +509,12 @@ var updateTable = function() {
         switch (key) {
           case 'Boss Gulgortz':
             totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3, opponentarmor, char.ranged.pierce, critChance, critDamage);
-            comment += ", passive working";
             break;
         }
         if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
           var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage);
           totalDmg += galaxyDmg * 0.5;
-          comment += "LtGB assumes hits on target"
+          // comment += "LtGB assumes hits on target"
         }
         if (char.hasOwnProperty("ranged")) {
           var rangedDmg = calcDmg(dmg+buffDmg, dmgFactor, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
@@ -506,7 +522,7 @@ var updateTable = function() {
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
             var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor, 0, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance, critDamage);
-            comment += ", passive working ("+Math.round(volkDamageBuff)+")";
+            comment += "passive ("+Math.round(volkDamageBuff)+")";
             rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
             break;
           case "Re'Vas":
@@ -514,7 +530,7 @@ var updateTable = function() {
             var revasPassiveDmgHigh = passiveFactor*char.passive[1];
             var revasPassiveOverload = (opponentHasMarkerlight || opponentIsMech) ? passiveFactor*char.passive[2] : 0;
             rangedDmg += calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor, 0, 3, opponentarmor, 0.35, critChance, critDamage);
-            comment += ", passive 3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
+            comment += "passive 3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
             break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
@@ -593,6 +609,9 @@ function sortTable(n) {
     </script>
 </head>
 <body>
+  <header>
+    <fieldset>
+      <legend>Character Development Level</legend>
   <select onchange="updateTable()" name="gearlevel" id="gearlevel">
     <option value="0">Stone Rank I</option>
     <option value="1">Stone Rank II</option>
@@ -653,18 +672,22 @@ function sortTable(n) {
     <select onChange="updateTable()" id="prefer-eq-armour">
       <option value="0" selected>Health</option>
     </select>
-    <br>
-    <label>Opponent armor</label>
-    <input onChange="updateTable()" type="number" id="opponentarmor" min="0" max="3000" value="300">
-    <label>Mech</label>
-    <input onChange="updateTable()" type="checkbox" id="opponent-is-mech"></input>
-    <label>Psyker</label>
-    <input onChange="updateTable()" type="checkbox" id="opponent-is-psyker"></input>
-    <label>Markerlight</label>
-    <input onChange="updateTable()" type="checkbox" id="opponent-has-markerlight"></input>
-    <label>Big Target/Vehicle</label>
-    <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
-    <br>
+    </fieldset>
+    <fieldset>
+      <legend>Opponent</legend>
+      <label>Armor</label>
+      <input class="armorBox" onChange="updateTable()" type="number" id="opponentarmor" min="0" max="3000" value="300" size="4">
+      <label>Mech</label>
+      <input onChange="updateTable()" type="checkbox" id="opponent-is-mech"></input>
+      <label>Psyker</label>
+      <input onChange="updateTable()" type="checkbox" id="opponent-is-psyker"></input>
+      <label>Markerlight</label>
+      <input onChange="updateTable()" type="checkbox" id="opponent-has-markerlight"></input>
+      <label>Big Target/Vehicle</label>
+      <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
+    </fieldset>
+    <fieldset>
+    <legend>Buffs</legend>
     <label>Eldryon</label>
     <input onChange="updateEldryon()" type="checkbox" id="eldryon-buff-enabled" checked></input>
     <select onchange="updateEldryon()" name="eldryon-buff-rarity" id="eldryon-buff-rarity">
@@ -706,14 +729,17 @@ function sortTable(n) {
     </select>
     <input onChange="updateAunShi()" type="number" id="aunshi-buff-level" min="0" max="50" value="35">
     +<span id="aunshi-buff-dmg"></span> damage [All] (every third turn)
-    <br>
+    </fieldset>
+    <fieldset>
+    <legend>Conditional</legend>
     <label>Heavy Weapon</label>
     <input title="Heavy Weapon and similar passives (Maugan Ra) are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
     <label>Made Contact</label>
     <input title="Made contact with the target this turn (does not work well on bosses that you pin down or that reduce the number of hits when moving into contact)" onChange="updateTable()" type="checkbox" id="made-contact"></input>
     <label>LtGB</label>
     <input title="Let the Galaxy Burn can be disabled since it often hits allies instead of the intended target" onChange="updateTable()" type="checkbox" id="ltgb-enabled" checked></input>
-    <br>
+    </fieldset>
+    </header>
 
     <table id="ch-table"></table>
   <footer>
