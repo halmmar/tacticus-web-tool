@@ -2,17 +2,19 @@
 <html>
 <head>
   <style type="text/css">
-    @media (min-width: 1280px) {
+    table {
+      font-size: 11pt;
+    }
+    @media (min-width: 1440px) {
       header {
-        width: calc(100% - 650px);
+        width: calc(100% - 750px);
         position: fixed;
         top: 0;
         right: 0;
       }
-    }
-    table {
-      max-width: 640px;
-      font-size: 11pt;
+      table {
+        max-width: 740px;
+      }
     }
     input[type='number']{
       width: 25pt;
@@ -285,6 +287,7 @@ var updateTable = function() {
         var buffDmg = 0;
         var dmgFactor = 1.0;
         var dmgFactorMelee = 1.0;
+        var dmgFactorRanged = 1.0;
         var abaddonBonusDmgModifiedByFaction = (char.alliance == "Chaos" ? abaddonBonusDmg : 0)
         var eldryondamageModifiedByFaction = eldryondamage + (char.faction == "Aeldari" ? eldryondamageAeldari : 0.0);
         var calgardamageModifiedByFaction = (char.alliance == "Imperial" ? calgarBonusDmgImperial : calgarBonusDmg)
@@ -299,7 +302,7 @@ var updateTable = function() {
         }
 
         if (opponentHasMarkerlight && char.faction == "T'au Empire") {
-          dmgFactor *= 1.15;
+          dmgFactorRanged *= 1.15;
         }
         
         char.traits.forEach(function (trait) {
@@ -394,7 +397,7 @@ var updateTable = function() {
           if (madeContact) {
             var passiveDmg = char.passive[key=="Kut skoden" ? 0 : 2] * passiveFactor;
             buffDmg += passiveDmg;
-            comment += "passive (" + Math.round(passiveDmg) + ")";
+            comment += "contact (+" + Math.round(passiveDmg) + ")";
           }
           break;
         case 'Sword Brother Godswyl':
@@ -539,11 +542,11 @@ var updateTable = function() {
         }
         if (char.hasOwnProperty("ranged")) {
           // Ranged damage
-          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
+          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
           switch (key) {
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
-            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor, 0, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance, critDamage);
+            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor*dmgFactorRanged, 0, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance, critDamage);
             comment += "passive (+"+Math.round(volkDamageBuff)+")";
             rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
             break;
@@ -551,12 +554,12 @@ var updateTable = function() {
             var revasPassiveDmgLow = passiveFactor*char.passive[0];
             var revasPassiveDmgHigh = passiveFactor*char.passive[1];
             var revasPassiveOverload = (opponentHasMarkerlight || opponentIsMech) ? passiveFactor*char.passive[2] : 0;
-            rangedDmg += calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor, 0, 3, opponentarmor, 0.35, critChance, critDamage);
+            rangedDmg += calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor*dmgFactorRanged, 0, 3, opponentarmor, 0.35, critChance, critDamage);
             comment += "3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
             break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
-            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor, aunshiBonusDmg, ltgbHits, opponentarmor, char.ranged.pierce, critChance, critDamage);
+            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorRanged, aunshiBonusDmg, ltgbHits, opponentarmor, char.ranged.pierce, critChance, critDamage);
             rangedDmg += galaxyDmg * 0.5;
           }
           if (rangedDmg > totalDmg) {
