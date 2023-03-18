@@ -4,6 +4,7 @@
   <style type="text/css">
     table {
       font-size: 11pt;
+      width: 100%;
     }
     @media (min-width: 1440px) {
       header {
@@ -19,9 +20,14 @@
     input[type='number']{
       width: 25pt;
     }
+    .nameCell {
+      width: 100pt;
+    }
     .statCell {
-      min-width: 27pt;
+      width: 30pt;
       text-align: right;
+    }
+    .commentCell {
     }
     .armourBox {
       width: 36pt !important
@@ -205,7 +211,7 @@ var characterTableEntryId = function(str) {
 }
 
 var addTable = function() {
-    res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">%</th><th onclick="sortTable(5)">Crit</th><th onclick="sortTable(6)">%</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Avg dmg</th><th onclick="sortTable(9)">Comment</th></tr>';
+    res = '<tr><th class="nameCell" onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">%</th><th onclick="sortTable(5)">Crit</th><th onclick="sortTable(6)">%</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Expected</th><th class="commentCell" onclick="sortTable(9)">Comment</th></tr>';
     Object.keys(tb_chars).forEach(function callback(key) {
         var id = characterTableEntryId(key);
         res += '<tr id="'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-health"></td><td class="statCell" id="'+id+'-armour"></td><td class="statCell" id="'+id+'-dmg"></td><td class="statCell" id="'+id+'-crit-chance"></td><td class="statCell" id="'+id+'-crit-dmg"></td><td class="statCell" id="'+id+'-block-chance"></td><td class="statCell" id="'+id+'-block"></td><td class="statCell" id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
