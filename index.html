@@ -226,6 +226,7 @@ var updateTable = function() {
     var aethanaBonusDmgAeldar = +document.getElementById("aethana-buff-aeldari").innerHTML;
     var aethanaBonusCritChance = +document.getElementById("aethana-buff-crit").innerHTML;
     var aunshiBonusDmgRawData = +document.getElementById("aunshi-buff-dmg").innerHTML;
+    var ltgbEnabled = document.getElementById("ltgb-enabled").checked;
     
     Object.keys(tb_chars_and_summons).forEach(function callback(key) {
         var comment = "";
@@ -494,7 +495,7 @@ var updateTable = function() {
             comment += ", passive working";
             break;
         }
-        if (char.traits.includes("let the galaxy burn")) {
+        if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
           var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage);
           totalDmg += galaxyDmg * 0.5;
           comment += "LtGB assumes hits on target"
@@ -516,7 +517,7 @@ var updateTable = function() {
             comment += ", passive 3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
             break;
           }
-          if (char.traits.includes("let the galaxy burn")) {
+          if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
             var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor, aunshiBonusDmg, ltgbHits, opponentarmor, char.ranged.pierce, critChance, critDamage);
             rangedDmg += galaxyDmg * 0.5;
           }
@@ -710,8 +711,8 @@ function sortTable(n) {
     <input title="Heavy Weapon and similar passives (Maugan Ra) are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
     <label>Made Contact</label>
     <input title="Made contact with the target this turn (does not work well on bosses that you pin down or that reduce the number of hits when moving into contact)" onChange="updateTable()" type="checkbox" id="made-contact"></input>
-    <br>
-    TODO: More buffs
+    <label>LtGB</label>
+    <input title="Let the Galaxy Burn can be disabled since it often hits allies instead of the intended target" onChange="updateTable()" type="checkbox" id="ltgb-enabled" checked></input>
     <br>
 
     <table id="ch-table"></table>
