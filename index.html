@@ -57,6 +57,7 @@ var getJSON = function(url, callback) {
 };
 
 tb_chars = {};
+tb_bosses = {};
 tb_summons = {};
 tb_chars_and_summons = {};
 tb_gear = [];
@@ -73,6 +74,7 @@ function(err, data) {
     tb_chars = data.characters;
     tb_summons = data.summons;
     tb_gear = data.gear;
+    tb_bosses = data.bosses;
     tb_abilities_factor = data.abilities_factor;
     tb_archimatos_ability_factor = data.archimatos_ability_factor;
     tb_equipment = data.equipment;
@@ -92,6 +94,7 @@ function(err, data) {
     updateDarkstrider(1);
     updateHelbrecht(1);
     updateTable();
+    updateOpponentPreset();
   }
 });
 
@@ -213,6 +216,42 @@ var updateHelbrecht = function(skipUpdate) {
   if (1 != skipUpdate) updateTable();
 }
 
+var updateOpponentPreset = function() {
+  var mech = false;
+  var psyker = false;
+  var markerlight = false;
+  var bigtarget = false;
+  var preset = document.getElementById("opponent-preset").value;
+  var level = +document.getElementById("opponent-preset-level").value;
+  var primeKilled = document.getElementById("opponent-prime-killed").checked;
+  switch (preset.split(" ")[0]) {
+    case "szarekh":
+    case "ghazghkull":
+      mech = true;
+      bigtarget = true;
+      break;
+    case "hive":
+    case "tervigon":
+      psyker = true;
+      bigtarget = true;
+      break;
+  }
+  var armour = tb_bosses[preset]["armour"][level-1];
+  if (armour) {
+    if (primeKilled) {
+      armour *= (1-tb_bosses[preset]["debuff"])
+    }
+    document.getElementById("opponent-armour").value = armour;
+    document.getElementById("opponent-preset-comment").innerHTML = "&nbsp;";
+  } else {
+    document.getElementById("opponent-preset-comment").innerHTML = "Armour unknown.";
+  }
+  document.getElementById("opponent-is-mech").checked = mech;
+  document.getElementById("opponent-is-psyker").checked = psyker;
+  document.getElementById("opponent-has-markerlight").checked = markerlight;
+  document.getElementById("opponent-beast-snagga").checked = bigtarget;
+}
+
 var updateGear = function() {
     res = "";
     tb_gear.forEach(function callback(v) {
@@ -259,7 +298,7 @@ var updateTable = function() {
     var starlevel = document.getElementById("starlevel").value;
     var gearlevel = document.getElementById("gearlevel").value;
     var levelStatFactor = Math.pow(1.25205, gearlevel)*(1+0.1*starlevel);
-    var opponentarmor = +document.getElementById("opponentarmor").value;
+    var opponentarmor = +document.getElementById("opponent-armour").value;
     var preferEqCritDmg = +document.getElementById("prefer-eq-crit-dmg").value;
     // Tyrant max debuff is 60%
     var eldryondamage = +document.getElementById("eldryon-buff-all").innerHTML;
@@ -733,8 +772,29 @@ function sortTable(n) {
     </fieldset>
     <fieldset>
       <legend>Opponent</legend>
+      <fieldset><legend>Preset</legend>
+      <select onChange="updateOpponentPreset()" id="opponent-preset">
+        <option value="ghazghkull" selected>Ghazghkull</option>
+        <option value="hive tyrant gorgon">Hive Tyrant Gorgon</option>
+        <option value="hive tyrant kronos">Hive Tyrant Kronos</option>
+        <option value="hive tyrant leviathan">Hive Tyrant Leviathan</option>
+        <option value="szarekh">Szarekh</option>
+        <option value="tervigon gorgon">Tervigon Gorgon</option>
+        <option value="tervigon kronos">Tervigon Kronos</option>
+        <option value="tervigon leviathan">Tervigon Leviathan</option>
+      </select>
+      <select onChange="updateOpponentPreset()" id="opponent-preset-level">
+        <option value="1">L1</option>
+        <option value="2">L2</option>
+        <option value="3" selected>L3</option>
+        <option value="4">L4</option>
+      </select>
+      <input title="The primes have been killed, debuffing armour" onChange="updateOpponentPreset()" type="checkbox" id="opponent-prime-killed" checked></input>
+      <br>
+      <div id="opponent-preset-comment"></div>
+      </fieldset>
       <fieldset><legend>Armour</legend>
-      <input class="armourBox" onChange="updateTable()" type="number" id="opponentarmor" min="0" max="3000" value="300" size="4">
+      <input class="armourBox" onChange="updateTable()" type="number" id="opponent-armour" min="0" max="3000" value="300" size="4">
       </fieldset>
       <fieldset><legend>Mech</legend>
       <input onChange="updateTable()" type="checkbox" id="opponent-is-mech"></input>

@@ -104,209 +104,77 @@
     22.2857142871429
   ],
   "bosses": {
-    "L1 GORGON TYRANT": {
-      "alliance": "TYRANT",
-      "armour": 645.0,
-      "damage": 780.0,
-      "faction": "GORGON",
-      "health": 1500000.0,
-      "melee": {
-        "hits": 5,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0
-      },
-      "traits": []
+    "ghazghkull": {
+      "armour": [
+        302.0,
+        null,
+        660.0,
+        null
+      ],
+      "debuff": 0.5
     },
-    "L1 Hapthatra ": {
-      "alliance": "NECRONS",
-      "armour": 625.0,
-      "damage": 311.0,
-      "faction": "LEFT",
-      "health": 12274.0,
-      "melee": {
-        "hits": 3,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 9,
-        "pierce": 0.3
-      },
-      "traits": []
+    "hive tyrant gorgon": {
+      "armour": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "debuff": 0.6
     },
-    "L1 KRONOS TERVIGON": {
-      "alliance": "TERVIGON",
-      "armour": 543.0,
-      "damage": 888.0,
-      "faction": "KRONOS",
-      "health": 1500000.0,
-      "melee": {
-        "hits": 3,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0
-      },
-      "traits": []
+    "hive tyrant kronos": {
+      "armour": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "debuff": 0.6
     },
-    "L1 LEVIATHAN TYRANT": {
-      "alliance": "TYRANT",
-      "armour": 418.0,
-      "damage": 1016.0,
-      "faction": "LEVIATHAN",
-      "health": 1500000.0,
-      "melee": {
-        "hits": 5,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0
-      },
-      "traits": []
+    "hive tyrant leviathan": {
+      "armour": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "debuff": 0.6
     },
-    "L1 Szarekh": {
-      "alliance": "NECRONS",
-      "armour": 449.0,
-      "damage": 449.0,
-      "faction": "MAIN",
-      "health": 1500000.0,
-      "melee": {
-        "hits": 3,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 6,
-        "pierce": 0.3
-      },
-      "traits": []
+    "szarekh": {
+      "armour": [
+        275.0,
+        null,
+        null,
+        920.0
+      ],
+      "debuff": 0.6
     },
-    "L1 Triarchal Menhir": {
-      "alliance": "NECRONS",
-      "armour": 826.0,
-      "damage": 1219.0,
-      "faction": "LEFT",
-      "health": 0.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.3
-      },
-      "traits": []
+    "tervigon gorgon": {
+      "armour": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "debuff": 0.6
     },
-    "L2 KRONOS TERVIGON": {
-      "alliance": "TERVIGON",
-      "armour": 640.0,
-      "damage": 1557.0,
-      "faction": "KRONOS",
-      "health": 2000000.0,
-      "melee": {
-        "hits": 3,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0
-      },
-      "traits": []
+    "tervigon kronos": {
+      "armour": [
+        null,
+        560.0,
+        null,
+        null
+      ],
+      "debuff": 0.6
     },
-    "L2 LEVIATHAN TERVIGON": {
-      "alliance": "TERVIGON",
-      "armour": 640.0,
-      "damage": 1557.0,
-      "faction": "LEVIATHAN",
-      "health": 2000000.0,
-      "melee": {
-        "hits": 3,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0
-      },
-      "traits": []
-    },
-    "L2 LEVIATHAN TYRANT": {
-      "alliance": "TYRANT",
-      "armour": 640.0,
-      "damage": 1557.0,
-      "faction": "LEVIATHAN",
-      "health": 2000000.0,
-      "melee": {
-        "hits": 3,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0
-      },
-      "traits": []
-    },
-    "L3 GORGON TYRANT": {
-      "alliance": "TYRANT",
-      "armour": 1510.0,
-      "damage": 1826.0,
-      "faction": "GORGON",
-      "health": 2500000.0,
-      "melee": {
-        "hits": 5,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0
-      },
-      "traits": []
-    },
-    "L3 KRONOS TYRANT": {
-      "alliance": "TYRANT",
-      "armour": 635.0,
-      "damage": 2078.0,
-      "faction": "KRONOS",
-      "health": 2500000.0,
-      "melee": {
-        "hits": 5,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0
-      },
-      "traits": []
-    },
-    "L3 LEVIATHAN TERVIGON": {
-      "alliance": "TERVIGON",
-      "armour": 978.0,
-      "damage": 2379.0,
-      "faction": "LEVIATHAN",
-      "health": 2500000.0,
-      "melee": {
-        "hits": 3,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0
-      },
-      "traits": []
-    },
-    "L3 LEVIATHAN TYRANT": {
-      "alliance": "TYRANT",
-      "armour": 1271.0,
-      "damage": 2078.0,
-      "faction": "LEVIATHAN",
-      "health": 2500000.0,
-      "melee": {
-        "hits": 5,
-        "pierce": 0.3
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0
-      },
-      "traits": []
+    "tervigon leviathan": {
+      "armour": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "debuff": 0.6
     }
   },
   "characters": {

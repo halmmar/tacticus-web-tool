@@ -85,6 +85,18 @@ for index, row in tb_SummonsList.iterrows():
 tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$65', True)
 characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.itertuples(index=False)])
 
+# Boss stats
+bossStats = {
+  "ghazghkull": {"armour": [151/0.5,None,330/0.5,None], "debuff": 0.5},
+  "tervigon gorgon": {"armour": [None, None, None, None], "debuff": 0.6},
+  "tervigon leviathan": {"armour": [None, None, None, None], "debuff": 0.6},
+  "tervigon kronos": {"armour": [None, 224/0.4, None, None], "debuff": 0.6},
+  "hive tyrant gorgon": {"armour": [None, None, None, None], "debuff": 0.6},
+  "hive tyrant leviathan": {"armour": [None, None, None, None], "debuff": 0.6},
+  "hive tyrant kronos": {"armour": [None, None, None, None], "debuff": 0.6}, # 60% max debuff
+  "szarekh": {"armour": [110/0.4, None, None, 368/0.4], "debuff": 0.6} # 60% max debuff?
+}
+
 pierce = dict([(k.lower(),v) for (k,v) in tb_Pierce.itertuples(index=False)])
 gear = [(rank,int(gearLevel)) for (rarity,rank,rankMetal,rankLevel,gearLevel) in tb_Gear.itertuples(index=False)]
 
@@ -207,6 +219,6 @@ def toJSON(rows):
     for name in summonsNames:
         if name not in summons:
             raise Exception("%s is not in the list of summons" % name)
-    return {"characters": characters, "bosses": bosses, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "archimatos_ability_factor": tb_Abilities_factor_archimatos, "equipment": eqDict, "version": file.split("-")[1].strip().replace(".xlsx", "")}
+    return {"characters": characters, "bosses": bossStats, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "archimatos_ability_factor": tb_Abilities_factor_archimatos, "equipment": eqDict, "version": file.split("-")[1].strip().replace(".xlsx", "")}
 with open("tacticus.json", "w") as fout:
     fout.write(json.dumps(toJSON(tb_Characters), sort_keys=True, indent=2))
