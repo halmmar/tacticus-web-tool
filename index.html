@@ -236,13 +236,20 @@ var updateOpponentPreset = function() {
       bigtarget = true;
       break;
   }
-  var armour = tb_bosses[preset]["armour"][level-1];
-  if (armour) {
+  var tb_armour = tb_bosses[preset]["armour"];
+  var armour = tb_armour[level-1];
+  var armourMax = Math.max(...tb_armour);
+  if (armour || armourMax) {
+    var armourUsed = armour || armourMax;
     if (primeKilled) {
-      armour *= (1-tb_bosses[preset]["debuff"])
+      armourUsed *= (1-tb_bosses[preset]["debuff"])
     }
-    document.getElementById("opponent-armour").value = armour;
-    document.getElementById("opponent-preset-comment").innerHTML = "&nbsp;";
+    document.getElementById("opponent-armour").value = armourUsed;
+    if (!armour) {
+      document.getElementById("opponent-preset-comment").innerHTML = "Armour unknown; using L" + (tb_armour.findIndex(armour => armour == armourMax) + 1);
+    } else {
+      document.getElementById("opponent-preset-comment").innerHTML = "&nbsp;";
+    }
   } else {
     document.getElementById("opponent-preset-comment").innerHTML = "Armour unknown.";
   }
