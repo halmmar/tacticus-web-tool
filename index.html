@@ -6,6 +6,8 @@
     table {
       font-size: 11pt;
       width: 100%;
+      line-height: 1;
+      overflow: hidden;
     }
     @media (min-width: 1440px) {
       header {
@@ -338,9 +340,7 @@ var updateTable = function() {
               }
               break;
             case "close combat weakness":
-              if (opponentBeastSnagga) {
-                dmgFactorMelee *= 0.50;
-              }
+              dmgFactorMelee *= 0.50;
               break;
             case "heavy weapon":
               if (thaddeusPassive) {
