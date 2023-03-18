@@ -53,55 +53,55 @@
   ],
   "archimatos_ability_factor": [
     1.0,
-    1.171428571,
-    1.342857143,
-    1.514285714,
-    1.685714286,
-    1.885714286,
-    2.085714286,
-    2.257142857,
-    2.428571429,
+    1.17142857142857,
+    1.34285714285714,
+    1.51428571428571,
+    1.68571428571429,
+    1.88571428571429,
+    2.08571428571429,
+    2.25714285714286,
+    2.42857142857143,
     2.6,
-    2.771428571,
-    2.942857143,
-    3.085714286,
-    3.257142857,
+    2.77142857142857,
+    2.94285714285714,
+    3.08571428571429,
+    3.25714285714286,
     3.4,
-    3.542857143,
-    3.685714286,
+    3.54285714285714,
+    3.68571428571429,
     3.8,
-    3.942857143,
-    4.057142857,
-    4.228571429,
-    4.485714286,
-    5.085714286,
-    5.657142857,
-    6.228571429,
-    6.771428571,
-    7.285714286,
+    3.94285714285714,
+    4.05714285714286,
+    4.22857142857143,
+    4.48571428571429,
+    5.08571428571429,
+    5.65714285714286,
+    6.22857142857143,
+    6.77142857142857,
+    7.28571428571429,
     7.8,
-    8.257142857,
-    8.714285714,
-    9.142857143,
-    9.571428571,
-    9.971428571,
-    10.34285714,
-    10.68571429,
-    11.02857143,
-    11.34285714,
-    11.62857143,
-    11.88571429,
-    12.34285714,
-    13.02857143,
-    13.74285714,
-    14.48571429,
-    15.28571429,
-    16.91428571,
-    18.48571429,
-    19.94285714,
+    8.25714285714286,
+    8.71428571428571,
+    9.14285714285714,
+    9.57142857142857,
+    9.97142857142857,
+    10.3428571428571,
+    10.6857142857143,
+    11.0285714285714,
+    11.3428571428571,
+    11.6285714285714,
+    11.8857142857143,
+    12.3428571428571,
+    13.0285714285714,
+    13.7428571428571,
+    14.4857142857143,
+    15.2857142857143,
+    16.9142857142857,
+    18.4857142857143,
+    19.9428571428571,
     19.82857143,
-    21.11428571,
-    22.28571429
+    21.1142857157143,
+    22.2857142871429
   ],
   "bosses": {
     "L1 GORGON TYRANT": {
@@ -180,6 +180,18 @@
       },
       "ranged": {
         "hits": 6,
+        "pierce": 0.3
+      },
+      "traits": []
+    },
+    "L1 Triarchal Menhir": {
+      "alliance": "NECRONS",
+      "armour": 826.0,
+      "damage": 1219.0,
+      "faction": "LEFT",
+      "health": 0.0,
+      "melee": {
+        "hits": 1,
         "pierce": 0.3
       },
       "traits": []
@@ -477,6 +489,26 @@
         "let the galaxy burn",
         "psyker"
       ]
+    },
+    "Aun'Shi (preview)": {
+      "alliance": "Xenos",
+      "armour": 16.0,
+      "damage": 14.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "T'au Empire",
+      "health": 85.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.4
+      },
+      "passive": [
+        8.0
+      ],
+      "traits": []
     },
     "Bellator": {
       "alliance": "Imperial",
@@ -2343,7 +2375,7 @@
   ],
   "summons": {
     "Bloodletter": {
-      "alliance": null,
+      "alliance": "",
       "armour": 0,
       "damage": 35.0,
       "faction": "Black Legion",
@@ -2358,7 +2390,7 @@
       ]
     },
     "Bloodletter (v1.6)": {
-      "alliance": null,
+      "alliance": "",
       "armour": 0,
       "damage": 24.849999999999998,
       "faction": "Black Legion",
@@ -2374,7 +2406,7 @@
       ]
     },
     "Cadian Guardsman": {
-      "alliance": null,
+      "alliance": "",
       "armour": 8.0,
       "damage": 24.0,
       "faction": "Astra Miltarum",
@@ -2393,7 +2425,7 @@
       ]
     },
     "Colour Sergeant Kell": {
-      "alliance": null,
+      "alliance": "",
       "armour": 15.0,
       "damage": 18.0,
       "faction": "Astra Miltarum",
@@ -2407,7 +2439,7 @@
       ]
     },
     "Geminae Superia": {
-      "alliance": null,
+      "alliance": "",
       "armour": 20.0,
       "damage": 25.0,
       "faction": "ADEPTA SOROITAS",
@@ -2422,7 +2454,7 @@
       ]
     },
     "Grot": {
-      "alliance": null,
+      "alliance": "",
       "armour": 0,
       "damage": 33.0,
       "faction": "Ork",
@@ -2438,7 +2470,7 @@
       ]
     },
     "Grot Tank": {
-      "alliance": null,
+      "alliance": "",
       "armour": 20.0,
       "damage": 25.0,
       "faction": "Ork",
@@ -2459,7 +2491,7 @@
       ]
     },
     "Inceptor": {
-      "alliance": null,
+      "alliance": "",
       "armour": 12.0,
       "damage": 10.0,
       "faction": "Ultramarines",
@@ -2475,7 +2507,7 @@
       ]
     },
     "MV71 Sniper Drone": {
-      "alliance": null,
+      "alliance": "",
       "armour": 0,
       "damage": 28.0,
       "faction": "T'au Empire",
@@ -2497,7 +2529,7 @@
       ]
     },
     "Necron warrior": {
-      "alliance": null,
+      "alliance": "",
       "armour": 15.0,
       "damage": 20.0,
       "faction": "Necrons",
@@ -2516,7 +2548,7 @@
       ]
     },
     "Pox Walkers": {
-      "alliance": null,
+      "alliance": "",
       "armour": 0,
       "damage": 35.0,
       "faction": "Death guard",
@@ -2531,7 +2563,7 @@
       ]
     },
     "Scarab Swarm": {
-      "alliance": null,
+      "alliance": "",
       "armour": 0,
       "damage": 10.0,
       "faction": "Necrons",
@@ -2547,7 +2579,7 @@
       ]
     },
     "Scarab Swarm (v1.6)": {
-      "alliance": null,
+      "alliance": "",
       "armour": 0,
       "damage": 10.0,
       "faction": "Necrons",
@@ -2564,7 +2596,7 @@
       ]
     },
     "Shield Drone": {
-      "alliance": null,
+      "alliance": "",
       "armour": 4.0,
       "damage": 12.0,
       "faction": "T'au Empire",

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <script>
@@ -40,18 +41,17 @@ function(err, data) {
     tb_chars_and_summons = Object.assign(tb_chars,tb_summons)
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
-    document.getElementById("eldryon-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
-    document.getElementById("thaddeus-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
-    document.getElementById("calgar-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
-    document.getElementById("abaddon-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
-    document.getElementById("aethana-buff-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
-    document.getElementById("equipment-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
+    ["eldryon-buff", "thaddeus-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "equipment"].forEach(function (key) {
+      document.getElementById(key + "-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
+    });
     addTable();
-    updateEldryon();
-    updateAbaddon();
-    updateThaddeus();
-    updateCalgar();
-    updateAethana();
+    updateEldryon(1);
+    updateAbaddon(1);
+    updateThaddeus(1);
+    updateCalgar(1);
+    updateAethana(1);
+    updateAunShi(1);
+    updateTable();
   }
 });
 
@@ -75,69 +75,80 @@ var passiveFactorCharacter = function(name) {
   return passiveFactorActiveCharacterWithTable(tb_abilities_factor);
 }
 
-var updateEldryon = function() {
+var updateEldryon = function(skipUpdate) {
   if (!document.getElementById("eldryon-buff-enabled").checked) {
     document.getElementById("eldryon-buff-all").innerHTML = 0;
     document.getElementById("eldryon-buff-aeldari").innerHTML = 0;
-    updateTable();
+    if (1 != skipUpdate) updateTable();
     return;
   }
   var level = document.getElementById("eldryon-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("eldryon-buff-rarity").value*0.2);
   document.getElementById("eldryon-buff-all").innerHTML = Math.round(tb_chars["Eldryon"].passive[0]*factor);
   document.getElementById("eldryon-buff-aeldari").innerHTML = Math.round(tb_chars["Eldryon"].passive[1]*factor);
-  updateTable();
+  if (1 != skipUpdate) updateTable();
 };
 
-var updateAbaddon = function() {
+var updateAbaddon = function(skipUpdate) {
   if (!document.getElementById("abaddon-buff-enabled").checked) {
     document.getElementById("abaddon-buff-dmg").innerHTML = 0;
-    updateTable();
+    if (1 != skipUpdate) updateTable();
     return;
   }
   var level = document.getElementById("abaddon-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("abaddon-buff-rarity").value*0.2);
   document.getElementById("abaddon-buff-dmg").innerHTML = Math.round(tb_chars["Abaddon the despolier"].passive[0]*factor);
-  updateTable();
+  if (1 != skipUpdate) updateTable();
 };
-var updateThaddeus = function() {
+var updateThaddeus = function(skipUpdate) {
   if (!document.getElementById("thaddeus-buff-enabled").checked) {
     document.getElementById("thaddeus-buff-dmg").innerHTML = 0;
-    updateTable();
+    if (1 != skipUpdate) updateTable();
     return;
   }
   var level = document.getElementById("thaddeus-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("thaddeus-buff-rarity").value*0.2);
   document.getElementById("thaddeus-buff-dmg").innerHTML = Math.round(tb_chars["Thaddeus noble"].passive[0]*factor);
-  updateTable();
+  if (1 != skipUpdate) updateTable();
 }
-var updateCalgar = function() {
+var updateCalgar = function(skipUpdate) {
   if (!document.getElementById("calgar-buff-enabled").checked) {
     document.getElementById("calgar-buff-all").innerHTML = 0;
     document.getElementById("calgar-buff-imperial").innerHTML = 0;
-    updateTable();
+    if (1 != skipUpdate) updateTable();
     return;
   }
   var level = document.getElementById("calgar-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("calgar-buff-rarity").value*0.2);
   document.getElementById("calgar-buff-all").innerHTML = Math.round(tb_chars["Marneus Calgar"].passive[0]*factor);
   document.getElementById("calgar-buff-imperial").innerHTML = Math.round(tb_chars["Marneus Calgar"].passive[1]*factor);
-  updateTable();
+  if (1 != skipUpdate) updateTable();
 }
-var updateAethana = function() {
+var updateAethana = function(skipUpdate) {
   if (!document.getElementById("aethana-buff-enabled").checked) {
     document.getElementById("aethana-buff-all").innerHTML = 0;
     document.getElementById("aethana-buff-aeldari").innerHTML = 0;
     document.getElementById("aethana-buff-crit").innerHTML = 0;
-    updateTable();
+    if (1 != skipUpdate) updateTable();
     return;
   }
   var level = document.getElementById("aethana-buff-level").value;
-  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("calgar-buff-rarity").value*0.2);
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("aethana-buff-rarity").value*0.2);
   document.getElementById("aethana-buff-all").innerHTML = Math.round(tb_chars["Aethana"].passive[0]*factor);
   document.getElementById("aethana-buff-aeldari").innerHTML = Math.round(tb_chars["Aethana"].passive[1]*factor);
   document.getElementById("aethana-buff-crit").innerHTML = Math.round(tb_chars["Aethana"].passive[2]+levelToRarityInt(level));
-  updateTable();
+  if (1 != skipUpdate) updateTable();
+}
+var updateAunShi = function(skipUpdate) {
+  if (!document.getElementById("aunshi-buff-enabled").checked) {
+    document.getElementById("aunshi-buff-dmg").innerHTML = 0;
+    if (1 != skipUpdate) updateTable();
+    return;
+  }
+  var level = document.getElementById("aunshi-buff-level").value;
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("aunshi-buff-rarity").value*0.2);
+  document.getElementById("aunshi-buff-dmg").innerHTML = Math.round(tb_chars["Aun'Shi (preview)"].passive[0]*factor);
+  if (1 != skipUpdate) updateTable();
 }
 
 var updateGear = function() {
@@ -164,24 +175,30 @@ var addTable = function() {
 var round2 = function(num) {
   return Math.round( num * 100 + Number.EPSILON ) / 100;
 }
-var calcDmgLowHigh = function(dmgLow, dmgHigh, dmgFactor, hits, armour, pierce, critChance, crit) {
-  var perNonCrit = Math.max(dmgLow-armour, dmgLow*pierce)*0.5 + Math.max(dmgHigh-armour, dmgHigh*pierce)*0.5;
-  var perCrit =  Math.max((dmgLow+crit)-armour, (dmgLow+crit)*pierce)*0.5 + Math.max((dmgHigh+crit)-armour, (dmgHigh+crit)*pierce)*0.5;
+var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit) {
+  console.log(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit)
+  numRounds = aunshiBonusDmg > 0 ? 3 : 1;
   var total = 0;
-  for (n=1; n<=hits; n++) {
-    var critCurHit = Math.pow(critChance, n);
-    total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
-  };
-  return Math.round(dmgFactor*total);
+  for (i=0; i<numRounds; i++) {
+    var dmgLow = low+aunshiBonusDmg
+    var dmgHigh = high+aunshiBonusDmg
+    var perNonCrit = Math.max(dmgLow-armour, dmgLow*pierce)*0.5 + Math.max(dmgHigh-armour, dmgHigh*pierce)*0.5;
+    var perCrit =  Math.max((dmgLow+crit)-armour, (dmgLow+crit)*pierce)*0.5 + Math.max((dmgHigh+crit)-armour, (dmgHigh+crit)*pierce)*0.5;
+    for (n=1; n<=hits; n++) {
+      var critCurHit = Math.pow(critChance, n);
+      total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
+    };
+  }
+  return Math.round(dmgFactor*total) / numRounds;
 }
-var calcDmg = function(dmg, dmgFactor, hits, armour, pierce, critChance, crit) {
-  return calcDmgLowHigh(dmg*0.8, dmg*1.2, dmgFactor, hits, armour, pierce, critChance, crit);
+var calcDmg = function(dmg, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit) {
+  return calcDmgLowHigh(dmg*0.8, dmg*1.2, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit);
 }
 var updateTable = function() {
     var starlevel = document.getElementById("starlevel").value;
     var gearlevel = document.getElementById("gearlevel").value;
     var levelStatFactor = Math.pow(1.25205, gearlevel)*(1+0.1*starlevel);
-    var opponentarmor = document.getElementById("opponentarmor").value;
+    var opponentarmor = +document.getElementById("opponentarmor").value;
     var preferEqCritDmg = +document.getElementById("prefer-eq-crit-dmg").value;
     // Tyrant max debuff is 60%
     var eldryondamage = +document.getElementById("eldryon-buff-all").innerHTML;
@@ -208,6 +225,7 @@ var updateTable = function() {
     var aethanaBonusDmg = +document.getElementById("aethana-buff-all").innerHTML;
     var aethanaBonusDmgAeldar = +document.getElementById("aethana-buff-aeldari").innerHTML;
     var aethanaBonusCritChance = +document.getElementById("aethana-buff-crit").innerHTML;
+    var aunshiBonusDmgRawData = +document.getElementById("aunshi-buff-dmg").innerHTML;
     
     Object.keys(tb_chars_and_summons).forEach(function callback(key) {
         var comment = "";
@@ -232,6 +250,7 @@ var updateTable = function() {
         var calgardamageModifiedByFaction = (char.alliance == "Imperial" ? calgarBonusDmgImperial : calgarBonusDmg)
         var aethanadamageModifiedByFaction = aethanaBonusDmg + (char.faction == "Aeldari" ? aethanaBonusDmgAeldar : 0.0);
         var ltgbHits = (abaddonPassive || key=="Abaddon the despolier") ? 2 : 1;
+        var aunshiBonusDmg = key.includes("Aun'Shi")  ? 0 : aunshiBonusDmgRawData;
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
@@ -363,6 +382,8 @@ var updateTable = function() {
         case 'Ancient Thoread':
         case 'Anuphet':
         case 'Archimatos':
+        case "Aun'Shi":
+        case "Aun'Shi (preview)":
         case 'Bellator':
         case 'Boss Gulgortz':
         case 'Brother Burchard':
@@ -465,25 +486,25 @@ var updateTable = function() {
 
         buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmgModifiedByFaction + aethanadamageModifiedByFaction;
        
-        var meleeDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage);
+        var meleeDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage);
         var totalDmg = meleeDmg;
         switch (key) {
           case 'Boss Gulgortz':
-            totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 3, opponentarmor, char.ranged.pierce, critChance, critDamage);
+            totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3, opponentarmor, char.ranged.pierce, critChance, critDamage);
             comment += ", passive working";
             break;
         }
         if (char.traits.includes("let the galaxy burn")) {
-          var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage);
+          var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage);
           totalDmg += galaxyDmg * 0.5;
           comment += "LtGB assumes hits on target"
         }
         if (char.hasOwnProperty("ranged")) {
-          var rangedDmg = calcDmg(dmg+buffDmg, dmgFactor, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
+          var rangedDmg = calcDmg(dmg+buffDmg, dmgFactor, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
           switch (key) {
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
-            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance, critDamage);
+            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor, 0, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance, critDamage);
             comment += ", passive working ("+Math.round(volkDamageBuff)+")";
             rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
             break;
@@ -491,12 +512,12 @@ var updateTable = function() {
             var revasPassiveDmgLow = passiveFactor*char.passive[0];
             var revasPassiveDmgHigh = passiveFactor*char.passive[1];
             var revasPassiveOverload = (opponentHasMarkerlight || opponentIsMech) ? passiveFactor*char.passive[2] : 0;
-            rangedDmg += calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor, 3, opponentarmor, 0.35, critChance, critDamage);
+            rangedDmg += calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor, 0, 3, opponentarmor, 0.35, critChance, critDamage);
             comment += ", passive 3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
             break;
           }
           if (char.traits.includes("let the galaxy burn")) {
-            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor, ltgbHits, opponentarmor, char.ranged.pierce, critChance, critDamage);
+            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor, aunshiBonusDmg, ltgbHits, opponentarmor, char.ranged.pierce, critChance, critDamage);
             rangedDmg += galaxyDmg * 0.5;
           }
           totalDmg = Math.max(totalDmg, rangedDmg);
@@ -677,6 +698,13 @@ function sortTable(n) {
     </select>
     <input onChange="updateAethana()" type="number" id="aethana-buff-level" min="0" max="50" value="35">
     +<span id="aethana-buff-all"></span> damage [All] +<span id="aethana-buff-aeldari"></span> damage [Aeldari], +<span id="aethana-buff-crit"></span>% crit
+    <br>
+    <label>Aun'Shi</label>
+    <input onChange="updateAunShi()" type="checkbox" id="aunshi-buff-enabled"></input>
+    <select onchange="updateAunShi()" id="aunshi-buff-rarity">
+    </select>
+    <input onChange="updateAunShi()" type="number" id="aunshi-buff-level" min="0" max="50" value="35">
+    +<span id="aunshi-buff-dmg"></span> damage [All] (every third turn)
     <br>
     <label>Heavy Weapon</label>
     <input title="Heavy Weapon and similar passives (Maugan Ra) are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
