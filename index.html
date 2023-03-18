@@ -381,7 +381,6 @@ var updateTable = function() {
           dmg *= incisusFactor;
           break;
         case 'High Marshal Helbrecht':
-          comment += "TODO: Buff missing";
         case 'Roswitha':
           if (opponentIsPsyker) {
             buffDmg += passiveFactor*char.passive[0];
@@ -434,6 +433,7 @@ var updateTable = function() {
         case 'Certus':
         case 'Commissar Yarrick':
         case 'Corrodius':
+        case 'Darkstrider':
         case 'Geminae Superia':
         case 'Gibbascrapz':
         case 'Grot':
@@ -470,9 +470,7 @@ var updateTable = function() {
         case 'Eldryon':
           eldryondamageModifiedByFaction = 0;
           break;
-        case 'Darkstrider':
         case 'Pestillian':
-          comment += "TODO: Buff missing";
           break;
         default:
           comment += "TODO: Add passive";
@@ -764,6 +762,10 @@ function sortTable(n) {
     </select>
     <input onChange="updateDarkstrider()" type="number" id="darkstrider-buff-level" min="0" max="50" value="35">
     +<span id="darkstrider-buff-dmg"></span> damage [Ranged; Markerlight]
+    <br>
+    TODO: High Marshal Helbrecht missing
+    <br>
+    TODO: Pestillian missing
     </fieldset>
     <fieldset>
     <legend>Conditional</legend>
