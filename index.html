@@ -2,11 +2,9 @@
 <html>
 <head>
   <style type="text/css">
-    header {
-      width: calc(100% - 650px);
-    }
     @media (min-width: 1280px) {
       header {
+        width: calc(100% - 650px);
         position: fixed;
         top: 0;
         right: 0;
@@ -14,9 +12,14 @@
     }
     table {
       max-width: 640px;
+      font-size: 11pt;
     }
     input[type='number']{
       width: 25pt;
+    }
+    .statCell {
+      min-width: 27pt;
+      text-align: right;
     }
     .armourBox {
       width: 36pt !important
@@ -203,7 +206,7 @@ var addTable = function() {
     res = '<tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">%</th><th onclick="sortTable(5)">Crit</th><th onclick="sortTable(6)">%</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Avg dmg</th><th onclick="sortTable(9)">Comment</th></tr>';
     Object.keys(tb_chars).forEach(function callback(key) {
         var id = characterTableEntryId(key);
-        res += '<tr id="'+id+'"><td>'+key+'</td><td id="'+id+'-health"></td><td id="'+id+'-armour"></td><td id="'+id+'-dmg"></td><td id="'+id+'-crit-chance"></td><td id="'+id+'-crit-dmg"></td><td id="'+id+'-block-chance"></td><td id="'+id+'-block"></td><td id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
+        res += '<tr id="'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-health"></td><td class="statCell" id="'+id+'-armour"></td><td class="statCell" id="'+id+'-dmg"></td><td class="statCell" id="'+id+'-crit-chance"></td><td class="statCell" id="'+id+'-crit-dmg"></td><td class="statCell" id="'+id+'-block-chance"></td><td class="statCell" id="'+id+'-block"></td><td class="statCell" id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
     });
     document.getElementById("ch-table").innerHTML=res;
     updateTable();
@@ -303,7 +306,6 @@ var updateTable = function() {
           switch (trait) {
             case "dakka":
               dakka = 2;
-              comment += "dakka";
               break;
             case "beast snagga":
               if (opponentBeastSnagga) {
@@ -321,7 +323,7 @@ var updateTable = function() {
               }
               if (heavyWeaponEnabled) {
                 dmgFactor *= 1.25;
-                comment += "heavy weapon"
+                comment += "heavy"
                 if (key=="Maugan Ra") {
                   var mauganCritChance = (char.passive[1] + passiveLevelAsRarityInt - (passiveLevelAsRarityInt==0 ? 1 : 0)) / 100;
                   var mauganCritDamage = char.passive[0] * passiveFactor;
@@ -398,7 +400,6 @@ var updateTable = function() {
         case 'Sword Brother Godswyl':
           var passiveDmg = char.passive[0] * passiveFactor;
           critDamage += passiveDmg;
-          comment += "passive (crit +" + Math.round(passiveDmg) + ")";
           break;
         case 'Abaddon the despolier':
           abaddonBonusDmgModifiedByFaction = 0;
@@ -543,7 +544,7 @@ var updateTable = function() {
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
             var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor, 0, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance, critDamage);
-            comment += "passive ("+Math.round(volkDamageBuff)+")";
+            comment += "passive (+"+Math.round(volkDamageBuff)+")";
             rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
             break;
           case "Re'Vas":
@@ -558,7 +559,12 @@ var updateTable = function() {
             var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor, aunshiBonusDmg, ltgbHits, opponentarmor, char.ranged.pierce, critChance, critDamage);
             rangedDmg += galaxyDmg * 0.5;
           }
-          totalDmg = Math.max(totalDmg, rangedDmg);
+          if (rangedDmg > totalDmg) {
+            totalDmg = rangedDmg;
+            if (dakka) {
+              comment += "dakka";
+            }
+          }
         }
 
         document.getElementById(entryId+"-health").innerHTML=Math.round(health);
