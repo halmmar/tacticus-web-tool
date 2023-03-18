@@ -16,8 +16,11 @@
     input[type='number']{
       width: 25pt;
     }
-    .armorBox {
+    .armourBox {
       width: 36pt !important
+    }
+    fieldset fieldset {
+      display: inline-block;
     }
   </style>
     <script>
@@ -60,7 +63,7 @@ function(err, data) {
     tb_chars_and_summons = Object.assign(tb_chars,tb_summons)
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
-    ["eldryon-buff", "thaddeus-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "equipment"].forEach(function (key) {
+    ["eldryon-buff", "thaddeus-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "equipment"].forEach(function (key) {
       document.getElementById(key + "-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     });
     addTable();
@@ -70,6 +73,7 @@ function(err, data) {
     updateCalgar(1);
     updateAethana(1);
     updateAunShi(1);
+    updateDarkstrider(1);
     updateTable();
   }
 });
@@ -169,6 +173,17 @@ var updateAunShi = function(skipUpdate) {
   document.getElementById("aunshi-buff-dmg").innerHTML = Math.round(tb_chars["Aun'Shi (preview)"].passive[0]*factor);
   if (1 != skipUpdate) updateTable();
 }
+var updateDarkstrider = function(skipUpdate) {
+  if (!document.getElementById("darkstrider-buff-enabled").checked) {
+    document.getElementById("darkstrider-buff-dmg").innerHTML = 0;
+    if (1 != skipUpdate) updateTable();
+    return;
+  }
+  var level = document.getElementById("darkstrider-buff-level").value;
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("darkstrider-buff-rarity").value*0.2);
+  document.getElementById("darkstrider-buff-dmg").innerHTML = Math.round(tb_chars["Darkstrider"].passive[0]*factor);
+  if (1 != skipUpdate) updateTable();
+}
 
 var updateGear = function() {
     res = "";
@@ -244,6 +259,7 @@ var updateTable = function() {
     var aethanaBonusDmgAeldar = +document.getElementById("aethana-buff-aeldari").innerHTML;
     var aethanaBonusCritChance = +document.getElementById("aethana-buff-crit").innerHTML;
     var aunshiBonusDmgRawData = +document.getElementById("aunshi-buff-dmg").innerHTML;
+    var darkstriderBonusDmgRawData = +document.getElementById("darkstrider-buff-dmg").innerHTML;
     var ltgbEnabled = document.getElementById("ltgb-enabled").checked;
     
     Object.keys(tb_chars_and_summons).forEach(function callback(key) {
@@ -270,6 +286,8 @@ var updateTable = function() {
         var aethanadamageModifiedByFaction = aethanaBonusDmg + (char.faction == "Aeldari" ? aethanaBonusDmgAeldar : 0.0);
         var ltgbHits = (abaddonPassive || key=="Abaddon the despolier") ? 2 : 1;
         var aunshiBonusDmg = key.includes("Aun'Shi")  ? 0 : aunshiBonusDmgRawData;
+        var darkstriderBonusDmg = (key.includes("Darkstrider") || !opponentHasMarkerlight) ? 0 : darkstriderBonusDmgRawData;
+        var buffDmgRanged = 0;
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
@@ -278,7 +296,7 @@ var updateTable = function() {
         if (opponentHasMarkerlight && char.faction == "T'au Empire") {
           dmgFactor *= 1.15;
         }
-
+        
         char.traits.forEach(function (trait) {
           switch (trait) {
             case "dakka":
@@ -503,7 +521,9 @@ var updateTable = function() {
         }
 
         buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmgModifiedByFaction + aethanadamageModifiedByFaction;
+        buffDmgRanged += darkstriderBonusDmg;
        
+        // Melee damage
         var meleeDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage);
         var totalDmg = meleeDmg;
         switch (key) {
@@ -517,7 +537,8 @@ var updateTable = function() {
           // comment += "LtGB assumes hits on target"
         }
         if (char.hasOwnProperty("ranged")) {
-          var rangedDmg = calcDmg(dmg+buffDmg, dmgFactor, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
+          // Ranged damage
+          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
           switch (key) {
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
@@ -530,7 +551,7 @@ var updateTable = function() {
             var revasPassiveDmgHigh = passiveFactor*char.passive[1];
             var revasPassiveOverload = (opponentHasMarkerlight || opponentIsMech) ? passiveFactor*char.passive[2] : 0;
             rangedDmg += calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor, 0, 3, opponentarmor, 0.35, critChance, critDamage);
-            comment += "passive 3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
+            comment += "3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
             break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
@@ -675,16 +696,21 @@ function sortTable(n) {
     </fieldset>
     <fieldset>
       <legend>Opponent</legend>
-      <label>Armor</label>
-      <input class="armorBox" onChange="updateTable()" type="number" id="opponentarmor" min="0" max="3000" value="300" size="4">
-      <label>Mech</label>
+      <fieldset><legend>Armour</legend>
+      <input class="armourBox" onChange="updateTable()" type="number" id="opponentarmor" min="0" max="3000" value="300" size="4">
+      </fieldset>
+      <fieldset><legend>Mech</legend>
       <input onChange="updateTable()" type="checkbox" id="opponent-is-mech"></input>
-      <label>Psyker</label>
+      </fieldset>
+      <fieldset><legend>Psyker</legend>
       <input onChange="updateTable()" type="checkbox" id="opponent-is-psyker"></input>
-      <label>Markerlight</label>
+      </fieldset>
+      <fieldset><legend>Markerlight</legend>
       <input onChange="updateTable()" type="checkbox" id="opponent-has-markerlight"></input>
-      <label>Big Target/Vehicle</label>
+      </fieldset>
+      <fieldset><legend>Big Target</legend>
       <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
+      </fieldset>
     </fieldset>
     <fieldset>
     <legend>Buffs</legend>
@@ -729,6 +755,13 @@ function sortTable(n) {
     </select>
     <input onChange="updateAunShi()" type="number" id="aunshi-buff-level" min="0" max="50" value="35">
     +<span id="aunshi-buff-dmg"></span> damage [All] (every third turn)
+    <br>
+    <label>Darkstrider</label>
+    <input onChange="updateDarkstrider()" type="checkbox" id="darkstrider-buff-enabled"></input>
+    <select onchange="updateDarkstrider()" id="darkstrider-buff-rarity">
+    </select>
+    <input onChange="updateDarkstrider()" type="number" id="darkstrider-buff-level" min="0" max="50" value="35">
+    +<span id="darkstrider-buff-dmg"></span> damage [Ranged; Markerlight]
     </fieldset>
     <fieldset>
     <legend>Conditional</legend>
