@@ -91,7 +91,7 @@ bossStats = {
   "ghazghkull": {"armour": [[151/0.5,15],None,[330/0.5,16],None], "debuff": 0.5},
   "gibbascrapz": {"armour": [None,None,[2297,16],None], "debuff": 0.0},
   "tervigon gorgon": {"armour": [None, None, None, None], "debuff": 0.6},
-  "tervigon leviathan": {"armour": [None, None, None, None], "debuff": 0.6},
+  "tervigon leviathan": {"armour": [None, None, None, [403/0.4,16]], "debuff": 0.6},
   "tervigon kronos": {"armour": [None, [224/0.4,15], None, None], "debuff": 0.6},
   "hive tyrant gorgon": {"armour": [None, None, None, None], "debuff": 0.6},
   "hive tyrant leviathan": {"armour": [None, None, None, None], "debuff": 0.6},

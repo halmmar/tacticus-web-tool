@@ -199,7 +199,10 @@
         null,
         null,
         null,
-        null
+        [
+          1007.5,
+          16
+        ]
       ],
       "debuff": 0.6
     }

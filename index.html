@@ -256,7 +256,7 @@ var updateOpponentPreset = function() {
     if (primeKilled) {
       scale = 1.0 - tb_bosses[preset]["debuff"]
     }
-    document.getElementById("opponent-armour").value = armourUsed[0]*scale;
+    document.getElementById("opponent-armour").value = Math.round(armourUsed[0]*scale);
     var season = '<abbr title="Guild raid season the data comes from">S' + armourUsed[1] + '</abbr>';
     if (!armour) {
       document.getElementById("opponent-preset-comment").innerHTML = "Not found; using L" + (tb_armour.findIndex(armour => armour == armourMax) + 1) + " (" + season + ")";
