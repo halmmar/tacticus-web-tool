@@ -106,12 +106,30 @@
   "bosses": {
     "ghazghkull": {
       "armour": [
-        302.0,
+        [
+          302.0,
+          15
+        ],
         null,
-        660.0,
+        [
+          660.0,
+          16
+        ],
         null
       ],
       "debuff": 0.5
+    },
+    "gibbascrapz": {
+      "armour": [
+        null,
+        null,
+        [
+          2297,
+          16
+        ],
+        null
+      ],
+      "debuff": 0.0
     },
     "hive tyrant gorgon": {
       "armour": [
@@ -142,10 +160,16 @@
     },
     "szarekh": {
       "armour": [
-        275.0,
+        [
+          275.0,
+          16
+        ],
         null,
         null,
-        920.0
+        [
+          920.0,
+          15
+        ]
       ],
       "debuff": 0.6
     },
@@ -161,7 +185,10 @@
     "tervigon kronos": {
       "armour": [
         null,
-        560.0,
+        [
+          560.0,
+          15
+        ],
         null,
         null
       ],

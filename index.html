@@ -249,17 +249,19 @@ var updateOpponentPreset = function() {
   }
   var tb_armour = tb_bosses[preset]["armour"];
   var armour = tb_armour[level-1];
-  var armourMax = Math.max(...tb_armour);
+  var armourMax = tb_armour.filter(x => x != null).slice(-1)[0];
   if (armour || armourMax) {
     var armourUsed = armour || armourMax;
+    var scale = 1.0;
     if (primeKilled) {
-      armourUsed *= (1-tb_bosses[preset]["debuff"])
+      scale = 1.0 - tb_bosses[preset]["debuff"]
     }
-    document.getElementById("opponent-armour").value = armourUsed;
+    document.getElementById("opponent-armour").value = armourUsed[0]*scale;
+    var season = '<abbr title="Guild raid season the data comes from">S' + armourUsed[1] + '</abbr>';
     if (!armour) {
-      document.getElementById("opponent-preset-comment").innerHTML = "Armour unknown; using L" + (tb_armour.findIndex(armour => armour == armourMax) + 1);
+      document.getElementById("opponent-preset-comment").innerHTML = "Not found; using L" + (tb_armour.findIndex(armour => armour == armourMax) + 1) + " (" + season + ")";
     } else {
-      document.getElementById("opponent-preset-comment").innerHTML = "&nbsp;";
+      document.getElementById("opponent-preset-comment").innerHTML = season;
     }
   } else {
     document.getElementById("opponent-preset-comment").innerHTML = "Armour unknown.";
@@ -795,6 +797,7 @@ function sortTable(n) {
       <legend>Opponent</legend>
       <fieldset><legend>Preset</legend>
       <select onChange="updateOpponentPreset()" id="opponent-preset">
+        <option value="gibbascrapz">Gibbascrapz</option>
         <option value="ghazghkull" selected>Ghazghkull</option>
         <option value="hive tyrant gorgon">Hive Tyrant Gorgon</option>
         <option value="hive tyrant kronos">Hive Tyrant Kronos</option>

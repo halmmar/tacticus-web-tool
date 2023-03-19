@@ -87,14 +87,16 @@ characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.ite
 
 # Boss stats
 bossStats = {
-  "ghazghkull": {"armour": [151/0.5,None,330/0.5,None], "debuff": 0.5},
+  # Stats are an array [0]=L1, etc. The first element is the stat and the second, the season which the data was collected from
+  "ghazghkull": {"armour": [[151/0.5,15],None,[330/0.5,16],None], "debuff": 0.5},
+  "gibbascrapz": {"armour": [None,None,[2297,16],None], "debuff": 0.0},
   "tervigon gorgon": {"armour": [None, None, None, None], "debuff": 0.6},
   "tervigon leviathan": {"armour": [None, None, None, None], "debuff": 0.6},
-  "tervigon kronos": {"armour": [None, 224/0.4, None, None], "debuff": 0.6},
+  "tervigon kronos": {"armour": [None, [224/0.4,15], None, None], "debuff": 0.6},
   "hive tyrant gorgon": {"armour": [None, None, None, None], "debuff": 0.6},
   "hive tyrant leviathan": {"armour": [None, None, None, None], "debuff": 0.6},
   "hive tyrant kronos": {"armour": [None, None, None, None], "debuff": 0.6}, # 60% max debuff
-  "szarekh": {"armour": [110/0.4, None, None, 368/0.4], "debuff": 0.6} # 60% max debuff?
+  "szarekh": {"armour": [[110/0.4,16], None, None, [368/0.4,15]], "debuff": 0.6} # 60% max debuff?
 }
 
 pierce = dict([(k.lower(),v) for (k,v) in tb_Pierce.itertuples(index=False)])
