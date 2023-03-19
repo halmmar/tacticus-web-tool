@@ -365,6 +365,8 @@ var updateTable = function() {
         var meleeHits = char.melee.hits;
         var critChance = 0;
         var critDamage = 0;
+        var critChanceRanged = 0;
+        var critDamageRanged = 0;
         var blockChance = 0;
         var block = 0;
         var dakka = 0;
@@ -382,6 +384,7 @@ var updateTable = function() {
         var helbrechtBonusDmg = key.includes("Helbrecht") ? 0 : helbrechtBonusDmgRawData;
         var buffDmgRanged = 0;
         var buffDmgMelee = 0;
+        var commentRanged = "";
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
@@ -409,13 +412,13 @@ var updateTable = function() {
                 buffDmg += thaddeusBonusDmg;
               }
               if (heavyWeaponEnabled) {
-                dmgFactor *= 1.25;
-                comment += "heavy"
+                dmgFactorRanged *= 1.25;
+                commentRanged += "heavy"
                 if (key=="Maugan Ra") {
                   var mauganCritChance = (char.passive[1] + passiveLevelAsRarityInt - (passiveLevelAsRarityInt==0 ? 1 : 0)) / 100;
                   var mauganCritDamage = char.passive[0] * passiveFactor;
-                  critChance += mauganCritChance;
-                  critDamage += mauganCritDamage;
+                  critChanceRanged += mauganCritChance;
+                  critDamageRanged += mauganCritDamage;
                 }
               }
               break;
@@ -627,11 +630,11 @@ var updateTable = function() {
         }
         if (char.hasOwnProperty("ranged")) {
           // Ranged damage
-          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance, critDamage);
+          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged);
           switch (key) {
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
-            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor*dmgFactorRanged, 0, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance, critDamage);
+            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor*dmgFactorRanged, 0, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance + critChanceRanged, critDamage + critDamageRanged);
             comment += "passive (+"+Math.round(volkDamageBuff)+")";
             rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
             break;
@@ -639,12 +642,12 @@ var updateTable = function() {
             var revasPassiveDmgLow = passiveFactor*char.passive[0];
             var revasPassiveDmgHigh = passiveFactor*char.passive[1];
             var revasPassiveOverload = (opponentHasMarkerlight || opponentIsMech) ? passiveFactor*char.passive[2] : 0;
-            rangedDmg += calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor*dmgFactorRanged, 0, 3, opponentarmor, 0.35, critChance, critDamage);
+            rangedDmg += calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor*dmgFactorRanged, 0, 3, opponentarmor, 0.35, critChance + critChanceRanged, critDamage + critDamageRanged);
             comment += "3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
             break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
-            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorRanged, aunshiBonusDmg, ltgbHits, opponentarmor, char.ranged.pierce, critChance, critDamage);
+            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorRanged, aunshiBonusDmg, ltgbHits, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged);
             rangedDmg += galaxyDmg * 0.5;
           }
           if (rangedDmg > totalDmg) {
@@ -652,7 +655,7 @@ var updateTable = function() {
             if (dakka) {
               comment += "dakka";
             }
-            comment = insertIcon("boltgun") + comment;
+            comment = insertIcon("boltgun") + commentRanged + comment;
           } else {
             comment = "⚔" + comment;
           }
