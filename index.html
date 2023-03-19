@@ -12,6 +12,9 @@
     th {
       cursor: pointer;
     }
+    .damage-icon {
+      height: 10pt;
+    }
     .nameCell, .commentCell {
       background-image: url(images/sort_both.svg);
       background-repeat: no-repeat;
@@ -308,6 +311,9 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour
 }
 var calcDmg = function(dmg, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit) {
   return calcDmgLowHigh(dmg*0.8, dmg*1.2, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit);
+}
+var insertIcon = function(name) {
+  return '<img class="damage-icon" src="images/'+name+'.png" />'
 }
 var updateTable = function() {
     var starlevel = document.getElementById("starlevel").value;
@@ -644,7 +650,7 @@ var updateTable = function() {
             if (dakka) {
               comment += "dakka";
             }
-            comment = "🥆" + comment;
+            comment = insertIcon("boltgun") + comment;
           } else {
             comment = "⚔" + comment;
           }
