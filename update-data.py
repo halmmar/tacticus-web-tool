@@ -96,7 +96,8 @@ bossStats = {
   "hive tyrant gorgon": {"armour": [None, None, None, None], "debuff": 0.6},
   "hive tyrant leviathan": {"armour": [None, None, None, None], "debuff": 0.6},
   "hive tyrant kronos": {"armour": [None, None, None, None], "debuff": 0.6}, # 60% max debuff
-  "szarekh": {"armour": [[110/0.4,16], None, None, [368/0.4,15]], "debuff": 0.6} # 60% max debuff?
+  "szarekh": {"armour": [[110/0.4,16], None, None, [368/0.4,15]], "debuff": 0.6}, # 60% max debuff?
+  "triarchal mehir": {"armour": [None, None, None, [1910,15]], "debuff": 0.0}
 }
 
 pierce = dict([(k.lower(),v) for (k,v) in tb_Pierce.itertuples(index=False)])
