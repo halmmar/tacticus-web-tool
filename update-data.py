@@ -63,7 +63,7 @@ def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     df = pd.DataFrame(([cell.value for cell in row] for row in region), columns=columns)
     return df
 
-file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.0.3.3.xlsx'
+file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.0.3.4.xlsx'
 tb_Characters = data_frame_from_xlsx(file, 'tb_Characters', 1)
 tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$W$3:$X$21', True)
 tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
@@ -97,7 +97,7 @@ bossStats = {
   "hive tyrant leviathan": {"armour": [None, None, None, None], "debuff": 0.6},
   "hive tyrant kronos": {"armour": [None, None, None, None], "debuff": 0.6}, # 60% max debuff
   "szarekh": {"armour": [[110/0.4,16], None, None, [368/0.4,15]], "debuff": 0.6}, # 60% max debuff?
-  "triarchal mehir": {"armour": [None, None, None, [1910,15]], "debuff": 0.0}
+  "triarchal menhir": {"armour": [None, None, None, [1910,15]], "debuff": 0.0}
 }
 
 pierce = dict([(k.lower(),v) for (k,v) in tb_Pierce.itertuples(index=False)])
@@ -184,6 +184,8 @@ def toJSON(rows):
             if traitStripped in traits:
                 continue
             traits += [traitStripped]
+        if row.Name == "Shield Drone" and "summon" not in traits:
+            traits += ["summon"]
         toDelete = []
         for key in eqCount.keys():
             if not eqCount[key]:
