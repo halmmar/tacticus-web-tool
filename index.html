@@ -329,7 +329,7 @@ var characterTableEntryId = function(str) {
 
 var addTable = function() {
   resDmg = '<tr><th class="nameCell" onclick="sortTable(0)">Name</th><th title="Damage stat" onclick="sortTable(1)">Dmg</th><th onclick="sortTable(2)">%</th><th onclick="sortTable(3)">Crit</th><th title="Average damage for an attack" onclick="sortTable(4)">Expected</th><th class="commentCell" onclick="sortTable(5)">Comment</th></tr>';
-  resSurvival = '<tr><th class="survival-nameCell" onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th onclick="sortTable(3)">%</th><th onclick="sortTable(4)">Block</th><th title="Worst case number of attacks survived" onclick="sortTable(5)">WC % Health</th><th title="Worst case number of attacks survived" onclick="sortTable(5)">WC # Survived</th><th class="commentCell" onclick="sortTable(6)">Comment</th></tr>';
+  resSurvival = '<tr><th class="survival-nameCell" onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th onclick="sortTable(3)">%</th><th onclick="sortTable(4)">Block</th><th title="Worst case number of attacks survived" onclick="sortTable(5)">WC % Health</th><th title="Worst case number of attacks survived" onclick="sortTable(6)">WC # Survived</th><th class="commentCell" onclick="sortTable(7)">Comment</th></tr>';
   Object.keys(tb_chars).forEach(function callback(key) {
     var id = characterTableEntryId(key);
     resDmg += '<tr id="'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-dmg"></td><td class="statCell" id="'+id+'-crit-chance"></td><td class="statCell" id="'+id+'-crit-dmg"></td><td class="statCell" id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
