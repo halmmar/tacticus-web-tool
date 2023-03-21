@@ -378,6 +378,62 @@
       },
       "faction": "Black Legion",
       "health": 80.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Piercing",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Power",
+            "Bolter",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [
+            "Eligible",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Bolter",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 5,
         "pierce": 0.4
@@ -406,6 +462,62 @@
       },
       "faction": "Aeldari",
       "health": 80.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Piercing",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Piercing"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 3,
         "pierce": 0.8
@@ -431,6 +543,55 @@
       },
       "faction": "Necrons",
       "health": 75.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "Mechanical",
+            "No Resilient",
+            "Melee"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Necrons"
+          ],
+          "beta": [
+            "No Blast"
+          ],
+          "gamma": [
+            "Eligible",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Melee"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch"
+          ]
+        }
+      },
       "melee": {
         "hits": 5,
         "pierce": 0.35
@@ -456,6 +617,62 @@
       },
       "faction": "Black templars",
       "health": 100.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "Power",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "Power"
+          ],
+          "beta": [
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 2,
         "pierce": 0.4
@@ -477,6 +694,59 @@
       },
       "faction": "Black Legion",
       "health": 110.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "No Summons"
+          ],
+          "beta": [
+            "Power",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Power"
+          ],
+          "beta": [
+            "Eligible",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 4,
         "pierce": 0.4
@@ -503,6 +773,54 @@
       },
       "faction": "Necrons",
       "health": 85.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "Mechanical",
+            "No Resilient"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons"
+          ],
+          "beta": [
+            "No Blast"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Ranged"
+          ]
+        }
+      },
       "melee": {
         "hits": 4,
         "pierce": 0.3
@@ -530,6 +848,57 @@
       },
       "faction": "Black Legion",
       "health": 70.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient"
+          ],
+          "gamma": [
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "Max 3 hits"
+          ],
+          "beta": [
+            "No Blast",
+            "Max 2 hits"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Mechanical"
+          ],
+          "gamma": [
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged"
+          ]
+        }
+      },
       "melee": {
         "hits": 2,
         "pierce": 1.0
@@ -558,6 +927,63 @@
       },
       "faction": "T'au Empire",
       "health": 77.3,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "No Summons"
+          ],
+          "beta": [
+            "Power",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Power"
+          ],
+          "beta": [
+            "Eligible",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 5,
         "pierce": 0.4
@@ -579,6 +1005,56 @@
       },
       "faction": "Ultramarines",
       "health": 85.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "Melee"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "Eligible",
+            "Bolter",
+            "No Blast"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Bolter",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical"
+          ],
+          "gamma": [
+            "Eligible",
+            "Bolter",
+            "No Overwatch"
+          ]
+        }
+      },
       "melee": {
         "hits": 6,
         "pierce": 0.2
@@ -602,6 +1078,58 @@
       },
       "faction": "Orks",
       "health": 100.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "Mechanical",
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 5,
         "pierce": 0.2
@@ -632,6 +1160,62 @@
       },
       "faction": "Black templars",
       "health": 120.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "Power",
+            "Bolter",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Power"
+          ],
+          "beta": [
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Bolter",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 4,
         "pierce": 0.4
@@ -659,6 +1243,62 @@
       },
       "faction": "Black templars",
       "health": 110.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "Power",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "Power"
+          ],
+          "beta": [
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 2,
         "pierce": 0.4
@@ -682,6 +1322,67 @@
       },
       "faction": "Aeldari",
       "health": 70.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Piercing",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Piercing",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.01
@@ -710,6 +1411,57 @@
       },
       "faction": "Astra militarum",
       "health": 90.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "Melee"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Blast",
+            "Max 2 hits"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch"
+          ]
+        }
+      },
       "melee": {
         "hits": 2,
         "pierce": 0.1
@@ -732,6 +1484,53 @@
       },
       "faction": "ADEPTA SOROITAS",
       "health": 60.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "Melee"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "Power",
+            "No Blast"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Power"
+          ],
+          "beta": [
+            "No Let the Galaxy Burn",
+            "No Mechanical"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch"
+          ]
+        }
+      },
       "melee": {
         "hits": 3,
         "pierce": 0.4
@@ -757,6 +1556,66 @@
       },
       "faction": "Ultramarines",
       "health": 60.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "No Resilient",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Bolter",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Bolter",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.01
@@ -785,6 +1644,58 @@
       },
       "faction": "Astra militarum",
       "health": 60.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "Max 3 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Bolter",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [
+            "No Let the Galaxy Burn",
+            "No Mechanical"
+          ],
+          "gamma": [
+            "Eligible",
+            "Bolter",
+            "No Overwatch",
+            "Ranged"
+          ]
+        }
+      },
       "melee": {
         "hits": 3,
         "pierce": 0.4
@@ -811,6 +1722,56 @@
       },
       "faction": "Death guard",
       "health": 100.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "Melee"
+          ],
+          "gamma": [
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits"
+          ],
+          "beta": [
+            "No Blast",
+            "Max 2 hits"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "Resilient"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical"
+          ],
+          "gamma": [
+            "No Overwatch"
+          ]
+        }
+      },
       "melee": {
         "hits": 2,
         "pierce": 0.65
@@ -834,6 +1795,65 @@
       },
       "faction": "T'au Empire",
       "health": 68.2,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 3,
         "pierce": 0.01
@@ -861,6 +1881,66 @@
       },
       "faction": "Aeldari",
       "health": 75.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Piercing",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Piercing",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 2,
         "pierce": 0.8
@@ -888,6 +1968,58 @@
       },
       "faction": "Orks",
       "health": 75.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Melee",
+            "Min 3 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "Melee",
+            "Physical"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Physical"
+          ],
+          "beta": [
+            "No Blast"
+          ],
+          "gamma": [
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch"
+          ]
+        }
+      },
       "melee": {
         "hits": 4,
         "pierce": 0.01
@@ -910,6 +2042,59 @@
       },
       "faction": "Black Legion",
       "health": 78.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Piercing",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Piercing",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 4,
         "pierce": 0.8
@@ -933,6 +2118,62 @@
       },
       "faction": "Black templars",
       "health": 80.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Bolter",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Power"
+          ],
+          "beta": [
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Bolter",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 6,
         "pierce": 0.4
@@ -959,6 +2200,58 @@
       },
       "faction": "Necrons",
       "health": 60.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "Mechanical",
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Ranged",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.6
@@ -986,6 +2279,66 @@
       },
       "faction": "Ultramarines",
       "health": 75.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Piercing",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Max 1 hit",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.8
@@ -1008,6 +2361,63 @@
       },
       "faction": "ADEPTA SOROITAS",
       "health": 85.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "Bolter",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Bolter",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Bolter",
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 3,
         "pierce": 0.2
@@ -1031,6 +2441,64 @@
       },
       "faction": "Aeldari",
       "health": 75.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Piercing",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Piercing",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 3,
         "pierce": 0.8
@@ -1053,6 +2521,62 @@
       },
       "faction": "Astra militarum",
       "health": 95.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Min 3 hits"
+          ],
+          "beta": [
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Physical",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 4,
         "pierce": 0.01
@@ -1075,6 +2599,64 @@
       },
       "faction": "Necrons",
       "health": 80.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "Mechanical",
+            "No Resilient",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Max 2 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.01
@@ -1101,6 +2683,59 @@
       },
       "faction": "Death guard",
       "health": 120.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Power",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [
+            "Eligible",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 3,
         "pierce": 0.4
@@ -1125,6 +2760,65 @@
       },
       "faction": "Ultramarines",
       "health": 95.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Bolter",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "Power"
+          ],
+          "beta": [
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Bolter",
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 2,
         "pierce": 0.4
@@ -1149,6 +2843,60 @@
       },
       "faction": "Aeldari",
       "health": 55.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Ranged",
+            "No Summons"
+          ],
+          "beta": [
+            "Power",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Power"
+          ],
+          "beta": [
+            "Eligible",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 5,
         "pierce": 0.4
@@ -1178,6 +2926,60 @@
       },
       "faction": "ADEPTA SOROITAS",
       "health": 85.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Mechanical",
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "Power",
+            "Bolter",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Bolter",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Power"
+          ],
+          "beta": [
+            "No Let the Galaxy Burn",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Bolter",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 5,
         "pierce": 0.4
@@ -1208,6 +3010,60 @@
       },
       "faction": "Death guard",
       "health": 120.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "No Summons"
+          ],
+          "beta": [
+            "Power",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [
+            "Eligible",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 4,
         "pierce": 0.4
@@ -1232,6 +3088,63 @@
       },
       "faction": "Death guard",
       "health": 109.8,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "Resilient"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Overwatch",
+            "Max 1 hit",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 1.0
@@ -1256,6 +3169,54 @@
       },
       "faction": "T'au Empire",
       "health": 105.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "Mechanical",
+            "No Resilient"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Ranged"
+          ],
+          "beta": [
+            "No Blast"
+          ],
+          "gamma": [
+            "Eligible",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Ranged"
+          ]
+        }
+      },
       "melee": {
         "hits": 6,
         "pierce": 0.25
@@ -1287,6 +3248,64 @@
       },
       "faction": "ADEPTA SOROITAS",
       "health": 85.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Bolter",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Bolter",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 3,
         "pierce": 0.2
@@ -1313,6 +3332,62 @@
       },
       "faction": "T'au Empire",
       "health": 65.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Piercing",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Ranged",
+            "Max 3 hits"
+          ],
+          "beta": [
+            "No Blast",
+            "Max 2 hits"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "Piercing",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.2
@@ -1342,6 +3417,64 @@
       },
       "faction": "Astra militarum",
       "health": 55.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 1.0
@@ -1368,6 +3501,60 @@
       },
       "faction": "Orks",
       "health": 80.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Min 3 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "Mechanical",
+            "No Resilient",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 2,
         "pierce": 0.2
@@ -1398,6 +3585,57 @@
       },
       "faction": "Orks",
       "health": 110.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Melee",
+            "Min 3 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "Melee",
+            "Physical"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Physical",
+            "Max 3 hits"
+          ],
+          "beta": [
+            "No Blast"
+          ],
+          "gamma": [
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch"
+          ]
+        }
+      },
       "melee": {
         "hits": 3,
         "pierce": 0.01
@@ -1421,6 +3659,64 @@
       },
       "faction": "Black templars",
       "health": 95.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "Power",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee",
+            "Max 2 hits",
+            "Power"
+          ],
+          "beta": [
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Max 1 hit",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.4
@@ -1443,6 +3739,62 @@
       },
       "faction": "Orks",
       "health": 85.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Melee",
+            "Min 3 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Physical",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Melee"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 3,
         "pierce": 0.2
@@ -1467,6 +3819,58 @@
       },
       "faction": "Astra militarum",
       "health": 50.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.1
@@ -1494,6 +3898,62 @@
       },
       "faction": "Necrons",
       "health": 70.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "Mechanical",
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Eligible",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Max 2 hits"
+          ],
+          "beta": [
+            "Eligible",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.65
@@ -1521,6 +3981,63 @@
       },
       "faction": "Death guard",
       "health": 120.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Flying",
+            "No Overwatch",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Power",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Psychic",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [
+            "Eligible",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.4
@@ -1551,6 +4068,66 @@
       },
       "faction": "Ultramarines",
       "health": 65.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "No Resilient",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.01
@@ -1578,6 +4155,62 @@
       },
       "faction": "ADEPTA SOROITAS",
       "health": 70.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Min 3 hits"
+          ],
+          "beta": [
+            "No Resilient",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Physical",
+            "Ranged",
+            "No Summons"
+          ],
+          "beta": [
+            "Eligible",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible"
+          ],
+          "beta": [
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 1,
         "pierce": 0.01
@@ -1605,6 +4238,58 @@
       },
       "faction": "Black Legion",
       "health": 65.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "Eligible",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "Eligible",
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "Ranged",
+            "No Summons"
+          ],
+          "beta": [
+            "Power",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "Eligible",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "Eligible",
+            "Power"
+          ],
+          "beta": [
+            "Eligible",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        }
+      },
       "melee": {
         "hits": 4,
         "pierce": 0.4
@@ -2431,6 +5116,87 @@
       17
     ]
   ],
+  "latest-legendary-event": "AUN'SHI",
+  "legendary-events": {
+    "AUN'SHI": {
+      "alpha": {
+        "Eligible": 29.0,
+        "Max 2 hits": 70.0,
+        "Melee": 80.0,
+        "Min 3 hits": 70.0,
+        "No Physical": 40.0,
+        "Piercing": 115.0
+      },
+      "beta": {
+        "Eligible": 53.0,
+        "Mechanical": 105.0,
+        "Melee": 85.0,
+        "No Resilient": 40.0,
+        "No Summons": 45.0,
+        "Physical": 100.0
+      },
+      "gamma": {
+        "Eligible": 40.0,
+        "Max 1 hit": 125.0,
+        "No Flying": 40.0,
+        "No Overwatch": 40.0,
+        "No Power": 50.0,
+        "Physical": 120.0
+      }
+    },
+    "JAIN ZAR": {
+      "alpha": {
+        "Eligible": 45.0,
+        "Max 3 hits": 45.0,
+        "Necrons": 110.0,
+        "No Summons": 60.0,
+        "Physical": 100.0,
+        "Ranged": 60.0
+      },
+      "beta": {
+        "Bolter": 96.0,
+        "Eligible": 45.0,
+        "Max 2 hits": 70.0,
+        "No Blast": 50.0,
+        "No Summons": 60.0,
+        "Power": 95.0
+      },
+      "gamma": {
+        "Bolter": 95.0,
+        "Eligible": 45.0,
+        "Min 4 hits": 90.0,
+        "No Flying": 45.0,
+        "No Mechanical": 45.0,
+        "Piercing": 100.0
+      }
+    },
+    "MAUGAN RA": {
+      "alpha": {
+        "Eligible": 43.0,
+        "Max 2 hits": 65.0,
+        "Melee": 50.0,
+        "Power": 70.0,
+        "Psychic": 95.0,
+        "Resilient": 95.0
+      },
+      "beta": {
+        "Eligible": 44.0,
+        "Min 4 hits": 115.0,
+        "No Let the Galaxy Burn": 65.0,
+        "No Mechanical": 75.0,
+        "No Power": 70.0,
+        "No Summons": 50.0
+      },
+      "gamma": {
+        "Bolter": 100.0,
+        "Eligible": 40.0,
+        "Max 1 hit": 120.0,
+        "No Overwatch": 45.0,
+        "No Summons": 40.0,
+        "Ranged": 70.0
+      }
+    }
+  },
   "summons": {
     "Bloodletter": {
       "alliance": "",

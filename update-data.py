@@ -80,6 +80,55 @@ summonsNames = set()
 for index, row in tb_SummonsList.iterrows():
     if row["Name"]:
         summonsNames.add(row["Name"])
+# Legendary Events
+tb_LegendaryEvent = data_frame_from_xlsx(file, 'YourUnits!$A$1:$CX$99')
+lastIndexCharacter = 6
+while tb_LegendaryEvent[0][lastIndexCharacter]:
+    lastIndexCharacter += 1
+
+print(lastIndexCharacter)
+indexLegendaryEvent=17
+legendaryEvents = {}
+legendaryEventCharacters = {}
+latestLegendaryEvent = None
+while tb_LegendaryEvent[indexLegendaryEvent][0]:
+    legendaryEventName = tb_LegendaryEvent[indexLegendaryEvent][0].split("-")[1].strip()
+    latestLegendaryEvent = legendaryEventName
+    items = tb_LegendaryEvent.iloc[3:5,indexLegendaryEvent:indexLegendaryEvent+18]
+    points = list(tb_LegendaryEvent.iloc[2,indexLegendaryEvent:indexLegendaryEvent+18])
+    items.replace("No", "No ",inplace=True)
+    items.replace("Eligiable", "Eligible",inplace=True)
+    items.fillna("",inplace=True)
+    itemsList = list(items.sum())
+    alphaNames = itemsList[0:6]
+    betaNames = itemsList[6:12]
+    gammaNames = itemsList[12:18]
+    pointsList = list(points)
+    
+    alpha = dict(zip(alphaNames,pointsList[0:6]))
+    beta = dict(zip(betaNames,pointsList[6:12]))
+    gamma = dict(zip(gammaNames,pointsList[12:18]))
+    for index, row in tb_LegendaryEvent.iterrows():
+        if index < 5:
+            continue
+        if not row[0]:
+            continue
+        if row[0] not in legendaryEventCharacters:
+            legendaryEventCharacters[row[0]] = {}
+        characterAlpha = []
+        characterBeta = []
+        characterGamma = []
+        for i in range(0,6):
+            if row[indexLegendaryEvent+i]:
+                characterAlpha += [alphaNames[i]]
+            if row[indexLegendaryEvent+6+i]:
+                characterBeta += [betaNames[i]]
+            if row[indexLegendaryEvent+12+i]:
+                characterGamma += [gammaNames[i]]
+        legendaryEventCharacters[row[0]][legendaryEventName] = {"alpha": characterAlpha, "beta": characterBeta, "gamma": characterGamma}
+                
+    legendaryEvents[legendaryEventName] = {"alpha": alpha, "beta": beta, "gamma": gamma}
+    indexLegendaryEvent += 19
 
 # Passives
 tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$65', True)
@@ -273,6 +322,7 @@ def toJSON(rows):
         if row["Initial rarity"] in ["Common", "Uncommon", "Rare", "Epic", "Legendary"]:
             data["passive"] = passiveData
             data["equipment"] = eqCount
+            data["legendary-event"] = legendaryEventCharacters[row.Name]
             characters[row.Name] = data
         elif row.Name[0:2] in ["L1", "L2", "L3", "L4"]:
             bosses[row.Name] = data
@@ -296,6 +346,6 @@ def toJSON(rows):
     for name in summonsNames:
         if name not in summons:
             raise Exception("%s is not in the list of summons" % name)
-    return {"characters": characters, "bosses": bossStats, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "archimatos_ability_factor": tb_Abilities_factor_archimatos, "equipment": eqDict, "version": file.split("-")[1].strip().replace(".xlsx", "")}
+    return {"characters": characters, "bosses": bossStats, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "archimatos_ability_factor": tb_Abilities_factor_archimatos, "equipment": eqDict, "legendary-events": legendaryEvents, "latest-legendary-event": latestLegendaryEvent, "version": file.split("-")[1].strip().replace(".xlsx", "")}
 with open("tacticus.json", "w") as fout:
     fout.write(json.dumps(toJSON(tb_Characters), sort_keys=True, indent=2))

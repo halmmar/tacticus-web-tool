@@ -73,6 +73,7 @@ tb_gear = [];
 tb_abilities_factor = [];
 tb_archimatos_ability_factor = [];
 tb_equipment = {};
+tb_legendary_events = {};
 intToRarity = ["common", "uncommon", "rare", "epic", "legendary"]
 
 getJSON('tacticus.json',
@@ -87,12 +88,15 @@ function(err, data) {
     tb_abilities_factor = data.abilities_factor;
     tb_archimatos_ability_factor = data.archimatos_ability_factor;
     tb_equipment = data.equipment;
+    tb_legendary_events = data["legendary-events"]
+    latest_legendary_event = data["latest-legendary-event"]
     tb_chars_and_summons = Object.assign(tb_chars,tb_summons)
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
     ["eldryon-buff", "thaddeus-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "helbrecht-buff", "equipment"].forEach(function (key) {
       document.getElementById(key + "-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     });
+    addLegendaryEvents(latest_legendary_event);
     addTable();
     updateEldryon(1);
     updateAbaddon(1);
@@ -106,6 +110,66 @@ function(err, data) {
     updateOpponentPreset();
   }
 });
+
+var addLegendaryEvents = function(latest_legendary_event) {
+  legendaryEventsHtml = "";
+  Object.keys(tb_legendary_events).forEach(function (name) {
+    legendaryEventsHtml += '<option value="'+name+'"'+(name == latest_legendary_event ? " selected": "")+'>'+name+'</option>';
+  });
+  document.getElementById("legendary-event-select").innerHTML = legendaryEventsHtml;
+  updateLegendaryEvent(1);
+};
+
+var updateLegendaryEvent = function(skipUpdateTable) {
+  eventName = document.getElementById("legendary-event-select").value;
+  eventData = tb_legendary_events[eventName];
+  Object.keys(eventData).forEach(function(track) {
+    res = "";
+    Object.keys(eventData[track]).forEach(function(mission) {
+      res += '<input onChange="updateFilter()" type="checkbox" id="legendary-event-filter-'+track+'-'+characterTableEntryId(mission)+'" checked></input> '+mission+'<br>'
+    });
+    document.getElementById("legendary-event-select-"+track).innerHTML = res;
+  });
+};
+
+var updateFilter = function() {
+  var isLegendary = document.getElementById("mode-select").value == "legendary";
+  Object.keys(tb_chars_and_summons).forEach(function callback(key) {
+    var id = characterTableEntryId(key);
+    var style = document.getElementById(id).style;
+    var foundEvent = false;
+    if (!isLegendary) {
+      style.display = "";
+      return;
+    }
+    if (!tb_chars_and_summons[key]["legendary-event"]) {
+      style.display = "none";
+      return;
+    }
+    var curEvent = document.getElementById("legendary-event-select").value;
+    console.log(key,curEvent);
+    legData = tb_chars_and_summons[key]["legendary-event"][curEvent];
+    if (!legData) {
+      style.display = "none";
+      return;
+    }
+    Object.keys(legData).forEach(function(track) {
+      if (foundEvent) return;
+      legData[track].forEach(function(mission) {
+        if (foundEvent) return;
+        var idToLookFor = 'legendary-event-filter-'+track+'-'+characterTableEntryId(mission);
+        console.log(idToLookFor);
+        if (document.getElementById(idToLookFor).checked) {
+          style.display = "";
+          console.log("Found element");
+          foundEvent = true;
+          return;
+        }
+      });
+    });
+    style.display = foundEvent ? "" : "none";
+  });
+}
 
 var levelToRarityInt = function(level) {
   return Math.min(Math.floor(level / 9), 4);
@@ -235,19 +299,30 @@ var updateMode = function(skipUpdateTable) {
   var mode = document.getElementById("mode-select").value;
   dmgOnly = document.getElementsByClassName("damage-mode-only");
   survivalOnly = document.getElementsByClassName("survival-mode-only");
+  legendaryOnly = document.getElementsByClassName("legendary-mode-only");
   switch (mode) {
     case "damage":
-      updateModeVisible(dmgOnly,"");
       updateModeVisible(survivalOnly, "none");
+      updateModeVisible(legendaryOnly, "none");
+      updateModeVisible(dmgOnly,"");
     break;
   case "survival":
       updateModeVisible(dmgOnly,"none");
+      updateModeVisible(legendaryOnly, "none");
       updateModeVisible(survivalOnly, "");
+    break;
+  case "legendary":
+      updateModeVisible(dmgOnly,"none");
+      updateModeVisible(survivalOnly, "none");
+      updateModeVisible(legendaryOnly, "");
     break;
   default:
     console.log("Unknown mode to select:",mode)
   }
-  if (!skipUpdateTable) updateTable();
+  if (!skipUpdateTable) {
+    updateTable();
+    updateFilter();
+  }
 }
 
 var updateOpponentPreset = function() {
@@ -922,7 +997,8 @@ function sortTable(n) {
       <select onChange="updateMode()" id="mode-select">
         <option value="damage" selected>Damage</option>
         <option value="survival">Survival</option>
-        <option value="legendary" disabled>Legendary Event</option>
+        <option value="legendary-overview" disabled>Legendary Event (Overview)</option>
+        <option value="legendary">Legendary Event</option>
       </select>
     </fieldset>
     
@@ -995,9 +1071,26 @@ function sortTable(n) {
     <label>LtGB</label>
     <input title="Let the Galaxy Burn can be disabled since it often hits allies instead of the intended target" onChange="updateTable()" type="checkbox" id="ltgb-enabled" checked></input>
     </fieldset>
+    <fieldset class="legendary-mode-only">
+      <legend>Filter</legend>
+      <select onChange="updateLegendaryEvent()" id="legendary-event-select">
+      </select>
+      <fieldset>
+        <legend>α</legend>
+        <span id="legendary-event-select-alpha"></span>
+      </fieldset>
+      <fieldset>
+        <legend>ß</legend>
+        <span id="legendary-event-select-beta"></span>
+      </fieldset>
+      <fieldset>
+        <legend>γ</legend>
+        <span id="legendary-event-select-gamma"></span>
+      </fieldset>
+    </fieldset>
     </header>
 
-    <table class="damage-mode-only" id="damage-table"></table>
+    <table class="damage-mode-only legendary-mode-only" id="damage-table"></table>
     <table class="survival-mode-only" id="survival-table"></table>
   <footer>
     <p>This web application was created by Rilak (MOP-06-FAX)<br>
