@@ -117,7 +117,27 @@
         ],
         null
       ],
-      "debuff": 0.5
+      "checkbox": {
+        "armour": 0.5,
+        "damage": 0.5
+      },
+      "damage": [
+        null,
+        null,
+        [
+          1556.0,
+          15
+        ],
+        null
+      ],
+      "melee": {
+        "hits": 4,
+        "pierce": 0.4
+      },
+      "ranged": {
+        "hits": 6,
+        "pierce": 0.15
+      }
     },
     "gibbascrapz": {
       "armour": [
@@ -129,7 +149,20 @@
         ],
         null
       ],
-      "debuff": 0.0
+      "checkbox": {},
+      "damage": [
+        null,
+        null,
+        [
+          1874,
+          16
+        ],
+        null
+      ],
+      "melee": {
+        "hits": 4,
+        "pierce": 0.01
+      }
     },
     "hive tyrant gorgon": {
       "armour": [
@@ -138,7 +171,15 @@
         null,
         null
       ],
-      "debuff": 0.6
+      "checkbox": {
+        "armour": 0.4
+      },
+      "damage": [
+        null,
+        null,
+        null,
+        null
+      ]
     },
     "hive tyrant kronos": {
       "armour": [
@@ -147,7 +188,15 @@
         null,
         null
       ],
-      "debuff": 0.6
+      "checkbox": {
+        "armour": 0.4
+      },
+      "damage": [
+        null,
+        null,
+        null,
+        null
+      ]
     },
     "hive tyrant leviathan": {
       "armour": [
@@ -156,7 +205,42 @@
         null,
         null
       ],
-      "debuff": 0.6
+      "checkbox": {
+        "armour": 0.4
+      },
+      "damage": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "stormboy": {
+      "armour": [
+        null,
+        null,
+        [
+          502,
+          15
+        ],
+        null
+      ],
+      "checkbox": {
+        "hits": 1
+      },
+      "damage": [
+        null,
+        null,
+        [
+          1003,
+          16
+        ],
+        null
+      ],
+      "melee": {
+        "hits": 2,
+        "pierce": 0.01
+      }
     },
     "szarekh": {
       "armour": [
@@ -171,7 +255,15 @@
           15
         ]
       ],
-      "debuff": 0.6
+      "checkbox": {
+        "armour": 0.4
+      },
+      "damage": [
+        null,
+        null,
+        null,
+        null
+      ]
     },
     "tervigon gorgon": {
       "armour": [
@@ -180,19 +272,32 @@
         null,
         null
       ],
-      "debuff": 0.6
+      "checkbox": {
+        "armour": 0.4
+      },
+      "damage": [
+        null,
+        null,
+        null,
+        null
+      ]
     },
     "tervigon kronos": {
       "armour": [
         null,
-        [
-          560.0,
-          15
-        ],
+        null,
         null,
         null
       ],
-      "debuff": 0.6
+      "checkbox": {
+        "armour": 0.4
+      },
+      "damage": [
+        null,
+        null,
+        null,
+        null
+      ]
     },
     "tervigon leviathan": {
       "armour": [
@@ -204,11 +309,33 @@
           16
         ]
       ],
-      "debuff": 0.6
+      "checkbox": {
+        "armour": 0.4
+      },
+      "damage": [
+        null,
+        null,
+        null,
+        [
+          2379,
+          16
+        ]
+      ],
+      "melee": {
+        "hits": 3,
+        "pierce": 0.3
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0
+      }
     },
     "triarchal menhir": {
       "armour": [
-        null,
+        [
+          573,
+          16
+        ],
         null,
         null,
         [
@@ -216,7 +343,27 @@
           15
         ]
       ],
-      "debuff": 0.0
+      "checkbox": {},
+      "damage": [
+        [
+          859,
+          16
+        ],
+        null,
+        null,
+        [
+          2864,
+          15
+        ]
+      ],
+      "melee": {
+        "hits": 1,
+        "pierce": 0.8
+      },
+      "ranged": {
+        "hits": 1,
+        "pierce": 0.8
+      }
     }
   },
   "characters": {

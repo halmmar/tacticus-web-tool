@@ -41,9 +41,7 @@
       width: 30pt;
       text-align: right;
     }
-    .commentCell {
-    }
-    .armourBox {
+    .armourBox, .damageBox {
       width: 36pt !important
     }
     fieldset fieldset {
@@ -227,6 +225,31 @@ var updateHelbrecht = function(skipUpdate) {
   if (1 != skipUpdate) updateTable();
 }
 
+var updateModeVisible = function(elements, display) {
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].style.display=display;
+  }
+};
+
+var updateMode = function(skipUpdateTable) {
+  var mode = document.getElementById("mode-select").value;
+  dmgOnly = document.getElementsByClassName("damage-mode-only");
+  survivalOnly = document.getElementsByClassName("survival-mode-only");
+  switch (mode) {
+    case "damage":
+      updateModeVisible(dmgOnly,"");
+      updateModeVisible(survivalOnly, "none");
+    break;
+  case "survival":
+      updateModeVisible(dmgOnly,"none");
+      updateModeVisible(survivalOnly, "");
+    break;
+  default:
+    console.log("Unknown mode to select:",mode)
+  }
+  if (!skipUpdateTable) updateTable();
+}
+
 var updateOpponentPreset = function() {
   var mech = false;
   var psyker = false;
@@ -234,7 +257,7 @@ var updateOpponentPreset = function() {
   var bigtarget = false;
   var preset = document.getElementById("opponent-preset").value;
   var level = +document.getElementById("opponent-preset-level").value;
-  var primeKilled = document.getElementById("opponent-prime-killed").checked;
+  var checkbox = document.getElementById("opponent-checkbox").checked;
   switch (preset.split(" ")[0]) {
     case "szarekh":
     case "ghazghkull":
@@ -247,25 +270,45 @@ var updateOpponentPreset = function() {
       bigtarget = true;
       break;
   }
-  var tb_armour = tb_bosses[preset]["armour"];
-  var armour = tb_armour[level-1];
-  var armourMax = tb_armour.filter(x => x != null).slice(-1)[0];
-  if (armour || armourMax) {
-    var armourUsed = armour || armourMax;
-    var scale = 1.0;
-    if (primeKilled) {
-      scale = 1.0 - tb_bosses[preset]["debuff"]
-    }
-    document.getElementById("opponent-armour").value = Math.round(armourUsed[0]*scale);
-    var season = '<abbr title="Guild raid season the data comes from">S' + armourUsed[1] + '</abbr>';
-    if (!armour) {
-      document.getElementById("opponent-preset-comment").innerHTML = "Not found; using L" + (tb_armour.findIndex(armour => armour == armourMax) + 1) + " (" + season + ")";
+  var updateOpponentPresetStat = function(stat) {
+    var tb = tb_bosses[preset][stat];
+    var statLevel = tb[level-1];
+    var statMax = tb.filter(x => x != null).slice(-1)[0];
+    if (statLevel || statMax) {
+      var statUsed = statLevel || statMax;
+      var statScale = tb_bosses[preset]["checkbox"][stat];
+      var scale = 1.0;
+      if (checkbox && statScale) {
+        scale *= 1-statScale
+      }
+      document.getElementById("opponent-" + stat).value = Math.round(statUsed[0]*scale);
+      var season = '<abbr title="Guild raid season the data comes from">S' + statUsed[1] + '</abbr>';
+      if (!statLevel) {
+        document.getElementById("opponent-preset-comment").innerHTML = "Not found; using L" + (tb.findIndex(statLevel => statLevel == statMax) + 1) + " (" + season + ")";
+      } else {
+        document.getElementById("opponent-preset-comment").innerHTML = season;
+      }
     } else {
-      document.getElementById("opponent-preset-comment").innerHTML = season;
+      document.getElementById("opponent-preset-comment").innerHTML = stat + " unknown.";
     }
-  } else {
-    document.getElementById("opponent-preset-comment").innerHTML = "Armour unknown.";
   }
+  updateOpponentPresetStat("armour");
+  updateOpponentPresetStat("damage");
+
+  ["melee","ranged"].forEach(function x(it) {
+    if (tb_bosses[preset][it]) {
+      var extraHits = +(checkbox ? tb_bosses[preset]["checkbox"]["hits"] || 0 : 0);
+      document.getElementById("opponent-"+it+"-hits").innerHTML = tb_bosses[preset][it]["hits"] + extraHits;
+      document.getElementById("opponent-"+it+"-damage").innerHTML = document.getElementById("opponent-damage").value;
+      document.getElementById("opponent-"+it+"-damage").value = document.getElementById("opponent-damage").value;
+      document.getElementById("opponent-"+it+"-pierce").innerHTML = tb_bosses[preset][it]["pierce"];
+    } else {
+      document.getElementById("opponent-"+it+"-hits").innerHTML = 0;
+      document.getElementById("opponent-"+it+"-damage").innerHTML = 0;
+      document.getElementById("opponent-"+it+"-pierce").innerHTML = 0;
+    }
+  });
+
   document.getElementById("opponent-is-mech").checked = mech;
   document.getElementById("opponent-is-psyker").checked = psyker;
   document.getElementById("opponent-has-markerlight").checked = markerlight;
@@ -285,16 +328,23 @@ var characterTableEntryId = function(str) {
 }
 
 var addTable = function() {
-    res = '<tr><th class="nameCell" onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th title="Damage stat" onclick="sortTable(3)">Dmg</th><th onclick="sortTable(4)">%</th><th onclick="sortTable(5)">Crit</th><th onclick="sortTable(6)">%</th><th onclick="sortTable(7)">Block</th><th title="Average damage for an attack, without passives" onclick="sortTable(8)">Expected</th><th class="commentCell" onclick="sortTable(9)">Comment</th></tr>';
-    Object.keys(tb_chars).forEach(function callback(key) {
-        var id = characterTableEntryId(key);
-        res += '<tr id="'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-health"></td><td class="statCell" id="'+id+'-armour"></td><td class="statCell" id="'+id+'-dmg"></td><td class="statCell" id="'+id+'-crit-chance"></td><td class="statCell" id="'+id+'-crit-dmg"></td><td class="statCell" id="'+id+'-block-chance"></td><td class="statCell" id="'+id+'-block"></td><td class="statCell" id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
-    });
-    document.getElementById("ch-table").innerHTML=res;
-    updateTable();
+  resDmg = '<tr><th class="nameCell" onclick="sortTable(0)">Name</th><th title="Damage stat" onclick="sortTable(1)">Dmg</th><th onclick="sortTable(2)">%</th><th onclick="sortTable(3)">Crit</th><th title="Average damage for an attack" onclick="sortTable(4)">Expected</th><th class="commentCell" onclick="sortTable(5)">Comment</th></tr>';
+  resSurvival = '<tr><th class="survival-nameCell" onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th onclick="sortTable(3)">%</th><th onclick="sortTable(4)">Block</th><th title="Worst case number of attacks survived" onclick="sortTable(5)">WC % Health</th><th title="Worst case number of attacks survived" onclick="sortTable(5)">WC # Survived</th><th class="commentCell" onclick="sortTable(6)">Comment</th></tr>';
+  Object.keys(tb_chars).forEach(function callback(key) {
+    var id = characterTableEntryId(key);
+    resDmg += '<tr id="'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-dmg"></td><td class="statCell" id="'+id+'-crit-chance"></td><td class="statCell" id="'+id+'-crit-dmg"></td><td class="statCell" id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
+    resSurvival += '<tr id="survival-'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-health"></td><td class="statCell" id="'+id+'-armour"></td><td class="statCell" id="'+id+'-block-chance"></td><td class="statCell" id="'+id+'-block"></td><td class="statCell" id="'+id+'-worst-case-percentage"></td><td class="statCell" id="'+id+'-worst-case-attacks"></td><td id="'+id+'-comment-survival"></td></tr>';
+  });
+  document.getElementById("damage-table").innerHTML=resDmg;
+  document.getElementById("survival-table").innerHTML=resSurvival;
+  updateMode(1);
+  updateTable();
 }
 var round2 = function(num) {
   return Math.round( num * 100 + Number.EPSILON ) / 100;
+}
+var damageArmourOrPierce = function(dmg, armour, pierce) {
+  return Math.max(dmg-armour, dmg*pierce);
 }
 var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit) {
   numRounds = aunshiBonusDmg > 0 ? 3 : 1;
@@ -302,9 +352,9 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour
   for (i=0; i<numRounds; i++) {
     var dmgLow = low+aunshiBonusDmg
     var dmgHigh = high+aunshiBonusDmg
-    var perNonCrit = Math.max(dmgLow-armour, dmgLow*pierce)*0.5 + Math.max(dmgHigh-armour, dmgHigh*pierce)*0.5;
-    var perCrit =  Math.max((dmgLow+crit)-armour, (dmgLow+crit)*pierce)*0.5 + Math.max((dmgHigh+crit)-armour, (dmgHigh+crit)*pierce)*0.5;
-    for (n=1; n<=hits; n++) {
+    var perNonCrit = damageArmourOrPierce(dmgLow, armour, pierce)*0.5 + damageArmourOrPierce(dmgHigh, armour, pierce)*0.5;
+    var perCrit =  damageArmourOrPierce(dmgLow+crit, armour, pierce)*0.5 + damageArmourOrPierce(dmgHigh+crit, armour, pierce)*0.5;
+        for (n=1; n<=hits; n++) {
       var critCurHit = Math.pow(critChance, n);
       total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
     };
@@ -322,6 +372,12 @@ var updateTable = function() {
     var gearlevel = document.getElementById("gearlevel").value;
     var levelStatFactor = Math.pow(1.25205, gearlevel)*(1+0.1*starlevel);
     var opponentarmor = +document.getElementById("opponent-armour").value;
+    var opponentMeleeDamage = +document.getElementById("opponent-melee-damage").innerHTML;
+    var opponentMeleeHits = +document.getElementById("opponent-melee-hits").innerHTML;
+    var opponentMeleePierce = +document.getElementById("opponent-melee-pierce").innerHTML;
+    var opponentRangedDamage = +document.getElementById("opponent-ranged-damage").innerHTML;
+    var opponentRangedHits = +document.getElementById("opponent-ranged-hits").innerHTML;
+    var opponentRangedPierce = +document.getElementById("opponent-ranged-pierce").innerHTML;
     var preferEqCritDmg = +document.getElementById("prefer-eq-crit-dmg").value;
     // Tyrant max debuff is 60%
     var eldryondamage = +document.getElementById("eldryon-buff-all").innerHTML;
@@ -374,6 +430,7 @@ var updateTable = function() {
         var dmgFactor = 1.0;
         var dmgFactorMelee = 1.0;
         var dmgFactorRanged = 1.0;
+        var dmgFactorMeleeTaken = 1.0;
         var abaddonBonusDmgModifiedByFaction = (char.alliance == "Chaos" ? abaddonBonusDmg : 0)
         var eldryondamageModifiedByFaction = eldryondamage + (char.faction == "Aeldari" ? eldryondamageAeldari : 0.0);
         var calgardamageModifiedByFaction = (char.alliance == "Imperial" ? calgarBonusDmgImperial : calgarBonusDmg)
@@ -385,6 +442,7 @@ var updateTable = function() {
         var buffDmgRanged = 0;
         var buffDmgMelee = 0;
         var commentRanged = "";
+        var commentSurvival = "";
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
@@ -427,6 +485,10 @@ var updateTable = function() {
                 meleeHits += 1;
               }
               break;
+            case "terrifying":
+              dmgFactorMeleeTaken *= 0.7;
+              commentSurvival = "terrifying";
+              break;
             case "battle fatigue":
             case "diminutive":
             case "let the galaxy burn":
@@ -437,7 +499,6 @@ var updateTable = function() {
             case "living metal":
             case "mechanic":
             case "final vengeance":
-            case "terrifying":
             case "act of faith":
             case "big target":
             case "infiltrate":
@@ -510,8 +571,7 @@ var updateTable = function() {
         case 'Ancient Thoread':
         case 'Anuphet':
         case 'Archimatos':
-        case "Aun'Shi":
-        case "Aun'Shi (preview)":
+        case "Aun'shi":
         case 'Bellator':
         case 'Boss Gulgortz':
         case 'Brother Burchard':
@@ -535,8 +595,8 @@ var updateTable = function() {
         case 'Isabella':
         case 'Jain Zar':
         case 'Makhotep':
-        case 'Maugan Ra':
         case 'Maladus':
+        case 'Maugan Ra':
         case 'Morvenn Vahl':
         case 'MV71 Sniper Drone':
         case 'Necron warrior':
@@ -663,6 +723,14 @@ var updateTable = function() {
           comment = "⚔" + comment;
         }
 
+        var calcOpponentDamageWorstCase = function(dmg,hits,pierce) {
+          res = damageArmourOrPierce(dmg,armour,pierce)*hits;
+          return res;
+        };
+        opponentDmgPerAttack = Math.max(
+          dmgFactorMeleeTaken*calcOpponentDamageWorstCase(opponentMeleeDamage, opponentMeleeHits, opponentMeleePierce),
+          calcOpponentDamageWorstCase(opponentRangedDamage, opponentRangedHits, opponentRangedPierce));
+
         document.getElementById(entryId+"-health").innerHTML=Math.round(health);
         document.getElementById(entryId+"-armour").innerHTML=Math.round(armour);
         document.getElementById(entryId+"-dmg").innerHTML=Math.round(dmg);
@@ -672,12 +740,15 @@ var updateTable = function() {
         document.getElementById(entryId+"-block-chance").innerHTML=round2(blockChance);
         document.getElementById(entryId+"-block").innerHTML=block;
         document.getElementById(entryId+"-comment").innerHTML=comment;
+        document.getElementById(entryId+"-comment-survival").innerHTML=commentSurvival;
+        document.getElementById(entryId+"-worst-case-percentage").innerHTML=Math.round(100 * opponentDmgPerAttack / health);
+        document.getElementById(entryId+"-worst-case-attacks").innerHTML=Math.floor(health / opponentDmgPerAttack);
     });
 }
 
 function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-  table = document.getElementById("ch-table");
+  table = document.getElementById(document.getElementById("mode-select").value+"-table");
   switching = true;
   // Set the sorting direction to ascending:
   dir = "asc";
@@ -805,6 +876,7 @@ function sortTable(n) {
         <option value="hive tyrant gorgon">Hive Tyrant Gorgon</option>
         <option value="hive tyrant kronos">Hive Tyrant Kronos</option>
         <option value="hive tyrant leviathan">Hive Tyrant Leviathan</option>
+        <option value="stormboy">Stormboy</option>
         <option value="szarekh">Szarekh</option>
         <option value="tervigon gorgon">Tervigon Gorgon</option>
         <option value="tervigon kronos">Tervigon Kronos</option>
@@ -816,27 +888,45 @@ function sortTable(n) {
         <option value="3" selected>L3</option>
         <option value="4">L4</option>
       </select>
-      <input title="The primes have been killed, debuffing armour" onChange="updateOpponentPreset()" type="checkbox" id="opponent-prime-killed" checked></input>
+      <input title="The primes have been killed, debuffing armour. For summons, activates some abilities such as Stormboy buffs." onChange="updateOpponentPreset()" type="checkbox" id="opponent-checkbox" checked></input>
       <br>
       <div id="opponent-preset-comment"></div>
       </fieldset>
-      <fieldset><legend>Armour</legend>
-      <input class="armourBox" onChange="updateTable()" type="number" id="opponent-armour" min="0" max="3000" value="300" size="4">
+      <fieldset class="damage-mode-only"><legend>Armour</legend>
+        <input class="armourBox" onChange="updateTable()" type="number" id="opponent-armour" min="0" max="3000" value="300" size="4">
       </fieldset>
-      <fieldset><legend>Mech</legend>
+      <fieldset class="survival-mode-only"><legend>Damage</legend>
+        <input class="damageBox" onChange="updateTable()" type="number" id="opponent-damage" min="0" max="3000" value="300" size="4">
+      </fieldset>
+      <fieldset class="survival-mode-only"><legend>Hits</legend>
+        <span id="opponent-melee">⚔ <span id="opponent-melee-hits"></span>x<span id="opponent-melee-damage"></span> (<span id="opponent-melee-pierce"></span></span> pierce)
+        <br />
+        <span id="opponent-ranged"><img class="damage-icon" src="images/boltgun.png" /> <span id="opponent-ranged-hits"></span>x<span id="opponent-ranged-damage"></span> (<span id="opponent-ranged-pierce"></span> pierce)</span>
+      </fieldset>
+      <fieldset class="damage-mode-only"><legend>Mech</legend>
       <input onChange="updateTable()" type="checkbox" id="opponent-is-mech"></input>
       </fieldset>
-      <fieldset><legend>Psyker</legend>
+      <fieldset class="damage-mode-only"><legend>Psyker</legend>
       <input onChange="updateTable()" type="checkbox" id="opponent-is-psyker"></input>
       </fieldset>
-      <fieldset><legend>Markerlight</legend>
+      <fieldset class="damage-mode-only"><legend>Markerlight</legend>
       <input onChange="updateTable()" type="checkbox" id="opponent-has-markerlight"></input>
       </fieldset>
-      <fieldset><legend>Big Target</legend>
+      <fieldset class="damage-mode-only"><legend>Big Target</legend>
       <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
       </fieldset>
     </fieldset>
+
     <fieldset>
+      <legend>Mode</legend>
+      <select onChange="updateMode()" id="mode-select">
+        <option value="damage" selected>Damage</option>
+        <option value="survival">Survival</option>
+        <option value="legendary" disabled>Legendary Event</option>
+      </select>
+    </fieldset>
+    
+    <fieldset class="damage-mode-only">
     <legend>Buffs</legend>
     <label>Abaddon</label>
     <input onChange="updateAbaddon()" type="checkbox" id="abaddon-buff-enabled"></input>
@@ -896,7 +986,7 @@ function sortTable(n) {
     <input onChange="updateThaddeus()" type="number" id="thaddeus-buff-level" min="0" max="50" value="35">
     +<span id="thaddeus-buff-dmg"></span> damage [Heavy Weapon]
     </fieldset>
-    <fieldset>
+    <fieldset class="damage-mode-only">
     <legend>Conditional</legend>
     <label>Heavy Weapon</label>
     <input title="Heavy Weapon and similar passives (Maugan Ra) are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
@@ -907,7 +997,8 @@ function sortTable(n) {
     </fieldset>
     </header>
 
-    <table id="ch-table"></table>
+    <table class="damage-mode-only" id="damage-table"></table>
+    <table class="survival-mode-only" id="survival-table"></table>
   <footer>
     <p>This web application was created by Rilak (MOP-06-FAX)<br>
     Based on data and formulas in <a href="https://docs.google.com/spreadsheets/d/1al2IWwvTP3QOhHtfr6P8stdlA48ED4JFrtK8wDKznrk/edit#gid=2104934925">Towen's Awesome Calculator To Infer Cool Useful Stuff -  T.A.C.T.I.C.U.S</a> <span id="tacticus-version">v???</span> (NOD-08-POD)</p>

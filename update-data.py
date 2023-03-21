@@ -88,16 +88,88 @@ characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.ite
 # Boss stats
 bossStats = {
   # Stats are an array [0]=L1, etc. The first element is the stat and the second, the season which the data was collected from
-  "ghazghkull": {"armour": [[151/0.5,15],None,[330/0.5,16],None], "debuff": 0.5},
-  "gibbascrapz": {"armour": [None,None,[2297,16],None], "debuff": 0.0},
-  "tervigon gorgon": {"armour": [None, None, None, None], "debuff": 0.6},
-  "tervigon leviathan": {"armour": [None, None, None, [403/0.4,16]], "debuff": 0.6},
-  "tervigon kronos": {"armour": [None, [224/0.4,15], None, None], "debuff": 0.6},
-  "hive tyrant gorgon": {"armour": [None, None, None, None], "debuff": 0.6},
-  "hive tyrant leviathan": {"armour": [None, None, None, None], "debuff": 0.6},
-  "hive tyrant kronos": {"armour": [None, None, None, None], "debuff": 0.6}, # 60% max debuff
-  "szarekh": {"armour": [[110/0.4,16], None, None, [368/0.4,15]], "debuff": 0.6}, # 60% max debuff?
-  "triarchal menhir": {"armour": [None, None, None, [1910,15]], "debuff": 0.0}
+  "ghazghkull": {
+      "armour": [[151/0.5,15],None,[330/0.5,16],None],
+      "damage": [None,None,[778/0.5,15],None],
+      "melee": {"hits": 4, "pierce": 0.4},
+      "ranged": {"hits": 6, "pierce": 0.15},
+      "checkbox": {
+          "armour": 0.5,
+          "damage": 0.5 # ??? Confirm this
+      }
+  },
+  "gibbascrapz": {
+      "armour": [None, None, [2297,16], None],
+      "damage": [None, None, [1874,16], None],
+      "melee": {"hits": 4, "pierce": 0.01},
+      "checkbox": {}
+  },
+  "tervigon gorgon": {
+      "armour": [None, None, None, None],
+      "damage": [None, None, None, None],
+      "checkbox": {
+          "armour": 0.4
+      }
+  },
+  "tervigon leviathan": {
+      "armour": [None, None, None, [403/0.4,16]],
+      "damage": [None, None, None, [2379,16]],
+      "melee": {"hits": 3, "pierce": 0.3},
+      "ranged": {"hits": 2, "pierce": 1.0 },
+      "checkbox": {
+          "armour": 0.4
+      }
+  },
+  "tervigon kronos": {
+      "armour": [None, None, None, None],
+      "damage": [None, None, None, None],
+      "checkbox": {
+          "armour": 0.4
+      }
+  },
+  "hive tyrant gorgon": {
+      "armour": [None, None, None, None],
+      "damage": [None, None, None, None],
+      "checkbox": {
+          "armour": 0.4
+      }
+  },
+  "hive tyrant leviathan": {
+      "armour": [None, None, None, None],
+      "damage": [None, None, None, None],
+      "checkbox": {
+          "armour": 0.4
+      }
+  },
+  "hive tyrant kronos": {
+      "armour": [None, None, None, None],
+      "damage": [None, None, None, None],
+      "checkbox": {
+          "armour": 0.4
+      }
+  },
+  "szarekh": {
+      "armour": [[110/0.4,16], None, None, [368/0.4,15]],
+      "damage": [None, None, None, None],
+      "checkbox": {
+          "armour": 0.4
+      }
+  },
+  "stormboy": {
+      "armour": [None, None, [502,15], None],
+      "damage": [None, None, [1003,16], None],
+      "melee": {"hits": 2, "pierce": 0.01},
+      "checkbox": {
+          "hits": 1
+      }
+    },
+  "triarchal menhir": {
+      "armour": [[573,16], None, None, [1910,15]],
+      "damage": [[859,16], None, None, [2864,15]],
+      "melee": {"hits": 1, "pierce": 0.8},
+      "ranged": {"hits": 1, "pierce": 0.8},
+      "checkbox": {}
+  }
 }
 
 pierce = dict([(k.lower(),v) for (k,v) in tb_Pierce.itertuples(index=False)])
