@@ -37,6 +37,12 @@
     .nameCell {
       width: 120pt;
     }
+    #legendary-table {
+      font-size: 10pt;
+    }
+    #legendary-table .nameCell {
+      width: 100pt;
+    }
     .statCell {
       width: 30pt;
       text-align: right;
@@ -120,62 +126,76 @@ var addLegendaryEvents = function(latest_legendary_event) {
   updateLegendaryEvent(1);
 };
 
-var updateLegendaryEvent = function(skipUpdateTable) {
+var updateLegendaryEvent = function(skipUpdate) {
   eventName = document.getElementById("legendary-event-select").value;
   eventData = tb_legendary_events[eventName];
   Object.keys(eventData).forEach(function(track) {
     res = "";
     Object.keys(eventData[track]).forEach(function(mission) {
-      res += '<input onChange="updateFilter()" type="checkbox" id="legendary-event-filter-'+track+'-'+characterTableEntryId(mission)+'" checked></input> '+mission+'<br>'
+      res += '<input class="legendary-event-select-checkbox" onChange="updateFilter()" type="checkbox" id="legendary-event-filter-'+track+'-'+characterTableEntryId(mission)+'"></input> '+mission+'<br>'
     });
     document.getElementById("legendary-event-select-"+track).innerHTML = res;
   });
+  if (1 != skipUpdate) {
+    updateFilter();
+    updateTable();
+  }
 };
 
 var updateFilter = function() {
-  var isLegendary = document.getElementById("mode-select").value == "legendary";
   var displayCharacters = document.getElementById("filter-characters").checked;
   var displaySummons = document.getElementById("filter-summons").checked;
   Object.keys(tb_chars_and_summons).forEach(function callback(key) {
     var id = characterTableEntryId(key);
-    var style = document.getElementById(id).style;
-    var foundEvent = false;
-    if (!isLegendary) {
+    switch (document.getElementById("mode-select").value) {
+    case 'damage':
+    case 'survival':
+      var style = document.getElementById(id).style;
       if (tb_chars_and_summons[key].traits.includes("summon") ? displaySummons : displayCharacters) {
         style.display = "";
       } else {
         style.display = "none";
       }
       return;
-    }
-    if (!tb_chars_and_summons[key]["legendary-event"]) {
-      style.display = "none";
-      return;
-    }
-    var curEvent = document.getElementById("legendary-event-select").value;
-    console.log(key,curEvent);
-    legData = tb_chars_and_summons[key]["legendary-event"][curEvent];
-    if (!legData) {
-      style.display = "none";
-      return;
-    }
-    Object.keys(legData).forEach(function(track) {
-      if (foundEvent) return;
-      legData[track].forEach(function(mission) {
-        if (foundEvent) return;
-        var idToLookFor = 'legendary-event-filter-'+track+'-'+characterTableEntryId(mission);
-        console.log(idToLookFor);
-        if (document.getElementById(idToLookFor).checked) {
-          style.display = "";
-          console.log("Found element");
-          foundEvent = true;
-          return;
-        }
+    case 'legendary':
+      var style = document.getElementById("legendary-"+id).style;
+      if (!tb_chars_and_summons[key]["legendary-event"]) {
+        style.display = "none";
+        return;
+      }
+      var curEvent = document.getElementById("legendary-event-select").value;
+      var charLegData = tb_chars_and_summons[key]["legendary-event"][curEvent];
+      var globalLegData = tb_legendary_events[curEvent];
+      if (!charLegData) {
+        style.display = "none";
+        return;
+      }
+      var filteredOut = false;
+      Object.keys(globalLegData).forEach(function(track) {
+        if (filteredOut) return;
+        var foundEvents = true;
+        Object.keys(globalLegData[track]).forEach(function(mission) {
+          if (filteredOut) return;
+          var idToLookFor = 'legendary-event-filter-'+track+'-'+characterTableEntryId(mission);
+          if (document.getElementById(idToLookFor).checked && !charLegData[track].includes(mission)) {
+            filteredOut = true;
+            return;
+          }
+        });
       });
-    });
-    style.display = foundEvent ? "" : "none";
+      style.display = filteredOut ? "none" : "";
+      break;
+    }
   });
 }
+
+var setAllFilters=function(className,checked) {
+  var elements = document.getElementsByClassName(className);
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].checked=checked;
+  }
+  updateFilter();
+};
 
 var levelToRarityInt = function(level) {
   return Math.min(Math.floor(level / 9), 4);
@@ -410,15 +430,18 @@ var characterTableEntryId = function(str) {
 }
 
 var addTable = function() {
-  resDmg = '<tr><th class="nameCell" onclick="sortTable(0)">Name</th><th title="Damage stat" onclick="sortTable(1)">Dmg</th><th onclick="sortTable(2)">%</th><th onclick="sortTable(3)">Crit</th><th title="Average damage for an attack" onclick="sortTable(4)">Expected</th><th class="commentCell" onclick="sortTable(5)">Comment</th></tr>';
-  resSurvival = '<tr><th class="survival-nameCell" onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">HP</th><th title="Armour stat" onclick="sortTable(2)">Arm</th><th onclick="sortTable(3)">%</th><th onclick="sortTable(4)">Block</th><th title="Worst case number of attacks survived" onclick="sortTable(5)">WC % Health</th><th title="Worst case number of attacks survived" onclick="sortTable(6)">WC # Survived</th><th class="commentCell" onclick="sortTable(7)">Comment</th></tr>';
+  resDmg = "";
+  resSurvival = "";
+  resLeg = "";
   Object.keys(tb_chars).forEach(function callback(key) {
     var id = characterTableEntryId(key);
     resDmg += '<tr id="'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-dmg"></td><td class="statCell" id="'+id+'-crit-chance"></td><td class="statCell" id="'+id+'-crit-dmg"></td><td class="statCell" id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
     resSurvival += '<tr id="survival-'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-health"></td><td class="statCell" id="'+id+'-armour"></td><td class="statCell" id="'+id+'-block-chance"></td><td class="statCell" id="'+id+'-block"></td><td class="statCell" id="'+id+'-worst-case-percentage"></td><td class="statCell" id="'+id+'-worst-case-attacks"></td><td id="'+id+'-comment-survival"></td></tr>';
+    resLeg += '<tr id="legendary-'+id+'"><td>'+key+'</td><td id="'+id+'-leg-alpha" /><td id="'+id+'-leg-alpha-1" /><td id="'+id+'-leg-alpha-2" /><td id="'+id+'-leg-alpha-3" /><td id="'+id+'-leg-alpha-4" /><td id="'+id+'-leg-alpha-5" /><td id="'+id+'-leg-beta" /><td id="'+id+'-leg-beta-1" /><td id="'+id+'-leg-beta-2" /><td id="'+id+'-leg-beta-3" /><td id="'+id+'-leg-beta-4" /><td id="'+id+'-leg-beta-5" /><td id="'+id+'-leg-gamma" /><td id="'+id+'-leg-gamma-1" /><td id="'+id+'-leg-gamma-2" /><td id="'+id+'-leg-gamma-3" /><td id="'+id+'-leg-gamma-4" /><td id="'+id+'-leg-gamma-5" /><td id="'+id+'-leg-total" /></tr>'
   });
-  document.getElementById("damage-table").innerHTML=resDmg;
-  document.getElementById("survival-table").innerHTML=resSurvival;
+  document.getElementById("damage-table").innerHTML += resDmg;
+  document.getElementById("survival-table").innerHTML += resSurvival;
+  document.getElementById("legendary-table").innerHTML += resLeg;
   updateMode(1);
   updateTable();
 }
@@ -490,6 +513,8 @@ var updateTable = function() {
     var darkstriderBonusDmgRawData = +document.getElementById("darkstrider-buff-dmg").innerHTML;
     var helbrechtBonusDmgRawData = opponentIsPsyker ? +document.getElementById("helbrecht-buff-dmg").innerHTML : 0;
     var ltgbEnabled = document.getElementById("ltgb-enabled").checked;
+    var curEvent = document.getElementById("legendary-event-select").value;
+    var globalLegData = tb_legendary_events[curEvent];
     
     Object.keys(tb_chars_and_summons).forEach(function callback(key) {
         var comment = "";
@@ -525,6 +550,7 @@ var updateTable = function() {
         var buffDmgMelee = 0;
         var commentRanged = "";
         var commentSurvival = "";
+        var charLegData = char["legendary-event"] ? char["legendary-event"][curEvent] : null;
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
@@ -812,6 +838,30 @@ var updateTable = function() {
         opponentDmgPerAttack = Math.max(
           dmgFactorMeleeTaken*calcOpponentDamageWorstCase(opponentMeleeDamage, opponentMeleeHits, opponentMeleePierce),
           calcOpponentDamageWorstCase(opponentRangedDamage, opponentRangedHits, opponentRangedPierce));
+        
+        if (charLegData) {
+          var totalSum = 0;
+          Object.keys(globalLegData).forEach(function(track) {
+            var trackData = globalLegData[track];
+            var i=5;
+            var sum=0;
+            var eligible = charLegData[track].includes("Eligible");
+            Object.keys(trackData).reverse().forEach(function(mission) {
+              var idMission = entryId+"-leg-"+track+(i ? ("-"+i) : "");
+              if (eligible && charLegData[track].includes(mission)) {
+                var points = trackData[mission];
+                sum += points;
+                document.getElementById(idMission).innerHTML = i==0 ? sum : points;
+              } else {
+                document.getElementById(idMission).innerHTML = "";
+              }
+              i--;
+            });
+            totalSum += sum;
+          });
+          document.getElementById(entryId+"-leg-total").innerHTML = totalSum;
+        }
+          
 
         document.getElementById(entryId+"-health").innerHTML=Math.round(health);
         document.getElementById(entryId+"-armour").innerHTML=Math.round(armour);
@@ -887,6 +937,16 @@ function sortTable(n) {
 <body>
   <header>
     <fieldset>
+      <legend>Mode</legend>
+      <select onChange="updateMode()" id="mode-select">
+        <option value="damage" selected>Damage</option>
+        <option value="survival">Survival</option>
+        <option value="legendary-overview" disabled>Legendary Event (Overview)</option>
+        <option value="legendary">Legendary Event</option>
+      </select>
+    </fieldset>
+
+    <fieldset class="damage-mode-only survival-mode-only">
       <legend>Character Development Level</legend>
   <select onchange="updateTable()" name="gearlevel" id="gearlevel">
     <option value="0">Stone Rank I</option>
@@ -949,7 +1009,7 @@ function sortTable(n) {
       <option value="0" selected>Health</option>
     </select>
     </fieldset>
-    <fieldset>
+    <fieldset class="damage-mode-only survival-mode-only">
       <legend>Opponent</legend>
       <fieldset><legend>Preset</legend>
       <select onChange="updateOpponentPreset()" id="opponent-preset">
@@ -997,16 +1057,6 @@ function sortTable(n) {
       <fieldset class="damage-mode-only"><legend>Big Target</legend>
       <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
       </fieldset>
-    </fieldset>
-
-    <fieldset>
-      <legend>Mode</legend>
-      <select onChange="updateMode()" id="mode-select">
-        <option value="damage" selected>Damage</option>
-        <option value="survival">Survival</option>
-        <option value="legendary-overview" disabled>Legendary Event (Overview)</option>
-        <option value="legendary">Legendary Event</option>
-      </select>
     </fieldset>
     
     <fieldset class="damage-mode-only">
@@ -1094,6 +1144,7 @@ function sortTable(n) {
         <legend>γ</legend>
         <span id="legendary-event-select-gamma"></span>
       </fieldset>
+      <a onClick="setAllFilters('legendary-event-select-checkbox',false)" href="#">None</a>
     </fieldset>
     <fieldset class="damage-mode-only survival-mode-only">
       <legend>Filter</legend>
@@ -1108,8 +1159,52 @@ function sortTable(n) {
     </fieldset>
     </header>
 
-    <table class="damage-mode-only legendary-mode-only" id="damage-table"></table>
-    <table class="survival-mode-only" id="survival-table"></table>
+    <table class="damage-mode-only" id="damage-table">
+      <tr>
+        <th class="nameCell" onclick="sortTable(0)">Name</th>
+        <th title="Damage stat" onclick="sortTable(1)">Dmg</th>
+        <th onclick="sortTable(2)">%</th>
+        <th onclick="sortTable(3)">Crit</th>
+        <th title="Average damage for an attack" onclick="sortTable(4)">Expected</th>
+        <th class="commentCell" onclick="sortTable(5)">Comment</th>
+      </tr>
+    </table>
+    <table class="survival-mode-only" id="survival-table">
+      <tr>
+        <th class="survival-nameCell" onclick="sortTable(0)">Name</th>
+        <th onclick="sortTable(1)">HP</th>
+        <th title="Armour stat" onclick="sortTable(2)">Arm</th>
+        <th onclick="sortTable(3)">%</th>
+        <th onclick="sortTable(4)">Block</th>
+        <th title="Worst case number of attacks survived" onclick="sortTable(5)">WC % Health</th>
+        <th title="Worst case number of attacks survived" onclick="sortTable(6)">WC # Survived</th>
+        <th class="commentCell" onclick="sortTable(7)">Comment</th>
+      </tr>
+    </table>
+    <table class="legendary-mode-only" id="legendary-table">
+      <tr>
+        <th class="legendary-nameCell" onclick="sortTable(0)">Name</th>
+        <th onclick="sortTable(1)">α</th>
+        <th onclick="sortTable(2)">α1</th>
+        <th onclick="sortTable(3)">α2</th>
+        <th onclick="sortTable(4)">α3</th>
+        <th onclick="sortTable(5)">α4</th>
+        <th onclick="sortTable(6)">α5</th>
+        <th onclick="sortTable(7)">ß</th>
+        <th onclick="sortTable(8)">ß1</th>
+        <th onclick="sortTable(9)">ß2</th>
+        <th onclick="sortTable(10)">ß3</th>
+        <th onclick="sortTable(11)">ß4</th>
+        <th onclick="sortTable(12)">ß5</th>
+        <th onclick="sortTable(13)">γ</th>
+        <th onclick="sortTable(14)">γ1</th>
+        <th onclick="sortTable(15)">γ2</th>
+        <th onclick="sortTable(16)">γ3</th>
+        <th onclick="sortTable(17)">γ4</th>
+        <th onclick="sortTable(18)">γ5</th>
+        <th onclick="sortTable(19)">Total</th>
+      </tr>
+    </table>
   <footer>
     <p>This web application was created by Rilak (MOP-06-FAX)<br>
     Based on <a href="https://docs.google.com/spreadsheets/d/1al2IWwvTP3QOhHtfr6P8stdlA48ED4JFrtK8wDKznrk/edit#gid=2104934925">Towen's Awesome Calculator To Infer Cool Useful Stuff</a> <span id="tacticus-version">v???</span> (NOD-08-POD)</p>
