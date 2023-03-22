@@ -106,8 +106,8 @@ function(err, data) {
     updateAunShi(1);
     updateDarkstrider(1);
     updateHelbrecht(1);
+    updateOpponentPreset(1);
     updateTable();
-    updateOpponentPreset();
   }
 });
 
@@ -134,12 +134,18 @@ var updateLegendaryEvent = function(skipUpdateTable) {
 
 var updateFilter = function() {
   var isLegendary = document.getElementById("mode-select").value == "legendary";
+  var displayCharacters = document.getElementById("filter-characters").checked;
+  var displaySummons = document.getElementById("filter-summons").checked;
   Object.keys(tb_chars_and_summons).forEach(function callback(key) {
     var id = characterTableEntryId(key);
     var style = document.getElementById(id).style;
     var foundEvent = false;
     if (!isLegendary) {
-      style.display = "";
+      if (tb_chars_and_summons[key].traits.includes("summon") ? displaySummons : displayCharacters) {
+        style.display = "";
+      } else {
+        style.display = "none";
+      }
       return;
     }
     if (!tb_chars_and_summons[key]["legendary-event"]) {
@@ -325,7 +331,7 @@ var updateMode = function(skipUpdateTable) {
   }
 }
 
-var updateOpponentPreset = function() {
+var updateOpponentPreset = function(skipUpdateTable) {
   var mech = false;
   var psyker = false;
   var markerlight = false;
@@ -388,6 +394,7 @@ var updateOpponentPreset = function() {
   document.getElementById("opponent-is-psyker").checked = psyker;
   document.getElementById("opponent-has-markerlight").checked = markerlight;
   document.getElementById("opponent-beast-snagga").checked = bigtarget;
+  if (!skipUpdateTable) updateTable();
 }
 
 var updateGear = function() {
@@ -1088,13 +1095,24 @@ function sortTable(n) {
         <span id="legendary-event-select-gamma"></span>
       </fieldset>
     </fieldset>
+    <fieldset class="damage-mode-only survival-mode-only">
+      <legend>Filter</legend>
+      <fieldset>
+        <legend>Characters</legend>
+        <input onChange="updateFilter()" type="checkbox" id="filter-characters" checked></input>
+      </fieldset>
+      <fieldset>
+        <legend>Summons</legend>
+        <input onChange="updateFilter()" type="checkbox" id="filter-summons" checked></input>
+      </fieldset>
+    </fieldset>
     </header>
 
     <table class="damage-mode-only legendary-mode-only" id="damage-table"></table>
     <table class="survival-mode-only" id="survival-table"></table>
   <footer>
     <p>This web application was created by Rilak (MOP-06-FAX)<br>
-    Based on data and formulas in <a href="https://docs.google.com/spreadsheets/d/1al2IWwvTP3QOhHtfr6P8stdlA48ED4JFrtK8wDKznrk/edit#gid=2104934925">Towen's Awesome Calculator To Infer Cool Useful Stuff -  T.A.C.T.I.C.U.S</a> <span id="tacticus-version">v???</span> (NOD-08-POD)</p>
+    Based on <a href="https://docs.google.com/spreadsheets/d/1al2IWwvTP3QOhHtfr6P8stdlA48ED4JFrtK8wDKznrk/edit#gid=2104934925">Towen's Awesome Calculator To Infer Cool Useful Stuff</a> <span id="tacticus-version">v???</span> (NOD-08-POD)</p>
   </footer>
 </body>
 
