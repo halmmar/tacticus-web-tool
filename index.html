@@ -354,7 +354,7 @@ var updateOpponentPreset = function() {
       var statScale = tb_bosses[preset]["checkbox"][stat];
       var scale = 1.0;
       if (checkbox && statScale) {
-        scale *= 1-statScale
+        scale *= statScale
       }
       document.getElementById("opponent-" + stat).value = Math.round(statUsed[0]*scale);
       var season = '<abbr title="Guild raid season the data comes from">S' + statUsed[1] + '</abbr>';
