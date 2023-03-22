@@ -98,6 +98,7 @@ while tb_LegendaryEvent[indexLegendaryEvent][0]:
     points = list(tb_LegendaryEvent.iloc[2,indexLegendaryEvent:indexLegendaryEvent+18])
     items.replace("No", "No ",inplace=True)
     items.replace("Eligiable", "Eligible",inplace=True)
+    items.replace("Eligible", "!", inplace=True)
     items.fillna("",inplace=True)
     itemsList = list(items.sum())
     alphaNames = itemsList[0:6]

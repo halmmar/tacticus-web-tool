@@ -381,13 +381,13 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Piercing",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Summons"
           ],
           "gamma": [
@@ -408,7 +408,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Piercing",
             "Bolter",
@@ -417,12 +417,12 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Power",
             "Resilient"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Summons"
           ],
@@ -465,27 +465,27 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Piercing",
             "Melee",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "Melee",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Power"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 3 hits",
             "No Summons"
           ],
@@ -494,25 +494,25 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Piercing"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Summons"
           ]
@@ -546,33 +546,33 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Mechanical",
             "No Resilient",
             "Melee"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Power"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Necrons"
           ],
           "beta": [
             "No Blast"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Min 4 hits"
           ]
         },
@@ -581,13 +581,13 @@
             "Melee"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "Min 4 hits"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch"
           ]
         }
@@ -620,7 +620,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "No Physical"
@@ -631,7 +631,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch"
           ]
@@ -642,21 +642,21 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Power",
             "No Blast",
             "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "Power"
@@ -667,7 +667,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Summons"
           ]
@@ -697,13 +697,13 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "Melee",
             "No Summons"
@@ -723,7 +723,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying",
             "Min 4 hits"
@@ -731,12 +731,12 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Power"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Min 4 hits",
             "No Mechanical",
             "No Summons"
@@ -776,17 +776,17 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Mechanical",
             "No Resilient"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -794,7 +794,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Ranged",
             "Max 3 hits",
             "Necrons"
@@ -803,19 +803,19 @@
             "No Blast"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Ranged"
           ]
@@ -851,12 +851,12 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient"
           ],
           "gamma": [
@@ -876,19 +876,19 @@
             "Max 2 hits"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Psychic",
             "Max 2 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Mechanical"
           ],
@@ -930,26 +930,26 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "Melee",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "No Summons"
           ],
           "beta": [
@@ -958,7 +958,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying",
             "Min 4 hits"
@@ -966,19 +966,19 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Power"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Summons"
           ]
@@ -1008,7 +1008,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Min 3 hits",
             "No Physical"
@@ -1018,7 +1018,7 @@
             "Melee"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Power"
           ]
@@ -1026,12 +1026,12 @@
         "JAIN ZAR": {
           "alpha": [],
           "beta": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Blast"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Bolter",
             "Min 4 hits"
@@ -1039,7 +1039,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee"
           ],
           "beta": [
@@ -1049,7 +1049,7 @@
             "No Mechanical"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Overwatch"
           ]
@@ -1085,13 +1085,13 @@
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Mechanical",
             "No Resilient",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -1099,7 +1099,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Ranged",
             "Max 3 hits",
             "No Summons"
@@ -1114,16 +1114,16 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible"
+            "!"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Ranged",
             "No Summons"
@@ -1163,7 +1163,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Min 3 hits",
             "No Physical"
           ],
@@ -1172,7 +1172,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch"
           ]
@@ -1183,13 +1183,13 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Power",
             "Bolter",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Bolter",
             "No Flying",
@@ -1198,7 +1198,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Power"
           ],
           "beta": [
@@ -1208,7 +1208,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Overwatch",
             "Ranged",
@@ -1246,7 +1246,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "No Physical"
@@ -1257,7 +1257,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch"
           ]
@@ -1268,21 +1268,21 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Power",
             "No Blast",
             "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "Power"
@@ -1293,7 +1293,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Summons"
           ]
@@ -1325,18 +1325,18 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Piercing",
             "Max 2 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "Physical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Power",
@@ -1345,7 +1345,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Physical",
             "Ranged",
             "Max 3 hits",
@@ -1357,7 +1357,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Piercing",
             "No Flying"
@@ -1365,18 +1365,18 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Max 1 hit",
             "Ranged",
             "No Summons"
@@ -1414,7 +1414,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "No Physical"
@@ -1424,7 +1424,7 @@
             "Melee"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -1435,19 +1435,19 @@
             "Max 3 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Blast",
             "Max 2 hits"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits"
           ],
@@ -1457,7 +1457,7 @@
             "No Mechanical"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch"
           ]
         }
@@ -1487,7 +1487,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Min 3 hits",
             "No Physical"
@@ -1497,7 +1497,7 @@
             "Melee"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch"
           ]
         },
@@ -1506,18 +1506,18 @@
             "Max 3 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Power",
             "No Blast"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Power"
           ],
@@ -1526,7 +1526,7 @@
             "No Mechanical"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch"
           ]
         }
@@ -1559,7 +1559,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits"
           ],
           "beta": [
@@ -1568,7 +1568,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Power",
@@ -1583,14 +1583,14 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Bolter",
             "No Flying"
@@ -1598,7 +1598,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits"
           ],
           "beta": [
@@ -1608,7 +1608,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Bolter",
             "Max 1 hit",
             "Ranged",
@@ -1647,13 +1647,13 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits",
             "No Physical"
           ],
           "beta": [],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch"
           ]
@@ -1664,14 +1664,14 @@
             "Max 3 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Power",
             "Bolter",
             "No Blast",
             "Max 2 hits"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Bolter",
             "No Flying"
@@ -1679,7 +1679,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits",
             "Power",
             "Resilient"
@@ -1689,7 +1689,7 @@
             "No Mechanical"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Overwatch",
             "Ranged"
@@ -1725,13 +1725,13 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Melee"
           ],
           "gamma": [
@@ -1749,20 +1749,20 @@
             "Max 2 hits"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "Resilient"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Mechanical"
@@ -1798,17 +1798,17 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "Physical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Overwatch",
@@ -1817,7 +1817,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Physical",
             "Ranged",
             "Max 3 hits",
@@ -1829,25 +1829,25 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Ranged",
             "No Summons"
@@ -1884,18 +1884,18 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Piercing",
             "Max 2 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -1903,7 +1903,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Ranged",
             "Max 3 hits",
             "No Summons"
@@ -1914,7 +1914,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Piercing",
             "No Flying"
@@ -1922,19 +1922,19 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Psychic",
             "Max 2 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Ranged",
             "No Summons"
@@ -1975,13 +1975,13 @@
             "Min 3 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "Melee",
             "Physical"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Overwatch",
@@ -1990,7 +1990,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Physical"
           ],
           "beta": [
@@ -2004,18 +2004,18 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Mechanical"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch"
           ]
         }
@@ -2045,14 +2045,14 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Piercing",
             "Melee",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "Melee",
             "No Summons"
@@ -2071,7 +2071,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Piercing",
             "Min 4 hits"
@@ -2079,11 +2079,11 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "Min 4 hits",
             "No Mechanical",
@@ -2121,7 +2121,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Min 3 hits",
             "No Physical"
           ],
@@ -2130,7 +2130,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch"
           ]
@@ -2142,14 +2142,14 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Power",
             "Bolter",
             "No Blast",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Bolter",
             "No Flying"
@@ -2157,7 +2157,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Power"
           ],
           "beta": [
@@ -2166,7 +2166,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Overwatch",
             "Ranged",
@@ -2203,25 +2203,25 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Mechanical",
             "No Resilient",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Power"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Ranged",
             "Necrons",
             "No Summons"
@@ -2231,7 +2231,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "Min 4 hits"
           ]
@@ -2239,14 +2239,14 @@
         "MAUGAN RA": {
           "alpha": [],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Ranged",
             "No Summons"
           ]
@@ -2282,7 +2282,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Piercing",
             "Melee",
             "Max 2 hits",
@@ -2294,7 +2294,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power",
@@ -2307,13 +2307,13 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Blast",
             "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Piercing",
             "No Flying"
@@ -2321,7 +2321,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits"
           ],
@@ -2332,7 +2332,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Max 1 hit",
             "No Summons"
@@ -2364,7 +2364,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Min 3 hits",
             "No Physical"
@@ -2375,7 +2375,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -2387,13 +2387,13 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Blast",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Bolter",
             "No Flying"
@@ -2401,7 +2401,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee"
           ],
           "beta": [
@@ -2411,7 +2411,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Overwatch",
             "No Summons"
@@ -2444,20 +2444,20 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Piercing",
             "Melee",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "Melee",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -2465,7 +2465,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 3 hits",
             "No Summons"
           ],
@@ -2474,7 +2474,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Piercing",
             "No Flying"
@@ -2482,18 +2482,18 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Summons"
           ]
@@ -2524,7 +2524,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Min 3 hits"
           ],
@@ -2535,7 +2535,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Overwatch",
@@ -2548,11 +2548,11 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying",
             "Min 4 hits"
@@ -2560,7 +2560,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee"
           ],
           "beta": [
@@ -2571,7 +2571,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Summons"
           ]
@@ -2602,18 +2602,18 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Mechanical",
             "No Resilient",
             "Physical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Overwatch",
@@ -2622,7 +2622,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Physical",
             "Ranged",
             "Max 3 hits",
@@ -2635,7 +2635,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying"
           ]
         },
@@ -2644,13 +2644,13 @@
             "Max 2 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Ranged",
             "No Summons"
@@ -2686,13 +2686,13 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Melee",
             "No Summons"
           ],
@@ -2712,20 +2712,20 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Power",
             "Resilient"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Let the Galaxy Burn",
             "No Mechanical",
             "No Summons"
@@ -2763,7 +2763,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "No Physical"
@@ -2774,7 +2774,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch"
           ]
@@ -2785,7 +2785,7 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Power",
             "Bolter",
             "No Blast",
@@ -2793,7 +2793,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Bolter",
             "No Flying"
@@ -2801,7 +2801,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "Power"
@@ -2812,7 +2812,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Overwatch",
             "No Summons"
@@ -2846,23 +2846,23 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Ranged",
             "No Summons"
           ],
@@ -2872,7 +2872,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying",
             "Min 4 hits"
@@ -2880,18 +2880,18 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Power"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Ranged",
             "No Summons"
           ]
@@ -2929,7 +2929,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Min 3 hits",
             "No Physical"
           ],
@@ -2939,7 +2939,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch"
           ]
@@ -2951,20 +2951,20 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Power",
             "Bolter",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Power"
           ],
           "beta": [
@@ -2972,7 +2972,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Overwatch",
             "Ranged",
@@ -3013,13 +3013,13 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Melee",
             "No Summons"
           ],
@@ -3038,7 +3038,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying",
             "Min 4 hits"
@@ -3046,13 +3046,13 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Power",
             "Resilient"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Mechanical",
@@ -3091,13 +3091,13 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Melee",
             "No Summons"
           ],
@@ -3119,20 +3119,20 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "Resilient"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Mechanical",
@@ -3172,46 +3172,46 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Mechanical",
             "No Resilient"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Power"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Ranged"
           ],
           "beta": [
             "No Blast"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible"
+            "!"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "Min 4 hits"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Ranged"
           ]
@@ -3251,7 +3251,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits",
             "No Physical"
           ],
@@ -3260,7 +3260,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -3273,14 +3273,14 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Bolter",
             "No Flying"
@@ -3288,7 +3288,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits"
           ],
           "beta": [
@@ -3298,7 +3298,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Bolter",
             "No Overwatch",
             "Ranged",
@@ -3335,17 +3335,17 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Piercing",
             "Max 2 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power",
@@ -3354,7 +3354,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Ranged",
             "Max 3 hits"
           ],
@@ -3363,7 +3363,7 @@
             "Max 2 hits"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "Piercing",
             "No Flying"
@@ -3371,17 +3371,17 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Mechanical"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Max 1 hit",
             "Ranged"
@@ -3420,7 +3420,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits",
             "No Physical"
           ],
@@ -3429,7 +3429,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power",
@@ -3443,20 +3443,20 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Blast",
             "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Psychic",
             "Max 2 hits"
           ],
@@ -3467,7 +3467,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Max 1 hit",
             "Ranged",
@@ -3507,14 +3507,14 @@
             "Min 3 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Mechanical",
             "No Resilient",
             "Physical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Overwatch",
@@ -3523,7 +3523,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Physical",
             "Ranged",
             "Max 3 hits",
@@ -3539,16 +3539,16 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible"
+            "!"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Ranged",
             "No Summons"
@@ -3592,13 +3592,13 @@
             "Min 3 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "Melee",
             "Physical"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Overwatch",
@@ -3607,7 +3607,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Physical",
             "Max 3 hits"
           ],
@@ -3621,17 +3621,17 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Mechanical"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch"
           ]
         }
@@ -3662,7 +3662,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "No Physical"
@@ -3673,7 +3673,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "Max 1 hit"
@@ -3685,21 +3685,21 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Power",
             "No Blast",
             "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee",
             "Max 2 hits",
             "Power"
@@ -3710,7 +3710,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Max 1 hit",
             "No Summons"
@@ -3746,14 +3746,14 @@
             "Min 3 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "Melee",
             "Physical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Overwatch",
@@ -3762,7 +3762,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Physical",
             "Max 3 hits",
             "No Summons"
@@ -3778,18 +3778,18 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Melee"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "No Summons"
           ]
@@ -3822,7 +3822,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Min 3 hits",
             "No Physical"
           ],
@@ -3831,7 +3831,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -3844,18 +3844,18 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible"
+            "!"
           ],
           "beta": [
             "No Power",
@@ -3864,7 +3864,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Ranged",
             "No Summons"
@@ -3901,18 +3901,18 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Mechanical",
             "No Resilient",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -3920,7 +3920,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "Eligible",
+            "!",
             "Ranged",
             "Max 3 hits",
             "Necrons",
@@ -3932,7 +3932,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Flying"
           ]
         },
@@ -3941,13 +3941,13 @@
             "Max 2 hits"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Power",
             "No Let the Galaxy Burn",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Ranged",
             "No Summons"
@@ -3984,12 +3984,12 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Summons"
           ],
           "gamma": [
@@ -4011,21 +4011,21 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Psychic",
             "Max 2 hits",
             "Power",
             "Resilient"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Let the Galaxy Burn",
             "No Mechanical",
             "No Summons"
@@ -4071,7 +4071,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Max 2 hits"
           ],
           "beta": [
@@ -4080,7 +4080,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Overwatch",
@@ -4096,20 +4096,20 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Blast",
             "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Psychic",
             "Max 2 hits"
           ],
@@ -4120,7 +4120,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Max 1 hit",
             "Ranged",
@@ -4158,7 +4158,7 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Min 3 hits"
           ],
           "beta": [
@@ -4167,7 +4167,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "Physical",
             "No Flying",
             "No Overwatch",
@@ -4181,12 +4181,12 @@
             "No Summons"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Blast",
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying",
             "Min 4 hits"
@@ -4194,7 +4194,7 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible"
+            "!"
           ],
           "beta": [
             "No Power",
@@ -4204,7 +4204,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Overwatch",
             "Ranged",
             "No Summons"
@@ -4241,12 +4241,12 @@
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
-            "Eligible",
+            "!",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "No Resilient",
             "No Summons"
           ],
@@ -4266,7 +4266,7 @@
             "No Summons"
           ],
           "gamma": [
-            "Eligible",
+            "!",
             "No Mechanical",
             "No Flying",
             "Min 4 hits"
@@ -4274,11 +4274,11 @@
         },
         "MAUGAN RA": {
           "alpha": [
-            "Eligible",
+            "!",
             "Power"
           ],
           "beta": [
-            "Eligible",
+            "!",
             "Min 4 hits",
             "No Mechanical",
             "No Summons"
@@ -5120,7 +5120,7 @@
   "legendary-events": {
     "AUN'SHI": {
       "alpha": {
-        "Eligible": 29.0,
+        "!": 29.0,
         "Max 2 hits": 70.0,
         "Melee": 80.0,
         "Min 3 hits": 70.0,
@@ -5128,7 +5128,7 @@
         "Piercing": 115.0
       },
       "beta": {
-        "Eligible": 53.0,
+        "!": 53.0,
         "Mechanical": 105.0,
         "Melee": 85.0,
         "No Resilient": 40.0,
@@ -5136,7 +5136,7 @@
         "Physical": 100.0
       },
       "gamma": {
-        "Eligible": 40.0,
+        "!": 40.0,
         "Max 1 hit": 125.0,
         "No Flying": 40.0,
         "No Overwatch": 40.0,
@@ -5146,7 +5146,7 @@
     },
     "JAIN ZAR": {
       "alpha": {
-        "Eligible": 45.0,
+        "!": 45.0,
         "Max 3 hits": 45.0,
         "Necrons": 110.0,
         "No Summons": 60.0,
@@ -5154,16 +5154,16 @@
         "Ranged": 60.0
       },
       "beta": {
+        "!": 45.0,
         "Bolter": 96.0,
-        "Eligible": 45.0,
         "Max 2 hits": 70.0,
         "No Blast": 50.0,
         "No Summons": 60.0,
         "Power": 95.0
       },
       "gamma": {
+        "!": 45.0,
         "Bolter": 95.0,
-        "Eligible": 45.0,
         "Min 4 hits": 90.0,
         "No Flying": 45.0,
         "No Mechanical": 45.0,
@@ -5172,7 +5172,7 @@
     },
     "MAUGAN RA": {
       "alpha": {
-        "Eligible": 43.0,
+        "!": 43.0,
         "Max 2 hits": 65.0,
         "Melee": 50.0,
         "Power": 70.0,
@@ -5180,7 +5180,7 @@
         "Resilient": 95.0
       },
       "beta": {
-        "Eligible": 44.0,
+        "!": 44.0,
         "Min 4 hits": 115.0,
         "No Let the Galaxy Burn": 65.0,
         "No Mechanical": 75.0,
@@ -5188,8 +5188,8 @@
         "No Summons": 50.0
       },
       "gamma": {
+        "!": 40.0,
         "Bolter": 100.0,
-        "Eligible": 40.0,
         "Max 1 hit": 120.0,
         "No Overwatch": 45.0,
         "No Summons": 40.0,

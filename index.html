@@ -132,7 +132,7 @@ var updateLegendaryEvent = function(skipUpdate) {
   Object.keys(eventData).forEach(function(track) {
     res = "";
     Object.keys(eventData[track]).forEach(function(mission) {
-      res += '<input class="legendary-event-select-checkbox" onChange="updateFilter()" type="checkbox" id="legendary-event-filter-'+track+'-'+characterTableEntryId(mission)+'"></input> '+mission+'<br>'
+      res += '<input class="legendary-event-select-checkbox" onChange="updateFilter()" type="checkbox" id="legendary-event-filter-'+track+'-'+characterTableEntryId(mission)+'"></input> '+mission.replace("!",track.replace("alpha","α").replace("beta","ß").replace("gamma","γ"))+'<br>'
     });
     document.getElementById("legendary-event-select-"+track).innerHTML = res;
   });
@@ -845,7 +845,7 @@ var updateTable = function() {
             var trackData = globalLegData[track];
             var i=5;
             var sum=0;
-            var eligible = charLegData[track].includes("Eligible");
+            var eligible = charLegData[track].includes("!");
             Object.keys(trackData).reverse().forEach(function(mission) {
               var idMission = entryId+"-leg-"+track+(i ? ("-"+i) : "");
               if (eligible && charLegData[track].includes(mission)) {
