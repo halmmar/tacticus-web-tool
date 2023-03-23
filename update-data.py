@@ -7,7 +7,7 @@ import subprocess
 import openpyxl
 import json
 import copy
-from collections import OrderedDict 
+from collections import OrderedDict
 
 def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     """ Get a single rectangular region from the specified file.
@@ -63,7 +63,7 @@ def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     df = pd.DataFrame(([cell.value for cell in row] for row in region), columns=columns)
     return df
 
-file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.0.3.4.xlsx'
+file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.0.3.5.xlsx'
 tb_Characters = data_frame_from_xlsx(file, 'tb_Characters', 1)
 tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$W$3:$X$21', True)
 tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
@@ -335,16 +335,6 @@ def toJSON(rows):
             data["damage"] = passiveData[1]
             data["armour"] = passiveData[2] if len(passiveData)==3 else 0
             summons[row.Name] = data
-            if row.Name == "Bloodletter":
-                data = copy.deepcopy(data)
-                data["damage"] *= 0.71
-                data["traits"] += ["bloodletter_1.6_extra_hit"]
-                summons[row.Name + " (v1.6)"] = data
-            elif row.Name == "Scarab Swarm":
-                data = copy.deepcopy(data)
-                data["melee"]["pierce"] = 0.3
-                data["traits"] += ["flying"]
-                summons[row.Name + " (v1.6)"] = data
         else:
             continue
     for name in summonsNames:

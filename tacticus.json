@@ -377,7 +377,7 @@
         "crit": 1
       },
       "faction": "Black Legion",
-      "health": 80.0,
+      "health": 88.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -841,7 +841,7 @@
       },
       "passive": [
         39.0,
-        35.0
+        25.0
       ],
       "ranged": {
         "hits": 1,
@@ -1494,7 +1494,7 @@
     },
     "Commissar Yarrick": {
       "alliance": "Imperial",
-      "armour": 15.0,
+      "armour": 17.9,
       "damage": 30.0,
       "equipment": {
         "block": 1,
@@ -1502,7 +1502,7 @@
         "crit": 1
       },
       "faction": "Astra militarum",
-      "health": 60.0,
+      "health": 75.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -1858,7 +1858,7 @@
     },
     "Haarken Worldclaimer": {
       "alliance": "Chaos",
-      "armour": 18.0,
+      "armour": 20.0,
       "damage": 11.0,
       "equipment": {
         "block": 1,
@@ -1866,7 +1866,7 @@
         "crit_booster": 1
       },
       "faction": "Black Legion",
-      "health": 78.0,
+      "health": 88.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -4745,7 +4745,7 @@
     "Bloodletter": {
       "alliance": "",
       "armour": 0,
-      "damage": 35.0,
+      "damage": 25.0,
       "faction": "Black Legion",
       "health": 39.0,
       "melee": {
@@ -4755,22 +4755,6 @@
       "traits": [
         "daemon",
         "summon"
-      ]
-    },
-    "Bloodletter (v1.6)": {
-      "alliance": "",
-      "armour": 0,
-      "damage": 24.849999999999998,
-      "faction": "Black Legion",
-      "health": 39.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.8
-      },
-      "traits": [
-        "daemon",
-        "summon",
-        "bloodletter_1.6_extra_hit"
       ]
     },
     "Cadian Guardsman": {
@@ -4938,29 +4922,13 @@
       "health": 20.0,
       "melee": {
         "hits": 5,
-        "pierce": 0.8
-      },
-      "traits": [
-        "living metal",
-        "swarm",
-        "summon"
-      ]
-    },
-    "Scarab Swarm (v1.6)": {
-      "alliance": "",
-      "armour": 0,
-      "damage": 10.0,
-      "faction": "Necrons",
-      "health": 20.0,
-      "melee": {
-        "hits": 5,
         "pierce": 0.3
       },
       "traits": [
         "living metal",
+        "flying",
         "swarm",
-        "summon",
-        "flying"
+        "summon"
       ]
     },
     "Shield Drone": {
@@ -4980,5 +4948,5 @@
       ]
     }
   },
-  "version": "Beta 0.0.3.4"
+  "version": "Beta 0.0.3.5"
 }

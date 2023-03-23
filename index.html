@@ -212,7 +212,6 @@ var passiveFactorActiveCharacterWithTable = function(tb_factor) {
 var passiveFactorCharacter = function(name) {
   switch (name) {
     case 'Bloodletter':
-    case 'Bloodletter (v1.6)':
     case 'Archimatos':
       return passiveFactorActiveCharacterWithTable(tb_archimatos_ability_factor);
   }
@@ -620,11 +619,6 @@ var updateTable = function() {
                 }
               }
               break;
-            case "bloodletter_1.6_extra_hit":
-              if (opponentIsPsyker) {
-                meleeHits += 1;
-              }
-              break;
             case "terrifying":
               dmgFactorMeleeTaken *= 0.7;
               commentSurvival = "terrifying";
@@ -667,6 +661,11 @@ var updateTable = function() {
         });
 
         switch (key) {
+        case "Bloodletter":
+          if (opponentIsPsyker) {
+            meleeHits += 1;
+          }
+          break;
         case 'Incisus':
           var incisusFactor = 1+Math.min(0.05*gearlevel,0.3);
           health *= incisusFactor;
