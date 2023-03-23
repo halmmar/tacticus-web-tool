@@ -105,6 +105,9 @@ while tb_LegendaryEvent[indexLegendaryEvent][0]:
     betaNames = itemsList[6:12]
     gammaNames = itemsList[12:18]
     pointsList = list(points)
+    #pointsList[0] = 40
+    #pointsList[6] = 40
+    #pointsList[12] = 40
     
     alpha = dict(zip(alphaNames,pointsList[0:6]))
     beta = dict(zip(betaNames,pointsList[6:12]))
@@ -126,6 +129,9 @@ while tb_LegendaryEvent[indexLegendaryEvent][0]:
                 characterBeta += [betaNames[i]]
             if row[indexLegendaryEvent+12+i]:
                 characterGamma += [gammaNames[i]]
+        for missionList in [characterAlpha,characterBeta,characterGamma]:
+            if "!" not in missionList:
+                missionList.clear()
         legendaryEventCharacters[row[0]][legendaryEventName] = {"alpha": characterAlpha, "beta": characterBeta, "gamma": characterGamma}
                 
     legendaryEvents[legendaryEventName] = {"alpha": alpha, "beta": beta, "gamma": gamma}

@@ -390,23 +390,11 @@
             "!",
             "No Summons"
           ],
-          "gamma": [
-            "No Flying",
-            "No Overwatch"
-          ]
+          "gamma": []
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "Max 3 hits",
-            "No Summons"
-          ],
-          "beta": [
-            "Power",
-            "Bolter",
-            "No Blast",
-            "No Summons"
-          ],
+          "alpha": [],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -426,12 +414,7 @@
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": [
-            "Bolter",
-            "No Overwatch",
-            "Ranged",
-            "No Summons"
-          ]
+          "gamma": []
         }
       },
       "melee": {
@@ -489,10 +472,7 @@
             "Max 3 hits",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -568,18 +548,14 @@
             "!",
             "Necrons"
           ],
-          "beta": [
-            "No Blast"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
-          "alpha": [
-            "Melee"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Power",
@@ -625,11 +601,7 @@
             "Max 2 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "Melee",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -637,10 +609,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Power",
@@ -661,11 +630,7 @@
             "Max 2 hits",
             "Power"
           ],
-          "beta": [
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
@@ -708,20 +673,11 @@
             "Melee",
             "No Summons"
           ],
-          "gamma": [
-            "No Flying",
-            "No Overwatch"
-          ]
+          "gamma": []
         },
         "JAIN ZAR": {
-          "alpha": [
-            "No Summons"
-          ],
-          "beta": [
-            "Power",
-            "No Blast",
-            "No Summons"
-          ],
+          "alpha": [],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -741,10 +697,7 @@
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": [
-            "No Overwatch",
-            "No Summons"
-          ]
+          "gamma": []
         }
       },
       "melee": {
@@ -799,9 +752,7 @@
             "Max 3 hits",
             "Necrons"
           ],
-          "beta": [
-            "No Blast"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying"
@@ -859,22 +810,11 @@
             "!",
             "No Resilient"
           ],
-          "gamma": [
-            "No Flying",
-            "No Overwatch",
-            "No Power",
-            "Max 1 hit"
-          ]
+          "gamma": []
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "Max 3 hits"
-          ],
-          "beta": [
-            "No Blast",
-            "Max 2 hits"
-          ],
+          "alpha": [],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -892,11 +832,7 @@
             "No Power",
             "No Mechanical"
           ],
-          "gamma": [
-            "No Overwatch",
-            "Max 1 hit",
-            "Ranged"
-          ]
+          "gamma": []
         }
       },
       "melee": {
@@ -952,11 +888,7 @@
             "!",
             "No Summons"
           ],
-          "beta": [
-            "Power",
-            "No Blast",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -1013,10 +945,7 @@
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "Melee"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
@@ -1042,12 +971,7 @@
             "!",
             "Melee"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "Min 4 hits",
-            "No Mechanical"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Bolter",
@@ -1080,10 +1004,7 @@
       "health": 100.0,
       "legendary-event": {
         "AUN'SHI": {
-          "alpha": [
-            "Min 3 hits",
-            "No Physical"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Mechanical",
@@ -1104,13 +1025,8 @@
             "Max 3 hits",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "No Summons"
-          ],
-          "gamma": [
-            "No Flying"
-          ]
+          "beta": [],
+          "gamma": []
         },
         "MAUGAN RA": {
           "alpha": [
@@ -1167,10 +1083,7 @@
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -1178,10 +1091,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Power",
@@ -1201,12 +1111,7 @@
             "!",
             "Power"
           ],
-          "beta": [
-            "No Let the Galaxy Burn",
-            "Min 4 hits",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Bolter",
@@ -1251,11 +1156,7 @@
             "Max 2 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "Melee",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -1263,10 +1164,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Power",
@@ -1287,11 +1185,7 @@
             "Max 2 hits",
             "Power"
           ],
-          "beta": [
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
@@ -1351,11 +1245,7 @@
             "Max 3 hits",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "Max 2 hits",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -1419,10 +1309,7 @@
             "Max 2 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "Melee"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -1431,9 +1318,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Blast",
@@ -1451,11 +1336,7 @@
             "Melee",
             "Max 2 hits"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "No Mechanical"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch"
@@ -1492,19 +1373,14 @@
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "Melee"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Power",
@@ -1521,10 +1397,7 @@
             "Melee",
             "Power"
           ],
-          "beta": [
-            "No Let the Galaxy Burn",
-            "No Mechanical"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch"
@@ -1562,11 +1435,7 @@
             "!",
             "Max 2 hits"
           ],
-          "beta": [
-            "No Resilient",
-            "Physical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Physical",
@@ -1576,12 +1445,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Physical",
-            "Ranged",
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Bolter",
@@ -1601,12 +1465,7 @@
             "!",
             "Max 2 hits"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Bolter",
@@ -1659,10 +1518,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "Max 3 hits"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Power",
@@ -1684,10 +1540,7 @@
             "Power",
             "Resilient"
           ],
-          "beta": [
-            "No Let the Galaxy Burn",
-            "No Mechanical"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Bolter",
@@ -1734,20 +1587,11 @@
             "!",
             "Melee"
           ],
-          "gamma": [
-            "No Flying",
-            "No Overwatch",
-            "No Power"
-          ]
+          "gamma": []
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits"
-          ],
-          "beta": [
-            "No Blast",
-            "Max 2 hits"
-          ],
+          "alpha": [],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -1767,9 +1611,7 @@
             "No Let the Galaxy Burn",
             "No Mechanical"
           ],
-          "gamma": [
-            "No Overwatch"
-          ]
+          "gamma": []
         }
       },
       "melee": {
@@ -1823,11 +1665,7 @@
             "Max 3 hits",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "Max 2 hits",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -1908,11 +1746,7 @@
             "Max 3 hits",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "Max 2 hits",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -1970,10 +1804,7 @@
       "health": 75.0,
       "legendary-event": {
         "AUN'SHI": {
-          "alpha": [
-            "Melee",
-            "Min 3 hits"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Resilient",
@@ -1993,14 +1824,8 @@
             "!",
             "Physical"
           ],
-          "beta": [
-            "No Blast"
-          ],
-          "gamma": [
-            "No Mechanical",
-            "No Flying",
-            "Min 4 hits"
-          ]
+          "beta": [],
+          "gamma": []
         },
         "MAUGAN RA": {
           "alpha": [
@@ -2057,19 +1882,11 @@
             "Melee",
             "No Summons"
           ],
-          "gamma": [
-            "No Overwatch",
-            "No Power"
-          ]
+          "gamma": []
         },
         "JAIN ZAR": {
-          "alpha": [
-            "No Summons"
-          ],
-          "beta": [
-            "No Blast",
-            "No Summons"
-          ],
+          "alpha": [],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -2089,10 +1906,7 @@
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": [
-            "No Overwatch",
-            "No Summons"
-          ]
+          "gamma": []
         }
       },
       "melee": {
@@ -2125,10 +1939,7 @@
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -2136,11 +1947,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Power",
@@ -2160,11 +1967,7 @@
             "!",
             "Power"
           ],
-          "beta": [
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Bolter",
@@ -2226,10 +2029,7 @@
             "Necrons",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -2288,11 +2088,7 @@
             "Max 2 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "Melee",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -2302,10 +2098,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Blast",
@@ -2325,12 +2118,7 @@
             "Melee",
             "Max 2 hits"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
@@ -2369,11 +2157,7 @@
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "Melee",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -2382,10 +2166,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Bolter",
@@ -2404,12 +2185,7 @@
             "!",
             "Melee"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Bolter",
@@ -2469,10 +2245,7 @@
             "Max 3 hits",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -2528,12 +2301,7 @@
             "Melee",
             "Min 3 hits"
           ],
-          "beta": [
-            "No Resilient",
-            "Melee",
-            "Physical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Physical",
@@ -2543,10 +2311,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Physical",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Summons"
@@ -2563,13 +2328,7 @@
             "!",
             "Melee"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "Min 4 hits",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
@@ -2629,20 +2388,14 @@
             "Necrons",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "Max 2 hits",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
-          "alpha": [
-            "Max 2 hits"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Power",
@@ -2696,21 +2449,11 @@
             "Melee",
             "No Summons"
           ],
-          "gamma": [
-            "No Flying",
-            "No Overwatch"
-          ]
+          "gamma": []
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits",
-            "No Summons"
-          ],
-          "beta": [
-            "Power",
-            "No Blast",
-            "No Summons"
-          ],
+          "alpha": [],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -2730,10 +2473,7 @@
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": [
-            "No Overwatch",
-            "No Summons"
-          ]
+          "gamma": []
         }
       },
       "melee": {
@@ -2768,11 +2508,7 @@
             "Max 2 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "Melee",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -2780,10 +2516,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Power",
@@ -2806,11 +2539,7 @@
             "Max 2 hits",
             "Power"
           ],
-          "beta": [
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Bolter",
@@ -2866,11 +2595,7 @@
             "Ranged",
             "No Summons"
           ],
-          "beta": [
-            "Power",
-            "No Blast",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -2933,11 +2658,7 @@
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [
-            "Mechanical",
-            "No Resilient",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -2945,11 +2666,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Power",
@@ -2967,10 +2684,7 @@
             "!",
             "Power"
           ],
-          "beta": [
-            "No Let the Galaxy Burn",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Bolter",
@@ -3023,20 +2737,11 @@
             "Melee",
             "No Summons"
           ],
-          "gamma": [
-            "No Flying",
-            "No Overwatch"
-          ]
+          "gamma": []
         },
         "JAIN ZAR": {
-          "alpha": [
-            "No Summons"
-          ],
-          "beta": [
-            "Power",
-            "No Blast",
-            "No Summons"
-          ],
+          "alpha": [],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -3058,10 +2763,7 @@
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": [
-            "No Overwatch",
-            "No Summons"
-          ]
+          "gamma": []
         }
       },
       "melee": {
@@ -3101,23 +2803,11 @@
             "Melee",
             "No Summons"
           ],
-          "gamma": [
-            "No Flying",
-            "No Overwatch",
-            "No Power",
-            "Max 1 hit"
-          ]
+          "gamma": []
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits",
-            "No Summons"
-          ],
-          "beta": [
-            "No Blast",
-            "Max 2 hits",
-            "No Summons"
-          ],
+          "alpha": [],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -3138,11 +2828,7 @@
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": [
-            "No Overwatch",
-            "Max 1 hit",
-            "No Summons"
-          ]
+          "gamma": []
         }
       },
       "melee": {
@@ -3192,9 +2878,7 @@
             "!",
             "Ranged"
           ],
-          "beta": [
-            "No Blast"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Min 4 hits"
@@ -3255,10 +2939,7 @@
             "Max 2 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -3267,11 +2948,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Bolter",
@@ -3291,12 +2968,7 @@
             "!",
             "Max 2 hits"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Bolter",
@@ -3358,10 +3030,7 @@
             "Ranged",
             "Max 3 hits"
           ],
-          "beta": [
-            "No Blast",
-            "Max 2 hits"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -3424,10 +3093,7 @@
             "Max 2 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -3437,11 +3103,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Blast",
@@ -3460,12 +3122,7 @@
             "Psychic",
             "Max 2 hits"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
@@ -3503,9 +3160,7 @@
       "health": 80.0,
       "legendary-event": {
         "AUN'SHI": {
-          "alpha": [
-            "Min 3 hits"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Mechanical",
@@ -3529,13 +3184,8 @@
             "Max 3 hits",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "No Summons"
-          ],
-          "gamma": [
-            "No Flying"
-          ]
+          "beta": [],
+          "gamma": []
         },
         "MAUGAN RA": {
           "alpha": [
@@ -3587,10 +3237,7 @@
       "health": 110.0,
       "legendary-event": {
         "AUN'SHI": {
-          "alpha": [
-            "Melee",
-            "Min 3 hits"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Resilient",
@@ -3611,13 +3258,8 @@
             "Physical",
             "Max 3 hits"
           ],
-          "beta": [
-            "No Blast"
-          ],
-          "gamma": [
-            "No Mechanical",
-            "No Flying"
-          ]
+          "beta": [],
+          "gamma": []
         },
         "MAUGAN RA": {
           "alpha": [
@@ -3667,11 +3309,7 @@
             "Max 2 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "Melee",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -3680,10 +3318,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "Power",
@@ -3704,11 +3339,7 @@
             "Max 2 hits",
             "Power"
           ],
-          "beta": [
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
@@ -3741,10 +3372,7 @@
       "health": 85.0,
       "legendary-event": {
         "AUN'SHI": {
-          "alpha": [
-            "Melee",
-            "Min 3 hits"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Resilient",
@@ -3767,14 +3395,8 @@
             "Max 3 hits",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "No Summons"
-          ],
-          "gamma": [
-            "No Mechanical",
-            "No Flying"
-          ]
+          "beta": [],
+          "gamma": []
         },
         "MAUGAN RA": {
           "alpha": [
@@ -3826,10 +3448,7 @@
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [
-            "No Resilient",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying",
@@ -3838,11 +3457,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Summons"
@@ -3857,12 +3472,7 @@
           "alpha": [
             "!"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
@@ -3926,20 +3536,14 @@
             "Necrons",
             "No Summons"
           ],
-          "beta": [
-            "No Blast",
-            "Max 2 hits",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
-          "alpha": [
-            "Max 2 hits"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Power",
@@ -3992,24 +3596,11 @@
             "!",
             "No Summons"
           ],
-          "gamma": [
-            "No Flying",
-            "No Overwatch",
-            "Max 1 hit"
-          ]
+          "gamma": []
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "Max 3 hits",
-            "No Summons"
-          ],
-          "beta": [
-            "Power",
-            "No Blast",
-            "Max 2 hits",
-            "No Summons"
-          ],
+          "alpha": [],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -4030,12 +3621,7 @@
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": [
-            "No Overwatch",
-            "Max 1 hit",
-            "Ranged",
-            "No Summons"
-          ]
+          "gamma": []
         }
       },
       "melee": {
@@ -4074,11 +3660,7 @@
             "!",
             "Max 2 hits"
           ],
-          "beta": [
-            "No Resilient",
-            "Physical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Physical",
@@ -4089,12 +3671,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Physical",
-            "Ranged",
-            "Max 3 hits",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Blast",
@@ -4113,12 +3690,7 @@
             "Psychic",
             "Max 2 hits"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
@@ -4161,11 +3733,7 @@
             "!",
             "Min 3 hits"
           ],
-          "beta": [
-            "No Resilient",
-            "Physical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "Physical",
@@ -4175,11 +3743,7 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Physical",
-            "Ranged",
-            "No Summons"
-          ],
+          "alpha": [],
           "beta": [
             "!",
             "No Blast",
@@ -4196,13 +3760,7 @@
           "alpha": [
             "!"
           ],
-          "beta": [
-            "No Power",
-            "No Let the Galaxy Burn",
-            "Min 4 hits",
-            "No Mechanical",
-            "No Summons"
-          ],
+          "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
@@ -4250,21 +3808,11 @@
             "No Resilient",
             "No Summons"
           ],
-          "gamma": [
-            "No Flying",
-            "No Overwatch"
-          ]
+          "gamma": []
         },
         "JAIN ZAR": {
-          "alpha": [
-            "Ranged",
-            "No Summons"
-          ],
-          "beta": [
-            "Power",
-            "No Blast",
-            "No Summons"
-          ],
+          "alpha": [],
+          "beta": [],
           "gamma": [
             "!",
             "No Mechanical",
@@ -4283,11 +3831,7 @@
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": [
-            "No Overwatch",
-            "Ranged",
-            "No Summons"
-          ]
+          "gamma": []
         }
       },
       "melee": {
