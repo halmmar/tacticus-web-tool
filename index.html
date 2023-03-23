@@ -159,6 +159,7 @@ var updateFilter = function() {
       }
       return;
     case 'legendary':
+      if (tb_chars_and_summons[key].traits.includes("summon")) return;
       var style = document.getElementById("legendary-"+id).style;
       if (!tb_chars_and_summons[key]["legendary-event"]) {
         style.display = "none";
@@ -327,21 +328,31 @@ var updateMode = function(skipUpdateTable) {
   dmgOnly = document.getElementsByClassName("damage-mode-only");
   survivalOnly = document.getElementsByClassName("survival-mode-only");
   legendaryOnly = document.getElementsByClassName("legendary-mode-only");
+  legendaryOverviewOnly = document.getElementsByClassName("legendary-overview-mode-only");
   switch (mode) {
     case "damage":
       updateModeVisible(survivalOnly, "none");
       updateModeVisible(legendaryOnly, "none");
+      updateModeVisible(legendaryOverviewOnly, "none");
       updateModeVisible(dmgOnly,"");
     break;
   case "survival":
       updateModeVisible(dmgOnly,"none");
       updateModeVisible(legendaryOnly, "none");
+      updateModeVisible(legendaryOverviewOnly, "none");
       updateModeVisible(survivalOnly, "");
     break;
   case "legendary":
       updateModeVisible(dmgOnly,"none");
       updateModeVisible(survivalOnly, "none");
+      updateModeVisible(legendaryOverviewOnly, "none");
       updateModeVisible(legendaryOnly, "");
+    break;
+  case "legendary-overview":
+      updateModeVisible(dmgOnly,"none");
+      updateModeVisible(survivalOnly, "none");
+      updateModeVisible(legendaryOnly, "none");
+      updateModeVisible(legendaryOverviewOnly, "");
     break;
   default:
     console.log("Unknown mode to select:",mode)
@@ -431,18 +442,39 @@ var characterTableEntryId = function(str) {
 }
 
 var addTable = function() {
-  resDmg = "";
-  resSurvival = "";
-  resLeg = "";
+  var resDmg = "";
+  var resSurvival = "";
+  var resLeg = "";
+  var resLegOverview = '<tr><th onClick="sortTable()">Name</th>';
+  var resLegOverviewRow2 = '';
+  var i = 1;
+  Object.keys(tb_legendary_events).forEach(function(event) {
+    resLegOverview += '<th onClick="sortTable('+(i)+')">'+event+'</th>';
+    resLegOverview += '<th onClick="sortTable('+(i+1)+')">Points</th>';
+    i+=2;
+  });
+  resLegOverview += '<th onClick="sortTable('+(i)+')">Total</th>\n';
+  resLegOverview += '<th onClick="sortTable('+(i+1)+')">Points</th>';
+  resLegOverview += '</tr>\n';
   Object.keys(tb_chars).forEach(function callback(key) {
     var id = characterTableEntryId(key);
     resDmg += '<tr id="'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-dmg"></td><td class="statCell" id="'+id+'-crit-chance"></td><td class="statCell" id="'+id+'-crit-dmg"></td><td class="statCell" id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
     resSurvival += '<tr id="survival-'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-health"></td><td class="statCell" id="'+id+'-armour"></td><td class="statCell" id="'+id+'-block-chance"></td><td class="statCell" id="'+id+'-block"></td><td class="statCell" id="'+id+'-worst-case-percentage"></td><td class="statCell" id="'+id+'-worst-case-attacks"></td><td id="'+id+'-comment-survival"></td></tr>';
-    resLeg += '<tr id="legendary-'+id+'"><td>'+key+'</td><td id="'+id+'-leg-alpha" /><td id="'+id+'-leg-alpha-1" /><td id="'+id+'-leg-alpha-2" /><td id="'+id+'-leg-alpha-3" /><td id="'+id+'-leg-alpha-4" /><td id="'+id+'-leg-alpha-5" /><td id="'+id+'-leg-beta" /><td id="'+id+'-leg-beta-1" /><td id="'+id+'-leg-beta-2" /><td id="'+id+'-leg-beta-3" /><td id="'+id+'-leg-beta-4" /><td id="'+id+'-leg-beta-5" /><td id="'+id+'-leg-gamma" /><td id="'+id+'-leg-gamma-1" /><td id="'+id+'-leg-gamma-2" /><td id="'+id+'-leg-gamma-3" /><td id="'+id+'-leg-gamma-4" /><td id="'+id+'-leg-gamma-5" /><td id="'+id+'-leg-total" /></tr>'
+    if (!tb_chars[key].traits.includes("summon")) {
+      resLeg += '<tr id="legendary-'+id+'"><td>'+key+'</td><td id="'+id+'-leg-alpha" /><td id="'+id+'-leg-alpha-1" /><td id="'+id+'-leg-alpha-2" /><td id="'+id+'-leg-alpha-3" /><td id="'+id+'-leg-alpha-4" /><td id="'+id+'-leg-alpha-5" /><td id="'+id+'-leg-beta" /><td id="'+id+'-leg-beta-1" /><td id="'+id+'-leg-beta-2" /><td id="'+id+'-leg-beta-3" /><td id="'+id+'-leg-beta-4" /><td id="'+id+'-leg-beta-5" /><td id="'+id+'-leg-gamma" /><td id="'+id+'-leg-gamma-1" /><td id="'+id+'-leg-gamma-2" /><td id="'+id+'-leg-gamma-3" /><td id="'+id+'-leg-gamma-4" /><td id="'+id+'-leg-gamma-5" /><td id="'+id+'-leg-total" /></tr>';
+      resLegOverview += '<tr id="legendary-overview-'+id+'"><td>'+key+'</td>';
+      Object.keys(tb_legendary_events).forEach(function(event) {
+        var eventID = characterTableEntryId(event);
+        var charID = id + "-leg-ov-" + eventID;
+        resLegOverview += '<td id="'+charID+'-num" class="statCell">x</td><td id="'+charID+'-points" class="statCell">1</td>';
+      });
+      resLegOverview += '<td id="'+id+'-leg-ov-total-num" class="statCell">x</td><td id="'+id+'-leg-ov-total-points" class="statCell">1</td></tr>\n';
+    }
   });
   document.getElementById("damage-table").innerHTML += resDmg;
   document.getElementById("survival-table").innerHTML += resSurvival;
   document.getElementById("legendary-table").innerHTML += resLeg;
+  document.getElementById("legendary-overview-table").innerHTML += resLegOverview;
   updateMode(1);
   updateTable();
 }
@@ -515,7 +547,6 @@ var updateTable = function() {
     var helbrechtBonusDmgRawData = opponentIsPsyker ? +document.getElementById("helbrecht-buff-dmg").innerHTML : 0;
     var ltgbEnabled = document.getElementById("ltgb-enabled").checked;
     var curEvent = document.getElementById("legendary-event-select").value;
-    var globalLegData = tb_legendary_events[curEvent];
     
     Object.keys(tb_chars_and_summons).forEach(function callback(key) {
         var comment = "";
@@ -551,7 +582,7 @@ var updateTable = function() {
         var buffDmgMelee = 0;
         var commentRanged = "";
         var commentSurvival = "";
-        var charLegData = char["legendary-event"] ? char["legendary-event"][curEvent] : null;
+        var charLegData = char["legendary-event"] ? char["legendary-event"] : null;
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
@@ -841,26 +872,45 @@ var updateTable = function() {
           calcOpponentDamageWorstCase(opponentRangedDamage, opponentRangedHits, opponentRangedPierce));
         
         if (charLegData) {
-          var totalSum = 0;
-          Object.keys(globalLegData).forEach(function(track) {
-            var trackData = globalLegData[track];
-            var i=5;
-            var sum=0;
-            var eligible = charLegData[track].includes("!");
-            Object.keys(trackData).reverse().forEach(function(mission) {
-              var idMission = entryId+"-leg-"+track+(i ? ("-"+i) : "");
-              if (eligible && charLegData[track].includes(mission)) {
-                var points = trackData[mission];
-                sum += points;
-                document.getElementById(idMission).innerHTML = i==0 ? sum : points;
-              } else {
-                document.getElementById(idMission).innerHTML = "";
-              }
-              i--;
+          var allEventsEligible = 0;
+          var allEventsPoints = 0;
+          Object.keys(tb_legendary_events).forEach(function(event) {
+            var globalLegData = tb_legendary_events[event];
+            var totalSum = 0;
+            var sumEligible=0;
+            Object.keys(globalLegData).forEach(function(track) {
+              var trackData = globalLegData[track];
+              var i=5;
+              var sum=0;
+              var eligible = charLegData[event][track].includes("!");
+              Object.keys(trackData).reverse().forEach(function(mission) {
+                var idMission = entryId+"-leg-"+track+(i ? ("-"+i) : "");
+                if (eligible && charLegData[event][track].includes(mission)) {
+                  var points = trackData[mission];
+                  sum += points;
+                  if (mission != "!") sumEligible++;
+                  if (curEvent==event) {
+                    document.getElementById(idMission).innerHTML = i==0 ? sum : points;
+                  }
+                } else {
+                  if (curEvent==event) {
+                    document.getElementById(idMission).innerHTML = "";
+                  }
+                }
+                i--;
+              });
+              totalSum += sum;
             });
-            totalSum += sum;
+            if (curEvent==event) {
+              document.getElementById(entryId+"-leg-total").innerHTML = totalSum;
+            }
+            document.getElementById(entryId+"-leg-ov-"+characterTableEntryId(event)+"-points").innerHTML = totalSum;
+            document.getElementById(entryId+"-leg-ov-"+characterTableEntryId(event)+"-num").innerHTML = sumEligible;
+            allEventsEligible += sumEligible;
+            allEventsPoints += totalSum;
           });
-          document.getElementById(entryId+"-leg-total").innerHTML = totalSum;
+          document.getElementById(entryId+"-leg-ov-total-points").innerHTML = allEventsPoints;
+          document.getElementById(entryId+"-leg-ov-total-num").innerHTML = allEventsEligible;
         }
           
 
@@ -942,7 +992,7 @@ function sortTable(n) {
       <select onChange="updateMode()" id="mode-select">
         <option value="damage" selected>Damage</option>
         <option value="survival">Survival</option>
-        <option value="legendary-overview" disabled>Legendary Event (Overview)</option>
+        <option value="legendary-overview">Legendary Event (Overview)</option>
         <option value="legendary">Legendary Event</option>
       </select>
     </fieldset>
@@ -1183,6 +1233,7 @@ function sortTable(n) {
       </tr>
     </table>
     <table class="legendary-mode-only" id="legendary-table">
+      <thead>
       <tr>
         <th class="legendary-nameCell" onclick="sortTable(0)">Name</th>
         <th onclick="sortTable(1)">α</th>
@@ -1205,6 +1256,9 @@ function sortTable(n) {
         <th onclick="sortTable(18)">γ5</th>
         <th onclick="sortTable(19)">Total</th>
       </tr>
+      </thead>
+    </table>
+    <table class="legendary-overview-mode-only" id="legendary-overview-table">
     </table>
   <footer>
     <p>This web application was created by Rilak (MOP-06-FAX)<br>

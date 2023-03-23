@@ -105,9 +105,6 @@ while tb_LegendaryEvent[indexLegendaryEvent][0]:
     betaNames = itemsList[6:12]
     gammaNames = itemsList[12:18]
     pointsList = list(points)
-    #pointsList[0] = 40
-    #pointsList[6] = 40
-    #pointsList[12] = 40
     
     alpha = dict(zip(alphaNames,pointsList[0:6]))
     beta = dict(zip(betaNames,pointsList[6:12]))
