@@ -132,7 +132,8 @@ var updateLegendaryEvent = function(skipUpdate) {
   Object.keys(eventData).forEach(function(track) {
     res = "";
     Object.keys(eventData[track]).forEach(function(mission) {
-      res += '<input class="legendary-event-select-checkbox" onChange="updateFilter()" type="checkbox" id="legendary-event-filter-'+track+'-'+characterTableEntryId(mission)+'"></input> '+mission.replace("!",track.replace("alpha","α").replace("beta","ß").replace("gamma","γ"))+'<br>'
+      if (mission.includes("!")) return;
+      res += '<input class="legendary-event-select-checkbox" onChange="updateFilter()" type="checkbox" id="legendary-event-filter-'+track+'-'+characterTableEntryId(mission)+'"></input> '+mission+'<br>'
     });
     document.getElementById("legendary-event-select-"+track).innerHTML = res;
   });
@@ -1133,15 +1134,15 @@ function sortTable(n) {
       <select onChange="updateLegendaryEvent()" id="legendary-event-select">
       </select>
       <fieldset>
-        <legend>α</legend>
+        <legend>α <input class="legendary-event-select-checkbox" onChange="updateFilter()" type="checkbox" id="legendary-event-filter-alpha-!"></input></legend>
         <span id="legendary-event-select-alpha"></span>
       </fieldset>
       <fieldset>
-        <legend>ß</legend>
+        <legend>ß <input class="legendary-event-select-checkbox" onChange="updateFilter()" type="checkbox" id="legendary-event-filter-beta-!"></input></legend>
         <span id="legendary-event-select-beta"></span>
       </fieldset>
       <fieldset>
-        <legend>γ</legend>
+        <legend>γ <input class="legendary-event-select-checkbox" onChange="updateFilter()" type="checkbox" id="legendary-event-filter-gamma-!"></input></legend>
         <span id="legendary-event-select-gamma"></span>
       </fieldset>
       <a onClick="setAllFilters('legendary-event-select-checkbox',false)" href="#">None</a>
