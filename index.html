@@ -481,7 +481,7 @@ var round2 = function(num) {
   return Math.round( num * 100 + Number.EPSILON ) / 100;
 }
 var damageArmourOrPierce = function(dmg, armour, pierce) {
-  return Math.max(dmg-armour, dmg*pierce);
+  return Math.max(1, Math.max(dmg-armour, dmg*pierce));
 }
 var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit) {
   numRounds = aunshiBonusDmg > 0 ? 3 : 1;
@@ -489,8 +489,8 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour
   for (i=0; i<numRounds; i++) {
     var dmgLow = low+aunshiBonusDmg
     var dmgHigh = high+aunshiBonusDmg
-    var perNonCrit = (Math.min(1, damageArmourOrPierce(dmgLow, armour, pierce)) + Math.min(1, damageArmourOrPierce(dmgHigh, armour, pierce)))*0.5;
-    var perCrit =  (Math.min(1, damageArmourOrPierce(dmgLow+crit, armour, pierce)) + Math.min(1, damageArmourOrPierce(dmgHigh+crit, armour, pierce)))*0.5;
+    var perNonCrit = (damageArmourOrPierce(dmgLow, armour, pierce) + damageArmourOrPierce(dmgHigh, armour, pierce))*0.5;
+    var perCrit =  (damageArmourOrPierce(dmgLow+crit, armour, pierce) + damageArmourOrPierce(dmgHigh+crit, armour, pierce))*0.5;
     for (n=1; n<=hits; n++) {
       var critCurHit = Math.pow(critChance, n);
       total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
