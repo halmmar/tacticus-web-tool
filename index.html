@@ -290,7 +290,7 @@ var updateAunShi = function(skipUpdate) {
   }
   var level = document.getElementById("aunshi-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("aunshi-buff-rarity").value*0.2);
-  document.getElementById("aunshi-buff-dmg").innerHTML = Math.round(tb_chars["Aun'Shi (preview)"].passive[0]*factor);
+  document.getElementById("aunshi-buff-dmg").innerHTML = Math.round(tb_chars["Aun'shi"].passive[1]*factor);
   if (1 != skipUpdate) updateTable();
 }
 var updateDarkstrider = function(skipUpdate) {
@@ -583,6 +583,7 @@ var updateTable = function() {
         var commentSurvival = "";
         var charLegData = char["legendary-event"] ? char["legendary-event"] : null;
         var numArmourReduction = 1;
+        var aunshiBonusDmg = key.includes("Aun'shi") ? passiveFactor*char.passive[1] : aunshiBonusDmgRawData;
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
