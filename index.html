@@ -489,9 +489,9 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour
   for (i=0; i<numRounds; i++) {
     var dmgLow = low+aunshiBonusDmg
     var dmgHigh = high+aunshiBonusDmg
-    var perNonCrit = damageArmourOrPierce(dmgLow, armour, pierce)*0.5 + damageArmourOrPierce(dmgHigh, armour, pierce)*0.5;
-    var perCrit =  damageArmourOrPierce(dmgLow+crit, armour, pierce)*0.5 + damageArmourOrPierce(dmgHigh+crit, armour, pierce)*0.5;
-        for (n=1; n<=hits; n++) {
+    var perNonCrit = (Math.min(1, damageArmourOrPierce(dmgLow, armour, pierce)) + Math.min(1, damageArmourOrPierce(dmgHigh, armour, pierce)))*0.5;
+    var perCrit =  (Math.min(1, damageArmourOrPierce(dmgLow+crit, armour, pierce)) + Math.min(1, damageArmourOrPierce(dmgHigh+crit, armour, pierce)))*0.5;
+    for (n=1; n<=hits; n++) {
       var critCurHit = Math.pow(critChance, n);
       total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
     };
@@ -582,6 +582,7 @@ var updateTable = function() {
         var commentRanged = "";
         var commentSurvival = "";
         var charLegData = char["legendary-event"] ? char["legendary-event"] : null;
+        var numArmourReduction = 1;
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
@@ -623,6 +624,10 @@ var updateTable = function() {
               dmgFactorMeleeTaken *= 0.7;
               commentSurvival = "terrifying";
               break;
+            case "mk x gravis":
+              numArmourReduction += 1;
+              commentSurvival = "gravis";
+              break;
             case "battle fatigue":
             case "diminutive":
             case "let the galaxy burn":
@@ -636,7 +641,6 @@ var updateTable = function() {
             case "act of faith":
             case "big target":
             case "infiltrate":
-            case "mk x gravis":
             case "healer":
             case "suppressive fire":
             case "indirect fire":
@@ -863,8 +867,12 @@ var updateTable = function() {
         }
 
         var calcOpponentDamageWorstCase = function(dmg,hits,pierce) {
-          res = damageArmourOrPierce(dmg,armour,pierce)*hits;
-          return res;
+          var res = dmg;
+          for (let i=0; i<numArmourReduction; i++) {
+            // Mk X gravis does this twice
+            res = damageArmourOrPierce(res,armour,pierce);
+          }
+          return res*hits;
         };
         opponentDmgPerAttack = Math.max(
           dmgFactorMeleeTaken*calcOpponentDamageWorstCase(opponentMeleeDamage, opponentMeleeHits, opponentMeleePierce),
