@@ -217,8 +217,8 @@ bossStats = {
       }
     },
   "triarchal menhir": {
-      "armour": [[573,16], None, None, [1910,15]],
-      "damage": [[859,16], None, None, [2864,15]],
+      "armour": [[573,17], None, None, [1910,15]],
+      "damage": [[859,17], None, None, [2864,15]],
       "melee": {"hits": 1, "pierce": 0.8},
       "ranged": {"hits": 1, "pierce": 0.8},
       "checkbox": {}
