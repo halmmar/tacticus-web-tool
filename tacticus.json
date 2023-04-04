@@ -99,9 +99,9 @@
     16.91428571,
     18.48571429,
     19.94285714,
-    19.82857143,
-    21.11428571,
-    22.28571429
+    21.28571429,
+    22.57142857,
+    23.74285714
   ],
   "bosses": {
     "ghazghkull": {
@@ -341,7 +341,7 @@
       "armour": [
         [
           573,
-          16
+          17
         ],
         null,
         null,
@@ -354,7 +354,7 @@
       "damage": [
         [
           859,
-          16
+          17
         ],
         null,
         null,
@@ -1530,7 +1530,7 @@
     },
     "Commissar Yarrick": {
       "alliance": "Imperial",
-      "armour": 17.9,
+      "armour": 17.0,
       "damage": 30.0,
       "equipment": {
         "block": 1,
@@ -1950,7 +1950,7 @@
         "pierce": 0.8
       },
       "passive": [
-        2.975
+        4.2
       ],
       "traits": [
         "let the galaxy burn",
@@ -3679,6 +3679,47 @@
         "terminator armour"
       ]
     },
+    "Ulf": {
+      "alliance": "Imperial",
+      "armour": 19.9,
+      "damage": 33.1,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Space Wolves",
+      "health": 90.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [],
+          "beta": [],
+          "gamma": []
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [],
+          "gamma": []
+        },
+        "MAUGAN RA": {
+          "alpha": [],
+          "beta": [],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 3,
+        "pierce": 0.4
+      },
+      "passive": [
+        25.0,
+        30.0
+      ],
+      "traits": [
+        "final vengeance",
+        "unstoppable"
+      ]
+    },
     "Varro Tigurius": {
       "alliance": "Imperial",
       "armour": 14.0,
@@ -4205,7 +4246,8 @@
           "Black Legion",
           "Black templars",
           "Death guard",
-          "Orks"
+          "Orks",
+          "Space Wolves"
         ],
         "legendary": {
           "crit-dmg": [
@@ -4281,6 +4323,7 @@
           "ADEPTA SOROITAS",
           "Astra militarum",
           "Black templars",
+          "Space Wolves",
           "Black Legion",
           "Death guard",
           "Necrons",
@@ -4352,6 +4395,7 @@
           "ADEPTA SOROITAS",
           "Astra militarum",
           "Black templars",
+          "Space Wolves",
           "Black Legion",
           "Death guard",
           "Necrons",
@@ -4444,7 +4488,8 @@
           "Black templars",
           "Death guard",
           "Orks",
-          "Aeldari"
+          "Aeldari",
+          "Space Wolves"
         ],
         "legendary": {
           "armour": [
@@ -4551,6 +4596,7 @@
         "factions": [
           "Ultramarines",
           "Black templars",
+          "Space Wolves",
           "ADEPTA SOROITAS",
           "Astra militarum",
           "Aeldari"
@@ -4984,5 +5030,5 @@
       ]
     }
   },
-  "version": "Beta 0.0.3.5"
+  "version": "Beta 0.0.3.6"
 }

@@ -9,6 +9,8 @@ import json
 import copy
 from collections import OrderedDict
 
+file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.0.3.6.xlsx'
+
 def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     """ Get a single rectangular region from the specified file.
     range_name can be a standard Excel reference ('Sheet1!A2:B7') or 
@@ -63,11 +65,10 @@ def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     df = pd.DataFrame(([cell.value for cell in row] for row in region), columns=columns)
     return df
 
-file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.0.3.5.xlsx'
 tb_Characters = data_frame_from_xlsx(file, 'tb_Characters', 1)
 tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$W$3:$X$21', True)
 tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
-tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AP$124', 2)
+tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AQ$124', 2)
 tb_Abilities = data_frame_from_xlsx(file, 'wb_abilities!$AB$3:$AJ$52', True)
 tb_Abilities_1_50 = [level for (level,growth,factor,_,_,_,_,_,_) in tb_Abilities.itertuples(index=False)]
 tb_SummonsList = data_frame_from_xlsx(file, 'SummonsData!$B$2:$B$30', True)
@@ -135,7 +136,7 @@ while tb_LegendaryEvent[indexLegendaryEvent][0]:
     indexLegendaryEvent += 19
 
 # Passives
-tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$65', True)
+tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$68', True)
 characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.itertuples(index=False)])
 
 # Boss stats
@@ -246,7 +247,8 @@ factionMap = {
     "ORKS": "Orks",
     "NECRONS": "Necrons",
     "AELDARI": "Aeldari",
-    "T'AU": "T'au Empire"
+    "T'AU": "T'au Empire",
+    "Space Wolves": "Space Wolves"
 }
 
 eqDict = {}
@@ -278,8 +280,8 @@ for index, eq in tb_Equipment.iterrows():
     itemChance = itemType[chance]
     rarityStr = eq["Rarity"].lower()
     if rarityStr not in itemChance:
-        stat1 = [int(x) for x in eq[18:29] if not np.isnan(x)]
-        stat2 = [int(x) for x in eq[30:41] if not np.isnan(x)]
+        stat1 = [int(x) for x in eq[19:30] if not np.isnan(x)]
+        stat2 = [int(x) for x in eq[31:42] if not np.isnan(x)]
         if itemTypeStr=="defense":
             itemChance[rarityStr] = {
                 "health": stat1,
@@ -339,6 +341,8 @@ def toJSON(rows):
         elif row.Name[0:2] in ["L1", "L2", "L3", "L4"]:
             bosses[row.Name] = data
         elif "summon" in traits:
+            if row.Name not in characterAbilities:
+                raise Exception(characterAbilities.keys())
             data["health"] = passiveData[0]
             data["damage"] = passiveData[1]
             data["armour"] = passiveData[2] if len(passiveData)==3 else 0
