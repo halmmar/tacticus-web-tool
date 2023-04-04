@@ -203,9 +203,10 @@ bossStats = {
   },
   "szarekh": {
       "armour": [[110/0.4,16], None, None, [368/0.4,15]],
-      "damage": [None, None, None, None],
+      "damage": [[110/0.4,16], None, None, [368/0.4,15]],
       "checkbox": {
-          "armour": 0.4
+          "armour": 0.4,
+          "damage": 0.4, # ???
       }
   },
   "stormboy": {
@@ -221,6 +222,13 @@ bossStats = {
       "damage": [[859,17], None, None, [2864,15]],
       "melee": {"hits": 1, "pierce": 0.8},
       "ranged": {"hits": 1, "pierce": 0.8},
+      "checkbox": {}
+  },
+  "tyranid prime": {
+      "armour": [None, None, None, [488,16]],
+      "damage": [None, None, None, [2882,16]],
+      "melee": {"hits": 3, "pierce": 0.01},
+      "ranged": {"hits": 3, "pierce": 0.3},
       "checkbox": {}
   }
 }

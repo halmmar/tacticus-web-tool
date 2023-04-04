@@ -256,13 +256,20 @@
         ]
       ],
       "checkbox": {
-        "armour": 0.4
+        "armour": 0.4,
+        "damage": 0.4
       },
       "damage": [
+        [
+          275.0,
+          16
+        ],
         null,
         null,
-        null,
-        null
+        [
+          920.0,
+          15
+        ]
       ]
     },
     "tervigon gorgon": {
@@ -363,6 +370,35 @@
       "ranged": {
         "hits": 1,
         "pierce": 0.8
+      }
+    },
+    "tyranid prime": {
+      "armour": [
+        null,
+        null,
+        null,
+        [
+          488,
+          16
+        ]
+      ],
+      "checkbox": {},
+      "damage": [
+        null,
+        null,
+        null,
+        [
+          2882,
+          16
+        ]
+      ],
+      "melee": {
+        "hits": 3,
+        "pierce": 0.01
+      },
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.3
       }
     }
   },

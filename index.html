@@ -381,6 +381,10 @@ var updateOpponentPreset = function(skipUpdateTable) {
       psyker = true;
       bigtarget = true;
       break;
+    case 'tyranid':
+    case 'triarchal menhir':
+      bigtarget = true;
+      break;
   }
   var updateOpponentPresetStat = function(stat) {
     var tb = tb_bosses[preset][stat];
@@ -1082,6 +1086,7 @@ function sortTable(n) {
         <option value="tervigon gorgon">Tervigon Gorgon</option>
         <option value="tervigon kronos">Tervigon Kronos</option>
         <option value="tervigon leviathan">Tervigon Leviathan</option>
+        <option value="tyranid prime">Tyranid Prime</option>
       </select>
       <select onChange="updateOpponentPreset()" id="opponent-preset-level">
         <option value="1">L1</option>
