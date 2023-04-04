@@ -778,26 +778,26 @@ var updateTable = function() {
         }
         
         if (equipmentEnabled && char.equipment) {
-          Object.keys(char.equipment).forEach(function equip(key) {
-            var eqCount = char.equipment[key];
-            var curEq = tb_equipment[key];
+          Object.keys(char.equipment).forEach(function equip(eqKey) {
+            var eqCount = char.equipment[eqKey];
+            var curEq = tb_equipment[eqKey];
             var curChance = Object.keys(curEq).filter(function (chance) { return curEq[chance]["factions"].includes(char.faction); });
-            if (preferEqCritDmg && key=="crit") {
+            if (preferEqCritDmg && eqKey=="crit") {
               selectedChance = Math.min(...curChance);
             } else {
               selectedChance = Math.max(...curChance);
             }
             eqStats = curEq[selectedChance][equipmentRarity];
-            if (key=="crit") {
+            if (eqKey=="crit") {
               critChance += 1.0 - Math.pow((100-selectedChance)/100, eqCount);
             }
-            if (key=="crit_booster") {
+            if (eqKey=="crit_booster") {
               critChance += (equipmentRarityInt+1)/100;
             }
-            if (key=="block") {
+            if (eqKey=="block") {
               blockChance += 1.0 - Math.pow((100-selectedChance)/100, eqCount);
             }
-            if (key=="block_booster") {
+            if (eqKey=="block_booster") {
               blockChance += (equipmentRarityInt+1)/100;
             }
             Object.keys(eqStats).forEach(function (stat) {
