@@ -107,9 +107,9 @@ while tb_LegendaryEvent[indexLegendaryEvent][0]:
     gammaNames = itemsList[12:18]
     pointsList = list(points)
     
-    alpha = dict(zip(alphaNames,pointsList[0:6]))
-    beta = dict(zip(betaNames,pointsList[6:12]))
-    gamma = dict(zip(gammaNames,pointsList[12:18]))
+    alpha = dict(zip(alphaNames,[[p,0] for p in pointsList[0:6]]))
+    beta = dict(zip(betaNames,[[p,0] for p in pointsList[6:12]]))
+    gamma = dict(zip(gammaNames,[[p,0] for p in pointsList[12:18]]))
     for index, row in tb_LegendaryEvent.iterrows():
         if index < 5:
             continue
@@ -127,9 +127,13 @@ while tb_LegendaryEvent[indexLegendaryEvent][0]:
                 characterBeta += [betaNames[i]]
             if row[indexLegendaryEvent+12+i]:
                 characterGamma += [gammaNames[i]]
-        for missionList in [characterAlpha,characterBeta,characterGamma]:
+        for (missionList,missionPoints) in [(characterAlpha,alpha),(characterBeta,beta),(characterGamma,gamma)]:
             if "!" not in missionList:
                 missionList.clear()
+            for mission in missionList:
+                missionPoints[mission][1] += 1
+        if legendaryEventName in legendaryEventCharacters[row[0]]:
+            raise Exception(row[0], "appears twice in the legendary events (YourUnits)")
         legendaryEventCharacters[row[0]][legendaryEventName] = {"alpha": characterAlpha, "beta": characterBeta, "gamma": characterGamma}
                 
     legendaryEvents[legendaryEventName] = {"alpha": alpha, "beta": beta, "gamma": gamma}
