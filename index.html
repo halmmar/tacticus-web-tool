@@ -904,7 +904,7 @@ var updateTable = function() {
                   var points = trackData[mission][0];
                   var weight = 1;
                   if (legendaryPointsWeight) {
-                    weight = Math.pow(1.0 / (Math.max(5, trackData[mission][1])-4), legendaryPointsWeight);
+                    weight = Math.pow(1.0 / (Math.max(5, trackData[mission][1])/5), legendaryPointsWeight);
                   }
                   points *= weight;
                   sum += points;
