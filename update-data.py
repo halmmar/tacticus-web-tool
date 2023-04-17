@@ -147,8 +147,8 @@ characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.ite
 bossStats = {
   # Stats are an array [0]=L1, etc. The first element is the stat and the second, the season which the data was collected from
   "ghazghkull": {
-      "armour": [[151/0.5,15],None,[330/0.5,16],None],
-      "damage": [None,None,[778/0.5,15],None],
+      "armour": [[151/0.5,15],None,[330/0.5,16],[504/0.5,18]],
+      "damage": [None,None,[778/0.5,15],[1189/0.5,18]],
       "melee": {"hits": 4, "pierce": 0.4},
       "ranged": {"hits": 6, "pierce": 0.15},
       "checkbox": {
@@ -157,8 +157,8 @@ bossStats = {
       }
   },
   "gibbascrapz": {
-      "armour": [None, None, [2297,16], None],
-      "damage": [None, None, [1874,16], None],
+      "armour": [None, None, [2297,16], [3510,18]],
+      "damage": [None, None, [1874,16], [2864,18]],
       "melee": {"hits": 4, "pierce": 0.01},
       "checkbox": {}
   },
@@ -215,8 +215,8 @@ bossStats = {
       }
   },
   "stormboy": {
-      "armour": [None, None, [502,15], None],
-      "damage": [None, None, [1003,16], None],
+      "armour": [None, None, [502,15], [797,18]],
+      "damage": [None, None, [1003,16], [1595,18]],
       "melee": {"hits": 2, "pierce": 0.01},
       "checkbox": {
           "hits": 1
