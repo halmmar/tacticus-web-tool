@@ -81,6 +81,7 @@ tb_archimatos_ability_factor = [];
 tb_equipment = {};
 tb_legendary_events = {};
 intToRarity = ["common", "uncommon", "rare", "epic", "legendary"]
+opponentRevoltingResilience = false;
 
 getJSON('tacticus.json',
 function(err, data) {
@@ -379,6 +380,7 @@ var updateOpponentPreset = function(skipUpdateTable) {
   var psyker = false;
   var markerlight = false;
   var bigtarget = false;
+  var revoltingresilience = false;
   var preset = document.getElementById("opponent-preset").value;
   var level = +document.getElementById("opponent-preset-level").value;
   var checkbox = document.getElementById("opponent-checkbox").checked;
@@ -441,6 +443,7 @@ var updateOpponentPreset = function(skipUpdateTable) {
   document.getElementById("opponent-is-psyker").checked = psyker;
   document.getElementById("opponent-has-markerlight").checked = markerlight;
   document.getElementById("opponent-beast-snagga").checked = bigtarget;
+  document.getElementById("opponent-revolting-resilience").checked = revoltingresilience;
   if (!skipUpdateTable) updateTable();
 }
 
@@ -502,6 +505,7 @@ var damageArmourOrPierce = function(dmg, armour, pierce) {
 var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit) {
   numRounds = aunshiBonusDmg > 0 ? 3 : 1;
   var total = 0;
+  var opponentRevoltingResilienceScaling = 1.0;
   for (i=0; i<numRounds; i++) {
     var dmgLow = low+aunshiBonusDmg
     var dmgHigh = high+aunshiBonusDmg
@@ -509,7 +513,10 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour
     var perCrit =  (damageArmourOrPierce(dmgLow+crit, armour, pierce) + damageArmourOrPierce(dmgHigh+crit, armour, pierce))*0.5;
     for (n=1; n<=hits; n++) {
       var critCurHit = Math.pow(critChance, n);
-      total += perCrit * critCurHit + perNonCrit * (1-critCurHit);
+      total += perCrit * critCurHit + perNonCrit * (1-critCurHit) * opponentRevoltingResilienceScaling;
+      if (opponentRevoltingResilience) {
+        opponentRevoltingResilienceScaling *= 0.5;
+      }
     };
   }
   return Math.round(dmgFactor*total) / numRounds;
@@ -548,6 +555,7 @@ var updateTable = function() {
     var opponentIsPsyker = document.getElementById("opponent-is-psyker").checked;
     var opponentHasMarkerlight = document.getElementById("opponent-has-markerlight").checked;
     var opponentBeastSnagga = document.getElementById("opponent-beast-snagga").checked;
+    opponentRevoltingResilience = document.getElementById("opponent-revolting-resilience").checked;
     var abaddonPassive = document.getElementById("abaddon-buff-enabled").checked;
     var abaddonBonusDmg = +document.getElementById("abaddon-buff-dmg").innerHTML;
     var thaddeusPassive = document.getElementById("thaddeus-buff-enabled").checked;
@@ -1143,6 +1151,9 @@ function sortTable(n) {
       </fieldset>
       <fieldset class="damage-mode-only"><legend>Big Target</legend>
       <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
+      </fieldset>
+      <fieldset class="damage-mode-only"><legend>Revolting Resilience (Mortarion leak)</legend>
+      <input title="Each hit after the first deals 50% less damage (compounding)" onChange="updateTable()" type="checkbox" id="opponent-revolting-resilience" checked></input>
       </fieldset>
     </fieldset>
     
