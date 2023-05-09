@@ -9,7 +9,7 @@ import json
 import copy
 from collections import OrderedDict
 
-file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.0.3.6.xlsx'
+file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.3.7.xlsx'
 
 def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     """ Get a single rectangular region from the specified file.
@@ -68,7 +68,7 @@ def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
 tb_Characters = data_frame_from_xlsx(file, 'tb_Characters', 1)
 tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$W$3:$X$21', True)
 tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
-tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AQ$124', 2)
+tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AS$124', 2)
 tb_Abilities = data_frame_from_xlsx(file, 'wb_abilities!$AB$3:$AJ$52', True)
 tb_Abilities_1_50 = [level for (level,growth,factor,_,_,_,_,_,_) in tb_Abilities.itertuples(index=False)]
 tb_SummonsList = data_frame_from_xlsx(file, 'SummonsData!$B$2:$B$30', True)
@@ -262,7 +262,8 @@ factionMap = {
     "NECRONS": "Necrons",
     "AELDARI": "Aeldari",
     "T'AU": "T'au Empire",
-    "Space Wolves": "Space Wolves"
+    "Space Wolves": "Space Wolves",
+    "DARK ANGELS": "Dark Angels"
 }
 
 eqDict = {}
@@ -294,8 +295,8 @@ for index, eq in tb_Equipment.iterrows():
     itemChance = itemType[chance]
     rarityStr = eq["Rarity"].lower()
     if rarityStr not in itemChance:
-        stat1 = [int(x) for x in eq[19:30] if not np.isnan(x)]
-        stat2 = [int(x) for x in eq[31:42] if not np.isnan(x)]
+        stat1 = [int(x) for x in eq[21:32] if not np.isnan(x)]
+        stat2 = [int(x) for x in eq[33:44] if not np.isnan(x)]
         if itemTypeStr=="defense":
             itemChance[rarityStr] = {
                 "health": stat1,
