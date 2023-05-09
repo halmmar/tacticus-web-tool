@@ -156,6 +156,16 @@ bossStats = {
           "damage": 0.5 # ??? Confirm this
       }
   },
+  "mortarion": {
+      "armour": [None,None,None,[6701,"beta"]],
+      "damage": [None,None,None,[2234,"beta"]],
+      "melee": {"hits": 7, "pierce": 0.15},
+      "ranged": {"hits": 3, "pierce": 1.00},
+      "checkbox": {
+          "armour": 0.1,
+          "damage": 0.75
+      }
+  },
   "gibbascrapz": {
       "armour": [None, None, [2297,16], [3510,18]],
       "damage": [None, None, [1874,16], [2864,18]],

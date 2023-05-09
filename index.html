@@ -81,7 +81,7 @@ tb_archimatos_ability_factor = [];
 tb_equipment = {};
 tb_legendary_events = {};
 intToRarity = ["common", "uncommon", "rare", "epic", "legendary"]
-opponentRevoltingResilience = false;
+opponentRevoltingResilience = 0;
 
 getJSON('tacticus.json',
 function(err, data) {
@@ -381,15 +381,21 @@ var updateOpponentPreset = function(skipUpdateTable) {
   var markerlight = false;
   var bigtarget = false;
   var revoltingresilience = false;
+  var melee = false;
   var preset = document.getElementById("opponent-preset").value;
   var level = +document.getElementById("opponent-preset-level").value;
   var checkbox = document.getElementById("opponent-checkbox").checked;
+  console.log(preset.split(" ")[0]);
   switch (preset.split(" ")[0]) {
     case "szarekh":
     case "ghazghkull":
       mech = true;
       bigtarget = true;
       break;
+    case "mortarion":
+      // demon = true;
+      revoltingresilience = true;
+      melee = true;
     case "hive":
     case "tervigon":
       psyker = true;
@@ -439,11 +445,13 @@ var updateOpponentPreset = function(skipUpdateTable) {
     }
   });
 
+  console.log(preset.split(" ")[0],revoltingresilience,melee);
   document.getElementById("opponent-is-mech").checked = mech;
   document.getElementById("opponent-is-psyker").checked = psyker;
   document.getElementById("opponent-has-markerlight").checked = markerlight;
   document.getElementById("opponent-beast-snagga").checked = bigtarget;
   document.getElementById("opponent-revolting-resilience").checked = revoltingresilience;
+  document.getElementById("opponent-punishes-melee").checked = melee;
   if (!skipUpdateTable) updateTable();
 }
 
@@ -511,10 +519,11 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour
     var dmgHigh = high+aunshiBonusDmg
     var perNonCrit = (damageArmourOrPierce(dmgLow, armour, pierce) + damageArmourOrPierce(dmgHigh, armour, pierce))*0.5;
     var perCrit =  (damageArmourOrPierce(dmgLow+crit, armour, pierce) + damageArmourOrPierce(dmgHigh+crit, armour, pierce))*0.5;
+    var numRevoltingResilience = opponentRevoltingResilience;
     for (n=1; n<=hits; n++) {
       var critCurHit = Math.pow(critChance, n);
       total += perCrit * critCurHit + perNonCrit * (1-critCurHit) * opponentRevoltingResilienceScaling;
-      if (opponentRevoltingResilience) {
+      if (opponentRevoltingResilience && (numRevoltingResilience-- <= 0)) {
         opponentRevoltingResilienceScaling *= 0.5;
       }
     };
@@ -555,7 +564,7 @@ var updateTable = function() {
     var opponentIsPsyker = document.getElementById("opponent-is-psyker").checked;
     var opponentHasMarkerlight = document.getElementById("opponent-has-markerlight").checked;
     var opponentBeastSnagga = document.getElementById("opponent-beast-snagga").checked;
-    opponentRevoltingResilience = document.getElementById("opponent-revolting-resilience").checked;
+    opponentRevoltingResilience = document.getElementById("opponent-revolting-resilience").checked ? (document.getElementById("opponent-checkbox") ? 3 : 1) : 0;
     var abaddonPassive = document.getElementById("abaddon-buff-enabled").checked;
     var abaddonBonusDmg = +document.getElementById("abaddon-buff-dmg").innerHTML;
     var thaddeusPassive = document.getElementById("thaddeus-buff-enabled").checked;
@@ -571,6 +580,7 @@ var updateTable = function() {
     var ltgbEnabled = document.getElementById("ltgb-enabled").checked;
     var curEvent = document.getElementById("legendary-event-select").value;
     var legendaryPointsWeight = +document.getElementById("legendary-points-weight").value;
+    var opponentPunishesMelee = document.getElementById("opponent-punishes-melee").checked;
     
     Object.keys(tb_chars_and_summons).forEach(function callback(key) {
         var comment = "";
@@ -704,6 +714,11 @@ var updateTable = function() {
           dmg *= incisusFactor;
           break;
         case 'High Marshal Helbrecht':
+          if (opponentIsPsyker && !opponentPunishesMelee) {
+            helbrechtBonusDmg += passiveFactor*char.passive[0];
+            comment += "psyker +" + Math.round(helbrechtBonusDmg);
+          }
+          break;
         case 'Roswitha':
           if (opponentIsPsyker) {
             buffDmg += passiveFactor*char.passive[0];
@@ -847,17 +862,19 @@ var updateTable = function() {
         buffDmgRanged += darkstriderBonusDmg;
        
         // Melee damage
-        var meleeDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage);
-        var totalDmg = meleeDmg;
-        switch (key) {
-          case 'Boss Gulgortz':
-            totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3, opponentarmor, char.ranged.pierce, critChance, critDamage);
-            break;
-        }
-        if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
-          var galaxyDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage);
-          totalDmg += galaxyDmg * 0.5;
-          // comment += "LtGB assumes hits on target"
+        var totalDmg = 0;
+        if (!opponentPunishesMelee) {
+          totalDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage);
+          switch (key) {
+            case 'Boss Gulgortz':
+              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3, opponentarmor, char.ranged.pierce, critChance, critDamage);
+              break;
+          }
+          if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
+            var galaxyDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage);
+            totalDmg += galaxyDmg * 0.5;
+            // comment += "LtGB assumes hits on target"
+          }
         }
         if (char.hasOwnProperty("ranged")) {
           // Ranged damage
@@ -1108,10 +1125,11 @@ function sortTable(n) {
       <fieldset><legend>Preset</legend>
       <select onChange="updateOpponentPreset()" id="opponent-preset">
         <option value="gibbascrapz">Gibbascrapz</option>
-        <option value="ghazghkull" selected>Ghazghkull</option>
+        <option value="ghazghkull">Ghazghkull</option>
         <option value="hive tyrant gorgon">Hive Tyrant Gorgon</option>
         <option value="hive tyrant kronos">Hive Tyrant Kronos</option>
         <option value="hive tyrant leviathan">Hive Tyrant Leviathan</option>
+        <option value="mortarion" selected>Mortarion</option>
         <option value="stormboy">Stormboy</option>
         <option value="szarekh">Szarekh</option>
         <option value="tervigon gorgon">Tervigon Gorgon</option>
@@ -1122,8 +1140,8 @@ function sortTable(n) {
       <select onChange="updateOpponentPreset()" id="opponent-preset-level">
         <option value="1">L1</option>
         <option value="2">L2</option>
-        <option value="3" selected>L3</option>
-        <option value="4">L4</option>
+        <option value="3">L3</option>
+        <option value="4" selected>L4</option>
       </select>
       <input title="The primes have been killed, debuffing armour. For summons, activates some abilities such as Stormboy buffs." onChange="updateOpponentPreset()" type="checkbox" id="opponent-checkbox" checked></input>
       <br>
@@ -1152,8 +1170,11 @@ function sortTable(n) {
       <fieldset class="damage-mode-only"><legend>Big Target</legend>
       <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
       </fieldset>
-      <fieldset class="damage-mode-only"><legend>Revolting Resilience (Mortarion leak)</legend>
+      <fieldset class="damage-mode-only"><legend>Revolting Resilience</legend>
       <input title="Each hit after the first deals 50% less damage (compounding)" onChange="updateTable()" type="checkbox" id="opponent-revolting-resilience" checked></input>
+      </fieldset>
+      <fieldset class="damage-mode-only"><legend>No Melee</legend>
+      <input title="Boss punishes melee attacks heavily, so don't use them for the calculation" onChange="updateTable()" type="checkbox" id="opponent-punishes-melee" checked></input>
       </fieldset>
     </fieldset>
     
