@@ -385,7 +385,6 @@ var updateOpponentPreset = function(skipUpdateTable) {
   var preset = document.getElementById("opponent-preset").value;
   var level = +document.getElementById("opponent-preset-level").value;
   var checkbox = document.getElementById("opponent-checkbox").checked;
-  console.log(preset.split(" ")[0]);
   switch (preset.split(" ")[0]) {
     case "szarekh":
     case "ghazghkull":
@@ -757,6 +756,7 @@ var updateTable = function() {
         case 'Anuphet':
         case 'Archimatos':
         case "Aun'shi":
+        case "Azrael":
         case 'Bellator':
         case 'Boss Gulgortz':
         case 'Brother Burchard':
