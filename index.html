@@ -100,7 +100,7 @@ function(err, data) {
     tb_chars_and_summons = Object.assign(tb_chars,tb_summons)
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
-    ["eldryon-buff", "thaddeus-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "helbrecht-buff", "equipment"].forEach(function (key) {
+    ["eldryon-buff", "thaddeus-buff", "shadowsun-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "helbrecht-buff", "equipment"].forEach(function (key) {
       document.getElementById(key + "-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     });
     addLegendaryEvents(latest_legendary_event);
@@ -108,6 +108,7 @@ function(err, data) {
     updateEldryon(1);
     updateAbaddon(1);
     updateThaddeus(1);
+    updateShadowsun(1);
     updateCalgar(1);
     updateAethana(1);
     updateAunShi(1);
@@ -253,6 +254,17 @@ var updateThaddeus = function(skipUpdate) {
   var level = document.getElementById("thaddeus-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("thaddeus-buff-rarity").value*0.2);
   document.getElementById("thaddeus-buff-dmg").innerHTML = Math.round(tb_chars["Thaddeus noble"].passive[0]*factor);
+  if (1 != skipUpdate) updateTable();
+}
+var updateShadowsun = function(skipUpdate) {
+  if (!document.getElementById("shadowsun-buff-enabled").checked) {
+    document.getElementById("shadowsun-buff-dmg").innerHTML = 0;
+    if (1 != skipUpdate) updateTable();
+    return;
+  }
+  var level = document.getElementById("shadowsun-buff-level").value;
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("shadowsun-buff-rarity").value*0.2);
+  document.getElementById("shadowsun-buff-dmg").innerHTML = Math.round(tb_chars["ShadowSun"].passive[0]*factor);
   if (1 != skipUpdate) updateTable();
 }
 var updateCalgar = function(skipUpdate) {
@@ -568,6 +580,8 @@ var updateTable = function() {
     var abaddonBonusDmg = +document.getElementById("abaddon-buff-dmg").innerHTML;
     var thaddeusPassive = document.getElementById("thaddeus-buff-enabled").checked;
     var thaddeusBonusDmg = +document.getElementById("thaddeus-buff-dmg").innerHTML;
+    var shadowsunPassive = document.getElementById("shadowsun-buff-enabled").checked;
+    var shadowsunBonusDmgRaw = +document.getElementById("shadowsun-buff-dmg").innerHTML;
     var calgarBonusDmg = +document.getElementById("calgar-buff-all").innerHTML;
     var calgarBonusDmgImperial = +document.getElementById("calgar-buff-imperial").innerHTML;
     var aethanaBonusDmg = +document.getElementById("aethana-buff-all").innerHTML;
@@ -607,6 +621,7 @@ var updateTable = function() {
         var eldryondamageModifiedByFaction = eldryondamage + (char.faction == "Aeldari" ? eldryondamageAeldari : 0.0);
         var calgardamageModifiedByFaction = (char.alliance == "Imperial" ? calgarBonusDmgImperial : calgarBonusDmg)
         var aethanadamageModifiedByFaction = aethanaBonusDmg + (char.faction == "Aeldari" ? aethanaBonusDmgAeldar : 0.0);
+        var shadowsunBonusDmg = key.includes("ShadowSun") ? 0 : shadowsunBonusDmgRaw;
         var ltgbHits = (abaddonPassive || key=="Abaddon the despolier") ? 2 : 1;
         var aunshiBonusDmg = key.includes("Aun'Shi")  ? 0 : aunshiBonusDmgRawData;
         var darkstriderBonusDmg = (key.includes("Darkstrider") || !opponentHasMarkerlight) ? 0 : darkstriderBonusDmgRawData;
@@ -718,6 +733,7 @@ var updateTable = function() {
             comment += "psyker +" + Math.round(helbrechtBonusDmg);
           }
           break;
+        case 'Tjark':
         case 'Roswitha':
           if (opponentIsPsyker) {
             buffDmg += passiveFactor*char.passive[0];
@@ -789,7 +805,7 @@ var updateTable = function() {
         case 'Pox Walkers':
         case "Re'Vas":
         case "Scarab Swarm":
-        case "Scarab Swarm (v1.6)":
+        case "ShadowSun":
         case "Shield Drone":
         case "Sho'Syl":
         case 'Sibyll':
@@ -859,7 +875,7 @@ var updateTable = function() {
 
         buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmgModifiedByFaction + aethanadamageModifiedByFaction;
         buffDmgMelee += helbrechtBonusDmg;
-        buffDmgRanged += darkstriderBonusDmg;
+        buffDmgRanged += darkstriderBonusDmg + shadowsunBonusDmg;
        
         // Melee damage
         var totalDmg = 0;
@@ -879,6 +895,10 @@ var updateTable = function() {
         if (char.hasOwnProperty("ranged")) {
           // Ranged damage
           var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged);
+          if (shadowsunPassive && char.faction.includes("T'au") && key != "ShadowSun") {
+            var rangedDmgTauProc = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka + 1, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged);
+            rangedDmg = 0.9 * rangedDmg + 0.1 * rangedDmgTauProc;
+          }
           switch (key) {
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
@@ -1230,6 +1250,13 @@ function sortTable(n) {
     +<span id="helbrecht-buff-dmg"></span> damage [vs. Psyker]
     <br>
     TODO: Pestillian missing
+    <br>
+    <label>Shadowsun</label>
+    <input onChange="updateShadowsun()" type="checkbox" id="shadowsun-buff-enabled"></input>
+    <select onchange="updateShadowsun()" id="shadowsun-buff-rarity">
+    </select>
+    <input onChange="updateShadowsun()" type="number" id="shadowsun-buff-level" min="0" max="50" value="35">
+    +<span id="shadowsun-buff-dmg"></span> damage [Ranged]
     <br>
     <label>Thaddeus</label>
     <input onChange="updateThaddeus()" type="checkbox" id="thaddeus-buff-enabled"></input>

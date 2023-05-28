@@ -469,38 +469,105 @@
           "alpha": [
             "!",
             "Piercing",
+            "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
         },
         "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
             "Piercing",
             "Bolter",
-            "No Flying"
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
             "Power",
             "Resilient"
           ],
           "beta": [
             "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
         }
       },
       "melee": {
@@ -537,50 +604,103 @@
             "!",
             "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
             "Melee",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
+            "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
+            "Ranged",
             "Max 3 hits",
+            "Necrons",
             "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
-            "Piercing"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Melee"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -613,7 +733,9 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
@@ -621,36 +743,95 @@
             "!",
             "Mechanical",
             "No Resilient",
-            "Melee"
+            "Melee",
+            "Physical",
+            "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
+            "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
-            "Necrons"
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
             "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
+          ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
-            "Min 4 hits"
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
           ],
           "gamma": [
             "!",
-            "No Overwatch"
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -683,22 +864,42 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
-            "No Overwatch"
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
             "Power",
+            "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
@@ -706,21 +907,62 @@
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
             "Max 2 hits",
-            "Power"
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -749,24 +991,51 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
             "Melee",
+            "Physical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
         },
         "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
+            "Bolter",
             "No Flying",
             "Min 4 hits"
           ]
@@ -774,16 +1043,54 @@
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
-            "Power"
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
+            "No Power",
+            "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
         }
       },
       "melee": {
@@ -816,45 +1123,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
             "Mechanical",
-            "No Resilient"
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
             "Ranged",
             "Max 3 hits",
-            "Necrons"
+            "Necrons",
+            "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
-            "No Flying"
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
+          ],
           "beta": [
             "!",
             "No Power",
-            "No Let the Galaxy Burn"
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
-            "Ranged"
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -889,36 +1256,106 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
-            "No Resilient"
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
         },
         "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
             "Psychic",
-            "Max 2 hits"
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
-            "No Mechanical"
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
         }
       },
       "melee": {
@@ -953,31 +1390,51 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
             "Melee",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
-            "No Overwatch"
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
             "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
+            "Bolter",
             "No Flying",
             "Min 4 hits"
           ]
@@ -985,11 +1442,15 @@
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
-            "Power"
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
+            "No Power",
             "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Mechanical",
@@ -997,8 +1458,37 @@
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1027,20 +1517,42 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
-            "No Flying"
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
             "Power",
+            "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
@@ -1048,20 +1560,62 @@
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
+            "Melee",
             "Max 2 hits",
-            "Power"
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1098,41 +1652,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
+            "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
             "Bolter",
-            "No Blast"
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
             "Bolter",
+            "No Flying",
             "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Melee"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Bolter",
-            "No Overwatch"
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1161,45 +1779,107 @@
       "health": 100.0,
       "legendary-event": {
         "AUN'SHI": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
+          ],
           "beta": [
             "!",
             "Mechanical",
             "No Resilient",
+            "Melee",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
             "Ranged",
             "Max 3 hits",
+            "Necrons",
             "No Summons"
           ],
-          "beta": [],
-          "gamma": []
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
+          ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "!"
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1237,27 +1917,50 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
-            "No Overwatch"
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
             "Power",
             "Bolter",
+            "No Blast",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
             "Bolter",
             "No Flying",
             "Min 4 hits"
@@ -1266,15 +1969,53 @@
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Power"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1309,22 +2050,42 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
-            "No Overwatch"
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
             "Power",
+            "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
@@ -1332,21 +2093,62 @@
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
             "Max 2 hits",
-            "Power"
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1378,11 +2180,16 @@
           "alpha": [
             "!",
             "Piercing",
-            "Max 2 hits"
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
+            "Melee",
             "Physical",
             "No Summons"
           ],
@@ -1390,6 +2197,7 @@
             "!",
             "Physical",
             "No Flying",
+            "No Overwatch",
             "No Power",
             "Max 1 hit"
           ]
@@ -1400,33 +2208,76 @@
             "Physical",
             "Ranged",
             "Max 3 hits",
+            "Necrons",
             "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
             "Piercing",
-            "No Flying"
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Max 2 hits"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
+            "No Overwatch",
             "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1462,41 +2313,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
+            "Bolter",
             "No Blast",
-            "Max 2 hits"
+            "Max 2 hits",
+            "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
-            "Max 2 hits"
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
-            "No Overwatch"
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1526,38 +2441,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Overwatch"
-          ]
-        },
-        "JAIN ZAR": {
-          "alpha": [],
           "beta": [
             "!",
-            "Power",
-            "No Blast"
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
           ],
           "gamma": [
             "!",
-            "No Mechanical"
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
-            "Power"
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
-            "No Overwatch"
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1590,21 +2572,41 @@
         "AUN'SHI": {
           "alpha": [
             "!",
-            "Max 2 hits"
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Physical",
             "No Flying",
+            "No Overwatch",
             "No Power",
             "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
             "Bolter",
             "No Blast",
             "Max 2 hits",
@@ -1613,22 +2615,62 @@
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
             "Bolter",
-            "No Flying"
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Max 2 hits"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Bolter",
+            "No Overwatch",
             "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1664,45 +2706,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
-            "No Overwatch"
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
             "Power",
             "Bolter",
             "No Blast",
-            "Max 2 hits"
+            "Max 2 hits",
+            "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
             "Bolter",
-            "No Flying"
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
+            "Melee",
             "Max 2 hits",
             "Power",
             "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Bolter",
             "No Overwatch",
-            "Ranged"
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1736,39 +2838,106 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
-            "Melee"
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
         },
         "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
             "Max 2 hits",
+            "Power",
             "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
-            "No Mechanical"
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
         }
       },
       "melee": {
@@ -1798,11 +2967,17 @@
         "AUN'SHI": {
           "alpha": [
             "!",
-            "Max 2 hits"
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
+            "Melee",
             "Physical",
             "No Summons"
           ],
@@ -1811,7 +2986,8 @@
             "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
@@ -1820,32 +2996,76 @@
             "Physical",
             "Ranged",
             "Max 3 hits",
+            "Necrons",
             "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Max 2 hits"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1881,54 +3101,104 @@
           "alpha": [
             "!",
             "Piercing",
+            "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
+            "Melee",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
             "Ranged",
             "Max 3 hits",
+            "Necrons",
             "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
             "Piercing",
-            "No Flying"
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
             "Psychic",
-            "Max 2 hits"
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -1961,44 +3231,107 @@
       "health": 75.0,
       "legendary-event": {
         "AUN'SHI": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
+          ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
             "Melee",
-            "Physical"
+            "Physical",
+            "No Summons"
           ],
           "gamma": [
             "!",
             "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
-            "Physical"
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
           ],
-          "beta": [],
-          "gamma": []
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
+          ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Melee"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
             "Min 4 hits",
-            "No Mechanical"
+            "No Mechanical",
+            "No Summons"
           ],
           "gamma": [
             "!",
-            "No Overwatch"
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2030,40 +3363,104 @@
             "!",
             "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
             "Melee",
+            "Physical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
         },
         "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
             "Piercing",
+            "Bolter",
+            "No Flying",
             "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Melee"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
+            "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
         }
       },
       "melee": {
@@ -2093,44 +3490,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
-            "No Overwatch"
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
             "Power",
             "Bolter",
             "No Blast",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
             "Bolter",
-            "No Flying"
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Power"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2164,6 +3622,9 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
@@ -2171,41 +3632,95 @@
             "!",
             "Mechanical",
             "No Resilient",
+            "Melee",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
-            "No Power"
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
             "Ranged",
+            "Max 3 hits",
             "Necrons",
             "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
             "No Flying",
             "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
+          ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
             "Min 4 hits",
+            "No Mechanical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2243,11 +3758,20 @@
             "Piercing",
             "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
             "No Power",
@@ -2255,9 +3779,18 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
+            "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
@@ -2266,21 +3799,61 @@
             "!",
             "No Mechanical",
             "Piercing",
-            "No Flying"
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
-            "Max 2 hits"
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
             "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2310,44 +3883,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
             "Bolter",
             "No Blast",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
             "Bolter",
-            "No Flying"
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Melee"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Bolter",
             "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2380,52 +4014,103 @@
             "!",
             "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
             "Melee",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
+            "Ranged",
             "Max 3 hits",
+            "Necrons",
             "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
             "Piercing",
-            "No Flying"
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Melee"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2455,27 +4140,51 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
-            "Min 3 hits"
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
+            "Bolter",
             "No Flying",
             "Min 4 hits"
           ]
@@ -2483,13 +4192,53 @@
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Melee"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2519,12 +4268,17 @@
         "AUN'SHI": {
           "alpha": [
             "!",
-            "Max 2 hits"
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
           ],
           "beta": [
             "!",
             "Mechanical",
             "No Resilient",
+            "Melee",
             "Physical",
             "No Summons"
           ],
@@ -2533,7 +4287,8 @@
             "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
@@ -2545,25 +4300,73 @@
             "Necrons",
             "No Summons"
           ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Flying"
-          ]
-        },
-        "MAUGAN RA": {
-          "alpha": [],
           "beta": [
             "!",
-            "No Power",
-            "No Let the Galaxy Burn",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2597,40 +4400,106 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
+            "No Resilient",
             "Melee",
+            "Physical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
         },
         "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
+            "Max 2 hits",
             "Power",
             "Resilient"
           ],
           "beta": [
             "!",
+            "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
         }
       },
       "melee": {
@@ -2661,19 +4530,38 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
-            "No Overwatch"
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
             "Power",
@@ -2685,23 +4573,62 @@
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
             "Bolter",
-            "No Flying"
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
             "Max 2 hits",
-            "Power"
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Bolter",
             "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2733,29 +4660,51 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
+            "Melee",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
-            "No Flying"
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
             "Ranged",
+            "Max 3 hits",
+            "Necrons",
             "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
+            "Bolter",
             "No Flying",
             "Min 4 hits"
           ]
@@ -2763,10 +4712,15 @@
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Power"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
+            "No Power",
             "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Mechanical",
@@ -2774,8 +4728,37 @@
           ],
           "gamma": [
             "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2812,42 +4795,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Flying",
-            "No Overwatch"
-          ]
-        },
-        "JAIN ZAR": {
-          "alpha": [],
           "beta": [
             "!",
-            "Power",
-            "Bolter",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
             "Bolter",
-            "No Flying"
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Power"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -2885,23 +4931,51 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
+            "No Resilient",
             "Melee",
+            "Physical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
         },
         "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
+            "Bolter",
             "No Flying",
             "Min 4 hits"
           ]
@@ -2909,18 +4983,54 @@
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
+            "Max 2 hits",
             "Power",
             "Resilient"
           ],
           "beta": [
             "!",
+            "No Power",
             "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
         }
       },
       "melee": {
@@ -2951,41 +5061,106 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
+            "No Resilient",
             "Melee",
+            "Physical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
         },
         "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
             "Max 2 hits",
+            "Power",
             "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
         }
       },
       "melee": {
@@ -3016,45 +5191,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
             "Mechanical",
-            "No Resilient"
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
+            "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
-            "Ranged"
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
             "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "!"
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
-            "Min 4 hits"
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
-            "Ranged"
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3093,21 +5328,41 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
             "Bolter",
             "No Blast",
             "Max 2 hits",
@@ -3116,22 +5371,62 @@
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
             "Bolter",
-            "No Flying"
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Max 2 hits"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3150,6 +5445,141 @@
         "act of faith"
       ]
     },
+    "ShadowSun": {
+      "alliance": "Xenos",
+      "armour": 18.0,
+      "damage": 27.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "T'au Empire",
+      "health": 80.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 2,
+        "pierce": 0.15
+      },
+      "passive": [
+        5.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.7
+      },
+      "traits": [
+        "close combat weakness",
+        "camouflage",
+        "flying",
+        "infiltrate"
+      ]
+    },
     "Sho'Syl": {
       "alliance": "Xenos",
       "armour": 16.0,
@@ -3166,15 +5596,22 @@
           "alpha": [
             "!",
             "Piercing",
+            "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
-            "No Resilient"
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
             "No Power",
@@ -3184,33 +5621,79 @@
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
             "Ranged",
-            "Max 3 hits"
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
             "Piercing",
-            "No Flying"
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Max 2 hits"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
-            "No Mechanical"
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
             "Max 1 hit",
-            "Ranged"
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3247,12 +5730,23 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
             "No Power",
@@ -3260,9 +5754,18 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
+            "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
@@ -3270,22 +5773,62 @@
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
             "Psychic",
-            "Max 2 hits"
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
             "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3317,11 +5860,19 @@
       "health": 80.0,
       "legendary-event": {
         "AUN'SHI": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
+          ],
           "beta": [
             "!",
             "Mechanical",
             "No Resilient",
+            "Melee",
             "Physical",
             "No Summons"
           ],
@@ -3330,7 +5881,8 @@
             "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
@@ -3339,26 +5891,76 @@
             "Physical",
             "Ranged",
             "Max 3 hits",
+            "Necrons",
             "No Summons"
           ],
-          "beta": [],
-          "gamma": []
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
+          ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "!"
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3394,44 +5996,107 @@
       "health": 110.0,
       "legendary-event": {
         "AUN'SHI": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
+          ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
             "Melee",
-            "Physical"
+            "Physical",
+            "No Summons"
           ],
           "gamma": [
             "!",
             "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
             "Physical",
-            "Max 3 hits"
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
           ],
-          "beta": [],
-          "gamma": []
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
+          ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Melee"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
-            "No Mechanical"
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
           ],
           "gamma": [
             "!",
-            "No Overwatch"
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3462,23 +6127,42 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
             "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
+            "No Power",
             "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
             "Power",
+            "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
@@ -3486,22 +6170,62 @@
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
             "Max 2 hits",
-            "Power"
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
             "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3529,9 +6253,17 @@
       "health": 85.0,
       "legendary-event": {
         "AUN'SHI": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
+          ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
             "Melee",
             "Physical",
@@ -3542,35 +6274,86 @@
             "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
             "Physical",
+            "Ranged",
             "Max 3 hits",
+            "Necrons",
             "No Summons"
           ],
-          "beta": [],
-          "gamma": []
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
+          ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Melee"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
             "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3602,39 +6385,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "!"
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3669,49 +6518,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
             "Mechanical",
             "No Resilient",
+            "Melee",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
             "Ranged",
             "Max 3 hits",
             "Necrons",
             "No Summons"
           ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Flying"
-          ]
-        },
-        "MAUGAN RA": {
-          "alpha": [],
           "beta": [
             "!",
-            "No Power",
-            "No Let the Galaxy Burn",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3731,6 +6636,135 @@
         "living metal"
       ]
     },
+    "Tjark": {
+      "alliance": "Imperial",
+      "armour": 23.0,
+      "damage": 32.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Space Wolves",
+      "health": 85.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 4,
+        "pierce": 0.01
+      },
+      "passive": [
+        8.0
+      ],
+      "traits": [
+        "infiltrate",
+        "terrifying"
+      ]
+    },
     "Typhus": {
       "alliance": "Chaos",
       "armour": 25.08,
@@ -3746,39 +6780,106 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
             "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
         },
         "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
             "Psychic",
+            "Melee",
             "Max 2 hits",
             "Power",
             "Resilient"
           ],
           "beta": [
             "!",
+            "No Power",
             "No Let the Galaxy Burn",
+            "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
         }
       },
       "melee": {
@@ -3817,42 +6918,103 @@
             "!",
             "Piercing",
             "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
-            "No Overwatch"
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
             "Power",
+            "Bolter",
             "No Blast",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
             "Piercing",
-            "No Flying"
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
+            "Psychic",
             "Melee",
-            "Power"
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3884,9 +7046,20 @@
         "AUN'SHI": {
           "alpha": [
             "!",
-            "Max 2 hits"
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Physical",
@@ -3897,9 +7070,18 @@
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
+            "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
@@ -3907,22 +7089,62 @@
           "gamma": [
             "!",
             "No Mechanical",
-            "No Flying"
+            "Piercing",
+            "Bolter",
+            "No Flying",
+            "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
             "Psychic",
-            "Max 2 hits"
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
             "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -3957,41 +7179,105 @@
         "AUN'SHI": {
           "alpha": [
             "!",
-            "Min 3 hits"
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "Min 3 hits",
+            "No Physical"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "Physical",
             "No Flying",
             "No Overwatch",
-            "No Power"
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
-          "alpha": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
           "beta": [
             "!",
+            "Power",
+            "Bolter",
             "No Blast",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
+            "Bolter",
             "No Flying",
             "Min 4 hits"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
-            "!"
+            "!",
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
-          "beta": [],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
           "gamma": [
             "!",
+            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
           ]
         }
       },
@@ -4026,22 +7312,51 @@
         "AUN'SHI": {
           "alpha": [
             "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
             "Min 3 hits",
             "No Physical"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Resilient",
+            "Melee",
+            "Physical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
         },
         "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "Necrons",
+            "No Summons"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Piercing",
+            "Bolter",
             "No Flying",
             "Min 4 hits"
           ]
@@ -4049,15 +7364,54 @@
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Power"
+            "Psychic",
+            "Melee",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
           ],
           "beta": [
             "!",
+            "No Power",
+            "No Let the Galaxy Burn",
             "Min 4 hits",
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": []
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged",
+            "Min 3 hits",
+            "Power",
+            "BLACK LEGION"
+          ]
         }
       },
       "melee": {
@@ -4896,245 +8250,325 @@
       17
     ]
   ],
-  "latest-legendary-event": "AUN'SHI",
+  "latest-legendary-event": "SHADOWSUN",
   "legendary-events": {
     "AUN'SHI": {
       "alpha": {
         "!": [
-          29.0,
-          46
+          "29.0",
+          53
         ],
         "Max 2 hits": [
-          70.0,
-          22
+          "70.0",
+          53
         ],
         "Melee": [
-          80.0,
-          21
+          "80.0",
+          53
         ],
         "Min 3 hits": [
-          70.0,
-          24
+          "70.0",
+          53
         ],
         "No Physical": [
-          40.0,
-          39
+          "40.0",
+          53
         ],
         "Piercing": [
-          115.0,
-          9
+          "115.0",
+          53
         ]
       },
       "beta": {
         "!": [
-          53.0,
-          29
+          "53.0",
+          53
         ],
         "Mechanical": [
-          105.0,
-          8
+          "105.0",
+          53
         ],
         "Melee": [
-          85.0,
-          13
+          "85.0",
+          53
         ],
         "No Resilient": [
-          40.0,
-          23
+          "40.0",
+          53
         ],
         "No Summons": [
-          45.0,
-          21
+          "45.0",
+          53
         ],
         "Physical": [
-          100.0,
-          7
+          "100.0",
+          53
         ]
       },
       "gamma": {
         "!": [
-          40.0,
-          41
+          "40.0",
+          53
         ],
         "Max 1 hit": [
-          125.0,
-          7
+          "125.0",
+          53
         ],
         "No Flying": [
-          40.0,
-          36
+          "40.0",
+          53
         ],
         "No Overwatch": [
-          40.0,
-          36
+          "40.0",
+          53
         ],
         "No Power": [
-          50.0,
-          28
+          "50.0",
+          53
         ],
         "Physical": [
-          120.0,
-          11
+          "120.0",
+          53
         ]
       }
     },
     "JAIN ZAR": {
       "alpha": {
         "!": [
-          45.0,
-          19
+          "45.0",
+          53
         ],
         "Max 3 hits": [
-          45.0,
-          13
+          "45.0",
+          53
         ],
         "Necrons": [
-          110.0,
-          5
+          "110.0",
+          53
         ],
         "No Summons": [
-          60.0,
-          13
+          "60.0",
+          53
         ],
         "Physical": [
-          100.0,
-          7
+          "100.0",
+          53
         ],
         "Ranged": [
-          60.0,
-          12
+          "60.0",
+          53
         ]
       },
       "beta": {
         "!": [
-          45.0,
-          22
+          "45.0",
+          53
         ],
         "Bolter": [
-          96.0,
-          9
+          "96.0",
+          53
         ],
         "Max 2 hits": [
-          70.0,
-          12
+          "70.0",
+          53
         ],
         "No Blast": [
-          50.0,
-          18
+          "50.0",
+          53
         ],
         "No Summons": [
-          60.0,
-          18
+          "60.0",
+          53
         ],
         "Power": [
-          95.0,
-          11
+          "95.0",
+          53
         ]
       },
       "gamma": {
         "!": [
-          45.0,
-          46
+          "45.0",
+          53
         ],
         "Bolter": [
-          95.0,
-          10
+          "95.0",
+          53
         ],
         "Min 4 hits": [
-          90.0,
-          13
+          "90.0",
+          53
         ],
         "No Flying": [
-          45.0,
-          40
+          "45.0",
+          53
         ],
         "No Mechanical": [
-          45.0,
-          39
+          "45.0",
+          53
         ],
         "Piercing": [
-          100.0,
-          9
+          "100.0",
+          53
         ]
       }
     },
     "MAUGAN RA": {
       "alpha": {
         "!": [
-          43.0,
-          46
+          "43.0",
+          53
         ],
         "Max 2 hits": [
-          65.0,
-          20
+          "65.0",
+          53
         ],
         "Melee": [
-          50.0,
-          23
+          "50.0",
+          53
         ],
         "Power": [
-          70.0,
-          19
+          "70.0",
+          53
         ],
         "Psychic": [
-          95.0,
-          5
+          "95.0",
+          53
         ],
         "Resilient": [
-          95.0,
-          7
+          "95.0",
+          53
         ]
       },
       "beta": {
         "!": [
-          44.0,
-          29
+          "44.0",
+          53
         ],
         "Min 4 hits": [
-          115.0,
-          10
+          "115.0",
+          53
         ],
         "No Let the Galaxy Burn": [
-          65.0,
-          24
+          "65.0",
+          53
         ],
         "No Mechanical": [
-          75.0,
-          21
+          "75.0",
+          53
         ],
         "No Power": [
-          70.0,
-          21
+          "70.0",
+          53
         ],
         "No Summons": [
-          50.0,
-          21
+          "50.0",
+          53
         ]
       },
       "gamma": {
         "!": [
-          40.0,
-          41
+          "40.0",
+          53
         ],
         "Bolter": [
-          100.0,
-          9
+          "100.0",
+          53
         ],
         "Max 1 hit": [
-          120.0,
-          7
+          "120.0",
+          53
         ],
         "No Overwatch": [
-          45.0,
-          36
+          "45.0",
+          53
         ],
         "No Summons": [
-          40.0,
-          31
+          "40.0",
+          53
         ],
         "Ranged": [
-          70.0,
-          23
+          "70.0",
+          53
+        ]
+      }
+    },
+    "SHADOWSUN": {
+      "alpha": {
+        "!": [
+          "35.0",
+          53
+        ],
+        "Big Target": [
+          "115.0",
+          53
+        ],
+        "Melee": [
+          "60.0",
+          53
+        ],
+        "Min 4 hits": [
+          "80.0",
+          53
+        ],
+        "No Psyker": [
+          "40.0",
+          53
+        ],
+        "Power": [
+          "80.0",
+          53
+        ]
+      },
+      "beta": {
+        "!": [
+          "19.0",
+          53
+        ],
+        "ASTRA MILITARUM": [
+          "120.0",
+          53
+        ],
+        "Mechanical": [
+          "90.0",
+          53
+        ],
+        "No Bolter": [
+          "50.0",
+          53
+        ],
+        "No Piercing": [
+          "50.0",
+          53
+        ],
+        "No Summons": [
+          "65.0",
+          53
+        ]
+      },
+      "gamma": {
+        "!": [
+          "18.0",
+          53
+        ],
+        "BLACK LEGION": [
+          "120.0",
+          53
+        ],
+        "Min 3 hits": [
+          "50.0",
+          53
+        ],
+        "No Piercing": [
+          "40.0",
+          53
+        ],
+        "Power": [
+          "100.0",
+          53
+        ],
+        "Ranged": [
+          "65.0",
+          53
         ]
       }
     }
@@ -5185,6 +8619,22 @@
         "pierce": 0.4
       },
       "traits": [
+        "summon"
+      ]
+    },
+    "Command-Link Drone": {
+      "alliance": "",
+      "armour": 10.0,
+      "damage": 14.0,
+      "faction": "T'au Empire",
+      "health": 30.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "traits": [
+        "flying",
+        "mechanical",
         "summon"
       ]
     },
@@ -5258,7 +8708,7 @@
     },
     "MV71 Sniper Drone": {
       "alliance": "",
-      "armour": 0,
+      "armour": 5.0,
       "damage": 28.0,
       "faction": "T'au Empire",
       "health": 20.0,
@@ -5331,10 +8781,10 @@
     },
     "Shield Drone": {
       "alliance": "",
-      "armour": 4.0,
-      "damage": 12.0,
+      "armour": 15.0,
+      "damage": 14.0,
       "faction": "T'au Empire",
-      "health": 8.0,
+      "health": 40.0,
       "melee": {
         "hits": 1,
         "pierce": 0.01
@@ -5346,5 +8796,5 @@
       ]
     }
   },
-  "version": "Beta 0.3.7"
+  "version": "Beta 0.3.8"
 }

@@ -8,12 +8,13 @@ import openpyxl
 import json
 import copy
 from collections import OrderedDict
+from io import StringIO
 
-file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.3.7.xlsx'
+file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.3.8.xlsx'
 
 def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     """ Get a single rectangular region from the specified file.
-    range_name can be a standard Excel reference ('Sheet1!A2:B7') or 
+    range_name can be a standard Excel reference ('Sheet1!A2:B7') or
     refer to a named region ('my_cells')."""
     wb = openpyxl.load_workbook(xlsx_file, data_only=True, read_only=True)
     columns = None
@@ -66,7 +67,7 @@ def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     return df
 
 tb_Characters = data_frame_from_xlsx(file, 'tb_Characters', 1)
-tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$W$3:$X$21', True)
+tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$W$3:$X$22', True)
 tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
 tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AS$124', 2)
 tb_Abilities = data_frame_from_xlsx(file, 'wb_abilities!$AB$3:$AJ$52', True)
@@ -83,16 +84,18 @@ for index, row in tb_SummonsList.iterrows():
         summonsNames.add(row["Name"])
 # Legendary Events
 tb_LegendaryEvent = data_frame_from_xlsx(file, 'YourUnits!$A$1:$CX$99')
-lastIndexCharacter = 6
-while tb_LegendaryEvent[0][lastIndexCharacter]:
+tb_LegendaryEvent.drop(columns=[76], axis=1, inplace=True)
+tb_LegendaryEvent = pd.read_csv(StringIO(tb_LegendaryEvent.to_csv(header=False, index=False)), header=None)
+
+lastIndexCharacter = 5
+while isinstance(tb_LegendaryEvent[0][lastIndexCharacter], str):
     lastIndexCharacter += 1
 
-print(lastIndexCharacter)
 indexLegendaryEvent=17
 legendaryEvents = {}
 legendaryEventCharacters = {}
 latestLegendaryEvent = None
-while tb_LegendaryEvent[indexLegendaryEvent][0]:
+while isinstance(tb_LegendaryEvent[indexLegendaryEvent][0],str) and tb_LegendaryEvent[indexLegendaryEvent][0]:
     legendaryEventName = tb_LegendaryEvent[indexLegendaryEvent][0].split("-")[1].strip()
     latestLegendaryEvent = legendaryEventName
     items = tb_LegendaryEvent.iloc[3:5,indexLegendaryEvent:indexLegendaryEvent+18]
@@ -114,6 +117,8 @@ while tb_LegendaryEvent[indexLegendaryEvent][0]:
         if index < 5:
             continue
         if not row[0]:
+            continue
+        if not isinstance(row[0],str):
             continue
         if row[0] not in legendaryEventCharacters:
             legendaryEventCharacters[row[0]] = {}
@@ -140,7 +145,7 @@ while tb_LegendaryEvent[indexLegendaryEvent][0]:
     indexLegendaryEvent += 19
 
 # Passives
-tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$68', True)
+tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$71', True)
 characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.itertuples(index=False)])
 
 # Boss stats
@@ -357,7 +362,7 @@ def toJSON(rows):
             bosses[row.Name] = data
         elif "summon" in traits:
             if row.Name not in characterAbilities:
-                raise Exception(characterAbilities.keys())
+                raise Exception(row.Name + " " + str(characterAbilities.keys()))
             data["health"] = passiveData[0]
             data["damage"] = passiveData[1]
             data["armour"] = passiveData[2] if len(passiveData)==3 else 0
