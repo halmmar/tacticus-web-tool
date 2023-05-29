@@ -86,7 +86,8 @@ for index, row in tb_SummonsList.iterrows():
 tb_LegendaryEvent = data_frame_from_xlsx(file, 'YourUnits!$A$1:$CX$99')
 # 76=Excel column BY, which conflicts with the query language used by Towen. The column is empty and skipped...
 tb_LegendaryEvent.drop(columns=[76], axis=1, inplace=True)
-tb_LegendaryEvent = pd.read_csv(StringIO(tb_LegendaryEvent.to_csv(header=False, index=False)), header=None)
+tb_LegendaryEvent.to_excel("tmp.xlsx", header=False, index=False)
+tb_LegendaryEvent = pd.read_excel("tmp.xlsx", header=None)
 
 lastIndexCharacter = 5
 while isinstance(tb_LegendaryEvent[0][lastIndexCharacter], str):
@@ -96,7 +97,7 @@ indexLegendaryEvent=17
 legendaryEvents = {}
 legendaryEventCharacters = {}
 latestLegendaryEvent = None
-while isinstance(tb_LegendaryEvent[indexLegendaryEvent][0],str) and tb_LegendaryEvent[indexLegendaryEvent][0]:
+while indexLegendaryEvent in tb_LegendaryEvent and tb_LegendaryEvent[indexLegendaryEvent][0]:
     legendaryEventName = tb_LegendaryEvent[indexLegendaryEvent][0].split("-")[1].strip()
     latestLegendaryEvent = legendaryEventName
     items = tb_LegendaryEvent.iloc[3:5,indexLegendaryEvent:indexLegendaryEvent+18]
