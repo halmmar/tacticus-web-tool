@@ -394,6 +394,7 @@ var updateOpponentPreset = function(skipUpdateTable) {
   var bigtarget = false;
   var revoltingresilience = false;
   var melee = false;
+  var ltgb = true;
   var preset = document.getElementById("opponent-preset").value;
   var level = +document.getElementById("opponent-preset-level").value;
   var checkbox = document.getElementById("opponent-checkbox").checked;
@@ -407,6 +408,7 @@ var updateOpponentPreset = function(skipUpdateTable) {
       // demon = true;
       revoltingresilience = true;
       melee = true;
+      ltgb = false;
     case "hive":
     case "tervigon":
       psyker = true;
@@ -463,6 +465,7 @@ var updateOpponentPreset = function(skipUpdateTable) {
   document.getElementById("opponent-beast-snagga").checked = bigtarget;
   document.getElementById("opponent-revolting-resilience").checked = revoltingresilience;
   document.getElementById("opponent-punishes-melee").checked = melee;
+  document.getElementById("ltgb-enabled").checked = ltgb;
   if (!skipUpdateTable) updateTable();
 }
 
@@ -896,8 +899,11 @@ var updateTable = function() {
           // Ranged damage
           var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged);
           if (shadowsunPassive && char.faction.includes("T'au") && key != "ShadowSun") {
-            var rangedDmgTauProc = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka + 1, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged);
-            rangedDmg = 0.9 * rangedDmg + 0.1 * rangedDmgTauProc;
+            rangedDmg = [0.2,0.3,0.4,0.5,0.6].map(function(round) {
+              var rangedDmgTauProc = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka + 1, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged);
+              return (1-round) * rangedDmg + round * rangedDmgTauProc;
+            }).reduce((a,b) => a+b) / 5;
+            comment += "Shadowsun+T'au";
           }
           switch (key) {
           case 'Volk':
@@ -1256,7 +1262,7 @@ function sortTable(n) {
     <select onchange="updateShadowsun()" id="shadowsun-buff-rarity">
     </select>
     <input onChange="updateShadowsun()" type="number" id="shadowsun-buff-level" min="0" max="50" value="35">
-    +<span id="shadowsun-buff-dmg"></span> damage [Ranged]
+    +<span id="shadowsun-buff-dmg"></span> damage [Ranged] +10%/turn +1 hit [T'au] (Assumes average of attacks turns 2-6)
     <br>
     <label>Thaddeus</label>
     <input onChange="updateThaddeus()" type="checkbox" id="thaddeus-buff-enabled"></input>
