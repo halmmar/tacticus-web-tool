@@ -82,6 +82,14 @@ tb_equipment = {};
 tb_legendary_events = {};
 intToRarity = ["common", "uncommon", "rare", "epic", "legendary"]
 opponentRevoltingResilience = 0;
+legendaryEventMaxCharacterPenalty = 25; // After this, we no longer penalize more characters added to the pool
+legendaryEventCharacterPenaltyFactor = 5; // 5 characters in a team
+legendaryEventFactors = {};
+
+var calculateLegendaryEventWeight = function(numberOfUnits, weight) {
+  var res = Math.pow(1.0 / (Math.min(legendaryEventMaxCharacterPenalty, numberOfUnits)/legendaryEventCharacterPenaltyFactor), weight);
+  return res;
+};
 
 getJSON('tacticus.json',
 function(err, data) {
@@ -95,9 +103,23 @@ function(err, data) {
     tb_abilities_factor = data.abilities_factor;
     tb_archimatos_ability_factor = data.archimatos_ability_factor;
     tb_equipment = data.equipment;
-    tb_legendary_events = data["legendary-events"]
-    latest_legendary_event = data["latest-legendary-event"]
-    tb_chars_and_summons = Object.assign(tb_chars,tb_summons)
+    tb_legendary_events = data["legendary-events"];
+    latest_legendary_event = data["latest-legendary-event"];
+    tb_chars_and_summons = Object.assign(tb_chars,tb_summons);
+    Object.keys(tb_legendary_events).forEach(function (event) {
+      var pointsAndOccurances = Object.values(tb_legendary_events[event]).map(Object.values).flat(1);
+      var points = pointsAndOccurances.map(po => po[0]);
+      var occurrances = pointsAndOccurances.map(po => po[1]);
+      var sumPoints = points.reduce((partialSum, a) => partialSum + a, 0);
+      legendaryEventFactors[event] = [sumPoints,0,0];
+      [1,2].forEach(function (weight) {
+        legendaryEventFactors[event][weight] = sumPoints / pointsAndOccurances.map(po => po[0]*calculateLegendaryEventWeight(po[1],weight)).reduce((partialSum, a) => partialSum + a, 0);
+      });
+      console.log(pointsAndOccurances);
+      console.log(sumPoints);
+      
+      // legendaryEventFactors
+    });
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
     ["eldryon-buff", "thaddeus-buff", "shadowsun-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "helbrecht-buff", "equipment"].forEach(function (key) {
@@ -974,7 +996,7 @@ var updateTable = function() {
                   var points = trackData[mission][0];
                   var weight = 1;
                   if (legendaryPointsWeight) {
-                    weight = Math.pow(1.0 / (Math.max(5, trackData[mission][1])/5), legendaryPointsWeight);
+                    weight = legendaryEventFactors[event][legendaryPointsWeight] * calculateLegendaryEventWeight(trackData[mission][1], legendaryPointsWeight);
                   }
                   points *= weight;
                   sum += points;
@@ -996,12 +1018,12 @@ var updateTable = function() {
             if (curEvent==event) {
               document.getElementById(entryId+"-leg-total").innerHTML = Math.round(totalSum);
             }
-            document.getElementById(entryId+"-leg-ov-"+characterTableEntryId(event)+"-points").innerHTML = round2(totalSum);
+            document.getElementById(entryId+"-leg-ov-"+characterTableEntryId(event)+"-points").innerHTML = Math.round(totalSum);
             document.getElementById(entryId+"-leg-ov-"+characterTableEntryId(event)+"-num").innerHTML = round2(sumEligible);
             allEventsEligible += sumEligible;
             allEventsPoints += totalSum;
           });
-          document.getElementById(entryId+"-leg-ov-total-points").innerHTML = round2(allEventsPoints);
+          document.getElementById(entryId+"-leg-ov-total-points").innerHTML = Math.round(allEventsPoints);
           document.getElementById(entryId+"-leg-ov-total-num").innerHTML = round2(allEventsEligible);
         }
           
