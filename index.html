@@ -699,6 +699,7 @@ var updateTable = function() {
             case "indirect fire":
             case "networked targeting":
             case "psyker":
+            case "psychic": // Typo in speadsheet?
             case "daemon":
             case "explodes":
             case "overwatch":
@@ -712,6 +713,7 @@ var updateTable = function() {
             case "unstoppable":
             case "camouflage":
             case "putrid explosion":
+            case "weaver of fates": // Does impact damage, but only with multiple psykers...
               break;
             default:
               console.log("Unknown trait:", trait);
@@ -770,10 +772,12 @@ var updateTable = function() {
             meleeHits += 1;
           }
           break;
+        case 'Abraxas':
         case 'Aleph-null':
         case 'Ancient Thoread':
         case 'Anuphet':
         case 'Archimatos':
+        case 'Arjac':
         case "Aun'shi":
         case "Azrael":
         case 'Bellator':
@@ -781,6 +785,7 @@ var updateTable = function() {
         case 'Brother Burchard':
         case 'Brother Jaeger':
         case 'Cadian Guardsman':
+        case 'Command-Link Drone':
         case 'Colour Sergeant Kell':
         case 'Calandis':
         case 'Castellan creed':
@@ -817,11 +822,13 @@ var updateTable = function() {
         case 'Tanksmasha':
         case 'Thaddeus noble':
         case 'Thutmose':
+        case 'Toth':
         case 'Typhus':
         case 'Ulf':
         case 'Varro Tigurius':
         case 'Vindicta':
         case 'Volk':
+        case 'Yazaghor':
           break;
         case 'Eldryon':
           eldryondamageModifiedByFaction = 0;
@@ -1212,6 +1219,8 @@ function sortTable(n) {
     </select>
     <input onChange="updateAbaddon()" type="number" id="abaddon-buff-level" min="0" max="50" value="35">
     +<span id="abaddon-buff-dmg"></span> damage [Chaos]
+    <br>
+    TODO: Abraxas missing
     <br>
     <label>Aethana</label>
     <input onChange="updateAethana()" type="checkbox" id="aethana-buff-enabled"></input>

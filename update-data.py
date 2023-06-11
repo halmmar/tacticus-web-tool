@@ -10,7 +10,7 @@ import copy
 from collections import OrderedDict
 from io import StringIO
 
-file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.3.8.xlsx'
+file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.3.9.xlsx'
 
 def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     """ Get a single rectangular region from the specified file.
@@ -69,10 +69,16 @@ def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
 tb_Characters = data_frame_from_xlsx(file, 'tb_Characters', 1)
 tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$W$3:$X$22', True)
 tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
-tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AS$124', 2)
-tb_Abilities = data_frame_from_xlsx(file, 'wb_abilities!$AB$3:$AJ$52', True)
+
+# Updated for new factions; also update the faction map below
+tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AT$124', 2)
+# Updated for new characters
+tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$77', True) # Passives
+
+tb_Abilities = data_frame_from_xlsx(file, 'wb_abilities!$AB$3:$AJ$52', True) # Not updated for new characters
 tb_Abilities_1_50 = [level for (level,growth,factor,_,_,_,_,_,_) in tb_Abilities.itertuples(index=False)]
 tb_SummonsList = data_frame_from_xlsx(file, 'SummonsData!$B$2:$B$30', True)
+
 for i in range(1,51):
     if tb_Abilities_1_50[i-1] != i:
         raise Exception("Did not find the correct table. i=%d, tb_Abilities=%d" % ( i, tb_Abilities_1_50[i-1]))
@@ -92,6 +98,8 @@ tb_LegendaryEvent = pd.read_excel("tmp.xlsx", header=None)
 lastIndexCharacter = 5
 while isinstance(tb_LegendaryEvent[0][lastIndexCharacter], str):
     lastIndexCharacter += 1
+# Passives
+characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.itertuples(index=False)])
 
 indexLegendaryEvent=17
 legendaryEvents = {}
@@ -145,10 +153,6 @@ while indexLegendaryEvent in tb_LegendaryEvent and tb_LegendaryEvent[indexLegend
                 
     legendaryEvents[legendaryEventName] = {"alpha": alpha, "beta": beta, "gamma": gamma}
     indexLegendaryEvent += 19
-
-# Passives
-tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$71', True)
-characterAbilities = dict([(tpl[0],tpl[1:]) for tpl in tb_CharacterAbilities.itertuples(index=False)])
 
 # Boss stats
 bossStats = {
@@ -270,7 +274,8 @@ factionMap = {
     "AELDARI": "Aeldari",
     "T'AU": "T'au Empire",
     "Space Wolves": "Space Wolves",
-    "DARK ANGELS": "Dark Angels"
+    "DARK ANGELS": "Dark Angels",
+    "THOUSAND SONS": "Thousand Sons"
 }
 
 eqDict = {}
@@ -302,8 +307,8 @@ for index, eq in tb_Equipment.iterrows():
     itemChance = itemType[chance]
     rarityStr = eq["Rarity"].lower()
     if rarityStr not in itemChance:
-        stat1 = [int(x) for x in eq[21:32] if not np.isnan(x)]
-        stat2 = [int(x) for x in eq[33:44] if not np.isnan(x)]
+        stat1 = [int(x) for x in eq[22:33] if not np.isnan(x)]
+        stat2 = [int(x) for x in eq[34:45] if not np.isnan(x)]
         if itemTypeStr=="defense":
             itemChance[rarityStr] = {
                 "health": stat1,
