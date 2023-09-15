@@ -71,6 +71,7 @@ var getJSON = function(url, callback) {
   xhr.send();
 };
 
+obsoleteEvents = {}; // {"MAUGAN RA": 1};
 tb_chars = {};
 tb_bosses = {};
 tb_summons = {};
@@ -511,6 +512,9 @@ var addTable = function() {
   var resLegOverviewRow2 = '';
   var i = 1;
   Object.keys(tb_legendary_events).forEach(function(event) {
+    if (event in obsoleteEvents) {
+      return;
+    }
     resLegOverview += '<th onClick="sortTable('+(i)+')">'+event+'</th>';
     resLegOverview += '<th onClick="sortTable('+(i+1)+')">Points</th>';
     i+=2;
@@ -526,6 +530,9 @@ var addTable = function() {
       resLeg += '<tr id="legendary-'+id+'"><td>'+key+'</td><td id="'+id+'-leg-alpha" /><td id="'+id+'-leg-alpha-1" /><td id="'+id+'-leg-alpha-2" /><td id="'+id+'-leg-alpha-3" /><td id="'+id+'-leg-alpha-4" /><td id="'+id+'-leg-alpha-5" /><td id="'+id+'-leg-beta" /><td id="'+id+'-leg-beta-1" /><td id="'+id+'-leg-beta-2" /><td id="'+id+'-leg-beta-3" /><td id="'+id+'-leg-beta-4" /><td id="'+id+'-leg-beta-5" /><td id="'+id+'-leg-gamma" /><td id="'+id+'-leg-gamma-1" /><td id="'+id+'-leg-gamma-2" /><td id="'+id+'-leg-gamma-3" /><td id="'+id+'-leg-gamma-4" /><td id="'+id+'-leg-gamma-5" /><td id="'+id+'-leg-total" /></tr>';
       resLegOverview += '<tr id="legendary-overview-'+id+'"><td>'+key+'</td>';
       Object.keys(tb_legendary_events).forEach(function(event) {
+        if (event in obsoleteEvents) {
+          return;
+        }
         var eventID = characterTableEntryId(event);
         var charID = id + "-leg-ov-" + eventID;
         resLegOverview += '<td id="'+charID+'-num" class="statCell">x</td><td id="'+charID+'-points" class="statCell">1</td>';
@@ -735,6 +742,8 @@ var updateTable = function() {
             case "unstoppable":
             case "camouflage":
             case "putrid explosion":
+            case "synapse":
+            case "shadow in the warp":
             case "weaver of fates": // Does impact damage, but only with multiple psykers...
               break;
             default:
@@ -803,6 +812,7 @@ var updateTable = function() {
         case "Aun'shi":
         case "Azrael":
         case 'Bellator':
+        case 'Blue Horror':
         case 'Boss Gulgortz':
         case 'Brother Burchard':
         case 'Brother Jaeger':
@@ -830,11 +840,14 @@ var updateTable = function() {
         case 'Maugan Ra':
         case 'Morvenn Vahl':
         case 'MV71 Sniper Drone':
-        case 'Necron warrior':
+        case 'Necron warrior':  
         case 'Nauseous rotbone':
+        case 'Pink Horror':
         case 'Pox Walkers':
         case "Re'Vas":
+        case "Sarquael":
         case "Scarab Swarm":
+        case "Screamer of Tzeentch":
         case "ShadowSun":
         case "Shield Drone":
         case "Sho'Syl":
@@ -842,6 +855,7 @@ var updateTable = function() {
         case 'Snappawrecka':
         case 'Snotflogga':
         case 'Tanksmasha':
+        case 'Thaumachus':
         case 'Thaddeus noble':
         case 'Thutmose':
         case 'Toth':
@@ -865,7 +879,7 @@ var updateTable = function() {
           Object.keys(char.equipment).forEach(function equip(eqKey) {
             var eqCount = char.equipment[eqKey];
             var curEq = tb_equipment[eqKey];
-            var curChance = Object.keys(curEq).filter(function (chance) { return curEq[chance]["factions"].includes(char.faction); });
+            var curChance = Object.keys(curEq).filter(function (chance) { return curEq[chance]["factions"].includes(char.faction) && curEq[chance][equipmentRarity]; });
             if (preferEqCritDmg && eqKey=="crit") {
               selectedChance = Math.min(...curChance);
             } else {
@@ -1018,10 +1032,13 @@ var updateTable = function() {
             if (curEvent==event) {
               document.getElementById(entryId+"-leg-total").innerHTML = Math.round(totalSum);
             }
-            document.getElementById(entryId+"-leg-ov-"+characterTableEntryId(event)+"-points").innerHTML = Math.round(totalSum);
+            if (event in obsoleteEvents) {
+            } else {
+              document.getElementById(entryId+"-leg-ov-"+characterTableEntryId(event)+"-points").innerHTML = Math.round(totalSum);
             document.getElementById(entryId+"-leg-ov-"+characterTableEntryId(event)+"-num").innerHTML = round2(sumEligible);
-            allEventsEligible += sumEligible;
-            allEventsPoints += totalSum;
+              allEventsEligible += sumEligible;
+              allEventsPoints += totalSum;
+            }
           });
           document.getElementById(entryId+"-leg-ov-total-points").innerHTML = Math.round(allEventsPoints);
           document.getElementById(entryId+"-leg-ov-total-num").innerHTML = round2(allEventsEligible);
@@ -1127,11 +1144,11 @@ function sortTable(n) {
     <option value="9">Silver Rank I</option>
     <option value="10">Silver Rank II</option>
     <option value="11">Silver Rank III</option>
-    <option value="12" selected="selected">Gold Rank I</option>
+    <option value="12">Gold Rank I</option>
     <option value="13">Gold Rank II</option>
     <option value="14">Gold Rank III</option>
     <option value="15">Diamond Rank I</option>
-    <option value="16">Diamond Rank II</option>
+    <option value="16" selected="selected">Diamond Rank II</option>
     <option value="17">Diamond Rank III</option>
   </select>
 
@@ -1139,8 +1156,8 @@ function sortTable(n) {
     <option value="0">Common</option>
     <option value="1">Uncommon</option>
     <option value="2">Rare</option>
-    <option selected="selected" value="3">Epic</option>
-    <option value="4">Legendary</option>
+    <option value="3">Epic</option>
+    <option selected="selected" value="4">Legendary</option>
   </select>
 
     <select onChange="updateTable()" id="starlevel">
@@ -1157,13 +1174,13 @@ function sortTable(n) {
       <option value="11">1 winged star</option>
     </select>
     <label>Skill level</label>
-    <input onChange="updateTable()" type="number" id="skill-level" min="1" max="50" value="35">
+    <input onChange="updateTable()" type="number" id="skill-level" min="1" max="50" value="47">
     <br>
     <label>Equipment</label>
     <input onChange="updateTable()" type="checkbox" id="equipment-enabled" checked></input>
     <select onchange="updateTable()" name="equipment-rarity" id="equipment-rarity">
     </select>
-    <input onChange="updateTable()" type="number" id="equipment-level" min="0" max="11" value="9">
+    <input onChange="updateTable()" type="number" id="equipment-level" min="0" max="11" value="11">
     <select onChange="updateTable()" id="prefer-eq-crit-dmg">
       <option value="0" selected>Gun</option>
       <option value="1">Knife</option>

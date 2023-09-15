@@ -3,47 +3,47 @@
     1.0,
     1.2,
     1.4,
-    1.6,
+    1.5999999999999999,
     1.815,
     2.0439,
-    2.2728,
-    2.5017,
-    2.7306,
-    2.9595,
-    3.1884,
-    3.4173,
-    3.6462,
-    3.8751,
-    4.104,
-    4.3329,
+    2.2727999999999997,
+    2.5016999999999996,
+    2.7305999999999995,
+    2.9594999999999994,
+    3.1883999999999992,
+    3.417299999999999,
+    3.646199999999999,
+    3.875099999999999,
+    4.103999999999999,
+    4.3328999999999995,
     4.5618,
     4.7907,
-    5.0196,
-    5.2485,
-    5.5485,
-    5.9985,
-    6.9073,
-    7.8161,
-    8.7249,
-    9.6337,
+    5.0196000000000005,
+    5.248500000000001,
+    5.548500000000001,
+    5.998500000000001,
+    6.907300000000001,
+    7.816100000000001,
+    8.724900000000002,
+    9.633700000000001,
     10.5425,
     11.4513,
     12.3601,
-    13.2689,
-    14.1777,
-    15.0865,
-    15.9953,
-    16.9041,
-    17.8129,
-    18.7217,
-    19.6305,
-    20.5393,
-    21.4481,
-    22.7481,
-    24.5481,
-    26.4481,
-    28.4481,
-    30.7371,
+    13.268899999999999,
+    14.177699999999998,
+    15.086499999999997,
+    15.995299999999997,
+    16.904099999999996,
+    17.812899999999996,
+    18.721699999999995,
+    19.630499999999994,
+    20.539299999999994,
+    21.448099999999993,
+    22.748099999999994,
+    24.548099999999994,
+    26.448099999999993,
+    28.448099999999993,
+    30.737099999999995,
     34.8454,
     38.9537,
     43.062,
@@ -53,55 +53,55 @@
   ],
   "archimatos_ability_factor": [
     1.0,
-    1.171428571,
-    1.342857143,
-    1.514285714,
-    1.685714286,
-    1.885714286,
-    2.085714286,
-    2.257142857,
-    2.428571429,
-    2.6,
-    2.771428571,
-    2.942857143,
-    3.085714286,
-    3.257142857,
-    3.4,
-    3.542857143,
-    3.685714286,
-    3.8,
-    3.942857143,
-    4.057142857,
-    4.228571429,
-    4.485714286,
-    5.085714286,
-    5.657142857,
-    6.228571429,
-    6.771428571,
-    7.285714286,
-    7.8,
-    8.257142857,
-    8.714285714,
-    9.142857143,
-    9.571428571,
-    9.971428571,
-    10.34285714,
-    10.68571429,
-    11.02857143,
-    11.34285714,
-    11.62857143,
-    11.88571429,
-    12.34285714,
-    13.02857143,
-    13.74285714,
-    14.48571429,
-    15.28571429,
-    16.91428571,
-    18.48571429,
-    19.94285714,
-    21.28571429,
-    22.57142857,
-    23.74285714
+    1.2,
+    1.4,
+    1.5999999999999999,
+    1.815,
+    2.0439,
+    2.2727999999999997,
+    2.5016999999999996,
+    2.7305999999999995,
+    2.9594999999999994,
+    3.1883999999999992,
+    3.417299999999999,
+    3.646199999999999,
+    3.875099999999999,
+    4.103999999999999,
+    4.3328999999999995,
+    4.5618,
+    4.7907,
+    5.0196000000000005,
+    5.248500000000001,
+    5.548500000000001,
+    5.998500000000001,
+    6.907300000000001,
+    7.816100000000001,
+    8.724900000000002,
+    9.633700000000001,
+    10.5425,
+    11.4513,
+    12.3601,
+    13.268899999999999,
+    14.177699999999998,
+    15.086499999999997,
+    15.995299999999997,
+    16.904099999999996,
+    17.812899999999996,
+    18.721699999999995,
+    19.630499999999994,
+    20.539299999999994,
+    21.448099999999993,
+    22.748099999999994,
+    24.548099999999994,
+    26.448099999999993,
+    28.448099999999993,
+    30.737099999999995,
+    34.8454,
+    38.9537,
+    43.062,
+    47.1703,
+    51.2786,
+    55.3869
   ],
   "bosses": {
     "ghazghkull": {
@@ -583,17 +583,11 @@
             "No Let the Galaxy Burn",
             "No Mechanical"
           ],
-          "gamma": [
-            "!",
-            "No Overwatch",
-            "Max 1 hit",
-            "Ranged"
-          ]
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
-            "!",
-            "No Psyker"
+            "!"
           ],
           "beta": [
             "!",
@@ -617,10 +611,10 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1.0
+        "pierce": 1
       },
       "traits": [
-        "psychic",
+        "psyker",
         "weaver of fates"
       ]
     },
@@ -893,7 +887,7 @@
         "crit": 1
       },
       "faction": "Black Legion",
-      "health": 110.0,
+      "health": 110.00000000000001,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -1125,7 +1119,7 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 1.0
+        "pierce": 1
       },
       "passive": [
         39.0,
@@ -1133,7 +1127,7 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1.0
+        "pierce": 1
       },
       "traits": [
         "let the galaxy burn",
@@ -1340,7 +1334,8 @@
           "beta": [],
           "gamma": [
             "!",
-            "No Flying"
+            "No Flying",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
@@ -1348,6 +1343,7 @@
           "beta": [
             "!",
             "Power",
+            "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
@@ -1355,6 +1351,7 @@
           "gamma": [
             "!",
             "No Mechanical",
+            "Bolter",
             "No Flying"
           ]
         },
@@ -1367,6 +1364,8 @@
           "beta": [],
           "gamma": [
             "!",
+            "Bolter",
+            "Max 1 hit",
             "Ranged",
             "No Summons"
           ]
@@ -1379,7 +1378,6 @@
           ],
           "beta": [
             "!",
-            "No Bolter",
             "No Piercing",
             "No Summons"
           ],
@@ -1396,7 +1394,7 @@
         15.0
       ],
       "ranged": {
-        "hits": 2,
+        "hits": 1,
         "pierce": 0.65
       },
       "traits": [
@@ -1579,7 +1577,7 @@
     "Brother Burchard": {
       "alliance": "Imperial",
       "armour": 24.0,
-      "damage": 9.03,
+      "damage": 9.030000000000001,
       "equipment": {
         "crit": 1,
         "crit_booster": 1,
@@ -1932,7 +1930,7 @@
         "crit_booster": 1,
         "defense": 1
       },
-      "faction": "ADEPTA SOROITAS",
+      "faction": "Adepta Sororitas",
       "health": 60.0,
       "legendary-event": {
         "AUN'SHI": {
@@ -1992,7 +1990,7 @@
         "pierce": 0.4
       },
       "passive": [
-        60.0,
+        48.0,
         25.0,
         20.0
       ],
@@ -2181,7 +2179,7 @@
         "crit_booster": 1,
         "defense": 1
       },
-      "faction": "Death guard",
+      "faction": "Death Guard",
       "health": 100.0,
       "legendary-event": {
         "AUN'SHI": {
@@ -2260,7 +2258,7 @@
         "defense": 1
       },
       "faction": "T'au Empire",
-      "health": 68.2,
+      "health": 73.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -2346,7 +2344,8 @@
       },
       "traits": [
         "close combat weakness",
-        "infiltrate"
+        "infiltrate",
+        "suppressive fire"
       ]
     },
     "Eldryon": {
@@ -2440,7 +2439,7 @@
       ],
       "ranged": {
         "hits": 2,
-        "pierce": 1.0
+        "pierce": 1
       },
       "traits": [
         "psyker"
@@ -2605,7 +2604,7 @@
         "pierce": 0.8
       },
       "passive": [
-        4.2
+        2.975
       ],
       "traits": [
         "let the galaxy burn",
@@ -2698,7 +2697,7 @@
     },
     "Imospekh": {
       "alliance": "Xenos",
-      "armour": 13.0,
+      "armour": 15.0,
       "damage": 8.0,
       "equipment": {
         "crit": 1,
@@ -2706,7 +2705,7 @@
         "defense": 1
       },
       "faction": "Necrons",
-      "health": 60.0,
+      "health": 72.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -2773,7 +2772,7 @@
         }
       },
       "melee": {
-        "hits": 1,
+        "hits": 6,
         "pierce": 0.6
       },
       "passive": [
@@ -2880,7 +2879,7 @@
         "block_booster": 1,
         "crit": 1
       },
-      "faction": "ADEPTA SOROITAS",
+      "faction": "Adepta Sororitas",
       "health": 85.0,
       "legendary-event": {
         "AUN'SHI": {
@@ -3128,8 +3127,8 @@
     },
     "Makhotep": {
       "alliance": "Xenos",
-      "armour": 18.0,
-      "damage": 18.0,
+      "armour": 20.0,
+      "damage": 19.0,
       "equipment": {
         "crit": 1,
         "crit_booster": 1,
@@ -3228,7 +3227,7 @@
         "block_booster": 1,
         "crit": 1
       },
-      "faction": "Death guard",
+      "faction": "Death Guard",
       "health": 120.0,
       "legendary-event": {
         "AUN'SHI": {
@@ -3498,7 +3497,7 @@
         "block_booster": 1,
         "crit": 1
       },
-      "faction": "ADEPTA SOROITAS",
+      "faction": "Adepta Sororitas",
       "health": 85.0,
       "legendary-event": {
         "AUN'SHI": {
@@ -3586,7 +3585,7 @@
         "crit": 1,
         "defense": 1
       },
-      "faction": "Death guard",
+      "faction": "Death Guard",
       "health": 120.0,
       "legendary-event": {
         "AUN'SHI": {
@@ -3664,6 +3663,109 @@
         "healer"
       ]
     },
+    "Neurothrope": {
+      "alliance": "Xenos",
+      "armour": 17.0,
+      "damage": 25.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
+      "faction": "Tyranids",
+      "health": 85.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Physical",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Physical",
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "passive": [
+        22.0,
+        10.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 1
+      },
+      "traits": [
+        "close combat weakness",
+        "flying",
+        "psyker",
+        "shadow in the warp",
+        "synapse"
+      ]
+    },
     "Pestillian": {
       "alliance": "Chaos",
       "armour": 33.0,
@@ -3673,7 +3775,7 @@
         "crit_booster": 1,
         "defense": 1
       },
-      "faction": "Death guard",
+      "faction": "Death Guard",
       "health": 109.8,
       "legendary-event": {
         "AUN'SHI": {
@@ -3735,7 +3837,7 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 1.0
+        "pierce": 1
       },
       "passive": [
         30.0
@@ -3852,7 +3954,7 @@
         "block_booster": 1,
         "crit": 1
       },
-      "faction": "ADEPTA SOROITAS",
+      "faction": "Adepta Sororitas",
       "health": 85.0,
       "legendary-event": {
         "AUN'SHI": {
@@ -3925,6 +4027,91 @@
       },
       "traits": [
         "act of faith"
+      ]
+    },
+    "Sarquael": {
+      "alliance": "Imperial",
+      "armour": 20.0,
+      "damage": 50.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Dark Angels",
+      "health": 70.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Max 2 hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "passive": [
+        30.0,
+        36.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 0.65
+      },
+      "traits": [
+        "final vengeance",
+        "overwatch",
+        "heavy weapon"
       ]
     },
     "ShadowSun": {
@@ -4192,14 +4379,14 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 1.0
+        "pierce": 1
       },
       "passive": [
         5.0
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1.0
+        "pierce": 1
       },
       "traits": [
         "psyker"
@@ -4639,6 +4826,85 @@
         "indirect fire"
       ]
     },
+    "Thaumachus": {
+      "alliance": "Chaos",
+      "armour": 18.0,
+      "damage": 27.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "Thousand Sons",
+      "health": 75.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient"
+          ],
+          "gamma": []
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 1,
+        "pierce": 0.25
+      },
+      "passive": [
+        55.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 1
+      },
+      "traits": [
+        "weaver of fates",
+        "flying",
+        "psyker"
+      ]
+    },
     "Thutmose": {
       "alliance": "Xenos",
       "armour": 16.0,
@@ -4649,7 +4915,7 @@
         "defense": 1
       },
       "faction": "Necrons",
-      "health": 70.0,
+      "health": 75.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -4716,7 +4982,7 @@
         }
       },
       "melee": {
-        "hits": 1,
+        "hits": 2,
         "pierce": 0.65
       },
       "passive": [
@@ -4859,12 +5125,7 @@
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": [
-            "!",
-            "No Overwatch",
-            "Ranged",
-            "No Summons"
-          ]
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -4916,7 +5177,7 @@
         "block_booster": 1,
         "crit": 1
       },
-      "faction": "Death guard",
+      "faction": "Death Guard",
       "health": 120.0,
       "legendary-event": {
         "AUN'SHI": {
@@ -4985,7 +5246,7 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1.0
+        "pierce": 1
       },
       "traits": [
         "contagions of nurgle",
@@ -5156,7 +5417,7 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1.0
+        "pierce": 1
       },
       "traits": [
         "psyker"
@@ -5171,7 +5432,7 @@
         "crit_booster": 1,
         "defense": 1
       },
-      "faction": "ADEPTA SOROITAS",
+      "faction": "Adepta Sororitas",
       "health": 70.0,
       "legendary-event": {
         "AUN'SHI": {
@@ -5380,13 +5641,7 @@
             "No Mechanical",
             "No Summons"
           ],
-          "gamma": [
-            "!",
-            "No Overwatch",
-            "Max 1 hit",
-            "Ranged",
-            "No Summons"
-          ]
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -5447,10 +5702,10 @@
           ]
         },
         "factions": [
-          "ADEPTA SOROITAS",
+          "Adepta Sororitas",
           "Astra militarum",
           "Black Legion",
-          "Death guard",
+          "Death Guard",
           "Thousand Sons",
           "Necrons",
           "Aeldari"
@@ -5529,18 +5784,19 @@
           ]
         },
         "factions": [
-          "Ultramarines",
-          "ADEPTA SOROITAS",
+          "Adepta Sororitas",
           "Astra militarum",
           "Black Legion",
           "Black templars",
-          "Death guard",
+          "Dark Angels",
+          "Death Guard",
           "Orks",
           "Necrons",
           "Aeldari",
           "T'au Empire",
-          "Dark Angels",
           "Thousand Sons",
+          "Tyranids",
+          "Ultramarines",
           "Space Wolves"
         ],
         "legendary": {
@@ -5601,10 +5857,10 @@
           ]
         },
         "factions": [
-          "Ultramarines",
           "Black templars",
-          "Space Wolves",
           "Dark Angels",
+          "Space Wolves",
+          "Ultramarines",
           "Necrons"
         ],
         "legendary": {
@@ -5667,19 +5923,20 @@
           ]
         },
         "factions": [
-          "Ultramarines",
-          "ADEPTA SOROITAS",
+          "Adepta Sororitas",
           "Astra militarum",
           "Black Legion",
           "Black templars",
-          "Death guard",
+          "Dark Angels",
+          "Death Guard",
           "Orks",
           "Necrons",
           "Aeldari",
           "T'au Empire",
           "Space Wolves",
-          "Dark Angels",
-          "Thousand Sons"
+          "Thousand Sons",
+          "Tyranids",
+          "Ultramarines"
         ],
         "legendary": {
           "block": [
@@ -5742,16 +5999,16 @@
         },
         "factions": [
           "Necrons",
-          "Ultramarines",
-          "ADEPTA SOROITAS",
+          "Adepta Sororitas",
           "Astra militarum",
           "Black Legion",
           "Black templars",
-          "Death guard",
+          "Dark Angels",
+          "Death Guard",
           "Orks",
           "Space Wolves",
-          "Dark Angels",
-          "Thousand Sons"
+          "Thousand Sons",
+          "Ultramarines"
         ],
         "legendary": {
           "crit-dmg": [
@@ -5789,6 +6046,66 @@
           ]
         }
       },
+      "25": {
+        "common": {
+          "crit-dmg": [
+            18,
+            27,
+            41
+          ]
+        },
+        "epic": {
+          "crit-dmg": [
+            195,
+            252,
+            308,
+            364,
+            421,
+            477,
+            540,
+            687,
+            835
+          ]
+        },
+        "factions": [
+          "Tyranids"
+        ],
+        "legendary": {
+          "crit-dmg": [
+            480,
+            544,
+            692,
+            841,
+            915,
+            990,
+            1064,
+            1139,
+            1213,
+            1287,
+            1446
+          ]
+        },
+        "rare": {
+          "crit-dmg": [
+            92,
+            111,
+            129,
+            147,
+            168,
+            196,
+            252
+          ]
+        },
+        "uncommon": {
+          "crit-dmg": [
+            41,
+            52,
+            65,
+            84,
+            102
+          ]
+        }
+      },
       "30": {
         "factions": [],
         "uncommon": {
@@ -5823,14 +6140,14 @@
           ]
         },
         "factions": [
-          "Ultramarines",
-          "ADEPTA SOROITAS",
+          "Adepta Sororitas",
           "Astra militarum",
           "Black templars",
-          "Space Wolves",
           "Dark Angels",
+          "Space Wolves",
+          "Ultramarines",
           "Black Legion",
-          "Death guard",
+          "Death Guard",
           "Thousand Sons",
           "Necrons",
           "Orks",
@@ -5872,6 +6189,26 @@
             72
           ]
         }
+      },
+      "40": {
+        "factions": [
+          "Dark Angels"
+        ],
+        "legendary": {
+          "crit-dmg": [
+            300,
+            340,
+            433,
+            526,
+            572,
+            619,
+            665,
+            712,
+            758,
+            805,
+            903
+          ]
+        }
       }
     },
     "crit_booster": {
@@ -5897,13 +6234,14 @@
           ]
         },
         "factions": [
-          "Ultramarines",
-          "ADEPTA SOROITAS",
+          "Adepta Sororitas",
           "Astra militarum",
           "Black templars",
+          "Dark Angels",
           "Space Wolves",
+          "Ultramarines",
           "Black Legion",
-          "Death guard",
+          "Death Guard",
           "Thousand Sons",
           "Necrons",
           "Orks",
@@ -5988,16 +6326,17 @@
         "factions": [
           "Necrons",
           "T'au Empire",
-          "Ultramarines",
-          "ADEPTA SOROITAS",
+          "Adepta Sororitas",
           "Astra militarum",
           "Black Legion",
           "Black templars",
-          "Death guard",
+          "Dark Angels",
+          "Death Guard",
           "Orks",
           "Aeldari",
           "Space Wolves",
-          "Thousand Sons"
+          "Thousand Sons",
+          "Ultramarines"
         ],
         "legendary": {
           "armour": [
@@ -6102,10 +6441,11 @@
           ]
         },
         "factions": [
-          "Ultramarines",
           "Black templars",
+          "Dark Angels",
           "Space Wolves",
-          "ADEPTA SOROITAS",
+          "Ultramarines",
+          "Adepta Sororitas",
           "Astra militarum",
           "Aeldari"
         ],
@@ -6178,75 +6518,75 @@
   },
   "gear": [
     [
-      "Stone Rank I",
+      "Stone I",
       0
     ],
     [
-      "Stone Rank II",
+      "Stone II",
       1
     ],
     [
-      "Stone Rank III",
+      "Stone III",
       2
     ],
     [
-      "Iron Rank I",
+      "Iron I",
       3
     ],
     [
-      "Iron Rank II",
+      "Iron II",
       4
     ],
     [
-      "Iron Rank III",
+      "Iron III",
       5
     ],
     [
-      "Bronze Rank I",
+      "Bronze I",
       6
     ],
     [
-      "Bronze Rank II",
+      "Bronze II",
       7
     ],
     [
-      "Bronze Rank III",
+      "Bronze III",
       8
     ],
     [
-      "Silver Rank I",
+      "Silver I",
       9
     ],
     [
-      "Silver Rank II",
+      "Silver II",
       10
     ],
     [
-      "Silver Rank III",
+      "Silver III",
       11
     ],
     [
-      "Gold Rank I",
+      "Gold I",
       12
     ],
     [
-      "Gold Rank II",
+      "Gold II",
       13
     ],
     [
-      "Gold Rank III",
+      "Gold III",
       14
     ],
     [
-      "Diamond Rank I",
+      "Diamond I",
       15
     ],
     [
-      "Diamond Rank II",
+      "Diamond II",
       16
     ],
     [
-      "Diamond Rank III",
+      "Diamond III",
       17
     ]
   ],
@@ -6256,11 +6596,11 @@
       "alpha": {
         "!": [
           29,
-          52
+          55
         ],
         "Max 2 hits": [
           70,
-          25
+          28
         ],
         "Melee": [
           80,
@@ -6272,7 +6612,7 @@
         ],
         "No Physical": [
           40,
-          43
+          44
         ],
         "Piercing": [
           115,
@@ -6282,7 +6622,7 @@
       "beta": {
         "!": [
           53,
-          33
+          35
         ],
         "Mechanical": [
           105,
@@ -6294,53 +6634,53 @@
         ],
         "No Resilient": [
           40,
-          27
+          29
         ],
         "No Summons": [
           45,
-          24
+          25
         ],
         "Physical": [
           100,
-          8
+          9
         ]
       },
       "gamma": {
         "!": [
           40,
-          44
+          46
         ],
         "Max 1 hit": [
           125,
-          7
+          10
         ],
         "No Flying": [
           40,
-          38
+          39
         ],
         "No Overwatch": [
           40,
-          39
+          40
         ],
         "No Power": [
           50,
-          30
+          32
         ],
         "Physical": [
           120,
-          12
+          14
         ]
       }
     },
     "JAIN ZAR": {
       "alpha": {
         "!": [
-          45,
-          20
+          42,
+          21
         ],
         "Max 3 hits": [
           45,
-          14
+          15
         ],
         "Necrons": [
           110,
@@ -6348,37 +6688,37 @@
         ],
         "No Summons": [
           60,
-          14
+          15
         ],
         "Physical": [
           100,
-          7
+          8
         ],
         "Ranged": [
           60,
-          13
+          14
         ]
       },
       "beta": {
         "!": [
-          45,
-          24
+          40,
+          25
         ],
         "Bolter": [
           96,
-          9
+          10
         ],
         "Max 2 hits": [
           70,
-          12
+          13
         ],
         "No Blast": [
           50,
-          20
+          21
         ],
         "No Summons": [
           60,
-          20
+          21
         ],
         "Power": [
           95,
@@ -6387,12 +6727,12 @@
       },
       "gamma": {
         "!": [
-          45,
-          52
+          29,
+          55
         ],
         "Bolter": [
           95,
-          10
+          11
         ],
         "Min 4 hits": [
           90,
@@ -6400,11 +6740,11 @@
         ],
         "No Flying": [
           45,
-          44
+          45
         ],
         "No Mechanical": [
           45,
-          45
+          48
         ],
         "Piercing": [
           100,
@@ -6415,12 +6755,12 @@
     "MAUGAN RA": {
       "alpha": {
         "!": [
-          43,
-          52
+          45,
+          55
         ],
         "Max 2 hits": [
           65,
-          23
+          26
         ],
         "Melee": [
           50,
@@ -6432,7 +6772,7 @@
         ],
         "Psychic": [
           95,
-          6
+          8
         ],
         "Resilient": [
           95,
@@ -6441,8 +6781,8 @@
       },
       "beta": {
         "!": [
-          44,
-          33
+          45,
+          35
         ],
         "Min 4 hits": [
           115,
@@ -6450,37 +6790,37 @@
         ],
         "No Let the Galaxy Burn": [
           65,
-          28
+          30
         ],
         "No Mechanical": [
           75,
-          25
+          27
         ],
         "No Power": [
           70,
-          24
+          26
         ],
         "No Summons": [
           50,
-          24
+          25
         ]
       },
       "gamma": {
         "!": [
-          40,
-          47
+          45,
+          46
         ],
         "Bolter": [
           100,
-          9
+          10
         ],
         "Max 1 hit": [
           120,
-          9
+          10
         ],
         "No Overwatch": [
           45,
-          42
+          40
         ],
         "No Summons": [
           40,
@@ -6488,7 +6828,7 @@
         ],
         "Ranged": [
           70,
-          27
+          26
         ]
       }
     },
@@ -6496,7 +6836,7 @@
       "alpha": {
         "!": [
           35,
-          52
+          55
         ],
         "Big Target": [
           115,
@@ -6522,7 +6862,7 @@
       "beta": {
         "!": [
           19,
-          57
+          60
         ],
         "ASTRA MILITARUM": [
           120,
@@ -6534,21 +6874,21 @@
         ],
         "No Bolter": [
           50,
-          47
+          49
         ],
         "No Piercing": [
           50,
-          48
+          51
         ],
         "No Summons": [
           65,
-          44
+          46
         ]
       },
       "gamma": {
         "!": [
           18,
-          33
+          35
         ],
         "BLACK LEGION": [
           120,
@@ -6560,7 +6900,7 @@
         ],
         "No Piercing": [
           40,
-          26
+          28
         ],
         "Power": [
           100,
@@ -6568,7 +6908,7 @@
         ],
         "Ranged": [
           65,
-          20
+          22
         ]
       }
     }
@@ -6589,11 +6929,31 @@
         "summon"
       ]
     },
+    "Blue Horror": {
+      "alliance": "",
+      "armour": 0.0,
+      "damage": 18.0,
+      "faction": "Thousand Sons",
+      "health": 21.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.25
+      },
+      "traits": [
+        "weaver of fates",
+        "daemon",
+        "summon"
+      ]
+    },
     "Cadian Guardsman": {
       "alliance": "",
       "armour": 8.0,
       "damage": 24.0,
-      "faction": "Astra Miltarum",
+      "faction": "Astra militarum",
       "health": 40.0,
       "melee": {
         "hits": 1,
@@ -6612,7 +6972,7 @@
       "alliance": "",
       "armour": 15.0,
       "damage": 18.0,
-      "faction": "Astra Miltarum",
+      "faction": "Astra militarum",
       "health": 90.0,
       "melee": {
         "hits": 2,
@@ -6642,8 +7002,8 @@
       "alliance": "",
       "armour": 20.0,
       "damage": 25.0,
-      "faction": "ADEPTA SOROITAS",
-      "health": 60.0,
+      "faction": "Adepta Sororitas",
+      "health": 48.0,
       "melee": {
         "hits": 2,
         "pierce": 0.4
@@ -6657,7 +7017,7 @@
       "alliance": "",
       "armour": 0,
       "damage": 33.0,
-      "faction": "Ork",
+      "faction": "Orks",
       "health": 65.5,
       "melee": {
         "hits": 1,
@@ -6673,7 +7033,7 @@
       "alliance": "",
       "armour": 20.0,
       "damage": 25.0,
-      "faction": "Ork",
+      "faction": "Orks",
       "health": 70.0,
       "melee": {
         "hits": 1,
@@ -6723,7 +7083,6 @@
       "traits": [
         "flying",
         "mechanical",
-        "networked targeting",
         "close combat weakness",
         "summon"
       ]
@@ -6747,11 +7106,32 @@
         "summon"
       ]
     },
+    "Pink Horror": {
+      "alliance": "",
+      "armour": 0.0,
+      "damage": 9.0,
+      "faction": "Thousand Sons",
+      "health": 36.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1
+      },
+      "traits": [
+        "weaver of fates",
+        "daemon",
+        "psyker",
+        "summon"
+      ]
+    },
     "Pox Walkers": {
       "alliance": "",
       "armour": 0,
       "damage": 35.0,
-      "faction": "Death guard",
+      "faction": "Death Guard",
       "health": 30.0,
       "melee": {
         "hits": 2,
@@ -6779,6 +7159,23 @@
         "summon"
       ]
     },
+    "Screamer of Tzeentch": {
+      "alliance": "",
+      "armour": 0.0,
+      "damage": 18.0,
+      "faction": "Thousand Sons",
+      "health": 45.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.4
+      },
+      "traits": [
+        "weaver of fates",
+        "daemon",
+        "flying",
+        "summon"
+      ]
+    },
     "Shield Drone": {
       "alliance": "",
       "armour": 15.0,
@@ -6796,5 +7193,5 @@
       ]
     }
   },
-  "version": "Beta 0.3.9"
+  "version": "Beta 0.4.3.2"
 }

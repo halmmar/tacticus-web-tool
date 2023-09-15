@@ -10,7 +10,7 @@ import copy
 from collections import OrderedDict
 from io import StringIO
 
-file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.3.9.xlsx'
+file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.4.3.2.xlsx'
 
 def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     """ Get a single rectangular region from the specified file.
@@ -66,28 +66,30 @@ def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     df = pd.DataFrame(([cell.value for cell in row] for row in region), columns=columns)
     return df
 
+bossSummons = ["Stormboy"]
+
 tb_Characters = data_frame_from_xlsx(file, 'tb_Characters', 1)
-tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$W$3:$X$22', True)
+tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$X$2:$Y$22', True)
 tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
 
 # Updated for new factions; also update the faction map below
-tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AT$124', 2)
+tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AT$130', 2)
 # Updated for new characters
-tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$77', True) # Passives
+tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$81', True) # Passives
 
-tb_Abilities = data_frame_from_xlsx(file, 'wb_abilities!$AB$3:$AJ$52', True) # Not updated for new characters
-tb_Abilities_1_50 = [level for (level,growth,factor,_,_,_,_,_,_) in tb_Abilities.itertuples(index=False)]
-tb_SummonsList = data_frame_from_xlsx(file, 'SummonsData!$B$2:$B$30', True)
+tb_Abilities = data_frame_from_xlsx(file, 'UL_Tables!$AG$3:$AI$52', True) # Not updated for new characters
+tb_Abilities_1_50 = [level for (level,factor,archi) in tb_Abilities.itertuples(index=False)]
+tb_SummonsList = data_frame_from_xlsx(file, 'SummonData!$A$2:$A$18', False)
 
 for i in range(1,51):
     if tb_Abilities_1_50[i-1] != i:
         raise Exception("Did not find the correct table. i=%d, tb_Abilities=%d" % ( i, tb_Abilities_1_50[i-1]))
-tb_Abilities_factor = [factor for (level,growth,factor,_,_,_,_,_,_) in tb_Abilities.itertuples(index=False)]
-tb_Abilities_factor_archimatos = [factor for (level,growth,_,_,_,_,_,factor,_) in tb_Abilities.itertuples(index=False)]
+tb_Abilities_factor = [factor for (level,factor,archi) in tb_Abilities.itertuples(index=False)]
+tb_Abilities_factor_archimatos = [factor for (level,factor,archi) in tb_Abilities.itertuples(index=False)]
 summonsNames = set()
 for index, row in tb_SummonsList.iterrows():
-    if row["Name"]:
-        summonsNames.add(row["Name"])
+    if row[0] and not row[0] in bossSummons:
+        summonsNames.add(row[0])
 # Legendary Events
 tb_LegendaryEvent = data_frame_from_xlsx(file, 'YourUnits!$A$1:$CX$99')
 # 76=Excel column BY, which conflicts with the query language used by Towen. The column is empty and skipped...
@@ -263,19 +265,42 @@ pierce = dict([(k.lower(),v) for (k,v) in tb_Pierce.itertuples(index=False)])
 gear = [(rank,int(gearLevel)) for (rarity,rank,rankMetal,rankLevel,gearLevel) in tb_Gear.itertuples(index=False)]
 
 factionMap = {
-    "ULTRAMARINES": "Ultramarines",
-    "ADEPTA SOROITAS": "ADEPTA SOROITAS",
+    "Adepta Sororitas": "Adepta Sororitas",
     "ASTRA MILITARUM": "Astra militarum",
+    "Astra Miltarum": "Astra militarum",
     "BLACK LEGION": "Black Legion",
+    "Black Legion": "Black Legion",
     "BLACK TEMPLARS": "Black templars",
-    "DEATH GUARD": "Death guard",
-    "ORKS": "Orks",
-    "NECRONS": "Necrons",
-    "AELDARI": "Aeldari",
-    "T'AU": "T'au Empire",
-    "Space Wolves": "Space Wolves",
+    "Black Templars": "Black templars",
     "DARK ANGELS": "Dark Angels",
-    "THOUSAND SONS": "Thousand Sons"
+    "Dark Angels": "Dark Angels",
+    "Death guard": "Death Guard",
+    "DEATH GUARD": "Death Guard",
+    "ORKS": "Orks",
+    "Orks": "Orks",
+    "Ork": "Orks",
+    "NECRONS": "Necrons",
+    "Necrons": "Necrons",
+    "AELDARI": "Aeldari",
+    "Aeldari": "Aeldari",
+    "T'AU": "T'au Empire",
+    "T'AU EMPIRE": "T'au Empire",
+    "T'au Empire": "T'au Empire",
+    "Space Wolves": "Space Wolves",
+    "SPACE WOLVES": "Space Wolves",
+    "THOUSAND SONS": "Thousand Sons",
+    "Thousand Sons": "Thousand Sons",
+    "Tyranids": "Tyranids",
+    "TYRANIDS": "Tyranids",
+    "Ultramarines": "Ultramarines",
+    "ULTRAMARINES": "Ultramarines"
+}
+allianceMap = {
+    "XENOS": "Xenos",
+    "CHAOS": "Chaos",
+    "IMPERIAL": "Imperial",
+    None: "",
+    0: ""
 }
 
 eqDict = {}
@@ -288,7 +313,7 @@ for index, eq in tb_Equipment.iterrows():
     itemType = eqDict[itemTypeStr]
     factions = []
     for faction in factionMap.keys():
-        if eq[faction]:
+        if faction in eq and eq[faction]:
             factions += [factionMap[faction]]
     itemInternalType = eq[0:1][0] # Gun, Knife, Both
     chance = eq["Chance"]
@@ -328,7 +353,12 @@ def toJSON(rows):
     characters = {}
     bosses = {}
     summons = {}
+    bossNames = ["TERVIGON", "Tervigon"]
     for index, row in rows.iterrows():
+        if row.Faction in bossNames:
+            continue
+        if row.Alliance in bossNames:
+            break
         if row.Name is None or np.isnan(row["Melee Hits"]) or np.isnan(row.Health) or row["Melee Damage"]==0:
             continue
         eqCount = {"crit": 0, "defense": 0, "crit_booster": 0, "block": 0, "block_booster": 0}
@@ -357,7 +387,7 @@ def toJSON(rows):
         passiveData = []
         if row.Name in characterAbilities:
             passiveData = [x for x in characterAbilities[row.Name][17:20] if not (x is None or np.isnan(x))]
-        data = {"faction": row.Faction, "alliance": row.Alliance or "", "health": row.Health, "damage": row.Damage, "traits": traits, "armour": row.Armour, "melee": {"pierce": pierce[row["Melee Damage"].lower()], "hits": int(row["Melee Hits"])}}
+        data = {"faction": factionMap[row.Faction], "alliance": allianceMap[row.Alliance], "health": row.Health, "damage": row.Damage, "traits": traits, "armour": row.Armour, "melee": {"pierce": pierce[row["Melee Damage"].lower()], "hits": int(row["Melee Hits"])}}
         if row["Ranged Hits"] > 0:
             data["ranged"] = {"pierce": pierce[row["Ranged Damage"].lower()], "hits": int(row["Ranged Hits"])}
         if row["Initial rarity"] in ["Common", "Uncommon", "Rare", "Epic", "Legendary"]:
