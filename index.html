@@ -71,7 +71,7 @@ var getJSON = function(url, callback) {
   xhr.send();
 };
 
-obsoleteEvents = {}; // {"MAUGAN RA": 1};
+obsoleteEvents = []; // ["MAUGAN RA"];
 tb_chars = {};
 tb_bosses = {};
 tb_summons = {};
@@ -86,6 +86,10 @@ opponentRevoltingResilience = 0;
 legendaryEventMaxCharacterPenalty = 25; // After this, we no longer penalize more characters added to the pool
 legendaryEventCharacterPenaltyFactor = 5; // 5 characters in a team
 legendaryEventFactors = {};
+
+ahrimanPercent = 1.0;
+ahrimanMax = 0;
+
 
 var calculateLegendaryEventWeight = function(numberOfUnits, weight) {
   var res = Math.pow(1.0 / (Math.min(legendaryEventMaxCharacterPenalty, numberOfUnits)/legendaryEventCharacterPenaltyFactor), weight);
@@ -129,6 +133,7 @@ function(err, data) {
     addLegendaryEvents(latest_legendary_event);
     addTable();
     updateEldryon(1);
+    updateAhriman(1);
     updateAbaddon(1);
     updateThaddeus(1);
     updateShadowsun(1);
@@ -254,6 +259,14 @@ var updateEldryon = function(skipUpdate) {
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("eldryon-buff-rarity").value*0.2);
   document.getElementById("eldryon-buff-all").innerHTML = Math.round(tb_chars["Eldryon"].passive[0]*factor);
   document.getElementById("eldryon-buff-aeldari").innerHTML = Math.round(tb_chars["Eldryon"].passive[1]*factor);
+  if (1 != skipUpdate) updateTable();
+};
+
+var updateAhriman = function(skipUpdate) {
+  if (!document.getElementById("ahriman-buff-enabled").checked) {
+    if (1 != skipUpdate) updateTable();
+    return;
+  }
   if (1 != skipUpdate) updateTable();
 };
 
@@ -550,18 +563,26 @@ var addTable = function() {
 var round2 = function(num) {
   return Math.round( num * 100 + Number.EPSILON ) / 100;
 }
-var damageArmourOrPierce = function(dmg, armour, pierce) {
-  return Math.max(1, Math.max(dmg-armour, dmg*pierce));
-}
-var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit) {
+var damageArmourOrPierce = function(dmg, armour, pierce, type) {
+  var dmgAfterArmour = Math.max(dmg-armour, dmg*pierce);
+  if (typeof type == 'undefined') {
+    throw new Error('Did not get damage type');
+  }
+  if (type=="psychic" || type=="flame") {
+    dmgAfterArmour = Math.min(dmgAfterArmour * ahrimanPercent, dmgAfterArmour + ahrimanMax);
+  }
+  return Math.max(1, dmgAfterArmour);
+};
+
+var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit, type) {
   numRounds = aunshiBonusDmg > 0 ? 3 : 1;
   var total = 0;
   var opponentRevoltingResilienceScaling = 1.0;
   for (i=0; i<numRounds; i++) {
     var dmgLow = low+aunshiBonusDmg
     var dmgHigh = high+aunshiBonusDmg
-    var perNonCrit = (damageArmourOrPierce(dmgLow, armour, pierce) + damageArmourOrPierce(dmgHigh, armour, pierce))*0.5;
-    var perCrit =  (damageArmourOrPierce(dmgLow+crit, armour, pierce) + damageArmourOrPierce(dmgHigh+crit, armour, pierce))*0.5;
+    var perNonCrit = (damageArmourOrPierce(dmgLow, armour, pierce, type) + damageArmourOrPierce(dmgHigh, armour, pierce, type))*0.5;
+    var perCrit =  (damageArmourOrPierce(dmgLow+crit, armour, pierce, type) + damageArmourOrPierce(dmgHigh+crit, armour, pierce, type))*0.5;
     var numRevoltingResilience = opponentRevoltingResilience;
     for (n=1; n<=hits; n++) {
       var critCurHit = Math.pow(critChance, n);
@@ -572,9 +593,10 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour
     };
   }
   return Math.round(dmgFactor*total) / numRounds;
-}
-var calcDmg = function(dmg, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit) {
-  return calcDmgLowHigh(dmg*0.8, dmg*1.2, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit);
+};
+
+var calcDmg = function(dmg, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit, type) {
+  return calcDmgLowHigh(dmg*0.8, dmg*1.2, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit, type);
 }
 var insertIcon = function(name) {
   return '<img class="damage-icon" src="images/'+name+'.png" />'
@@ -626,6 +648,9 @@ var updateTable = function() {
     var curEvent = document.getElementById("legendary-event-select").value;
     var legendaryPointsWeight = +document.getElementById("legendary-points-weight").value;
     var opponentPunishesMelee = document.getElementById("opponent-punishes-melee").checked;
+    ahrimanEnabled = document.getElementById("ahriman-buff-enabled").checked;
+    ahrimanPercent = 1+(ahrimanEnabled ? (document.getElementById("ahriman-buff-percent").innerHTML / 100) : 0);
+    ahrimanMax = ahrimanEnabled ? (+document.getElementById("ahriman-buff-max").innerHTML) : 0;
     
     Object.keys(tb_chars_and_summons).forEach(function callback(key) {
         var comment = "";
@@ -926,24 +951,24 @@ var updateTable = function() {
         // Melee damage
         var totalDmg = 0;
         if (!opponentPunishesMelee) {
-          totalDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage);
+          totalDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
           switch (key) {
             case 'Boss Gulgortz':
-              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3, opponentarmor, char.ranged.pierce, critChance, critDamage);
+              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
               break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
-            var galaxyDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage);
+            var galaxyDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
             totalDmg += galaxyDmg * 0.5;
             // comment += "LtGB assumes hits on target"
           }
         }
         if (char.hasOwnProperty("ranged")) {
           // Ranged damage
-          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged);
+          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
           if (shadowsunPassive && char.faction.includes("T'au") && key != "ShadowSun") {
             rangedDmg = [0.2,0.3,0.4,0.5,0.6].map(function(round) {
-              var rangedDmgTauProc = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka + 1, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged);
+              var rangedDmgTauProc = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka + 1, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
               return (1-round) * rangedDmg + round * rangedDmgTauProc;
             }).reduce((a,b) => a+b) / 5;
             comment += "Shadowsun+T'au";
@@ -951,7 +976,7 @@ var updateTable = function() {
           switch (key) {
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
-            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor*dmgFactorRanged, 0, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance + critChanceRanged, critDamage + critDamageRanged);
+            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor*dmgFactorRanged, 0, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
             comment += "passive (+"+Math.round(volkDamageBuff)+")";
             rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
             break;
@@ -959,12 +984,14 @@ var updateTable = function() {
             var revasPassiveDmgLow = passiveFactor*char.passive[0];
             var revasPassiveDmgHigh = passiveFactor*char.passive[1];
             var revasPassiveOverload = (opponentHasMarkerlight || opponentIsMech) ? passiveFactor*char.passive[2] : 0;
-            rangedDmg += calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor*dmgFactorRanged, 0, 3, opponentarmor, 0.35, critChance + critChanceRanged, critDamage + critDamageRanged);
+            var revasPassiveDmg = calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor*dmgFactorRanged, 0, 3, opponentarmor, 0.35, critChance + critChanceRanged, critDamage + critDamageRanged, "Particle");
+            rangedDmg += revasPassiveDmg;
+            totalDmg += revasPassiveDmg*dmgFactorMelee;
             comment += "3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
             break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
-            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorRanged, aunshiBonusDmg, ltgbHits, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged);
+            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorRanged, aunshiBonusDmg, ltgbHits, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
             rangedDmg += galaxyDmg * 0.5;
           }
           if (rangedDmg > totalDmg) {
@@ -984,7 +1011,7 @@ var updateTable = function() {
           var res = dmg;
           for (let i=0; i<numArmourReduction; i++) {
             // Mk X gravis does this twice
-            res = damageArmourOrPierce(res,armour,pierce);
+            res = damageArmourOrPierce(res,armour,pierce,"Boss");
           }
           return res*hits;
         };
@@ -1260,6 +1287,13 @@ function sortTable(n) {
     +<span id="abaddon-buff-dmg"></span> damage [Chaos]
     <br>
     TODO: Abraxas missing
+    <br>
+    <label>Ahriman</label>
+    <input onChange="updateAhriman()" type="checkbox" id="ahriman-buff-enabled"></input>
+    <select onchange="updateAhriman()" id="ahriman-buff-rarity">
+    </select>
+    <input onChange="updateAhriman()" type="number" id="ahriman-buff-level" min="0" max="50" value="50" disabled>
+    +<span id="ahriman-buff-percent">50</span>% damage [Psychic/Fire], max <span id="ahriman-buff-max">5483</span>
     <br>
     <label>Aethana</label>
     <input onChange="updateAethana()" type="checkbox" id="aethana-buff-enabled"></input>

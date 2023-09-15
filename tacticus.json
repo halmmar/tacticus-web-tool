@@ -523,14 +523,16 @@
       },
       "melee": {
         "hits": 5,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         5.0
       ],
       "ranged": {
         "hits": 3,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "bolter"
       },
       "traits": [
         "let the galaxy burn",
@@ -603,7 +605,8 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.25
+        "pierce": 0.25,
+        "type": "flame"
       },
       "passive": [
         10.0,
@@ -611,7 +614,8 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "traits": [
         "psyker",
@@ -700,7 +704,8 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.8
+        "pierce": 0.8,
+        "type": "piercing"
       },
       "passive": [
         4.0,
@@ -784,7 +789,8 @@
       },
       "melee": {
         "hits": 5,
-        "pierce": 0.35
+        "pierce": 0.35,
+        "type": "particle"
       },
       "passive": [
         40.0
@@ -869,7 +875,8 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [],
       "traits": [
@@ -953,7 +960,8 @@
       },
       "melee": {
         "hits": 4,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         18.0,
@@ -1040,7 +1048,8 @@
       },
       "melee": {
         "hits": 4,
-        "pierce": 0.3
+        "pierce": 0.3,
+        "type": "energy"
       },
       "passive": [
         15.0,
@@ -1048,7 +1057,8 @@
       ],
       "ranged": {
         "hits": 3,
-        "pierce": 0.3
+        "pierce": 0.3,
+        "type": "energy"
       },
       "traits": [
         "living metal"
@@ -1119,7 +1129,8 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "passive": [
         39.0,
@@ -1127,7 +1138,8 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "traits": [
         "let the galaxy burn",
@@ -1206,7 +1218,8 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         10.0,
@@ -1305,7 +1318,8 @@
       },
       "melee": {
         "hits": 5,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         -25.0,
@@ -1386,7 +1400,8 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         8.0,
@@ -1395,7 +1410,8 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 0.65
+        "pierce": 0.65,
+        "type": "plasma"
       },
       "traits": [
         "final vengeance",
@@ -1470,7 +1486,8 @@
       },
       "melee": {
         "hits": 6,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "bolter"
       },
       "passive": [
         5.0
@@ -1557,7 +1574,8 @@
       },
       "melee": {
         "hits": 5,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "chain"
       },
       "passive": [
         11.0,
@@ -1565,7 +1583,8 @@
       ],
       "ranged": {
         "hits": 3,
-        "pierce": 0.15
+        "pierce": 0.15,
+        "type": "projectile"
       },
       "traits": [
         "mechanical",
@@ -1646,14 +1665,16 @@
       },
       "melee": {
         "hits": 4,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         21.0
       ],
       "ranged": {
         "hits": 6,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "bolter"
       },
       "traits": [
         "mk x gravis",
@@ -1733,7 +1754,8 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         8.0,
@@ -1828,7 +1850,8 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         12.0,
@@ -1836,7 +1859,8 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 0.3
+        "pierce": 0.3,
+        "type": "energy"
       },
       "traits": [
         "heavy weapon",
@@ -1912,7 +1936,8 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.1
+        "pierce": 0.1,
+        "type": "las"
       },
       "passive": [
         90.0,
@@ -1987,7 +2012,8 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         48.0,
@@ -2070,14 +2096,16 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         -5.0
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "bolter"
       },
       "traits": [
         "overwatch",
@@ -2157,14 +2185,16 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         5.0
       ],
       "ranged": {
         "hits": 2,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "bolter"
       },
       "traits": [
         "resilient"
@@ -2238,7 +2268,8 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.65
+        "pierce": 0.65,
+        "type": "plasma"
       },
       "passive": [
         18.0
@@ -2333,14 +2364,16 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         10.0
       ],
       "ranged": {
         "hits": 2,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "pulse"
       },
       "traits": [
         "close combat weakness",
@@ -2431,7 +2464,8 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.8
+        "pierce": 0.8,
+        "type": "piercing"
       },
       "passive": [
         9.0,
@@ -2439,7 +2473,8 @@
       ],
       "ranged": {
         "hits": 2,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "traits": [
         "psyker"
@@ -2519,7 +2554,8 @@
       },
       "melee": {
         "hits": 4,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         5.8
@@ -2601,7 +2637,8 @@
       },
       "melee": {
         "hits": 4,
-        "pierce": 0.8
+        "pierce": 0.8,
+        "type": "piercing"
       },
       "passive": [
         2.975
@@ -2682,14 +2719,16 @@
       },
       "melee": {
         "hits": 6,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         15.0
       ],
       "ranged": {
         "hits": 3,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "bolter"
       },
       "traits": [
         "parry"
@@ -2773,14 +2812,16 @@
       },
       "melee": {
         "hits": 6,
-        "pierce": 0.6
+        "pierce": 0.6,
+        "type": "molecular"
       },
       "passive": [
         5.0
       ],
       "ranged": {
         "hits": 6,
-        "pierce": 0.6
+        "pierce": 0.6,
+        "type": "molecular"
       },
       "traits": [
         "living metal",
@@ -2861,7 +2902,8 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.8
+        "pierce": 0.8,
+        "type": "piercing"
       },
       "passive": [
         40.0
@@ -2941,7 +2983,8 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "bolter"
       },
       "passive": [
         12.0
@@ -3035,7 +3078,8 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.8
+        "pierce": 0.8,
+        "type": "piercing"
       },
       "passive": [
         -8.0,
@@ -3116,7 +3160,8 @@
       },
       "melee": {
         "hits": 4,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         6.0
@@ -3205,14 +3250,16 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         20.0
       ],
       "ranged": {
         "hits": 2,
-        "pierce": 0.6
+        "pierce": 0.6,
+        "type": "gauss"
       },
       "traits": [
         "living metal"
@@ -3291,7 +3338,8 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         7.0
@@ -3377,7 +3425,8 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         9.0,
@@ -3472,7 +3521,8 @@
       },
       "melee": {
         "hits": 5,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         10.0,
@@ -3480,7 +3530,8 @@
       ],
       "ranged": {
         "hits": 6,
-        "pierce": 0.55
+        "pierce": 0.55,
+        "type": "heavy round"
       },
       "traits": [
         "terrifying",
@@ -3559,7 +3610,8 @@
       },
       "melee": {
         "hits": 5,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         7.0,
@@ -3567,7 +3619,8 @@
       ],
       "ranged": {
         "hits": 3,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "bolter"
       },
       "traits": [
         "act of faith",
@@ -3652,7 +3705,8 @@
       },
       "melee": {
         "hits": 4,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         49.0
@@ -3748,7 +3802,8 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         22.0,
@@ -3756,7 +3811,8 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "traits": [
         "close combat weakness",
@@ -3837,7 +3893,8 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 1
+        "pierce": 1,
+        "type": "direct"
       },
       "passive": [
         30.0
@@ -3927,7 +3984,8 @@
       },
       "melee": {
         "hits": 6,
-        "pierce": 0.25
+        "pierce": 0.25,
+        "type": "flame"
       },
       "passive": [
         8.0,
@@ -3936,7 +3994,8 @@
       ],
       "ranged": {
         "hits": 6,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "pulse"
       },
       "traits": [
         "close combat weakness",
@@ -4016,14 +4075,16 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "chain"
       },
       "passive": [
         30.0
       ],
       "ranged": {
         "hits": 2,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "bolter"
       },
       "traits": [
         "act of faith"
@@ -4098,7 +4159,8 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         30.0,
@@ -4106,7 +4168,8 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 0.65
+        "pierce": 0.65,
+        "type": "plasma"
       },
       "traits": [
         "final vengeance",
@@ -4195,14 +4258,16 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.15
+        "pierce": 0.15,
+        "type": "blast"
       },
       "passive": [
         5.0
       ],
       "ranged": {
         "hits": 2,
-        "pierce": 0.7
+        "pierce": 0.7,
+        "type": "melta"
       },
       "traits": [
         "close combat weakness",
@@ -4291,7 +4356,8 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "pulse"
       },
       "passive": [
         20.0,
@@ -4300,7 +4366,8 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 0.8
+        "pierce": 0.8,
+        "type": "piercing"
       },
       "traits": [
         "camouflage",
@@ -4379,14 +4446,16 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "passive": [
         5.0
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "traits": [
         "psyker"
@@ -4472,7 +4541,8 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "chain"
       },
       "passive": [
         8.0,
@@ -4480,7 +4550,8 @@
       ],
       "ranged": {
         "hits": 3,
-        "pierce": 0.15
+        "pierce": 0.15,
+        "type": "projectile"
       },
       "traits": [
         "mechanical",
@@ -4562,7 +4633,8 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         18.0,
@@ -4647,7 +4719,8 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         10.0
@@ -4734,7 +4807,8 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "chain"
       },
       "passive": [
         26.0,
@@ -4812,14 +4886,16 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.1
+        "pierce": 0.1,
+        "type": "las"
       },
       "passive": [
         8.0
       ],
       "ranged": {
         "hits": 3,
-        "pierce": 0.15
+        "pierce": 0.15,
+        "type": "blast"
       },
       "traits": [
         "suppressive fire",
@@ -4890,14 +4966,16 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.25
+        "pierce": 0.25,
+        "type": "flame"
       },
       "passive": [
         55.0
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "traits": [
         "weaver of fates",
@@ -4983,7 +5061,8 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.65
+        "pierce": 0.65,
+        "type": "plasma"
       },
       "passive": [
         14.0,
@@ -4991,7 +5070,8 @@
       ],
       "ranged": {
         "hits": 2,
-        "pierce": 0.65
+        "pierce": 0.65,
+        "type": "plasma"
       },
       "traits": [
         "living metal"
@@ -5068,7 +5148,8 @@
       },
       "melee": {
         "hits": 4,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         8.0
@@ -5151,7 +5232,8 @@
       },
       "melee": {
         "hits": 4,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         12.0,
@@ -5160,7 +5242,8 @@
       ],
       "ranged": {
         "hits": 5,
-        "pierce": 0.25
+        "pierce": 0.25,
+        "type": "flame"
       },
       "traits": [
         "terminator armour",
@@ -5238,7 +5321,8 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         14.0,
@@ -5246,7 +5330,8 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "traits": [
         "contagions of nurgle",
@@ -5327,7 +5412,8 @@
       },
       "melee": {
         "hits": 3,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         25.0,
@@ -5409,7 +5495,8 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         6.0,
@@ -5417,7 +5504,8 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "traits": [
         "psyker"
@@ -5492,14 +5580,16 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         22.0
       ],
       "ranged": {
         "hits": 4,
-        "pierce": 0.25
+        "pierce": 0.25,
+        "type": "flame"
       },
       "traits": [
         "act of faith",
@@ -5580,14 +5670,16 @@
       },
       "melee": {
         "hits": 4,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
         10.0
       ],
       "ranged": {
         "hits": 6,
-        "pierce": 0.55
+        "pierce": 0.55,
+        "type": "heavy round"
       },
       "traits": [
         "let the galaxy burn",
@@ -5663,14 +5755,16 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
         1.0
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 0.55
+        "pierce": 0.55,
+        "type": "heavy round"
       },
       "traits": [
         "flying",
@@ -6922,7 +7016,8 @@
       "health": 39.0,
       "melee": {
         "hits": 1,
-        "pierce": 0.8
+        "pierce": 0.8,
+        "type": "piercing"
       },
       "traits": [
         "daemon",
@@ -6937,11 +7032,13 @@
       "health": 21.0,
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "ranged": {
         "hits": 2,
-        "pierce": 0.25
+        "pierce": 0.25,
+        "type": "flame"
       },
       "traits": [
         "weaver of fates",
@@ -6957,11 +7054,13 @@
       "health": 40.0,
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "ranged": {
         "hits": 2,
-        "pierce": 0.1
+        "pierce": 0.1,
+        "type": "las"
       },
       "traits": [
         "battle fatigue",
@@ -6976,7 +7075,8 @@
       "health": 90.0,
       "melee": {
         "hits": 2,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "traits": [
         "summon"
@@ -6990,7 +7090,8 @@
       "health": 30.0,
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "traits": [
         "flying",
@@ -7006,7 +7107,8 @@
       "health": 48.0,
       "melee": {
         "hits": 2,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "traits": [
         "flying",
@@ -7021,7 +7123,8 @@
       "health": 65.5,
       "melee": {
         "hits": 1,
-        "pierce": 0.15
+        "pierce": 0.15,
+        "type": "projectile"
       },
       "traits": [
         "diminutive",
@@ -7037,11 +7140,13 @@
       "health": 70.0,
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "ranged": {
         "hits": 3,
-        "pierce": 0.15
+        "pierce": 0.15,
+        "type": "blast"
       },
       "traits": [
         "mechanical",
@@ -7058,7 +7163,8 @@
       "health": 55.0,
       "melee": {
         "hits": 6,
-        "pierce": 0.2
+        "pierce": 0.2,
+        "type": "bolter"
       },
       "traits": [
         "flying",
@@ -7074,11 +7180,13 @@
       "health": 20.0,
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "ranged": {
         "hits": 1,
-        "pierce": 0.8
+        "pierce": 0.8,
+        "type": "piercing"
       },
       "traits": [
         "flying",
@@ -7095,11 +7203,13 @@
       "health": 60.0,
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "ranged": {
         "hits": 2,
-        "pierce": 0.6
+        "pierce": 0.6,
+        "type": "molecular"
       },
       "traits": [
         "living metal",
@@ -7114,11 +7224,13 @@
       "health": 36.0,
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "ranged": {
         "hits": 2,
-        "pierce": 1
+        "pierce": 1,
+        "type": "psychic"
       },
       "traits": [
         "weaver of fates",
@@ -7135,7 +7247,8 @@
       "health": 30.0,
       "melee": {
         "hits": 2,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "traits": [
         "contagions of nurgle",
@@ -7150,7 +7263,8 @@
       "health": 20.0,
       "melee": {
         "hits": 5,
-        "pierce": 0.3
+        "pierce": 0.3,
+        "type": "energy"
       },
       "traits": [
         "living metal",
@@ -7167,7 +7281,8 @@
       "health": 45.0,
       "melee": {
         "hits": 3,
-        "pierce": 0.4
+        "pierce": 0.4,
+        "type": "power"
       },
       "traits": [
         "weaver of fates",
@@ -7184,7 +7299,8 @@
       "health": 40.0,
       "melee": {
         "hits": 1,
-        "pierce": 0.01
+        "pierce": 0.01,
+        "type": "physical"
       },
       "traits": [
         "flying",
