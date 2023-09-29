@@ -89,6 +89,8 @@ tb_Abilities_factor_archimatos = [factor for (level,factor,archi) in tb_Abilitie
 summonsNames = set()
 for index, row in tb_SummonsList.iterrows():
     if row[0] and not row[0] in bossSummons:
+        if row[0] == "Command-Link drone":
+            row[0] = "Command-Link Drone"
         summonsNames.add(row[0])
 # Legendary Events
 tb_LegendaryEvent = data_frame_from_xlsx(file, 'YourUnits!$A$1:$CX$99')
@@ -258,6 +260,16 @@ bossStats = {
       "melee": {"hits": 3, "pierce": 0.01},
       "ranged": {"hits": 3, "pierce": 0.3},
       "checkbox": {}
+  },
+  "screamer-killer": {
+      "armour": [None, None, None, [2434/0.85,32]],
+      "damage": [None, None, None, [2022/0.85,32]],
+      "melee": {"hits": 5, "pierce": 0.01},
+      "ranged": {"hits": 4, "pierce": 0.65},
+      "checkbox": {
+          "armour": 0.85,
+          "damage": 0.85
+      }
   }
 }
 
@@ -355,6 +367,8 @@ def toJSON(rows):
     summons = {}
     bossNames = ["TERVIGON", "Tervigon"]
     for index, row in rows.iterrows():
+        if row.Name == "Command-Link drone":
+            row.Name = "Command-Link Drone"
         if row.Faction in bossNames:
             continue
         if row.Alliance in bossNames:

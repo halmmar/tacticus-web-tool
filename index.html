@@ -450,12 +450,16 @@ var updateOpponentPreset = function(skipUpdateTable) {
       psyker = true;
       bigtarget = true;
       break;
+    case 'screamer-killer':
     case 'tyranid':
     case 'triarchal menhir':
       bigtarget = true;
       break;
   }
   var updateOpponentPresetStat = function(stat) {
+    if (!(preset in tb_bosses)) {
+      console.log("Couldn't find boss " + preset);
+    }
     var tb = tb_bosses[preset][stat];
     var statLevel = tb[level-1];
     var statMax = tb.filter(x => x != null).slice(-1)[0];
@@ -1228,7 +1232,8 @@ function sortTable(n) {
         <option value="hive tyrant gorgon">Hive Tyrant Gorgon</option>
         <option value="hive tyrant kronos">Hive Tyrant Kronos</option>
         <option value="hive tyrant leviathan">Hive Tyrant Leviathan</option>
-        <option value="mortarion" selected>Mortarion</option>
+        <option value="mortarion">Mortarion</option>
+        <option value="screamer-killer" selected>Screamer-Killer</option>
         <option value="stormboy">Stormboy</option>
         <option value="szarekh">Szarekh</option>
         <option value="tervigon gorgon">Tervigon Gorgon</option>

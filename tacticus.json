@@ -259,6 +259,38 @@
         "pierce": 1.0
       }
     },
+    "screamer-killer": {
+      "armour": [
+        null,
+        null,
+        null,
+        [
+          2863.529411764706,
+          32
+        ]
+      ],
+      "checkbox": {
+        "armour": 0.85,
+        "damage": 0.85
+      },
+      "damage": [
+        null,
+        null,
+        null,
+        [
+          2378.823529411765,
+          32
+        ]
+      ],
+      "melee": {
+        "hits": 5,
+        "pierce": 0.01
+      },
+      "ranged": {
+        "hits": 4,
+        "pierce": 0.65
+      }
+    },
     "stormboy": {
       "armour": [
         null,
@@ -614,7 +646,7 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "traits": [
@@ -894,7 +926,7 @@
         "crit": 1
       },
       "faction": "Black Legion",
-      "health": 110.00000000000001,
+      "health": 110.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -1129,7 +1161,7 @@
       },
       "melee": {
         "hits": 2,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "passive": [
@@ -1138,7 +1170,7 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "traits": [
@@ -1596,7 +1628,7 @@
     "Brother Burchard": {
       "alliance": "Imperial",
       "armour": 24.0,
-      "damage": 9.030000000000001,
+      "damage": 9.03,
       "equipment": {
         "crit": 1,
         "crit_booster": 1,
@@ -2473,7 +2505,7 @@
       ],
       "ranged": {
         "hits": 2,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "traits": [
@@ -3811,7 +3843,7 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "traits": [
@@ -3893,7 +3925,7 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "direct"
       },
       "passive": [
@@ -4446,7 +4478,7 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "passive": [
@@ -4454,7 +4486,7 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "traits": [
@@ -4974,7 +5006,7 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "traits": [
@@ -5330,7 +5362,7 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "traits": [
@@ -5504,7 +5536,7 @@
       ],
       "ranged": {
         "hits": 1,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "traits": [
@@ -7026,7 +7058,7 @@
     },
     "Blue Horror": {
       "alliance": "",
-      "armour": 0.0,
+      "armour": 0,
       "damage": 18.0,
       "faction": "Thousand Sons",
       "health": 21.0,
@@ -7218,7 +7250,7 @@
     },
     "Pink Horror": {
       "alliance": "",
-      "armour": 0.0,
+      "armour": 0,
       "damage": 9.0,
       "faction": "Thousand Sons",
       "health": 36.0,
@@ -7229,7 +7261,7 @@
       },
       "ranged": {
         "hits": 2,
-        "pierce": 1,
+        "pierce": 1.0,
         "type": "psychic"
       },
       "traits": [
@@ -7275,7 +7307,7 @@
     },
     "Screamer of Tzeentch": {
       "alliance": "",
-      "armour": 0.0,
+      "armour": 0,
       "damage": 18.0,
       "faction": "Thousand Sons",
       "health": 45.0,
