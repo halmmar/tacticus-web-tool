@@ -534,6 +534,22 @@
           ],
           "gamma": []
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Ranged",
+            "Max 3 Hits",
+            "Bolter"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Piercing",
+            "No Physical",
+            "Power"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -618,6 +634,19 @@
             "No Mechanical"
           ],
           "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
         },
         "SHADOWSUN": {
           "alpha": [
@@ -717,6 +746,22 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Flying",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Piercing",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -747,6 +792,103 @@
       "traits": [
         "flying",
         "deep strike"
+      ]
+    },
+    "Ahriman": {
+      "alliance": "Chaos",
+      "armour": 18.0,
+      "damage": 30.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "Thousand Sons",
+      "health": 80.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 1,
+        "pierce": 0.25,
+        "type": "flame"
+      },
+      "passive": [
+        9.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 1.0,
+        "type": "psychic"
+      },
+      "traits": [
+        "weaver of fates",
+        "flying",
+        "psyker"
       ]
     },
     "Aleph-null": {
@@ -802,6 +944,20 @@
           "gamma": [
             "!",
             "No Overwatch"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Flying"
+          ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
           ]
         },
         "SHADOWSUN": {
@@ -889,6 +1045,20 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Bolter",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -966,6 +1136,20 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Bolter",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "Power"
+          ]
         },
         "SHADOWSUN": {
           "alpha": [
@@ -1062,6 +1246,18 @@
             "Ranged"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [],
           "beta": [
@@ -1141,6 +1337,18 @@
             "No Mechanical"
           ],
           "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Physical"
+          ]
         },
         "SHADOWSUN": {
           "alpha": [
@@ -1231,6 +1439,22 @@
             "No Overwatch",
             "No Summons"
           ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Max 3 Hits",
+            "Bolter",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -1326,6 +1550,22 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "Power",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -1416,6 +1656,20 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits",
+            "Bolter"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -1502,6 +1756,18 @@
             "No Overwatch"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Flying"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -1581,6 +1847,19 @@
             "No Overwatch",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
           ]
         },
         "SHADOWSUN": {
@@ -1680,6 +1959,20 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Bolter"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -1767,6 +2060,20 @@
             "No Overwatch",
             "No Summons"
           ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Bolter",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -1864,6 +2171,19 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Piercing",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -1951,6 +2271,17 @@
             "No Overwatch"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [
+            "!"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -2026,6 +2357,21 @@
             "!",
             "No Overwatch"
           ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Bolter",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "Flying"
+          ],
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -2112,6 +2458,19 @@
             "Ranged",
             "No Summons"
           ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -2201,6 +2560,20 @@
             "Ranged"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Ranged",
+            "Max 3 Hits",
+            "Bolter"
+          ],
+          "beta": [
+            "!",
+            "Power"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -2221,7 +2594,8 @@
         "type": "power"
       },
       "passive": [
-        5.0
+        4.0,
+        2.0
       ],
       "ranged": {
         "hits": 2,
@@ -2280,6 +2654,21 @@
             "No Mechanical"
           ],
           "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
         },
         "SHADOWSUN": {
           "alpha": [
@@ -2376,6 +2765,18 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -2411,6 +2812,118 @@
         "close combat weakness",
         "infiltrate",
         "suppressive fire"
+      ]
+    },
+    "Deathleaper": {
+      "alliance": "Xenos",
+      "armour": 17.0,
+      "damage": 24.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Tyranids",
+      "health": 80.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Min 3 hits"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 3,
+        "pierce": 0.3,
+        "type": "bio"
+      },
+      "passive": [
+        10.0,
+        33.0
+      ],
+      "traits": [
+        "camouflage",
+        "deep strike",
+        "infiltrate",
+        "terrifying"
       ]
     },
     "Eldryon": {
@@ -2477,6 +2990,19 @@
             "No Overwatch",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Piercing",
+            "No Physical",
+            "No BLACK LEGION"
           ]
         },
         "SHADOWSUN": {
@@ -2565,6 +3091,19 @@
             "No Overwatch"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Physical"
+          ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -2647,6 +3186,19 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Piercing",
+            "Melee",
+            "No Physical"
+          ]
         },
         "SHADOWSUN": {
           "alpha": [
@@ -2734,6 +3286,21 @@
             "Ranged",
             "No Summons"
           ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits",
+            "Bolter"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -2823,6 +3390,19 @@
             "!",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
           ]
         },
         "SHADOWSUN": {
@@ -2918,6 +3498,18 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -2998,6 +3590,19 @@
             "No Overwatch",
             "No Summons"
           ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "No Summons"
+          ],
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -3091,6 +3696,21 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Piercing",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -3171,6 +3791,19 @@
             "No Overwatch",
             "No Summons"
           ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -3264,6 +3897,18 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [],
           "beta": [
@@ -3346,6 +3991,23 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Max 3 Hits",
+            "Bolter",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "Power",
+            "No BLACK LEGION"
+          ]
         },
         "SHADOWSUN": {
           "alpha": [
@@ -3440,6 +4102,20 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Bolter",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -3527,6 +4203,21 @@
             "!",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "Power",
+            "No BLACK LEGION"
           ]
         },
         "SHADOWSUN": {
@@ -3624,6 +4315,21 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits",
+            "Bolter"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -3712,6 +4418,22 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Bolter",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "Power",
+            "No BLACK LEGION"
+          ]
         },
         "SHADOWSUN": {
           "alpha": [
@@ -3815,6 +4537,19 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Physical",
+            "Flying",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!"
@@ -3852,6 +4587,104 @@
         "psyker",
         "shadow in the warp",
         "synapse"
+      ]
+    },
+    "Njal": {
+      "alliance": "Imperial",
+      "armour": 26.0,
+      "damage": 8.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
+      "faction": "Space Wolves",
+      "health": 80.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 3,
+        "pierce": 1.0,
+        "type": "psychic"
+      },
+      "passive": [
+        4.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0,
+        "type": "psychic"
+      },
+      "traits": [
+        "psyker",
+        "terminator armour",
+        "unstoppable"
       ]
     },
     "Pestillian": {
@@ -3905,6 +4738,21 @@
           ],
           "gamma": []
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -3935,6 +4783,101 @@
         "contagions of nurgle",
         "resilient",
         "putrid explosion"
+      ]
+    },
+    "Ragnar": {
+      "alliance": "Imperial",
+      "armour": 26.0,
+      "damage": 15.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "Space Wolves",
+      "health": 110.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Min 4 hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 7,
+        "pierce": 0.2,
+        "type": "chain"
+      },
+      "passive": [
+        8.0
+      ],
+      "traits": [
+        "beast snagga",
+        "final vengeance",
+        "raid assault"
       ]
     },
     "Re'Vas": {
@@ -3991,6 +4934,19 @@
             "!",
             "No Overwatch",
             "Ranged"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Flying"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
           ]
         },
         "SHADOWSUN": {
@@ -4092,6 +5048,18 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -4174,6 +5142,19 @@
             "Ranged",
             "No Summons"
           ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -4268,6 +5249,19 @@
             "No Overwatch",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Flying",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
           ]
         },
         "SHADOWSUN": {
@@ -4371,6 +5365,17 @@
             "Ranged"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -4462,6 +5467,18 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!"
@@ -4548,6 +5565,19 @@
             "No Overwatch",
             "Ranged",
             "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No BLACK LEGION"
           ]
         },
         "SHADOWSUN": {
@@ -4645,6 +5675,19 @@
             "No Overwatch"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Physical"
+          ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -4733,6 +5776,20 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Bolter",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -4818,6 +5875,20 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -4901,6 +5972,19 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -4979,6 +6063,19 @@
             "No Mechanical"
           ],
           "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
         },
         "SHADOWSUN": {
           "alpha": [
@@ -5075,6 +6172,18 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [],
           "beta": [
@@ -5162,6 +6271,19 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -5239,6 +6361,20 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Bolter"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Physical",
+            "Power",
+            "No BLACK LEGION"
+          ]
         },
         "SHADOWSUN": {
           "alpha": [
@@ -5332,6 +6468,22 @@
           ],
           "gamma": []
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Ranged",
+            "Max 3 Hits",
+            "Bolter"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Physical",
+            "Power",
+            "No BLACK LEGION"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -5370,6 +6522,116 @@
         "resilient",
         "psyker",
         "terminator armour"
+      ]
+    },
+    "Tyrant Guard": {
+      "alliance": "Xenos",
+      "armour": 22.0,
+      "damage": 16.0,
+      "equipment": {
+        "crit": 1,
+        "defense": 2
+      },
+      "faction": "Tyranids",
+      "health": 125.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Piercing",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Piercing",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Summons"
+          ],
+          "gamma": [
+            "!"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 2,
+        "pierce": 0.8,
+        "type": "piercing"
+      },
+      "passive": [
+        25.0,
+        20.0
+      ],
+      "traits": [
+        "big target",
+        "crushing strike"
       ]
     },
     "Ulf": {
@@ -5426,6 +6688,21 @@
             "No Overwatch",
             "No Summons"
           ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Bolter",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
@@ -5512,6 +6789,19 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!"
@@ -5595,6 +6885,19 @@
             "No Summons"
           ]
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -5676,6 +6979,19 @@
           ],
           "gamma": []
         },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Bolter"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Physical",
+            "Power"
+          ]
+        },
         "SHADOWSUN": {
           "alpha": [
             "!",
@@ -5718,6 +7034,118 @@
         "suppressive fire",
         "daemon",
         "big target"
+      ]
+    },
+    "Winged Prime": {
+      "alliance": "Xenos",
+      "armour": 19.0,
+      "damage": 11.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Tyranids",
+      "health": 100.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "No Summons"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Flying"
+          ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Min 4 hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Min 3 hits"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 6,
+        "pierce": 0.3,
+        "type": "bio"
+      },
+      "passive": [
+        30.0,
+        22.0,
+        6.0
+      ],
+      "traits": [
+        "synapse",
+        "flying",
+        "final vengeance"
       ]
     },
     "Yazaghor": {
@@ -5766,6 +7194,18 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No BLACK LEGION"
+          ]
         },
         "SHADOWSUN": {
           "alpha": [
@@ -6194,7 +7634,11 @@
           ]
         },
         "factions": [
-          "Tyranids"
+          "Tyranids",
+          "Astra militarum",
+          "Aeldari",
+          "T'au Empire",
+          "Thousand Sons"
         ],
         "legendary": {
           "crit-dmg": [
@@ -6372,7 +7816,8 @@
           "Necrons",
           "Orks",
           "Aeldari",
-          "T'au Empire"
+          "T'au Empire",
+          "Tyranids"
         ],
         "legendary": {
           "crit-dmg": [
@@ -6573,7 +8018,12 @@
           "Ultramarines",
           "Adepta Sororitas",
           "Astra militarum",
-          "Aeldari"
+          "Aeldari",
+          "Tyranids",
+          "Black Legion",
+          "Death Guard",
+          "Orks",
+          "Thousand Sons"
         ],
         "legendary": {
           "armour": [
@@ -6716,39 +8166,39 @@
       17
     ]
   ],
-  "latest-legendary-event": "SHADOWSUN",
+  "latest-legendary-event": "RAGNAR",
   "legendary-events": {
     "AUN'SHI": {
       "alpha": {
         "!": [
           29,
-          55
+          61
         ],
         "Max 2 hits": [
           70,
-          28
+          31
         ],
         "Melee": [
           80,
-          23
+          27
         ],
         "Min 3 hits": [
           70,
-          27
+          30
         ],
         "No Physical": [
           40,
-          44
+          50
         ],
         "Piercing": [
           115,
-          9
+          10
         ]
       },
       "beta": {
         "!": [
           53,
-          35
+          39
         ],
         "Mechanical": [
           105,
@@ -6756,15 +8206,15 @@
         ],
         "Melee": [
           85,
-          13
+          16
         ],
         "No Resilient": [
           40,
-          29
+          33
         ],
         "No Summons": [
           45,
-          25
+          29
         ],
         "Physical": [
           100,
@@ -6774,7 +8224,7 @@
       "gamma": {
         "!": [
           40,
-          46
+          51
         ],
         "Max 1 hit": [
           125,
@@ -6782,15 +8232,15 @@
         ],
         "No Flying": [
           40,
-          39
+          43
         ],
         "No Overwatch": [
           40,
-          40
+          45
         ],
         "No Power": [
           50,
-          32
+          37
         ],
         "Physical": [
           120,
@@ -6802,11 +8252,11 @@
       "alpha": {
         "!": [
           42,
-          21
+          24
         ],
         "Max 3 hits": [
           45,
-          15
+          17
         ],
         "Necrons": [
           110,
@@ -6814,7 +8264,7 @@
         ],
         "No Summons": [
           60,
-          15
+          18
         ],
         "Physical": [
           100,
@@ -6828,7 +8278,7 @@
       "beta": {
         "!": [
           40,
-          25
+          27
         ],
         "Bolter": [
           96,
@@ -6836,15 +8286,15 @@
         ],
         "Max 2 hits": [
           70,
-          13
+          14
         ],
         "No Blast": [
           50,
-          21
+          23
         ],
         "No Summons": [
           60,
-          21
+          23
         ],
         "Power": [
           95,
@@ -6854,7 +8304,7 @@
       "gamma": {
         "!": [
           29,
-          55
+          61
         ],
         "Bolter": [
           95,
@@ -6862,19 +8312,19 @@
         ],
         "Min 4 hits": [
           90,
-          15
+          17
         ],
         "No Flying": [
           45,
-          45
+          49
         ],
         "No Mechanical": [
           45,
-          48
+          54
         ],
         "Piercing": [
           100,
-          9
+          10
         ]
       }
     },
@@ -6882,15 +8332,15 @@
       "alpha": {
         "!": [
           45,
-          55
+          61
         ],
         "Max 2 hits": [
           65,
-          26
+          29
         ],
         "Melee": [
           50,
-          25
+          29
         ],
         "Power": [
           70,
@@ -6898,7 +8348,7 @@
         ],
         "Psychic": [
           95,
-          8
+          10
         ],
         "Resilient": [
           95,
@@ -6908,33 +8358,33 @@
       "beta": {
         "!": [
           45,
-          35
+          39
         ],
         "Min 4 hits": [
           115,
-          11
+          12
         ],
         "No Let the Galaxy Burn": [
           65,
-          30
+          34
         ],
         "No Mechanical": [
           75,
-          27
+          31
         ],
         "No Power": [
           70,
-          26
+          30
         ],
         "No Summons": [
           50,
-          25
+          29
         ]
       },
       "gamma": {
         "!": [
           45,
-          46
+          51
         ],
         "Bolter": [
           100,
@@ -6946,15 +8396,95 @@
         ],
         "No Overwatch": [
           45,
-          40
+          45
         ],
         "No Summons": [
           40,
-          36
+          41
         ],
         "Ranged": [
           70,
-          26
+          27
+        ]
+      }
+    },
+    "RAGNAR": {
+      "alpha": {
+        "!": [
+          24,
+          42
+        ],
+        "Bolter": [
+          95,
+          19
+        ],
+        "Max 3 Hits": [
+          40,
+          31
+        ],
+        "Melee": [
+          70,
+          20
+        ],
+        "Ranged": [
+          65,
+          22
+        ],
+        "Resilient": [
+          105,
+          8
+        ]
+      },
+      "beta": {
+        "!": [
+          30,
+          51
+        ],
+        "Flying": [
+          100,
+          8
+        ],
+        "Min 3 hits": [
+          60,
+          28
+        ],
+        "No Summons": [
+          35,
+          40
+        ],
+        "Physical": [
+          90,
+          14
+        ],
+        "Power": [
+          90,
+          14
+        ]
+      },
+      "gamma": {
+        "!": [
+          34,
+          39
+        ],
+        "Melee": [
+          85,
+          16
+        ],
+        "No BLACK LEGION": [
+          35,
+          34
+        ],
+        "No Physical": [
+          45,
+          30
+        ],
+        "Piercing": [
+          105,
+          7
+        ],
+        "Power": [
+          105,
+          9
         ]
       }
     },
@@ -6962,23 +8492,23 @@
       "alpha": {
         "!": [
           35,
-          55
+          61
         ],
         "Big Target": [
           115,
-          6
+          7
         ],
         "Melee": [
           60,
-          25
+          29
         ],
         "Min 4 hits": [
           80,
-          14
+          16
         ],
         "No Psyker": [
           40,
-          47
+          51
         ],
         "Power": [
           80,
@@ -6988,7 +8518,7 @@
       "beta": {
         "!": [
           19,
-          60
+          66
         ],
         "ASTRA MILITARUM": [
           120,
@@ -7000,21 +8530,21 @@
         ],
         "No Bolter": [
           50,
-          49
+          55
         ],
         "No Piercing": [
           50,
-          51
+          56
         ],
         "No Summons": [
           65,
-          46
+          52
         ]
       },
       "gamma": {
         "!": [
           18,
-          35
+          39
         ],
         "BLACK LEGION": [
           120,
@@ -7022,11 +8552,11 @@
         ],
         "Min 3 hits": [
           50,
-          20
+          22
         ],
         "No Piercing": [
           40,
-          28
+          31
         ],
         "Power": [
           100,
@@ -7034,7 +8564,7 @@
         ],
         "Ranged": [
           65,
-          22
+          23
         ]
       }
     }
@@ -7341,5 +8871,5 @@
       ]
     }
   },
-  "version": "Beta 0.4.3.2"
+  "version": "Beta 0.4.6"
 }

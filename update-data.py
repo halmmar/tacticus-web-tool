@@ -10,7 +10,7 @@ import copy
 from collections import OrderedDict
 from io import StringIO
 
-file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.4.3.2.xlsx'
+file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.4.6.xlsx'
 
 def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     """ Get a single rectangular region from the specified file.
@@ -73,9 +73,9 @@ tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$X$2:$Y$22', True)
 tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
 
 # Updated for new factions; also update the faction map below
-tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AT$130', 2)
+tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AT$150', 2)
 # Updated for new characters
-tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$81', True) # Passives
+tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$88', True) # Passives
 
 tb_Abilities = data_frame_from_xlsx(file, 'UL_Tables!$AG$3:$AI$52', True) # Not updated for new characters
 tb_Abilities_1_50 = [level for (level,factor,archi) in tb_Abilities.itertuples(index=False)]
@@ -93,7 +93,7 @@ for index, row in tb_SummonsList.iterrows():
             row[0] = "Command-Link Drone"
         summonsNames.add(row[0])
 # Legendary Events
-tb_LegendaryEvent = data_frame_from_xlsx(file, 'YourUnits!$A$1:$CX$99')
+tb_LegendaryEvent = data_frame_from_xlsx(file, 'YourUnits!$A$1:$DX$99')
 # 76=Excel column BY, which conflicts with the query language used by Towen. The column is empty and skipped...
 tb_LegendaryEvent.drop(columns=[76], axis=1, inplace=True)
 tb_LegendaryEvent.to_excel("tmp.xlsx", header=False, index=False)
@@ -309,8 +309,11 @@ factionMap = {
 }
 allianceMap = {
     "XENOS": "Xenos",
+    "Xenos": "Xenos",
     "CHAOS": "Chaos",
+    "Chaos": "Chaos",
     "IMPERIAL": "Imperial",
+    "Imperial": "Imperial",
     None: "",
     0: ""
 }
