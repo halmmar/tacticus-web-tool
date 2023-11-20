@@ -486,6 +486,13 @@
   },
   "characters": {
     "Abaddon the despolier": {
+      "active": [
+        8.0,
+        11.0,
+        20.0,
+        24.0,
+        30.0
+      ],
       "alliance": "Chaos",
       "armour": 16.0,
       "damage": 15.0,
@@ -589,6 +596,12 @@
       ]
     },
     "Abraxas": {
+      "active": [
+        36.0,
+        9.0,
+        45.0,
+        18.0
+      ],
       "alliance": "Chaos",
       "armour": 20.0,
       "damage": 18.0,
@@ -684,6 +697,9 @@
       ]
     },
     "Aethana": {
+      "active": [
+        36.0
+      ],
       "alliance": "Xenos",
       "armour": 17.0,
       "damage": 14.0,
@@ -795,6 +811,10 @@
       ]
     },
     "Ahriman": {
+      "active": [
+        12.0,
+        16.0
+      ],
       "alliance": "Chaos",
       "armour": 18.0,
       "damage": 30.0,
@@ -878,7 +898,7 @@
         "type": "flame"
       },
       "passive": [
-        9.0
+        55.0
       ],
       "ranged": {
         "hits": 1,
@@ -892,6 +912,10 @@
       ]
     },
     "Aleph-null": {
+      "active": [
+        20.0,
+        10.0
+      ],
       "alliance": "Xenos",
       "armour": 22.0,
       "damage": 12.0,
@@ -991,6 +1015,9 @@
       ]
     },
     "Ancient Thoread": {
+      "active": [
+        20.0
+      ],
       "alliance": "Imperial",
       "armour": 22.0,
       "damage": 32.0,
@@ -1086,6 +1113,10 @@
       ]
     },
     "Angrax": {
+      "active": [
+        15.0,
+        21.0
+      ],
       "alliance": "Chaos",
       "armour": 30.0,
       "damage": 12.0,
@@ -1189,6 +1220,11 @@
       ]
     },
     "Anuphet": {
+      "active": [
+        60.0,
+        20.0,
+        15.0
+      ],
       "alliance": "Xenos",
       "armour": 29.0,
       "damage": 17.0,
@@ -1291,6 +1327,11 @@
       ]
     },
     "Archimatos": {
+      "active": [
+        39.0,
+        25.0,
+        3.0
+      ],
       "alliance": "Chaos",
       "armour": 14.0,
       "damage": 15.0,
@@ -1385,6 +1426,11 @@
       ]
     },
     "Arjac": {
+      "active": [
+        5.0,
+        10.0,
+        30.0
+      ],
       "alliance": "Imperial",
       "armour": 26.0,
       "damage": 23.0,
@@ -1485,6 +1531,10 @@
       ]
     },
     "Aun'shi": {
+      "active": [
+        15.0,
+        60.0
+      ],
       "alliance": "Xenos",
       "armour": 14.5,
       "damage": 11.8,
@@ -1597,6 +1647,12 @@
       "traits": []
     },
     "Azrael": {
+      "active": [
+        45.0,
+        55.0,
+        9.0,
+        11.0
+      ],
       "alliance": "Imperial",
       "armour": 24.0,
       "damage": 22.0,
@@ -1702,6 +1758,11 @@
       ]
     },
     "Bellator": {
+      "active": [
+        55.0,
+        10.0,
+        12.0
+      ],
       "alliance": "Imperial",
       "armour": 13.0,
       "damage": 10.0,
@@ -1794,6 +1855,9 @@
       ]
     },
     "Boss Gulgortz": {
+      "active": [
+        8.0
+      ],
       "alliance": "Xenos",
       "armour": 15.0,
       "damage": 12.0,
@@ -1903,6 +1967,10 @@
       ]
     },
     "Brother Burchard": {
+      "active": [
+        24.0,
+        30.0
+      ],
       "alliance": "Imperial",
       "armour": 24.0,
       "damage": 9.03,
@@ -2005,6 +2073,10 @@
       ]
     },
     "Brother Jaeger": {
+      "active": [
+        8.0,
+        5.0
+      ],
       "alliance": "Imperial",
       "armour": 25.0,
       "damage": 25.0,
@@ -2103,6 +2175,9 @@
       ]
     },
     "Calandis": {
+      "active": [
+        30.0
+      ],
       "alliance": "Xenos",
       "armour": 18.04,
       "damage": 45.0,
@@ -2217,6 +2292,11 @@
       ]
     },
     "Castellan creed": {
+      "active": [
+        40.0,
+        24.0,
+        8.0
+      ],
       "alliance": "Imperial",
       "armour": 21.0,
       "damage": 38.0,
@@ -2307,6 +2387,9 @@
       "traits": []
     },
     "Celestine": {
+      "active": [
+        5.0
+      ],
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 25.0,
@@ -2400,6 +2483,10 @@
       ]
     },
     "Certus": {
+      "active": [
+        45.0,
+        50.0
+      ],
       "alliance": "Imperial",
       "armour": 18.0,
       "damage": 55.0,
@@ -2502,6 +2589,11 @@
       ]
     },
     "Commissar Yarrick": {
+      "active": [
+        40.0,
+        24.0,
+        8.0
+      ],
       "alliance": "Imperial",
       "armour": 17.0,
       "damage": 30.0,
@@ -2604,6 +2696,12 @@
       ]
     },
     "Corrodius": {
+      "active": [
+        30.0,
+        35.0,
+        15.0,
+        25.0
+      ],
       "alliance": "Chaos",
       "armour": 30.0,
       "damage": 11.0,
@@ -2698,6 +2796,9 @@
       ]
     },
     "Darkstrider": {
+      "active": [
+        -8.0
+      ],
       "alliance": "Xenos",
       "armour": 15.45,
       "damage": 31.8,
@@ -2812,6 +2913,10 @@
       ]
     },
     "Deathleaper": {
+      "active": [
+        12.0,
+        15.0
+      ],
       "alliance": "Xenos",
       "armour": 17.0,
       "damage": 24.0,
@@ -2924,6 +3029,10 @@
       ]
     },
     "Eldryon": {
+      "active": [
+        8.0,
+        30.0
+      ],
       "alliance": "Xenos",
       "armour": 16.0,
       "damage": 16.0,
@@ -3036,6 +3145,12 @@
       ]
     },
     "Gibbascrapz": {
+      "active": [
+        70.0,
+        25.0,
+        20.0,
+        10.0
+      ],
       "alliance": "Xenos",
       "armour": 30.0,
       "damage": 25.0,
@@ -3133,6 +3248,11 @@
       ]
     },
     "Haarken Worldclaimer": {
+      "active": [
+        15.0,
+        18.0,
+        10.0
+      ],
       "alliance": "Chaos",
       "armour": 20.0,
       "damage": 11.0,
@@ -3230,6 +3350,11 @@
       ]
     },
     "High Marshal Helbrecht": {
+      "active": [
+        5.0,
+        7.0,
+        16.0
+      ],
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 15.0,
@@ -3331,6 +3456,10 @@
       ]
     },
     "Imospekh": {
+      "active": [
+        17.0,
+        20.0
+      ],
       "alliance": "Xenos",
       "armour": 15.0,
       "damage": 8.0,
@@ -3438,6 +3567,10 @@
       ]
     },
     "Incisus": {
+      "active": [
+        39.0,
+        65.0
+      ],
       "alliance": "Imperial",
       "armour": 17.0,
       "damage": 35.0,
@@ -3534,6 +3667,10 @@
       ]
     },
     "Isabella": {
+      "active": [
+        30.0,
+        25.0
+      ],
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 18.0,
@@ -3630,6 +3767,10 @@
       ]
     },
     "Jain Zar": {
+      "active": [
+        12.0,
+        15.0
+      ],
       "alliance": "Xenos",
       "armour": 18.0,
       "damage": 19.0,
@@ -3740,6 +3881,10 @@
       ]
     },
     "Kut skoden": {
+      "active": [
+        10.0,
+        15.0
+      ],
       "alliance": "Imperial",
       "armour": 35.0,
       "damage": 30.0,
@@ -3834,6 +3979,10 @@
       ]
     },
     "Makhotep": {
+      "active": [
+        12.0,
+        16.0
+      ],
       "alliance": "Xenos",
       "armour": 20.0,
       "damage": 19.0,
@@ -3941,6 +4090,10 @@
       ]
     },
     "Maladus": {
+      "active": [
+        45.0,
+        51.0
+      ],
       "alliance": "Chaos",
       "armour": 27.0,
       "damage": 26.0,
@@ -4042,6 +4195,10 @@
       ]
     },
     "Marneus Calgar": {
+      "active": [
+        35.0,
+        45.0
+      ],
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 20.0,
@@ -4143,6 +4300,12 @@
       ]
     },
     "Maugan Ra": {
+      "active": [
+        16.0,
+        20.0,
+        10.0,
+        13.0
+      ],
       "alliance": "Xenos",
       "armour": 12.0,
       "damage": 9.0,
@@ -4260,6 +4423,10 @@
       ]
     },
     "Morvenn Vahl": {
+      "active": [
+        30.0,
+        42.0
+      ],
       "alliance": "Imperial",
       "armour": 19.0,
       "damage": 12.0,
@@ -4365,12 +4532,15 @@
       ]
     },
     "Nauseous rotbone": {
+      "active": [
+        35.0
+      ],
       "alliance": "Chaos",
       "armour": 27.0,
       "damage": 14.0,
       "equipment": {
-        "block_booster": 1,
         "crit": 1,
+        "crit_booster": 1,
         "defense": 1
       },
       "faction": "Death Guard",
@@ -4468,6 +4638,11 @@
       ]
     },
     "Neurothrope": {
+      "active": [
+        20.0,
+        30.0,
+        20.0
+      ],
       "alliance": "Xenos",
       "armour": 17.0,
       "damage": 25.0,
@@ -4586,6 +4761,10 @@
       ]
     },
     "Njal": {
+      "active": [
+        5.0,
+        7.0
+      ],
       "alliance": "Imperial",
       "armour": 26.0,
       "damage": 8.0,
@@ -4684,6 +4863,9 @@
       ]
     },
     "Pestillian": {
+      "active": [
+        20.0
+      ],
       "alliance": "Chaos",
       "armour": 33.0,
       "damage": 35.0,
@@ -4782,6 +4964,11 @@
       ]
     },
     "Ragnar": {
+      "active": [
+        16.0,
+        26.0,
+        20.0
+      ],
       "alliance": "Imperial",
       "armour": 26.0,
       "damage": 15.0,
@@ -4877,6 +5064,12 @@
       ]
     },
     "Re'Vas": {
+      "active": [
+        40.0,
+        14.0,
+        15.0,
+        26.0
+      ],
       "alliance": "Xenos",
       "armour": 25.0,
       "damage": 10.0,
@@ -4989,6 +5182,11 @@
       ]
     },
     "Roswitha": {
+      "active": [
+        32.0,
+        38.0,
+        35.0
+      ],
       "alliance": "Imperial",
       "armour": 17.0,
       "damage": 30.0,
@@ -5088,6 +5286,13 @@
       ]
     },
     "Sarquael": {
+      "active": [
+        45.0,
+        55.0,
+        30.0,
+        36.0,
+        10.0
+      ],
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 50.0,
@@ -5188,6 +5393,9 @@
       ]
     },
     "ShadowSun": {
+      "active": [
+        30.0
+      ],
       "alliance": "Xenos",
       "armour": 18.0,
       "damage": 27.0,
@@ -5300,6 +5508,10 @@
       ]
     },
     "Sho'Syl": {
+      "active": [
+        75.0,
+        85.0
+      ],
       "alliance": "Xenos",
       "armour": 16.0,
       "damage": 53.0,
@@ -5410,6 +5622,10 @@
       ]
     },
     "Sibyll": {
+      "active": [
+        34.0,
+        36.0
+      ],
       "alliance": "Imperial",
       "armour": 20.0,
       "damage": 30.0,
@@ -5509,6 +5725,10 @@
       ]
     },
     "Snappawrecka": {
+      "active": [
+        26.0,
+        32.0
+      ],
       "alliance": "Xenos",
       "armour": 15.0,
       "damage": 20.0,
@@ -5621,6 +5841,10 @@
       ]
     },
     "Snotflogga": {
+      "active": [
+        65.5,
+        33.0
+      ],
       "alliance": "Xenos",
       "armour": 25.0,
       "damage": 25.0,
@@ -5718,6 +5942,10 @@
       ]
     },
     "Sword Brother Godswyl": {
+      "active": [
+        40.0,
+        45.0
+      ],
       "alliance": "Imperial",
       "armour": 22.0,
       "damage": 55.0,
@@ -5816,6 +6044,10 @@
       ]
     },
     "Tanksmasha": {
+      "active": [
+        11.0,
+        13.0
+      ],
       "alliance": "Xenos",
       "armour": 15.0,
       "damage": 30.0,
@@ -5920,6 +6152,10 @@
       ]
     },
     "Thaddeus noble": {
+      "active": [
+        30.0,
+        32.0
+      ],
       "alliance": "Imperial",
       "armour": 18.0,
       "damage": 38.0,
@@ -6016,6 +6252,10 @@
       ]
     },
     "Thaumachus": {
+      "active": [
+        80.0,
+        55.0
+      ],
       "alliance": "Chaos",
       "armour": 18.0,
       "damage": 27.0,
@@ -6110,6 +6350,10 @@
       ]
     },
     "Thutmose": {
+      "active": [
+        24.0,
+        28.0
+      ],
       "alliance": "Xenos",
       "armour": 16.0,
       "damage": 30.0,
@@ -6216,6 +6460,10 @@
       ]
     },
     "Tjark": {
+      "active": [
+        27.0,
+        38.0
+      ],
       "alliance": "Imperial",
       "armour": 23.0,
       "damage": 32.0,
@@ -6311,6 +6559,10 @@
       ]
     },
     "Toth": {
+      "active": [
+        30.0,
+        40.0
+      ],
       "alliance": "Chaos",
       "armour": 27.0,
       "damage": 10.0,
@@ -6416,6 +6668,10 @@
       ]
     },
     "Typhus": {
+      "active": [
+        36.0,
+        45.0
+      ],
       "alliance": "Chaos",
       "armour": 25.08,
       "damage": 18.0,
@@ -6520,6 +6776,10 @@
       ]
     },
     "Tyrant Guard": {
+      "active": [
+        15.0,
+        20.0
+      ],
       "alliance": "Xenos",
       "armour": 22.0,
       "damage": 16.0,
@@ -6630,6 +6890,10 @@
       ]
     },
     "Ulf": {
+      "active": [
+        20.0,
+        25.0
+      ],
       "alliance": "Imperial",
       "armour": 19.9,
       "damage": 33.1,
@@ -6728,6 +6992,11 @@
       ]
     },
     "Varro Tigurius": {
+      "active": [
+        25.0,
+        30.0,
+        3.0
+      ],
       "alliance": "Imperial",
       "armour": 14.0,
       "damage": 30.0,
@@ -6828,6 +7097,10 @@
       ]
     },
     "Vindicta": {
+      "active": [
+        20.0,
+        25.0
+      ],
       "alliance": "Imperial",
       "armour": 12.0,
       "damage": 20.0,
@@ -6926,6 +7199,10 @@
       ]
     },
     "Volk": {
+      "active": [
+        23.0,
+        30.0
+      ],
       "alliance": "Chaos",
       "armour": 10.0,
       "damage": 9.0,
@@ -7030,6 +7307,11 @@
       ]
     },
     "Winged Prime": {
+      "active": [
+        80.0,
+        30.0,
+        16.0
+      ],
       "alliance": "Xenos",
       "armour": 19.0,
       "damage": 11.0,
@@ -7142,6 +7424,10 @@
       ]
     },
     "Yazaghor": {
+      "active": [
+        10.0,
+        20.0
+      ],
       "alliance": "Chaos",
       "armour": 14.0,
       "damage": 49.0,

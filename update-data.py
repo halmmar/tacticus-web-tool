@@ -404,11 +404,15 @@ def toJSON(rows):
         passiveData = []
         if row.Name in characterAbilities:
             passiveData = [x for x in characterAbilities[row.Name][17:20] if not (x is None or np.isnan(x))]
+        activeData = []
+        if row.Name in characterAbilities:
+            activeData = [x for x in characterAbilities[row.Name][12:17] if not (x is None or np.isnan(x))]
         data = {"faction": factionMap[row.Faction], "alliance": allianceMap[row.Alliance], "health": row.Health, "damage": row.Damage, "traits": traits, "armour": row.Armour, "melee": {"pierce": pierce[row["Melee Damage"].lower()], "hits": int(row["Melee Hits"]), "type": row["Melee Damage"].lower()}}
         if row["Ranged Hits"] > 0:
             data["ranged"] = {"pierce": pierce[row["Ranged Damage"].lower()], "hits": int(row["Ranged Hits"]), "type": row["Ranged Damage"].lower()}
         if row["Initial rarity"] in ["Common", "Uncommon", "Rare", "Epic", "Legendary"]:
             data["passive"] = passiveData
+            data["active"] = activeData
             data["equipment"] = eqCount
             data["legendary-event"] = legendaryEventCharacters[row.Name]
             characters[row.Name] = data
