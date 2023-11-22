@@ -881,7 +881,6 @@ var updateTable = function() {
         case 'Bellator':
         case 'Blue Horror':
         case 'Boss Gulgortz':
-        case 'Brother Burchard':
         case 'Brother Jaeger':
         case 'Cadian Guardsman':
         case 'Command-Link Drone':
@@ -1345,6 +1344,8 @@ function sortTable(n) {
     <input onChange="updateAethana()" type="number" id="aethana-buff-level" min="0" max="50" value="50">
     +<span id="aethana-buff-all"></span> damage [All] +<span id="aethana-buff-aeldari"></span> damage [Aeldari], +<span id="aethana-buff-crit"></span>% crit
     <br>
+    TODO: Ancient Thoread missing
+    <br>
     <label>Aun'Shi</label>
     <input onChange="updateAunShi()" type="checkbox" id="aunshi-buff-enabled"></input>
     <select onchange="updateAunShi()" id="aunshi-buff-rarity">
@@ -1379,6 +1380,8 @@ function sortTable(n) {
     </select>
     <input onChange="updateHelbrecht()" type="number" id="helbrecht-buff-level" min="0" max="50" value="50">
     +<span id="helbrecht-buff-dmg"></span> damage [vs. Psyker]
+    <br>
+    TODO: Helbrecht active missing
     <br>
     TODO: Pestillian missing
     <br>

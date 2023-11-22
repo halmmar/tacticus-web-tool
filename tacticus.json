@@ -1016,11 +1016,12 @@
     },
     "Ancient Thoread": {
       "active": [
+        100.0,
         20.0
       ],
       "alliance": "Imperial",
       "armour": 22.0,
-      "damage": 32.0,
+      "damage": 33.0,
       "equipment": {
         "crit": 1,
         "crit_booster": 1,
@@ -1106,7 +1107,9 @@
         "pierce": 0.4,
         "type": "power"
       },
-      "passive": [],
+      "passive": [
+        75.0
+      ],
       "traits": [
         "final vengeance",
         "parry"
@@ -1972,8 +1975,8 @@
         30.0
       ],
       "alliance": "Imperial",
-      "armour": 24.0,
-      "damage": 9.03,
+      "armour": 22.0,
+      "damage": 18.0,
       "equipment": {
         "crit": 1,
         "crit_booster": 1,
@@ -2007,8 +2010,7 @@
             "!",
             "No Mechanical",
             "Bolter",
-            "No Flying",
-            "Min 4 hits"
+            "No Flying"
           ]
         },
         "MAUGAN RA": {
@@ -2029,6 +2031,7 @@
           "alpha": [
             "!",
             "Ranged",
+            "Max 3 Hits",
             "Bolter"
           ],
           "beta": [
@@ -2043,7 +2046,6 @@
           "alpha": [
             "!",
             "No Psyker",
-            "Min 4 hits",
             "Power"
           ],
           "beta": [
@@ -2055,21 +2057,23 @@
         }
       },
       "melee": {
-        "hits": 4,
+        "hits": 3,
         "pierce": 0.4,
         "type": "power"
       },
       "passive": [
-        21.0
+        15.0,
+        22.0
       ],
       "ranged": {
-        "hits": 6,
+        "hits": 3,
         "pierce": 0.2,
         "type": "bolter"
       },
       "traits": [
         "mk x gravis",
-        "suppressive fire"
+        "suppressive fire",
+        "crushing strike"
       ]
     },
     "Brother Jaeger": {
@@ -2092,7 +2096,7 @@
           "alpha": [
             "!",
             "Melee",
-            "Max 2 hits",
+            "Min 3 hits",
             "No Physical"
           ],
           "beta": [],
@@ -2108,7 +2112,6 @@
             "!",
             "Power",
             "No Blast",
-            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
@@ -2121,7 +2124,6 @@
           "alpha": [
             "!",
             "Melee",
-            "Max 2 hits",
             "Power"
           ],
           "beta": [],
@@ -2139,6 +2141,7 @@
           ],
           "beta": [
             "!",
+            "Min 3 hits",
             "Power",
             "No Summons"
           ],
@@ -2161,17 +2164,18 @@
         }
       },
       "melee": {
-        "hits": 2,
+        "hits": 3,
         "pierce": 0.4,
         "type": "power"
       },
       "passive": [
-        8.0,
-        14.0
+        20.0,
+        22.0
       ],
       "traits": [
         "final vengeance",
-        "parry"
+        "parry",
+        "raid assault"
       ]
     },
     "Calandis": {
@@ -3342,7 +3346,7 @@
         "type": "piercing"
       },
       "passive": [
-        2.975
+        4.2
       ],
       "traits": [
         "let the galaxy burn",
@@ -3352,11 +3356,10 @@
     "High Marshal Helbrecht": {
       "active": [
         5.0,
-        7.0,
-        16.0
+        7.0
       ],
       "alliance": "Imperial",
-      "armour": 20.0,
+      "armour": 22.0,
       "damage": 15.0,
       "equipment": {
         "block": 1,
@@ -3364,7 +3367,7 @@
         "crit": 1
       },
       "faction": "Black templars",
-      "health": 80.0,
+      "health": 95.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -5943,12 +5946,12 @@
     },
     "Sword Brother Godswyl": {
       "active": [
-        40.0,
-        45.0
+        60.0,
+        65.0
       ],
       "alliance": "Imperial",
-      "armour": 22.0,
-      "damage": 55.0,
+      "armour": 24.0,
+      "damage": 60.0,
       "equipment": {
         "crit": 1,
         "crit_booster": 1,
@@ -6037,10 +6040,13 @@
         "type": "power"
       },
       "passive": [
+        25.0,
+        35.0,
         10.0
       ],
       "traits": [
-        "parry"
+        "parry",
+        "raid assault"
       ]
     },
     "Tanksmasha": {
@@ -6848,13 +6854,13 @@
           "alpha": [],
           "beta": [
             "!",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
             "Piercing",
             "Melee",
-            "No Physical",
             "No BLACK LEGION"
           ]
         },
@@ -8455,7 +8461,7 @@
         ],
         "Max 2 hits": [
           70,
-          31
+          30
         ],
         "Melee": [
           80,
@@ -8463,7 +8469,7 @@
         ],
         "Min 3 hits": [
           70,
-          30
+          31
         ],
         "No Physical": [
           40,
@@ -8565,7 +8571,7 @@
         ],
         "Max 2 hits": [
           70,
-          14
+          13
         ],
         "No Blast": [
           50,
@@ -8591,7 +8597,7 @@
         ],
         "Min 4 hits": [
           90,
-          17
+          16
         ],
         "No Flying": [
           45,
@@ -8615,7 +8621,7 @@
         ],
         "Max 2 hits": [
           65,
-          29
+          28
         ],
         "Melee": [
           50,
@@ -8699,7 +8705,7 @@
         ],
         "Max 3 Hits": [
           40,
-          31
+          32
         ],
         "Melee": [
           70,
@@ -8725,7 +8731,7 @@
         ],
         "Min 3 hits": [
           60,
-          28
+          29
         ],
         "No Summons": [
           35,
@@ -8733,7 +8739,7 @@
         ],
         "Physical": [
           90,
-          14
+          15
         ],
         "Power": [
           90,
@@ -8755,7 +8761,7 @@
         ],
         "No Physical": [
           45,
-          30
+          29
         ],
         "Piercing": [
           105,
@@ -8783,7 +8789,7 @@
         ],
         "Min 4 hits": [
           80,
-          16
+          15
         ],
         "No Psyker": [
           40,
@@ -9150,5 +9156,5 @@
       ]
     }
   },
-  "version": "Beta 0.4.6"
+  "version": "Beta 0.4.6.2"
 }
