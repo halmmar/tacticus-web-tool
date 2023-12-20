@@ -574,6 +574,22 @@
             "Power",
             "BLACK LEGION"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "Power",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -675,6 +691,21 @@
             "No Piercing",
             "Ranged"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -694,6 +725,121 @@
       "traits": [
         "psyker",
         "weaver of fates"
+      ]
+    },
+    "Actus": {
+      "active": [
+        60.0
+      ],
+      "alliance": "Imperial",
+      "armour": 19.0,
+      "damage": 25.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
+      "faction": "Adeptus Mechanicus",
+      "health": 95.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Max 2 hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "Flying",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 2,
+        "pierce": 0.3,
+        "type": "energy"
+      },
+      "passive": [
+        60.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.3,
+        "type": "energy"
+      },
+      "traits": [
+        "mechanic",
+        "mechanical",
+        "flying"
       ]
     },
     "Aethana": {
@@ -793,6 +939,25 @@
             "!",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Piercing",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -889,6 +1054,20 @@
             "!",
             "No Piercing",
             "Ranged"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "Max 2 Hits"
           ]
         }
       },
@@ -997,6 +1176,19 @@
             "No Piercing",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate"
+          ],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -1097,6 +1289,21 @@
             "!",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -1204,6 +1411,22 @@
             "Power",
             "BLACK LEGION"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "Power",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -1309,6 +1532,20 @@
             "Ranged",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -1406,6 +1643,21 @@
             "No Piercing",
             "Ranged",
             "BLACK LEGION"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "Max 2 Hits"
           ]
         }
       },
@@ -1513,6 +1765,20 @@
             "!",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -1636,6 +1902,27 @@
             "Min 3 hits",
             "Power"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "Power",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -1735,6 +2022,23 @@
           "beta": [
             "!",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Max 1 Hit",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Bolter",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -1842,6 +2146,20 @@
             "No Piercing"
           ],
           "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Bolter",
+            "No Infiltrate"
+          ],
+          "gamma": []
         }
       },
       "melee": {
@@ -1945,6 +2263,26 @@
             "No Piercing",
             "Ranged",
             "Min 3 hits"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
           ]
         }
       },
@@ -2054,6 +2392,23 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Bolter",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
         }
       },
       "melee": {
@@ -2158,6 +2513,21 @@
             "!",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -2274,6 +2644,28 @@
             "!",
             "Ranged"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Piercing",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -2376,6 +2768,19 @@
             "No Piercing"
           ],
           "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate"
+          ],
+          "gamma": []
         }
       },
       "melee": {
@@ -2467,6 +2872,20 @@
             "!",
             "No Bolter",
             "No Piercing"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate"
           ],
           "gamma": []
         }
@@ -2568,6 +2987,21 @@
           "beta": [
             "!",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Bolter",
             "No Summons"
           ],
           "gamma": []
@@ -2679,6 +3113,21 @@
             "No Piercing"
           ],
           "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Power"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Bolter",
+            "No Infiltrate"
+          ],
+          "gamma": []
         }
       },
       "melee": {
@@ -2783,6 +3232,19 @@
           "gamma": [
             "!",
             "No Piercing"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Psyker",
+            "Max 2 Hits"
           ]
         }
       },
@@ -2894,6 +3356,26 @@
             "!",
             "No Piercing",
             "Ranged"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
           ]
         }
       },
@@ -3014,6 +3496,24 @@
             "No Piercing",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -3128,6 +3628,26 @@
             "!",
             "Ranged"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Piercing",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -3237,6 +3757,24 @@
             "No Piercing",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -3338,6 +3876,19 @@
             "Min 3 hits",
             "BLACK LEGION"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -3436,6 +3987,23 @@
           "beta": [
             "!",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Bolter",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -3549,6 +4117,21 @@
             "Ranged",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -3655,6 +4238,21 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Piercing",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
         }
       },
       "melee": {
@@ -3751,6 +4349,21 @@
           "beta": [
             "!",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Bolter",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -3868,6 +4481,25 @@
             "!",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -3964,6 +4596,20 @@
             "ASTRA MILITARUM",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -4073,6 +4719,22 @@
             "No Piercing",
             "Ranged"
           ]
+        },
+        "THANNEK": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -4181,6 +4843,20 @@
             "Min 3 hits",
             "Power"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "Power",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -4283,6 +4959,22 @@
           "beta": [
             "!",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Bolter",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -4403,6 +5095,28 @@
             "Min 3 hits",
             "Power"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "Power",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -4508,6 +5222,23 @@
             "!",
             "Mechanical",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Bolter",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -4624,6 +5355,20 @@
             "Min 3 hits",
             "Power"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "Power",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -4739,6 +5484,24 @@
             "No Piercing",
             "Ranged"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -4841,6 +5604,20 @@
             "!",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -4950,6 +5727,20 @@
             "!",
             "No Piercing"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Max 1 Hit"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -5047,6 +5838,20 @@
             "!",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -5160,6 +5965,24 @@
             "Ranged",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate"
+          ],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -5269,6 +6092,22 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Bolter",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
         }
       },
       "melee": {
@@ -5370,6 +6209,21 @@
             "!",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -5488,6 +6342,25 @@
             "No Piercing",
             "Ranged"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -5602,6 +6475,27 @@
             "!",
             "Ranged"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Piercing",
+            "No Infiltrate"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -5705,6 +6599,20 @@
             "ASTRA MILITARUM",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -5820,6 +6728,26 @@
             "Ranged",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -5929,6 +6857,24 @@
             "No Piercing",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -6029,6 +6975,21 @@
             "!",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Max 1 Hit",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -6141,6 +7102,25 @@
             "No Piercing",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -6234,6 +7214,21 @@
             "ASTRA MILITARUM",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -6333,6 +7328,20 @@
             "!",
             "No Piercing",
             "Ranged"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "Max 2 Hits"
           ]
         }
       },
@@ -6445,6 +7454,22 @@
             "No Piercing",
             "Ranged"
           ]
+        },
+        "THANNEK": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -6549,6 +7574,19 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Summons"
+          ],
+          "gamma": []
         }
       },
       "melee": {
@@ -6649,6 +7687,23 @@
             "Ranged",
             "Min 3 hits",
             "Power"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "Power",
+            "No Psyker"
           ]
         }
       },
@@ -6757,6 +7812,21 @@
             "No Piercing",
             "Ranged",
             "Power"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 1 Hit",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "Power",
+            "Max 2 Hits"
           ]
         }
       },
@@ -6879,6 +7949,27 @@
           "gamma": [
             "!"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Piercing",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -6978,6 +8069,22 @@
           "beta": [
             "!",
             "No Bolter",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "Piercing",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -7082,6 +8189,20 @@
             "No Summons"
           ],
           "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
         }
       },
       "melee": {
@@ -7181,6 +8302,21 @@
             "!",
             "No Bolter",
             "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate",
             "No Summons"
           ],
           "gamma": []
@@ -7289,6 +8425,23 @@
             "Min 3 hits",
             "Power",
             "BLACK LEGION"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "Power",
+            "No Psyker"
           ]
         }
       },
@@ -7411,6 +8564,23 @@
             "No Piercing",
             "Min 3 hits"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Min 2 hits",
+            "No Infiltrate"
+          ],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "No Psyker"
+          ]
         }
       },
       "melee": {
@@ -7508,6 +8678,22 @@
             "No Piercing",
             "Ranged"
           ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
         }
       },
       "melee": {
@@ -7554,6 +8740,7 @@
         },
         "factions": [
           "Adepta Sororitas",
+          "Adeptus Mechanicus",
           "Astra militarum",
           "Black Legion",
           "Death Guard",
@@ -7599,6 +8786,7 @@
       },
       "25": {
         "factions": [
+          "Adeptus Mechanicus",
           "Astra militarum"
         ],
         "rare": {
@@ -7636,6 +8824,7 @@
         },
         "factions": [
           "Adepta Sororitas",
+          "Adeptus Mechanicus",
           "Astra militarum",
           "Black Legion",
           "Black templars",
@@ -7775,6 +8964,7 @@
         },
         "factions": [
           "Adepta Sororitas",
+          "Adeptus Mechanicus",
           "Astra militarum",
           "Black Legion",
           "Black templars",
@@ -7851,6 +9041,7 @@
         "factions": [
           "Necrons",
           "Adepta Sororitas",
+          "Adeptus Mechanicus",
           "Astra militarum",
           "Black Legion",
           "Black templars",
@@ -7923,7 +9114,8 @@
           "Astra militarum",
           "Aeldari",
           "T'au Empire",
-          "Thousand Sons"
+          "Thousand Sons",
+          "Adeptus Mechanicus"
         ],
         "legendary": {
           "crit-dmg": [
@@ -7996,6 +9188,7 @@
         },
         "factions": [
           "Adepta Sororitas",
+          "Adeptus Mechanicus",
           "Astra militarum",
           "Black templars",
           "Dark Angels",
@@ -8090,6 +9283,7 @@
         },
         "factions": [
           "Adepta Sororitas",
+          "Adeptus Mechanicus",
           "Astra militarum",
           "Black templars",
           "Dark Angels",
@@ -8205,8 +9399,7 @@
             322,
             344,
             367,
-            389,
-            437
+            389
           ],
           "health": [
             0,
@@ -8321,8 +9514,7 @@
             233,
             249,
             266,
-            282,
-            317
+            282
           ],
           "health": [
             188,
@@ -8451,17 +9643,17 @@
       17
     ]
   ],
-  "latest-legendary-event": "RAGNAR",
+  "latest-legendary-event": "THANNEK",
   "legendary-events": {
     "AUN'SHI": {
       "alpha": {
         "!": [
           29,
-          61
+          62
         ],
         "Max 2 hits": [
           70,
-          30
+          31
         ],
         "Melee": [
           80,
@@ -8473,7 +9665,7 @@
         ],
         "No Physical": [
           40,
-          50
+          51
         ],
         "Piercing": [
           115,
@@ -8509,7 +9701,7 @@
       "gamma": {
         "!": [
           40,
-          51
+          52
         ],
         "Max 1 hit": [
           125,
@@ -8521,11 +9713,11 @@
         ],
         "No Overwatch": [
           40,
-          45
+          46
         ],
         "No Power": [
           50,
-          37
+          38
         ],
         "Physical": [
           120,
@@ -8563,7 +9755,7 @@
       "beta": {
         "!": [
           40,
-          27
+          28
         ],
         "Bolter": [
           96,
@@ -8571,15 +9763,15 @@
         ],
         "Max 2 hits": [
           70,
-          13
+          14
         ],
         "No Blast": [
           50,
-          23
+          24
         ],
         "No Summons": [
           60,
-          23
+          24
         ],
         "Power": [
           95,
@@ -8589,7 +9781,7 @@
       "gamma": {
         "!": [
           29,
-          61
+          62
         ],
         "Bolter": [
           95,
@@ -8617,11 +9809,11 @@
       "alpha": {
         "!": [
           45,
-          61
+          62
         ],
         "Max 2 hits": [
           65,
-          28
+          29
         ],
         "Melee": [
           50,
@@ -8669,7 +9861,7 @@
       "gamma": {
         "!": [
           45,
-          51
+          52
         ],
         "Bolter": [
           100,
@@ -8681,15 +9873,15 @@
         ],
         "No Overwatch": [
           45,
-          45
+          46
         ],
         "No Summons": [
           40,
-          41
+          42
         ],
         "Ranged": [
           70,
-          27
+          28
         ]
       }
     },
@@ -8697,7 +9889,7 @@
       "alpha": {
         "!": [
           24,
-          42
+          43
         ],
         "Bolter": [
           95,
@@ -8705,7 +9897,7 @@
         ],
         "Max 3 Hits": [
           40,
-          32
+          33
         ],
         "Melee": [
           70,
@@ -8713,7 +9905,7 @@
         ],
         "Ranged": [
           65,
-          22
+          23
         ],
         "Resilient": [
           105,
@@ -8723,11 +9915,11 @@
       "beta": {
         "!": [
           30,
-          51
+          52
         ],
         "Flying": [
           100,
-          8
+          9
         ],
         "Min 3 hits": [
           60,
@@ -8735,7 +9927,7 @@
         ],
         "No Summons": [
           35,
-          40
+          41
         ],
         "Physical": [
           90,
@@ -8777,7 +9969,7 @@
       "alpha": {
         "!": [
           35,
-          61
+          62
         ],
         "Big Target": [
           115,
@@ -8793,7 +9985,7 @@
         ],
         "No Psyker": [
           40,
-          51
+          52
         ],
         "Power": [
           80,
@@ -8803,7 +9995,7 @@
       "beta": {
         "!": [
           19,
-          66
+          67
         ],
         "ASTRA MILITARUM": [
           120,
@@ -8811,19 +10003,19 @@
         ],
         "Mechanical": [
           90,
-          9
+          10
         ],
         "No Bolter": [
           50,
-          55
+          56
         ],
         "No Piercing": [
           50,
-          56
+          57
         ],
         "No Summons": [
           65,
-          52
+          53
         ]
       },
       "gamma": {
@@ -8850,6 +10042,86 @@
         "Ranged": [
           65,
           23
+        ]
+      }
+    },
+    "THANNEK": {
+      "alpha": {
+        "!": [
+          24,
+          62
+        ],
+        "Max 1 Hit": [
+          120,
+          17
+        ],
+        "No Psychic": [
+          40,
+          52
+        ],
+        "No Resilient": [
+          35,
+          54
+        ],
+        "Power": [
+          105,
+          21
+        ],
+        "Ranged": [
+          75,
+          33
+        ]
+      },
+      "beta": {
+        "!": [
+          30,
+          52
+        ],
+        "Bolter": [
+          105,
+          10
+        ],
+        "Min 2 hits": [
+          75,
+          42
+        ],
+        "No Infiltrate": [
+          30,
+          46
+        ],
+        "No Summons": [
+          50,
+          41
+        ],
+        "Piercing": [
+          115,
+          8
+        ]
+      },
+      "gamma": {
+        "!": [
+          34,
+          39
+        ],
+        "Max 2 Hits": [
+          110,
+          17
+        ],
+        "No Death Guard": [
+          35,
+          34
+        ],
+        "No Flying": [
+          60,
+          29
+        ],
+        "No Psyker": [
+          45,
+          32
+        ],
+        "Power": [
+          125,
+          9
         ]
       }
     }
@@ -9156,5 +10428,5 @@
       ]
     }
   },
-  "version": "Beta 0.4.6.2"
+  "version": "Beta 0.4.6.4"
 }
