@@ -259,6 +259,56 @@
         "pierce": 1.0
       }
     },
+    "rogal-dorn": {
+      "armour": [
+        [
+          1326,
+          40
+        ],
+        [
+          2489,
+          40
+        ],
+        [
+          3805,
+          40
+        ],
+        [
+          3805,
+          40
+        ]
+      ],
+      "checkbox": {
+        "armour": 0.7,
+        "damage": 0.4
+      },
+      "damage": [
+        [
+          997,
+          40
+        ],
+        [
+          1872,
+          40
+        ],
+        [
+          2864,
+          40
+        ],
+        [
+          2864,
+          40
+        ]
+      ],
+      "melee": {
+        "hits": 2,
+        "pierce": 0.15
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.15
+      }
+    },
     "screamer-killer": {
       "armour": [
         null,

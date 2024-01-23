@@ -83,6 +83,7 @@ tb_equipment = {};
 tb_legendary_events = {};
 intToRarity = ["common", "uncommon", "rare", "epic", "legendary"]
 opponentRevoltingResilience = 0;
+opponentAblativePlating = false;
 legendaryEventMaxCharacterPenalty = 25; // After this, we no longer penalize more characters added to the pool
 legendaryEventCharacterPenaltyFactor = 5; // 5 characters in a team
 legendaryEventFactors = {};
@@ -442,6 +443,7 @@ var updateMode = function(skipUpdateTable) {
 }
 
 var updateOpponentPreset = function(skipUpdateTable) {
+  var ablativePlating = false;
   var mech = false;
   var psyker = false;
   var markerlight = false;
@@ -453,6 +455,8 @@ var updateOpponentPreset = function(skipUpdateTable) {
   var level = +document.getElementById("opponent-preset-level").value;
   var checkbox = document.getElementById("opponent-checkbox").checked;
   switch (preset.split(" ")[0]) {
+    case 'rogal-dorn':
+      ablativePlating = true;
     case "szarekh":
     case "ghazghkull":
       mech = true;
@@ -523,6 +527,7 @@ var updateOpponentPreset = function(skipUpdateTable) {
   document.getElementById("opponent-beast-snagga").checked = bigtarget;
   document.getElementById("opponent-revolting-resilience").checked = revoltingresilience;
   document.getElementById("opponent-punishes-melee").checked = melee;
+  document.getElementById("opponent-ablative-plating").checked = ablativePlating;
   document.getElementById("ltgb-enabled").checked = ltgb;
   if (!skipUpdateTable) updateTable();
 }
@@ -585,8 +590,11 @@ var addTable = function() {
 var round2 = function(num) {
   return Math.round( num * 100 + Number.EPSILON ) / 100;
 }
-var damageArmourOrPierce = function(dmg, armour, pierce, type) {
-  var dmgAfterArmour = Math.max(dmg-armour, dmg*pierce);
+var damageArmourOrPierce = function(dmg, armour, pierce, type, numArmourReduction) {
+  var dmgAfterArmour = dmg;
+  for (let i=0; i<numArmourReduction; i++) {
+    dmgAfterArmour = Math.max(dmgAfterArmour-armour, dmgAfterArmour*pierce);
+  }
   if (typeof type == 'undefined') {
     throw new Error('Did not get damage type');
   }
@@ -601,6 +609,7 @@ var ragnarBonusDmgPercent = 0;
 var ragnarBonusDmgCap = 0;
 
 var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit, type) {
+  critChance = Math.min(critChance,1);
   numRounds = (aunshiBonusDmg > 0 ? 3 : 1) * (ragnarBonusCritChance > 0 ? 5 : 1);
   var total = 0;
   var opponentRevoltingResilienceScaling = 1.0;
@@ -611,8 +620,9 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour
       dmgLow = Math.min(dmgLow + ragnarBonusDmgCap, dmgLow * (1.0+ragnarBonusDmgPercent/100.0));
       dmgHigh = Math.min(dmgHigh + ragnarBonusDmgCap, dmgHigh * (1.0+ragnarBonusDmgPercent/100.0));
     };
-    var perNonCrit = (damageArmourOrPierce(dmgLow, armour, pierce, type) + damageArmourOrPierce(dmgHigh, armour, pierce, type))*0.5;
-    var perCrit =  (damageArmourOrPierce(dmgLow+crit, armour, pierce, type) + damageArmourOrPierce(dmgHigh+crit, armour, pierce, type))*0.5;
+    var numArmourReductionNonCrit = opponentAblativePlating && pierce < 0.6 ? 3 : 1;
+    var perNonCrit = (damageArmourOrPierce(dmgLow, armour, pierce, type, numArmourReductionNonCrit) + damageArmourOrPierce(dmgHigh, armour, pierce, type, numArmourReductionNonCrit))*0.5;
+    var perCrit =  (damageArmourOrPierce(dmgLow+crit, armour, pierce, type, 1) + damageArmourOrPierce(dmgHigh+crit, armour, pierce, type, 1))*0.5;
     var numRevoltingResilience = opponentRevoltingResilience;
     var critChanceThisRound = Math.min(1.0, critChance + ragnarBonusCritChance/100.0);
     for (n=1; n<=hits; n++) {
@@ -661,6 +671,8 @@ var updateTable = function() {
     var opponentIsPsyker = document.getElementById("opponent-is-psyker").checked;
     var opponentHasMarkerlight = document.getElementById("opponent-has-markerlight").checked;
     var opponentBeastSnagga = document.getElementById("opponent-beast-snagga").checked;
+    var weakerRearEnabled = document.getElementById("weaker-rear-enabled").checked;
+    opponentAblativePlating = document.getElementById("opponent-ablative-plating").checked;
     opponentRevoltingResilience = document.getElementById("opponent-revolting-resilience").checked ? (document.getElementById("opponent-checkbox") ? 3 : 1) : 0;
     var abaddonPassive = document.getElementById("abaddon-buff-enabled").checked;
     var abaddonBonusDmg = +document.getElementById("abaddon-buff-dmg").innerHTML;
@@ -730,6 +742,9 @@ var updateTable = function() {
           ragnarBonusCritChance = +document.getElementById("ragnar-buff-crit-chance").innerHTML;
           ragnarBonusDmgPercent = +document.getElementById("ragnar-buff-damage-percent").innerHTML;
           ragnarBonusDmgCap = +document.getElementById("ragnar-buff-damage-cap").innerHTML;
+        }
+        if (weakerRearEnabled) {
+          critChance += 0.5;
         }
 
 
@@ -1050,10 +1065,7 @@ var updateTable = function() {
 
         var calcOpponentDamageWorstCase = function(dmg,hits,pierce) {
           var res = dmg;
-          for (let i=0; i<numArmourReduction; i++) {
-            // Mk X gravis does this twice
-            res = damageArmourOrPierce(res,armour,pierce,"Boss");
-          }
+          res = damageArmourOrPierce(res,armour,pierce,"Boss",numArmourReduction);
           return res*hits;
         };
         opponentDmgPerAttack = Math.max(
@@ -1270,7 +1282,8 @@ function sortTable(n) {
         <option value="hive tyrant kronos">Hive Tyrant Kronos</option>
         <option value="hive tyrant leviathan">Hive Tyrant Leviathan</option>
         <option value="mortarion">Mortarion</option>
-        <option value="screamer-killer" selected>Screamer-Killer</option>
+        <option value="rogal-dorn" selected>Rogal Dorn</option>
+        <option value="screamer-killer">Screamer-Killer</option>
         <option value="stormboy">Stormboy</option>
         <option value="szarekh">Szarekh</option>
         <option value="tervigon gorgon">Tervigon Gorgon</option>
@@ -1315,7 +1328,10 @@ function sortTable(n) {
       <input title="Each hit after the first deals 50% less damage (compounding)" onChange="updateTable()" type="checkbox" id="opponent-revolting-resilience" checked></input>
       </fieldset>
       <fieldset class="damage-mode-only"><legend>No Melee</legend>
-      <input title="Boss punishes melee attacks heavily, so don't use them for the calculation" onChange="updateTable()" type="checkbox" id="opponent-punishes-melee" checked></input>
+        <input title="Boss punishes melee attacks heavily, so don't use them for the calculation" onChange="updateTable()" type="checkbox" id="opponent-punishes-melee" checked></input>
+        </fieldset>
+      <fieldset class="damage-mode-only"><legend>Ablative Plating</legend>
+        <input title="Any incoming Damage less than 60% Pierce Ratio must go through Armour three times. Does not apply to Crits." onChange="updateTable()" type="checkbox" id="opponent-ablative-plating" checked></input>
       </fieldset>
     </fieldset>
     
@@ -1414,6 +1430,8 @@ function sortTable(n) {
     <input title="Made contact with the target this turn (does not work well on bosses that you pin down or that reduce the number of hits when moving into contact)" onChange="updateTable()" type="checkbox" id="made-contact"></input>
     <label>LtGB</label>
     <input title="Let the Galaxy Burn can be disabled since it often hits allies instead of the intended target" onChange="updateTable()" type="checkbox" id="ltgb-enabled" checked></input>
+    <label>Weaker Rear Armour</label>
+    <input title="+50% crit chance" onChange="updateTable()" type="checkbox" id="weaker-rear-enabled"></input>
     </fieldset>
     <fieldset class="legendary-mode-only">
       <legend>Filter</legend>

@@ -270,6 +270,16 @@ bossStats = {
           "armour": 0.85,
           "damage": 0.85
       }
+  },
+  "rogal-dorn": {
+      "armour": [[1326,40], [2489,40], [3805,40], [3805,40]],
+      "damage": [[997,40], [1872,40], [2864,40], [2864,40]],
+      "melee": {"hits": 2, "pierce": 0.15},
+      "ranged": {"hits": 2, "pierce": 0.15},
+      "checkbox": {
+          "armour": 0.7,
+          "damage": 0.4
+      }
   }
 }
 
