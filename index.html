@@ -527,6 +527,7 @@ var updateOpponentPreset = function(skipUpdateTable) {
   document.getElementById("opponent-beast-snagga").checked = bigtarget;
   document.getElementById("opponent-revolting-resilience").checked = revoltingresilience;
   document.getElementById("opponent-punishes-melee").checked = melee;
+  document.getElementById("opponent-punishes-ranged").checked = false;
   document.getElementById("opponent-ablative-plating").checked = ablativePlating;
   document.getElementById("ltgb-enabled").checked = ltgb;
   if (!skipUpdateTable) updateTable();
@@ -692,6 +693,7 @@ var updateTable = function() {
     var curEvent = document.getElementById("legendary-event-select").value;
     var legendaryPointsWeight = +document.getElementById("legendary-points-weight").value;
     var opponentPunishesMelee = document.getElementById("opponent-punishes-melee").checked;
+    var opponentPunishesRanged = document.getElementById("opponent-punishes-ranged").checked;
     ahrimanEnabled = document.getElementById("ahriman-buff-enabled").checked;
     ahrimanPercent = 1+(ahrimanEnabled ? (document.getElementById("ahriman-buff-percent").innerHTML / 100) : 0);
     ahrimanMax = ahrimanEnabled ? (+document.getElementById("ahriman-buff-max").innerHTML) : 0;
@@ -1019,7 +1021,7 @@ var updateTable = function() {
             // comment += "LtGB assumes hits on target"
           }
         }
-        if (char.hasOwnProperty("ranged")) {
+        if (char.hasOwnProperty("ranged") && !opponentPunishesRanged) {
           // Ranged damage
           var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
           if (shadowsunPassive && char.faction.includes("T'au") && key != "ShadowSun") {
@@ -1329,7 +1331,10 @@ function sortTable(n) {
       </fieldset>
       <fieldset class="damage-mode-only"><legend>No Melee</legend>
         <input title="Boss punishes melee attacks heavily, so don't use them for the calculation" onChange="updateTable()" type="checkbox" id="opponent-punishes-melee" checked></input>
-        </fieldset>
+      </fieldset>
+      <fieldset class="damage-mode-only"><legend>No Ranged</legend>
+        <input title="Boss punishes ranged attacks heavily, so don't use them for the calculation" onChange="updateTable()" type="checkbox" id="opponent-punishes-ranged" checked></input>
+      </fieldset>
       <fieldset class="damage-mode-only"><legend>Ablative Plating</legend>
         <input title="Any incoming Damage less than 60% Pierce Ratio must go through Armour three times. Does not apply to Crits." onChange="updateTable()" type="checkbox" id="opponent-ablative-plating" checked></input>
       </fieldset>
