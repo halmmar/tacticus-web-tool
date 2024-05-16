@@ -672,6 +672,7 @@ var updateTable = function() {
     var opponentIsPsyker = document.getElementById("opponent-is-psyker").checked;
     var opponentHasMarkerlight = document.getElementById("opponent-has-markerlight").checked;
     var opponentBeastSnagga = document.getElementById("opponent-beast-snagga").checked;
+    var opponentGetStuckIn = document.getElementById("opponent-get-stuck-in").checked;
     var weakerRearEnabled = document.getElementById("weaker-rear-enabled").checked;
     opponentAblativePlating = document.getElementById("opponent-ablative-plating").checked;
     opponentRevoltingResilience = document.getElementById("opponent-revolting-resilience").checked ? (document.getElementById("opponent-checkbox") ? 3 : 1) : 0;
@@ -736,6 +737,7 @@ var updateTable = function() {
         var charLegData = char["legendary-event"] ? char["legendary-event"] : null;
         var numArmourReduction = 1;
         var aunshiBonusDmg = key.includes("Aun'shi") ? passiveFactor*char.passive[1] : aunshiBonusDmgRawData;
+        var getStuckInChance = char.traits.includes("get stuck in") ? (opponentGetStuckIn ? 1.0 : 0.3) : 0.0;
         if (char.ranged) {
           ragnarBonusCritChance = 0;
           ragnarBonusDmgPercent = 0;
@@ -763,6 +765,7 @@ var updateTable = function() {
             case "dakka":
               dakka = 2;
               break;
+            case "beast slayer":
             case "beast snagga":
               if (opponentBeastSnagga) {
                 dmgFactorMelee *= 1.20;
@@ -887,6 +890,9 @@ var updateTable = function() {
             meleeHits += 1;
           }
           break;
+        case 'Tanksmasha':
+          buffDmgMelee += passiveFactor*char.passive[0];
+          break;
         case 'Abraxas':
         case 'Aleph-null':
         case 'Ancient Thoread':
@@ -937,7 +943,6 @@ var updateTable = function() {
         case 'Sibyll':
         case 'Snappawrecka':
         case 'Snotflogga':
-        case 'Tanksmasha':
         case 'Thaumachus':
         case 'Thaddeus noble':
         case 'Thutmose':
@@ -1009,14 +1014,14 @@ var updateTable = function() {
         // Melee damage
         var totalDmg = 0;
         if (!opponentPunishesMelee) {
-          totalDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
+          totalDmg = calcDmg(dmg+buffDmg+buffDmgMelee, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits + (meleeHits / 2) * getStuckInChance, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
           switch (key) {
             case 'Boss Gulgortz':
               totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
               break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
-            var galaxyDmg = calcDmg(dmg+buffDmg+helbrechtBonusDmg, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
+            var galaxyDmg = calcDmg(dmg+buffDmg+buffDmgMelee, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
             totalDmg += galaxyDmg * 0.5;
             // comment += "LtGB assumes hits on target"
           }
@@ -1324,8 +1329,11 @@ function sortTable(n) {
       <input onChange="updateTable()" type="checkbox" id="opponent-has-markerlight"></input>
       </fieldset>
       <fieldset class="damage-mode-only"><legend>Big Target</legend>
-      <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
-      </fieldset>
+        <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
+        </fieldset>
+      <fieldset class="damage-mode-only"><legend>Get Stuck In</legend>
+        <input title="Surrounded by 2 orks or 4 friends" onChange="updateTable()" type="checkbox" id="opponent-get-stuck-in" checked></input>
+      </fieldset>  
       <fieldset class="damage-mode-only"><legend>Revolting Resilience</legend>
       <input title="Each hit after the first deals 50% less damage (compounding)" onChange="updateTable()" type="checkbox" id="opponent-revolting-resilience" checked></input>
       </fieldset>
