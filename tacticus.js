@@ -339,6 +339,7 @@ var updateMode = function(skipUpdateTable) {
   legendaryOnly = document.getElementsByClassName("legendary-mode-only");
   legendaryOverviewOnly = document.getElementsByClassName("legendary-overview-mode-only");
   dropratesOnly = document.getElementsByClassName("droprates-mode-only");
+  apiOnly = document.getElementsByClassName("api-mode-only");
   switch (mode) {
     case "damage":
       updateModeVisible(survivalOnly, "none");
@@ -346,6 +347,7 @@ var updateMode = function(skipUpdateTable) {
       updateModeVisible(legendaryOverviewOnly, "none");
       updateModeVisible(dropratesOnly, "none");
       updateModeVisible(dmgOnly,"");
+      updateModeVisible(apiOnly,"none");
     break;
   case "survival":
       updateModeVisible(dmgOnly,"none");
@@ -353,6 +355,7 @@ var updateMode = function(skipUpdateTable) {
       updateModeVisible(legendaryOverviewOnly, "none");
       updateModeVisible(dropratesOnly, "none");
       updateModeVisible(survivalOnly, "");
+      updateModeVisible(apiOnly,"none");
     break;
   case "legendary":
       updateModeVisible(dmgOnly,"none");
@@ -360,6 +363,7 @@ var updateMode = function(skipUpdateTable) {
       updateModeVisible(legendaryOverviewOnly, "none");
       updateModeVisible(dropratesOnly, "none");
       updateModeVisible(legendaryOnly, "");
+      updateModeVisible(apiOnly,"none");
     break;
   case "legendary-overview":
       updateModeVisible(dmgOnly,"none");
@@ -367,6 +371,7 @@ var updateMode = function(skipUpdateTable) {
       updateModeVisible(legendaryOnly, "none");
       updateModeVisible(dropratesOnly, "none");
       updateModeVisible(legendaryOverviewOnly, "");
+      updateModeVisible(apiOnly,"none");
     break;
   case "droprates":
       updateModeVisible(dmgOnly,"none");
@@ -374,6 +379,15 @@ var updateMode = function(skipUpdateTable) {
       updateModeVisible(legendaryOnly, "none");
       updateModeVisible(legendaryOverviewOnly, "none");
       updateModeVisible(dropratesOnly, "");
+      updateModeVisible(apiOnly,"none");
+    break;
+  case "api":
+      updateModeVisible(dmgOnly,"none");
+      updateModeVisible(survivalOnly, "none");
+      updateModeVisible(legendaryOnly, "none");
+      updateModeVisible(legendaryOverviewOnly, "none");
+      updateModeVisible(dropratesOnly, "none");
+      updateModeVisible(apiOnly,"");
     break;
   default:
     console.log("Unknown mode to select:",mode)
