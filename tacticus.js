@@ -1162,15 +1162,22 @@ async function setAPICache(event) {
   event.preventDefault();
 
   apiKey = document.getElementById("api-key").value;
-  response = await fetch("https://api.tacticusgame.com/api/v1/player", {
-    method: "GET",
-    withCredentials: true,
-    headers: {
-      "accept": "application/json",
-      "X-API-KEY": apiKey
-    }
-  });
   localStorage.setItem("api-key", apiKey);
+  try {
+    response = await fetch("https://api.tacticusgame.com/api/v1/player", {
+      method: "GET",
+      withCredentials: true,
+      headers: {
+        "accept": "application/json",
+        "X-API-KEY": apiKey
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+  } catch (error) {
+    alert(error.message);
+  }
   return false;
 }
 
