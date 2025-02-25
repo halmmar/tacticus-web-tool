@@ -248,17 +248,14 @@ var updateRagnar = function(skipUpdate) {
   // ragnar-buff-crit-chance"></span>% crit chance +<span id="ragnar-buff-damage-percent"></span>% damage (max <span id="ragnar-buff-damage-cap
   if (!document.getElementById("ragnar-buff-enabled").checked) {
     document.getElementById("ragnar-buff-crit-chance").innerHTML = 0;
-    document.getElementById("ragnar-buff-damage-percent").innerHTML = 0;
-    document.getElementById("ragnar-buff-damage-cap").innerHTML = 0;
+    document.getElementById("ragnar-buff-damage").innerHTML = 0;
     if (1 != skipUpdate) updateTable();
     return;
   }
   var level = document.getElementById("ragnar-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("ragnar-buff-rarity").value*0.2);
-  console.log(tb_chars["Ragnar"]);
   document.getElementById("ragnar-buff-crit-chance").innerHTML = tb_chars["Ragnar"].active[0] + levelToRarityInt(level)*5 - (level < 50);
-  document.getElementById("ragnar-buff-damage-percent").innerHTML = tb_chars["Ragnar"].active[1] + levelToRarityInt(level)*2 - 1;
-  document.getElementById("ragnar-buff-damage-cap").innerHTML = Math.round(tb_chars["Ragnar"].active[2]*factor);
+  document.getElementById("ragnar-buff-damage").innerHTML = tb_chars["Ragnar"].active[1]*factor|0;
   if (1 != skipUpdate) updateTable();
 }
 var updateCalgar = function(skipUpdate) {
@@ -559,8 +556,7 @@ var damageArmourOrPierce = function(dmg, armour, pierce, type, numArmourReductio
 };
 
 var ragnarBonusCritChance = 0;
-var ragnarBonusDmgPercent = 0;
-var ragnarBonusDmgCap = 0;
+var ragnarBonusDmg = 0;
 
 var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit, type) {
   critChance = Math.min(critChance,1);
@@ -568,12 +564,8 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour
   var total = 0;
   var opponentRevoltingResilienceScaling = 1.0;
   for (i=0; i<numRounds; i++) {
-    var dmgLow = low+(i % 3 ? 0 : aunshiBonusDmg);
-    var dmgHigh = high+(i % 3 ? 0 : aunshiBonusDmg);
-    if (i % 5 == 0) {
-      dmgLow = Math.min(dmgLow + ragnarBonusDmgCap, dmgLow * (1.0+ragnarBonusDmgPercent/100.0));
-      dmgHigh = Math.min(dmgHigh + ragnarBonusDmgCap, dmgHigh * (1.0+ragnarBonusDmgPercent/100.0));
-    };
+    var dmgLow = low+(i % 3 ? 0 : aunshiBonusDmg) + ragnarBonusDmg;
+    var dmgHigh = high+(i % 3 ? 0 : aunshiBonusDmg) + ragnarBonusDmg;
     var numArmourReductionNonCrit = opponentAblativePlating && pierce < 0.6 ? 3 : 1;
     var perNonCrit = (damageArmourOrPierce(dmgLow, armour, pierce, type, numArmourReductionNonCrit) + damageArmourOrPierce(dmgHigh, armour, pierce, type, numArmourReductionNonCrit))*0.5;
     var perCrit =  (damageArmourOrPierce(dmgLow+crit, armour, pierce, type, 1) + damageArmourOrPierce(dmgHigh+crit, armour, pierce, type, 1))*0.5;
@@ -697,7 +689,7 @@ var updateTable = function() {
         var dmgFactorRanged = 1.0;
         var dmgFactorMeleeTaken = 1.0;
         var abaddonBonusDmgModifiedByFaction = (char.alliance == "Chaos" ? abaddonBonusDmg : 0)
-        var eldryondamageModifiedByFaction = eldryondamage + (char.faction == "Aeldari" ? eldryondamageAeldari : 0.0);
+        var eldryondamageModifiedByFaction = (char.faction == "Aeldari" ? eldryondamageAeldari : eldryondamage);
         var calgardamageModifiedByFaction = (char.alliance == "Imperial" ? calgarBonusDmgImperial : calgarBonusDmg)
         var aethanadamageModifiedByFaction = aethanaBonusDmg + (char.faction == "Aeldari" ? aethanaBonusDmgAeldar : 0.0);
         var shadowsunBonusDmg = key.includes("ShadowSun") ? 0 : shadowsunBonusDmgRaw;
@@ -716,12 +708,10 @@ var updateTable = function() {
         var getStuckInChance = char.traits.includes("get stuck in") ? (opponentGetStuckIn ? 1.0 : 0.3) : 0.0;
         if (char.ranged) {
           ragnarBonusCritChance = 0;
-          ragnarBonusDmgPercent = 0;
-          ragnarBonusDmgCap = 0;
+          ragnarBonusDmg = 0;
         } else {
           ragnarBonusCritChance = +document.getElementById("ragnar-buff-crit-chance").innerHTML;
-          ragnarBonusDmgPercent = +document.getElementById("ragnar-buff-damage-percent").innerHTML;
-          ragnarBonusDmgCap = +document.getElementById("ragnar-buff-damage-cap").innerHTML;
+          ragnarBonusDmg = +document.getElementById("ragnar-buff-damage").innerHTML;
         }
         if (weakerRearEnabled) {
           critChance += 0.5;
@@ -778,7 +768,12 @@ var updateTable = function() {
               break;
             case "get stuck in":
               break;
-            case "ambush":
+            case "rapid assault":
+            case "raid assault":
+              if (madeContact) {
+                dmgFactorMelee *= 1.25;
+              }
+              break;
             case "battle fatigue":
             case "blessings of khorne":
             case "diminutive":
@@ -817,7 +812,7 @@ var updateTable = function() {
             case "weaver of fates": // Does impact damage, but only with multiple psykers...
               break;
             default:
-              console.log("Unknown trait:", trait);
+              console.log("Unknown trait:", trait, key);
           }
         });
 
@@ -825,6 +820,14 @@ var updateTable = function() {
         case "Bloodletter":
           if (opponentIsPsyker) {
             meleeHits += 1;
+          }
+          break;
+        case "Ragnar":
+          if (madeContact) {
+            meleeHits += 1+(rarity/2|0);
+            var ragnarCritDamage = (passiveFactor*char.passive[0])|0;
+            critDamage += ragnarCritDamage;
+            comment += meleeHits + " hits, +" + ragnarCritDamage+" on crit";
           }
           break;
         case 'Incisus':
@@ -907,6 +910,7 @@ var updateTable = function() {
         case 'Inceptor':
         case 'Isabella':
         case 'Jain Zar':
+        case 'Kharn':
         case 'Makhotep':
         case 'Maladus':
         case 'Maugan Ra':
@@ -1007,6 +1011,10 @@ var updateTable = function() {
             case 'Gulgortz':
               totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3 + getStuckInChance, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
               break;
+            case 'Kharn':
+              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 4, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
+              comment += "Assumes no kills";
+              break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
             var galaxyDmg = calcDmg(dmg+buffDmg+buffDmgMelee, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
@@ -1025,8 +1033,8 @@ var updateTable = function() {
             comment += "Shadowsun+T'au";
           }
           switch (key) {
-            case 'Gulgortz':
-              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3 + getStuckInChance, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
+          case 'Gulgortz':
+              rangedDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3 + getStuckInChance, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
               break;
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];

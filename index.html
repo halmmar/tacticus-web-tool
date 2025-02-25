@@ -275,7 +275,7 @@
     <select onchange="updateRagnar()" id="ragnar-buff-rarity">
     </select>
     <input onChange="updateRagnar()" type="number" id="ragnar-buff-level" min="0" max="50" value="50">
-    +<span id="ragnar-buff-crit-chance"></span>% crit chance +<span id="ragnar-buff-damage-percent"></span>% damage (max <span id="ragnar-buff-damage-cap"></span>) (Assumes average of attacks turns 2-6)
+    +<span id="ragnar-buff-crit-chance"></span>% crit chance +<span id="ragnar-buff-damage"></span> damage
     <br>
     <label>Shadowsun</label>
     <input onChange="updateShadowsun()" type="checkbox" id="shadowsun-buff-enabled"></input>
@@ -295,7 +295,7 @@
     <legend>Conditional</legend>
     <label>Heavy Weapon</label>
     <input title="Heavy Weapon and similar passives (Maugan Ra) are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
-    <label>Made Contact</label>
+    <label>Charging</label>
     <input title="Made contact with the target this turn (does not work well on bosses that you pin down or that reduce the number of hits when moving into contact)" onChange="updateTable()" type="checkbox" id="made-contact"></input>
     <label>LtGB</label>
     <input title="Let the Galaxy Burn can be disabled since it often hits allies instead of the intended target" onChange="updateTable()" type="checkbox" id="ltgb-enabled" checked></input>
