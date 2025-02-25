@@ -1232,14 +1232,17 @@ function loadPlayerDataAPI() {
   updateTable();
 };
 
-function setAPICache(event) {
+async function setAPICache(event) {
   event.preventDefault();
 
   const apiKey = document.getElementById("api-key").value;
+  
+  const origUrl = "https://api.tacticusgame.com/api/v1/player";
+  const proxy = document.getElementById("use-cors-proxy").checked ? 'https://proxy.cors.sh/' : '';
+    
+  const url = proxy + origUrl;
   try {
-    const origUrl = "https://api.tacticusgame.com/api/v1/player";
-    const url = 'https://proxy.cors.sh/' + origUrl;
-    fetch(url, {
+    await fetch(url, {
       method: "GET",
       withCredentials: true,
       headers: {
