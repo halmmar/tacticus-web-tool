@@ -259,6 +259,13 @@
     <input onChange="updateEldryon()" type="number" id="eldryon-buff-level" min="0" max="50" value="50">
     +<span id="eldryon-buff-all"></span> damage [All] +<span id="eldryon-buff-aeldari"></span> damage [Aeldari]
     <br>
+    <label>Gulgortz</label>
+    <input onChange="updateActiveAbility('Gulgortz')" type="checkbox" id="gulgortz-buff-enabled"></input>
+    <select onChange="updateActiveAbility('Gulgortz')" name="gulgortz-buff-rarity" id="gulgortz-buff-rarity">
+    </select>
+    <input onChange="updateActiveAbility('Gulgortz')" type="number" id="gulgortz-buff-level" min="0" max="50" value="50">
+    +1 hit, +<span id="gulgortz-buff-value"></span> damage [Melee]
+    <br>
     <label>Helbrecht</label>
     <input onChange="updateHelbrecht()" type="checkbox" id="helbrecht-buff-enabled"></input>
     <select onchange="updateHelbrecht()" id="helbrecht-buff-rarity">

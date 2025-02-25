@@ -73,7 +73,7 @@ function(err, data) {
     */
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
-    ["eldryon-buff", "thaddeus-buff", "shadowsun-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "helbrecht-buff", "ragnar-buff", "equipment"].forEach(function (key) {
+    ["eldryon-buff", "thaddeus-buff", "shadowsun-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "gulgortz-buff", "helbrecht-buff", "ragnar-buff", "equipment"].forEach(function (key) {
       document.getElementById(key + "-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     });
     // addLegendaryEvents(latest_legendary_event);
@@ -90,6 +90,7 @@ function(err, data) {
     updateHelbrecht(1);
     updateOpponentPreset(1);
     updateRagnar(1);
+    updateActiveAbility("Gulgortz",1);
     updateTable();
   }
 });
@@ -204,6 +205,32 @@ var updateEldryon = function(skipUpdate) {
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("eldryon-buff-rarity").value*0.2);
   document.getElementById("eldryon-buff-all").innerHTML = Math.round(tb_chars["Eldryon"].passive[0]*factor);
   document.getElementById("eldryon-buff-aeldari").innerHTML = Math.round(tb_chars["Eldryon"].passive[1]*factor);
+  if (1 != skipUpdate) updateTable();
+};
+
+var updatePassiveAbility = function(name, skipUpdate) {
+  var nameLower = name.toLowerCase();
+  if (!document.getElementById(nameLower+"-buff-enabled").checked) {
+    document.getElementById(nameLower+"-buff-value").innerHTML = 0;
+    if (1 != skipUpdate) updateTable();
+    return;
+  }
+  var level = document.getElementById(nameLower+"-buff-level").value;
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById(nameLower+"-buff-rarity").value*0.2);
+  document.getElementById(nameLower+"-buff-value").innerHTML = Math.round(tb_chars[name].passive[factorIndex]*factor);
+  if (1 != skipUpdate) updateTable();
+};
+
+var updateActiveAbility = function(name, skipUpdate) {
+  var nameLower = name.toLowerCase();
+  if (!document.getElementById(nameLower+"-buff-enabled").checked) {
+    document.getElementById(nameLower+"-buff-value").innerHTML = 0;
+    if (1 != skipUpdate) updateTable();
+    return;
+  }
+  var level = document.getElementById(nameLower+"-buff-level").value;
+  var factor = tb_abilities_factor[level-1] * (1 + document.getElementById(nameLower+"-buff-rarity").value*0.2);
+  document.getElementById(nameLower+"-buff-value").innerHTML = Math.round(tb_chars[name].active[0]*factor);
   if (1 != skipUpdate) updateTable();
 };
 
@@ -649,6 +676,7 @@ var updateTable = function() {
     var legendaryPointsWeight = +document.getElementById("legendary-points-weight").value;
     var opponentPunishesMelee = document.getElementById("opponent-punishes-melee").checked;
     var opponentPunishesRanged = document.getElementById("opponent-punishes-ranged").checked;
+    var gulgortzBonusDmg = +document.getElementById("gulgortz-buff-value").innerHTML;
     ahrimanEnabled = document.getElementById("ahriman-buff-enabled").checked;
     ahrimanPercent = 1+(ahrimanEnabled ? (document.getElementById("ahriman-buff-percent").innerHTML / 100) : 0);
     ahrimanMax = ahrimanEnabled ? (+document.getElementById("ahriman-buff-max").innerHTML) : 0;
@@ -727,6 +755,8 @@ var updateTable = function() {
           critChance += 0.5;
         }
 
+        buffDmgMelee += gulgortzBonusDmg;
+        meleeHits += gulgortzBonusDmg > 0 ? 1 : 0;
 
         if (key != "Aethana") {
           critChance += aethanaBonusCritChance*0.01;
@@ -783,6 +813,7 @@ var updateTable = function() {
               if (madeContact) {
                 dmgFactorMelee *= 1.25;
               }
+              comment += "Assumes first hit of the battle";
               break;
             case "ambush":
             case "battle fatigue":
@@ -939,6 +970,7 @@ var updateTable = function() {
         case "Shield Drone":
         case "Sho'syl":
         case 'Sibyll':
+        case 'Snotflogga':
         case 'Thaumachus':
         case 'Thaddeus':
         case 'Thutmose':
@@ -1025,6 +1057,9 @@ var updateTable = function() {
             case 'Kharn':
               totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 4, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
               comment += "Assumes no kills";
+              break;
+            case 'Snotflogga':
+              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 2 + getStuckInChance, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
               break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
