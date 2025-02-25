@@ -24,6 +24,7 @@ tb_archimatos_ability_factor = [];
 tb_equipment = {};
 tb_legendary_events = {};
 intToRarity = ["common", "uncommon", "rare", "epic", "legendary"]
+gearLevelToText = ["Stone 1","Stone 2","Stone 3","Iron 1","Iron 2","Iron 3","Bronze 1","Bronze 2","Bronze 3","Silver 1","Silver 2","Silver 3","Gold 1","Gold 2","Gold 3","Diamond 1","Diamond 2","Diamond 3"]
 opponentRevoltingResilience = 0;
 opponentAblativePlating = false;
 legendaryEventMaxCharacterPenalty = 25; // After this, we no longer penalize more characters added to the pool
@@ -184,7 +185,7 @@ var passiveFactorActiveCharacterWithTable = function(tb_factor, level, rarity) {
 var passiveFactorCharacter = function(name, level, rarity) {
   tb = name in ['Bloodletter','Archimatos'] ? tb_archimatos_ability_factor : tb_abilities_factor;
   factor = passiveFactorActiveCharacterWithTable(tb_abilities_factor, level, rarity);
-  console.log(name,level,rarity,factor);
+  // console.log(name,level,rarity,factor);
   return factor;
 }
 
@@ -240,7 +241,7 @@ var updateShadowsun = function(skipUpdate) {
   }
   var level = document.getElementById("shadowsun-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("shadowsun-buff-rarity").value*0.2);
-  document.getElementById("shadowsun-buff-dmg").innerHTML = Math.round(tb_chars["ShadowSun"].passive[0]*factor);
+  document.getElementById("shadowsun-buff-dmg").innerHTML = Math.round(tb_chars["Shadowsun"].passive[0]*factor);
   if (1 != skipUpdate) updateTable();
 }
 var updateRagnar = function(skipUpdate) {
@@ -296,7 +297,7 @@ var updateAunShi = function(skipUpdate) {
   }
   var level = document.getElementById("aunshi-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("aunshi-buff-rarity").value*0.2);
-  document.getElementById("aunshi-buff-dmg").innerHTML = Math.round(tb_chars["Aun'shi"].passive[1]*factor);
+  document.getElementById("aunshi-buff-dmg").innerHTML = Math.round(tb_chars["Aun'Shi"].passive[1]*factor);
   if (1 != skipUpdate) updateTable();
 }
 var updateDarkstrider = function(skipUpdate) {
@@ -517,7 +518,7 @@ var addTable = function() {
   resLegOverview += '</tr>\n';
   Object.keys(tb_chars).forEach(function callback(key) {
     var id = characterTableEntryId(key);
-    resDmg += '<tr id="'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-dmg"></td><td class="statCell" id="'+id+'-crit-chance"></td><td class="statCell" id="'+id+'-crit-dmg"></td><td class="statCell" id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
+    resDmg += '<tr id="'+id+'"><td id="'+id+'-name">'+key+'</td><td class="statCell" id="'+id+'-dmg"></td><td class="statCell" id="'+id+'-crit-chance"></td><td class="statCell" id="'+id+'-crit-dmg"></td><td class="statCell" id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
     resSurvival += '<tr id="survival-'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-health"></td><td class="statCell" id="'+id+'-armour"></td><td class="statCell" id="'+id+'-block-chance"></td><td class="statCell" id="'+id+'-block"></td><td class="statCell" id="'+id+'-worst-case-percentage"></td><td class="statCell" id="'+id+'-worst-case-attacks"></td><td id="'+id+'-comment-survival"></td></tr>';
     if (!tb_chars[key].traits.includes("summon")) {
       resLeg += '<tr id="legendary-'+id+'"><td>'+key+'</td><td id="'+id+'-leg-alpha" /><td id="'+id+'-leg-alpha-1" /><td id="'+id+'-leg-alpha-2" /><td id="'+id+'-leg-alpha-3" /><td id="'+id+'-leg-alpha-4" /><td id="'+id+'-leg-alpha-5" /><td id="'+id+'-leg-beta" /><td id="'+id+'-leg-beta-1" /><td id="'+id+'-leg-beta-2" /><td id="'+id+'-leg-beta-3" /><td id="'+id+'-leg-beta-4" /><td id="'+id+'-leg-beta-5" /><td id="'+id+'-leg-gamma" /><td id="'+id+'-leg-gamma-1" /><td id="'+id+'-leg-gamma-2" /><td id="'+id+'-leg-gamma-3" /><td id="'+id+'-leg-gamma-4" /><td id="'+id+'-leg-gamma-5" /><td id="'+id+'-leg-total" /></tr>';
@@ -1115,6 +1116,7 @@ var updateTable = function() {
         }
           
 
+        document.getElementById(entryId+"-name").innerHTML='<abbr title="'+key+': '+intToRarity[rarity]+', '+gearLevelToText[gearlevel]+', P'+passiveSkillLevel+'">'+key+"</abbr>";
         document.getElementById(entryId+"-health").innerHTML=Math.round(health);
         document.getElementById(entryId+"-armour").innerHTML=Math.round(armour);
         document.getElementById(entryId+"-dmg").innerHTML=Math.round(dmg);
