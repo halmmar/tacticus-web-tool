@@ -706,6 +706,7 @@ var updateTable = function() {
         var buffDmgRanged = 0;
         var buffDmgMelee = 0;
         var commentRanged = "";
+        var commentMelee = "";
         var commentSurvival = "";
         var charLegData = char["legendary-event"] ? char["legendary-event"] : null;
         var numArmourReduction = 1;
@@ -753,13 +754,19 @@ var updateTable = function() {
               }
               if (heavyWeaponEnabled) {
                 dmgFactorRanged *= 1.25;
-                commentRanged += "heavy"
+                commentRanged += "heavy";
                 if (key=="Maugan Ra") {
                   var mauganCritChance = (char.passive[1] + passiveLevelAsRarityInt - (passiveLevelAsRarityInt==0 ? 1 : 0)) / 100;
                   var mauganCritDamage = char.passive[0] * passiveFactor;
                   critChanceRanged += mauganCritChance;
                   critDamageRanged += mauganCritDamage;
                 }
+              }
+              break;
+            case "crushing strike":
+              if (heavyWeaponEnabled) {
+                dmgFactorMelee *= 1.5;
+                commentMelee += "crushing";
               }
               break;
             case "terrifying":
@@ -1038,10 +1045,10 @@ var updateTable = function() {
             }
             comment = insertIcon("boltgun") + commentRanged + comment;
           } else {
-            comment = "⚔" + comment;
+            comment = "⚔" + commentMelee + comment;
           }
         } else {
-          comment = "⚔" + comment;
+          comment = "⚔" + commentMelee + comment;
         }
 
         var calcOpponentDamageWorstCase = function(dmg,hits,pierce) {
