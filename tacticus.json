@@ -53,55 +53,107 @@
   ],
   "archimatos_ability_factor": [
     1.0,
-    1.2,
-    1.4,
-    1.5999999999999999,
-    1.815,
-    2.0439,
-    2.2727999999999997,
-    2.5016999999999996,
-    2.7305999999999995,
-    2.9594999999999994,
-    3.1883999999999992,
-    3.417299999999999,
-    3.646199999999999,
-    3.875099999999999,
-    4.103999999999999,
-    4.3328999999999995,
-    4.5618,
-    4.7907,
-    5.0196000000000005,
-    5.248500000000001,
-    5.548500000000001,
-    5.998500000000001,
-    6.907300000000001,
-    7.816100000000001,
-    8.724900000000002,
-    9.633700000000001,
-    10.5425,
-    11.4513,
-    12.3601,
-    13.268899999999999,
-    14.177699999999998,
-    15.086499999999997,
-    15.995299999999997,
-    16.904099999999996,
-    17.812899999999996,
-    18.721699999999995,
-    19.630499999999994,
-    20.539299999999994,
-    21.448099999999993,
-    22.748099999999994,
-    24.548099999999994,
-    26.448099999999993,
-    28.448099999999993,
-    30.737099999999995,
-    34.8454,
-    38.9537,
-    43.062,
-    47.1703,
-    51.2786,
-    55.3869
+    1.1714285714285715,
+    1.3428571428571427,
+    1.5142857142857142,
+    1.6857142857142857,
+    1.8857142857142857,
+    2.085714285714286,
+    2.257142857142857,
+    2.4285714285714284,
+    2.6,
+    2.7714285714285714,
+    2.942857142857143,
+    3.085714285714286,
+    3.257142857142857,
+    3.4,
+    3.5428571428571427,
+    3.6857142857142855,
+    3.8,
+    3.942857142857143,
+    4.057142857142857,
+    4.228571428571429,
+    4.485714285714286,
+    5.085714285714285,
+    5.6571428571428575,
+    6.228571428571429,
+    6.771428571428571,
+    7.285714285714286,
+    7.8,
+    8.257142857142858,
+    8.714285714285714,
+    9.142857142857142,
+    9.571428571428571,
+    9.971428571428572,
+    10.342857142857143,
+    10.685714285714285,
+    11.028571428571428,
+    11.342857142857143,
+    11.628571428571428,
+    11.885714285714286,
+    12.342857142857143,
+    13.028571428571428,
+    13.742857142857142,
+    14.485714285714286,
+    15.285714285714286,
+    16.914285714285715,
+    18.485714285714284,
+    19.942857142857143,
+    21.285714285714285,
+    22.571428571428573,
+    23.742857142857144
+  ],
+  "azkor_ability_factor": [
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    5.0,
+    6.0,
+    7.0,
+    8.0,
+    10.0,
+    11.0,
+    12.0,
+    14.0,
+    16.0,
+    18.0,
+    20.0,
+    22.0,
+    24.0,
+    26.0,
+    28.0,
+    30.0,
+    32.0,
+    34.0,
+    36.0,
+    38.0,
+    40.0,
+    43.0,
+    46.0,
+    50.0,
+    55.0,
+    60.0,
+    66.0,
+    72.0,
+    78.0,
+    84.0,
+    90.0,
+    96.0,
+    102.0,
+    110.0,
+    118.0,
+    124.0,
+    134.0,
+    144.0,
+    154.0,
+    166.0,
+    190.0,
+    212.0,
+    234.0,
+    256.0,
+    278.0,
+    300.0
   ],
   "bosses": {
     "ghazghkull": {
@@ -866,7 +918,7 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
+            "Max 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -998,7 +1050,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "Piercing",
             "No Infiltrate",
             "No Summons"
@@ -1231,7 +1282,6 @@
           "alpha": [],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate"
           ],
           "gamma": [
@@ -1254,122 +1304,6 @@
         "explodes",
         "flying",
         "mechanic"
-      ]
-    },
-    "Thoread": {
-      "active": [
-        100.0,
-        20.0
-      ],
-      "alliance": "Imperial",
-      "armour": 22.0,
-      "damage": 33.0,
-      "equipment": {
-        "crit": 1,
-        "crit_booster": 1,
-        "defense": 1
-      },
-      "faction": "Black templars",
-      "health": 100.0,
-      "legendary-event": {
-        "AUN'SHI": {
-          "alpha": [
-            "!",
-            "Melee",
-            "Max 2 hits",
-            "No Physical"
-          ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Flying",
-            "No Overwatch"
-          ]
-        },
-        "JAIN ZAR": {
-          "alpha": [],
-          "beta": [
-            "!",
-            "Power",
-            "No Blast",
-            "Max 2 hits",
-            "No Summons"
-          ],
-          "gamma": [
-            "!",
-            "No Mechanical",
-            "No Flying"
-          ]
-        },
-        "MAUGAN RA": {
-          "alpha": [
-            "!",
-            "Melee",
-            "Max 2 hits",
-            "Power"
-          ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Overwatch",
-            "No Summons"
-          ]
-        },
-        "RAGNAR": {
-          "alpha": [
-            "!",
-            "Max 3 Hits",
-            "Melee"
-          ],
-          "beta": [
-            "!",
-            "Power",
-            "No Summons"
-          ],
-          "gamma": []
-        },
-        "SHADOWSUN": {
-          "alpha": [
-            "!",
-            "No Psyker",
-            "Power",
-            "Melee"
-          ],
-          "beta": [
-            "!",
-            "No Bolter",
-            "No Piercing",
-            "No Summons"
-          ],
-          "gamma": []
-        },
-        "THANNEK": {
-          "alpha": [
-            "!",
-            "No Psychic",
-            "Power",
-            "No Resilient"
-          ],
-          "beta": [
-            "!",
-            "Min 2 hits",
-            "No Infiltrate",
-            "No Summons"
-          ],
-          "gamma": []
-        }
-      },
-      "melee": {
-        "hits": 2,
-        "pierce": 0.4,
-        "type": "power"
-      },
-      "passive": [
-        75.0
-      ],
-      "traits": [
-        "final vengeance",
-        "parry"
       ]
     },
     "Angrax": {
@@ -1587,7 +1521,6 @@
           "alpha": [],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate"
           ],
           "gamma": [
@@ -1827,7 +1760,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -1846,7 +1778,123 @@
       "traits": [
         "terminator armour",
         "deep strike",
-        "resilient"
+        "resilient",
+        "unstoppable"
+      ]
+    },
+    "Asmodai": {
+      "active": [
+        10.0,
+        60.0,
+        80.0
+      ],
+      "alliance": "Imperial",
+      "armour": 23.0,
+      "damage": 20.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "Dark Angels",
+      "health": 90.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Power",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 4,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "passive": [
+        10.0
+      ],
+      "traits": [
+        "terrifying"
       ]
     },
     "Aun'Shi": {
@@ -1962,7 +2010,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -1986,6 +2033,124 @@
       ],
       "traits": []
     },
+    "Azkor": {
+      "active": [
+        28.0,
+        36.0
+      ],
+      "alliance": "Chaos",
+      "armour": 20.0,
+      "damage": 24.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "World Eaters",
+      "health": 100.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits",
+            "Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 2,
+        "pierce": 0.5,
+        "type": "eviscerating"
+      },
+      "passive": [
+        1.0
+      ],
+      "traits": [
+        "blessings of khorne",
+        "daemon",
+        "resilient",
+        "unstoppable",
+        "terrifying"
+      ]
+    },
     "Azrael": {
       "active": [
         45.0,
@@ -1995,14 +2160,14 @@
       ],
       "alliance": "Imperial",
       "armour": 24.0,
-      "damage": 22.0,
+      "damage": 28.0,
       "equipment": {
         "block": 1,
         "block_booster": 1,
         "crit": 1
       },
       "faction": "Dark Angels",
-      "health": 85.0,
+      "health": 95.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -2087,6 +2252,7 @@
           ],
           "beta": [
             "!",
+            "Max 2 hits",
             "Bolter",
             "No Infiltrate",
             "No Summons"
@@ -2112,6 +2278,123 @@
       "traits": [
         "final vengeance",
         "overwatch"
+      ]
+    },
+    "Baraqiel": {
+      "active": [
+        12.0,
+        16.0
+      ],
+      "alliance": "Imperial",
+      "armour": 29.0,
+      "damage": 22.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
+      "faction": "Dark Angels",
+      "health": 110.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Power",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 3,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "passive": [
+        1.5,
+        1.5
+      ],
+      "traits": [
+        "deep strike",
+        "crushing strike",
+        "heavy weapon",
+        "terminator armour"
       ]
     },
     "Bellator": {
@@ -2205,7 +2488,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "Bolter",
             "No Infiltrate"
           ],
@@ -2223,138 +2505,6 @@
       "traits": [
         "flying",
         "mk x gravis"
-      ]
-    },
-    "Gulgortz": {
-      "active": [
-        8.0
-      ],
-      "alliance": "Xenos",
-      "armour": 15.0,
-      "damage": 12.0,
-      "equipment": {
-        "block": 1,
-        "block_booster": 1,
-        "crit": 1
-      },
-      "faction": "Orks",
-      "health": 100.0,
-      "legendary-event": {
-        "AUN'SHI": {
-          "alpha": [],
-          "beta": [
-            "!",
-            "Mechanical",
-            "No Resilient",
-            "No Summons"
-          ],
-          "gamma": [
-            "!",
-            "No Flying",
-            "No Overwatch",
-            "No Power"
-          ]
-        },
-        "JAIN ZAR": {
-          "alpha": [
-            "!",
-            "Ranged",
-            "Max 3 hits",
-            "No Summons"
-          ],
-          "beta": [],
-          "gamma": []
-        },
-        "MAUGAN RA": {
-          "alpha": [
-            "!"
-          ],
-          "beta": [
-            "!",
-            "No Power",
-            "No Let the Galaxy Burn",
-            "No Summons"
-          ],
-          "gamma": [
-            "!",
-            "No Overwatch",
-            "Ranged",
-            "No Summons"
-          ]
-        },
-        "RAGNAR": {
-          "alpha": [],
-          "beta": [
-            "!",
-            "Min 3 hits",
-            "No Summons"
-          ],
-          "gamma": [
-            "!",
-            "No Physical",
-            "No BLACK LEGION"
-          ]
-        },
-        "SHADOWSUN": {
-          "alpha": [
-            "!",
-            "Big Target",
-            "No Psyker"
-          ],
-          "beta": [
-            "!",
-            "Mechanical",
-            "No Bolter",
-            "No Piercing",
-            "No Summons"
-          ],
-          "gamma": [
-            "!",
-            "No Piercing",
-            "Ranged",
-            "Min 3 hits"
-          ]
-        },
-        "THANNEK": {
-          "alpha": [
-            "!",
-            "No Psychic",
-            "Ranged",
-            "No Resilient"
-          ],
-          "beta": [
-            "!",
-            "Min 2 hits",
-            "No Infiltrate",
-            "No Summons"
-          ],
-          "gamma": [
-            "!",
-            "No Flying",
-            "No Death Guard",
-            "No Psyker"
-          ]
-        }
-      },
-      "melee": {
-        "hits": 5,
-        "pierce": 0.2,
-        "type": "chain"
-      },
-      "passive": [
-        11.0,
-        13.0
-      ],
-      "ranged": {
-        "hits": 3,
-        "pierce": 0.15,
-        "type": "projectile"
-      },
-      "traits": [
-        "mechanical",
-        "big target",
-        "final vengeance",
-        "dakka"
       ]
     },
     "Burchard": {
@@ -2453,7 +2603,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "Bolter",
             "No Infiltrate",
             "No Summons"
@@ -2479,123 +2628,6 @@
         "mk x gravis",
         "suppressive fire",
         "crushing strike"
-      ]
-    },
-    "Jaeger": {
-      "active": [
-        8.0,
-        5.0
-      ],
-      "alliance": "Imperial",
-      "armour": 25.0,
-      "damage": 25.0,
-      "equipment": {
-        "block": 1,
-        "block_booster": 1,
-        "crit": 1
-      },
-      "faction": "Black templars",
-      "health": 110.0,
-      "legendary-event": {
-        "AUN'SHI": {
-          "alpha": [
-            "!",
-            "Melee",
-            "Min 3 hits",
-            "No Physical"
-          ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Flying",
-            "No Overwatch"
-          ]
-        },
-        "JAIN ZAR": {
-          "alpha": [],
-          "beta": [
-            "!",
-            "Power",
-            "No Blast",
-            "No Summons"
-          ],
-          "gamma": [
-            "!",
-            "No Mechanical",
-            "No Flying"
-          ]
-        },
-        "MAUGAN RA": {
-          "alpha": [
-            "!",
-            "Melee",
-            "Power"
-          ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Overwatch",
-            "No Summons"
-          ]
-        },
-        "RAGNAR": {
-          "alpha": [
-            "!",
-            "Max 3 Hits",
-            "Melee"
-          ],
-          "beta": [
-            "!",
-            "Min 3 hits",
-            "Power",
-            "No Summons"
-          ],
-          "gamma": []
-        },
-        "SHADOWSUN": {
-          "alpha": [
-            "!",
-            "No Psyker",
-            "Power",
-            "Melee"
-          ],
-          "beta": [
-            "!",
-            "No Bolter",
-            "No Piercing",
-            "No Summons"
-          ],
-          "gamma": []
-        },
-        "THANNEK": {
-          "alpha": [
-            "!",
-            "No Psychic",
-            "Power",
-            "No Resilient"
-          ],
-          "beta": [
-            "!",
-            "Min 2 hits",
-            "No Infiltrate",
-            "No Summons"
-          ],
-          "gamma": []
-        }
-      },
-      "melee": {
-        "hits": 3,
-        "pierce": 0.4,
-        "type": "power"
-      },
-      "passive": [
-        20.0,
-        22.0
-      ],
-      "traits": [
-        "final vengeance",
-        "parry",
-        "raid assault"
       ]
     },
     "Calandis": {
@@ -2705,6 +2737,7 @@
           ],
           "beta": [
             "!",
+            "Max 2 hits",
             "Piercing",
             "No Infiltrate",
             "No Summons"
@@ -2737,22 +2770,21 @@
         "overwatch"
       ]
     },
-    "Creed": {
+    "Calgar": {
       "active": [
-        40.0,
-        24.0,
-        8.0
+        35.0,
+        45.0
       ],
       "alliance": "Imperial",
-      "armour": 21.0,
-      "damage": 38.0,
+      "armour": 20.0,
+      "damage": 20.0,
       "equipment": {
         "block": 1,
         "block_booster": 1,
         "crit": 1
       },
-      "faction": "Astra militarum",
-      "health": 90.0,
+      "faction": "Ultramarines",
+      "health": 95.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -2765,20 +2797,23 @@
           "gamma": [
             "!",
             "No Flying",
-            "No Overwatch",
-            "No Power"
+            "No Overwatch"
           ]
         },
         "JAIN ZAR": {
           "alpha": [],
           "beta": [
             "!",
+            "Power",
+            "Bolter",
             "No Blast",
-            "Max 2 hits"
+            "Max 2 hits",
+            "No Summons"
           ],
           "gamma": [
             "!",
             "No Mechanical",
+            "Bolter",
             "No Flying"
           ]
         },
@@ -2786,22 +2821,28 @@
           "alpha": [
             "!",
             "Melee",
-            "Max 2 hits"
+            "Max 2 hits",
+            "Power"
           ],
           "beta": [],
           "gamma": [
             "!",
-            "No Overwatch"
+            "Bolter",
+            "No Overwatch",
+            "No Summons"
           ]
         },
         "RAGNAR": {
           "alpha": [
             "!",
             "Max 3 Hits",
+            "Bolter",
             "Melee"
           ],
           "beta": [
-            "!"
+            "!",
+            "Power",
+            "No Summons"
           ],
           "gamma": []
         },
@@ -2809,13 +2850,13 @@
           "alpha": [
             "!",
             "No Psyker",
+            "Power",
             "Melee"
           ],
           "beta": [
             "!",
-            "ASTRA MILITARUM",
-            "No Bolter",
-            "No Piercing"
+            "No Piercing",
+            "No Summons"
           ],
           "gamma": []
         },
@@ -2823,27 +2864,32 @@
           "alpha": [
             "!",
             "No Psychic",
+            "Power",
             "No Resilient"
           ],
           "beta": [
             "!",
-            "Min 2 hits",
-            "No Infiltrate"
+            "Max 2 hits",
+            "Bolter",
+            "No Infiltrate",
+            "No Summons"
           ],
           "gamma": []
         }
       },
       "melee": {
         "hits": 2,
-        "pierce": 0.1,
-        "type": "las"
+        "pierce": 0.4,
+        "type": "power"
       },
       "passive": [
-        90.0,
-        18.0,
-        15.0
+        9.0,
+        13.0
       ],
-      "traits": []
+      "traits": [
+        "mk x gravis",
+        "final vengeance"
+      ]
     },
     "Celestine": {
       "active": [
@@ -2934,7 +2980,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate"
           ],
           "gamma": []
@@ -3051,6 +3096,7 @@
           ],
           "beta": [
             "!",
+            "Max 2 hits",
             "Bolter",
             "No Summons"
           ],
@@ -3076,128 +3122,6 @@
         "infiltrate"
       ]
     },
-    "Yarrick": {
-      "active": [
-        40.0,
-        24.0,
-        8.0
-      ],
-      "alliance": "Imperial",
-      "armour": 17.0,
-      "damage": 30.0,
-      "equipment": {
-        "block": 1,
-        "block_booster": 1,
-        "crit": 1
-      },
-      "faction": "Astra militarum",
-      "health": 75.0,
-      "legendary-event": {
-        "AUN'SHI": {
-          "alpha": [
-            "!",
-            "Max 2 hits",
-            "No Physical"
-          ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Flying",
-            "No Overwatch"
-          ]
-        },
-        "JAIN ZAR": {
-          "alpha": [],
-          "beta": [
-            "!",
-            "Power",
-            "Bolter",
-            "No Blast",
-            "Max 2 hits"
-          ],
-          "gamma": [
-            "!",
-            "No Mechanical",
-            "Bolter",
-            "No Flying"
-          ]
-        },
-        "MAUGAN RA": {
-          "alpha": [
-            "!",
-            "Max 2 hits",
-            "Power",
-            "Resilient"
-          ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "Bolter",
-            "No Overwatch",
-            "Ranged"
-          ]
-        },
-        "RAGNAR": {
-          "alpha": [
-            "!",
-            "Resilient",
-            "Ranged",
-            "Max 3 Hits",
-            "Bolter"
-          ],
-          "beta": [
-            "!",
-            "Power"
-          ],
-          "gamma": []
-        },
-        "SHADOWSUN": {
-          "alpha": [
-            "!",
-            "No Psyker",
-            "Power"
-          ],
-          "beta": [
-            "!",
-            "ASTRA MILITARUM",
-            "No Piercing"
-          ],
-          "gamma": []
-        },
-        "THANNEK": {
-          "alpha": [
-            "!",
-            "No Psychic",
-            "Ranged",
-            "Power"
-          ],
-          "beta": [
-            "!",
-            "Min 2 hits",
-            "Bolter",
-            "No Infiltrate"
-          ],
-          "gamma": []
-        }
-      },
-      "melee": {
-        "hits": 3,
-        "pierce": 0.4,
-        "type": "power"
-      },
-      "passive": [
-        4.0,
-        2.0
-      ],
-      "ranged": {
-        "hits": 2,
-        "pierce": 0.2,
-        "type": "bolter"
-      },
-      "traits": [
-        "resilient"
-      ]
-    },
     "Corrodius": {
       "active": [
         30.0,
@@ -3206,15 +3130,15 @@
         25.0
       ],
       "alliance": "Chaos",
-      "armour": 30.0,
-      "damage": 11.0,
+      "armour": 25.0,
+      "damage": 40.0,
       "equipment": {
         "crit": 1,
         "crit_booster": 1,
         "defense": 1
       },
       "faction": "Death Guard",
-      "health": 100.0,
+      "health": 125.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -3287,7 +3211,8 @@
         "THANNEK": {
           "alpha": [
             "!",
-            "No Psychic"
+            "No Psychic",
+            "Max 1 Hit"
           ],
           "beta": [],
           "gamma": [
@@ -3299,7 +3224,7 @@
         }
       },
       "melee": {
-        "hits": 2,
+        "hits": 1,
         "pierce": 0.65,
         "type": "plasma"
       },
@@ -3310,6 +3235,114 @@
         "contagions of nurgle",
         "resilient"
       ]
+    },
+    "Creed": {
+      "active": [
+        40.0,
+        24.0,
+        8.0
+      ],
+      "alliance": "Imperial",
+      "armour": 21.0,
+      "damage": 38.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
+      "faction": "Astra militarum",
+      "health": 90.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Blast",
+            "Max 2 hits"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [
+            "!"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "ASTRA MILITARUM",
+            "No Bolter",
+            "No Piercing"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 2,
+        "pierce": 0.1,
+        "type": "las"
+      },
+      "passive": [
+        90.0,
+        18.0,
+        15.0
+      ],
+      "traits": []
     },
     "Darkstrider": {
       "active": [
@@ -3417,7 +3450,7 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
@@ -3555,7 +3588,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Summons"
           ],
           "gamma": [
@@ -3687,7 +3719,7 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
+            "Max 2 hits",
             "Piercing",
             "No Infiltrate",
             "No Summons"
@@ -3707,7 +3739,7 @@
       },
       "passive": [
         9.0,
-        3.0
+        12.0
       ],
       "ranged": {
         "hits": 2,
@@ -3716,6 +3748,122 @@
       },
       "traits": [
         "psyker"
+      ]
+    },
+    "Exitor-Rho": {
+      "active": [
+        12.0,
+        15.0,
+        8.0,
+        12.0
+      ],
+      "alliance": "Imperial",
+      "armour": 17.0,
+      "damage": 30.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Adeptus Mechanicus",
+      "health": 80.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 2,
+        "pierce": 0.3,
+        "type": "energy"
+      },
+      "passive": [
+        21.0,
+        30.0
+      ],
+      "traits": [
+        "unstoppable",
+        "infiltrate",
+        "camouflage",
+        "mechanical"
       ]
     },
     "Gibbascrapz": {
@@ -3816,7 +3964,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate"
           ],
           "gamma": [
@@ -3833,10 +3980,264 @@
         "type": "physical"
       },
       "passive": [
-        5.8
+        6.0
       ],
       "traits": [
-        "mechanic"
+        "mechanic",
+        "get stuck in"
+      ]
+    },
+    "Godswyl": {
+      "active": [
+        60.0,
+        65.0
+      ],
+      "alliance": "Imperial",
+      "armour": 24.0,
+      "damage": 60.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Black templars",
+      "health": 95.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Power",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Max 1 hit",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Max 1 Hit",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 1,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "passive": [
+        25.0,
+        35.0,
+        10.0
+      ],
+      "traits": [
+        "parry",
+        "raid assault"
+      ]
+    },
+    "Gulgortz": {
+      "active": [
+        8.0,
+        45.0,
+        28.0,
+        15.0
+      ],
+      "alliance": "Xenos",
+      "armour": 26.0,
+      "damage": 26.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
+      "faction": "Orks",
+      "health": 100.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Resilient"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 hits"
+          ],
+          "beta": [],
+          "gamma": []
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "Big Target",
+            "No Psyker"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Bolter",
+            "No Piercing"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 2,
+        "pierce": 0.5,
+        "type": "eviscerating"
+      },
+      "passive": [
+        15.0,
+        20.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 0.15,
+        "type": "projectile"
+      },
+      "traits": [
+        "mechanical",
+        "big target",
+        "final vengeance",
+        "get stuck in",
+        "crushing strike"
       ]
     },
     "Haarken": {
@@ -3947,7 +4348,7 @@
         "type": "piercing"
       },
       "passive": [
-        4.2
+        2.975
       ],
       "traits": [
         "let the galaxy burn",
@@ -4051,7 +4452,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "Bolter",
             "No Infiltrate",
             "No Summons"
@@ -4074,6 +4474,143 @@
       },
       "traits": [
         "parry"
+      ]
+    },
+    "Hollan": {
+      "active": [
+        75.0,
+        14.0,
+        39.0
+      ],
+      "alliance": "Xenos",
+      "armour": 12.0,
+      "damage": 36.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Genestealer Cults",
+      "health": 55.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Max 1 hit",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 1,
+        "pierce": 0.7,
+        "type": "toxic"
+      },
+      "passive": [
+        30.0,
+        5.0
+      ],
+      "traits": [
+        "healer",
+        "ambush"
       ]
     },
     "Imospekh": {
@@ -4172,7 +4709,6 @@
           "alpha": [],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -4298,6 +4834,7 @@
           ],
           "beta": [
             "!",
+            "Max 2 hits",
             "Piercing",
             "No Infiltrate",
             "No Summons"
@@ -4315,6 +4852,147 @@
       ],
       "traits": [
         "healer"
+      ]
+    },
+    "Isaak": {
+      "active": [
+        30.0,
+        24.0,
+        6.0
+      ],
+      "alliance": "Xenos",
+      "armour": 14.0,
+      "damage": 30.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Genestealer Cults",
+      "health": 70.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 3,
+        "pierce": 0.3,
+        "type": "bio"
+      },
+      "passive": [
+        20.0,
+        24.0,
+        8.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 0.3,
+        "type": "bio"
+      },
+      "traits": [
+        "ambush"
       ]
     },
     "Isabella": {
@@ -4411,7 +5089,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "Bolter",
             "No Infiltrate",
             "No Summons"
@@ -4430,6 +5107,122 @@
       "traits": [
         "act of faith",
         "healer"
+      ]
+    },
+    "Jaeger": {
+      "active": [
+        8.0,
+        5.0
+      ],
+      "alliance": "Imperial",
+      "armour": 25.0,
+      "damage": 25.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
+      "faction": "Black templars",
+      "health": 110.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Power",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 3,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "passive": [
+        20.0,
+        22.0
+      ],
+      "traits": [
+        "final vengeance",
+        "parry",
+        "raid assault"
       ]
     },
     "Jain Zar": {
@@ -4540,7 +5333,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "Piercing",
             "No Summons"
           ],
@@ -4563,6 +5355,128 @@
       ],
       "traits": [
         "infiltrate"
+      ]
+    },
+    "Kharn": {
+      "active": [
+        50.0,
+        72.0,
+        12.0,
+        16.0,
+        33.0
+      ],
+      "alliance": "Chaos",
+      "armour": 20.0,
+      "damage": 25.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "World Eaters",
+      "health": 90.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Piercing",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Piercing",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Piercing",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Min 4 hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Min 3 hits"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 4,
+        "pierce": 0.5,
+        "type": "eviscerating"
+      },
+      "passive": [
+        14.0,
+        18.0
+      ],
+      "traits": [
+        "blessings of khorne",
+        "final vengeance",
+        "rapid assault"
       ]
     },
     "Kut": {
@@ -4658,7 +5572,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -4675,6 +5588,238 @@
       ],
       "traits": [
         "big target"
+      ]
+    },
+    "Lucien": {
+      "active": [
+        30.0,
+        10.0
+      ],
+      "alliance": "Imperial",
+      "armour": 21.0,
+      "damage": 30.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Blood Angels",
+      "health": 90.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 4,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "passive": [
+        25.0,
+        36.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.15,
+        "type": "blast"
+      },
+      "traits": [
+        "unstoppable",
+        "resilient",
+        "rapid assault"
+      ]
+    },
+    "Macer": {
+      "active": [
+        25.0,
+        36.0
+      ],
+      "alliance": "Chaos",
+      "armour": 10.0,
+      "damage": 30.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "World Eaters",
+      "health": 90.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits"
+          ],
+          "beta": [
+            "!",
+            "Melee",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Melee",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Min 3 hits"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 3,
+        "pierce": 0.2,
+        "type": "chain"
+      },
+      "passive": [
+        1.0
+      ],
+      "traits": [
+        "blessings of khorne",
+        "resilient"
       ]
     },
     "Makhotep": {
@@ -4774,7 +5919,7 @@
           "alpha": [],
           "beta": [
             "!",
-            "Min 2 hits",
+            "Max 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -4923,21 +6068,21 @@
         "terminator armour"
       ]
     },
-    "Calgar": {
+    "Mataneo": {
       "active": [
-        35.0,
-        45.0
+        32.0,
+        40.0
       ],
       "alliance": "Imperial",
-      "armour": 20.0,
-      "damage": 20.0,
+      "armour": 22.0,
+      "damage": 40.0,
       "equipment": {
-        "block": 1,
-        "block_booster": 1,
-        "crit": 1
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
       },
-      "faction": "Ultramarines",
-      "health": 95.0,
+      "faction": "Blood Angels",
+      "health": 90.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -4949,39 +6094,35 @@
           "beta": [],
           "gamma": [
             "!",
-            "No Flying",
-            "No Overwatch"
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
           ]
         },
         "JAIN ZAR": {
           "alpha": [],
           "beta": [
             "!",
-            "Power",
-            "Bolter",
             "No Blast",
             "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
             "!",
-            "No Mechanical",
-            "Bolter",
-            "No Flying"
+            "No Mechanical"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
             "Melee",
-            "Max 2 hits",
-            "Power"
+            "Max 2 hits"
           ],
           "beta": [],
           "gamma": [
             "!",
-            "Bolter",
             "No Overwatch",
+            "Max 1 hit",
             "No Summons"
           ]
         },
@@ -4989,12 +6130,11 @@
           "alpha": [
             "!",
             "Max 3 Hits",
-            "Bolter",
             "Melee"
           ],
           "beta": [
             "!",
-            "Power",
+            "Flying",
             "No Summons"
           ],
           "gamma": []
@@ -5003,11 +6143,11 @@
           "alpha": [
             "!",
             "No Psyker",
-            "Power",
             "Melee"
           ],
           "beta": [
             "!",
+            "No Bolter",
             "No Piercing",
             "No Summons"
           ],
@@ -5017,13 +6157,12 @@
           "alpha": [
             "!",
             "No Psychic",
-            "Power",
+            "Max 1 Hit",
             "No Resilient"
           ],
           "beta": [
             "!",
-            "Min 2 hits",
-            "Bolter",
+            "Max 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -5031,17 +6170,19 @@
         }
       },
       "melee": {
-        "hits": 2,
-        "pierce": 0.4,
-        "type": "power"
+        "hits": 1,
+        "pierce": 0.65,
+        "type": "plasma"
       },
       "passive": [
-        9.0,
-        13.0
+        50.0,
+        18.0,
+        18.0
       ],
       "traits": [
-        "mk x gravis",
-        "final vengeance"
+        "rapid assault",
+        "flying",
+        "deep strike"
       ]
     },
     "Maugan Ra": {
@@ -5156,7 +6297,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -5189,21 +6329,136 @@
         "overwatch"
       ]
     },
+    "Mephiston": {
+      "active": [
+        50.0
+      ],
+      "alliance": "Imperial",
+      "armour": 20.0,
+      "damage": 10.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "Blood Angels",
+      "health": 95.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 3,
+        "pierce": 1.0,
+        "type": "psychic"
+      },
+      "passive": [
+        12.0,
+        15.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0,
+        "type": "psychic"
+      },
+      "traits": [
+        "terrifying",
+        "psyker"
+      ]
+    },
     "Morvenn Vahl": {
       "active": [
         30.0,
         42.0
       ],
       "alliance": "Imperial",
-      "armour": 19.0,
-      "damage": 12.0,
+      "armour": 24.0,
+      "damage": 24.0,
       "equipment": {
         "block": 1,
         "block_booster": 1,
         "crit": 1
       },
       "faction": "Adepta Sororitas",
-      "health": 85.0,
+      "health": 94.95,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -5286,7 +6541,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "Bolter",
             "No Infiltrate",
             "No Summons"
@@ -5295,13 +6549,13 @@
         }
       },
       "melee": {
-        "hits": 5,
+        "hits": 2,
         "pierce": 0.4,
         "type": "power"
       },
       "passive": [
-        7.0,
-        10.0
+        12.0,
+        16.0
       ],
       "ranged": {
         "hits": 3,
@@ -5313,126 +6567,6 @@
         "mechanical",
         "explodes",
         "big target"
-      ]
-    },
-    "Rotbone": {
-      "active": [
-        35.0
-      ],
-      "alliance": "Chaos",
-      "armour": 27.0,
-      "damage": 14.0,
-      "equipment": {
-        "crit": 1,
-        "crit_booster": 1,
-        "defense": 1
-      },
-      "faction": "Death Guard",
-      "health": 120.0,
-      "legendary-event": {
-        "AUN'SHI": {
-          "alpha": [
-            "!",
-            "Melee",
-            "Min 3 hits",
-            "No Physical"
-          ],
-          "beta": [
-            "!",
-            "Melee",
-            "No Summons"
-          ],
-          "gamma": []
-        },
-        "JAIN ZAR": {
-          "alpha": [],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Mechanical",
-            "No Flying",
-            "Min 4 hits"
-          ]
-        },
-        "MAUGAN RA": {
-          "alpha": [
-            "!",
-            "Melee",
-            "Power",
-            "Resilient"
-          ],
-          "beta": [
-            "!",
-            "No Let the Galaxy Burn",
-            "Min 4 hits",
-            "No Mechanical",
-            "No Summons"
-          ],
-          "gamma": []
-        },
-        "RAGNAR": {
-          "alpha": [
-            "!",
-            "Resilient",
-            "Melee"
-          ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "Melee",
-            "No Physical",
-            "Power",
-            "No BLACK LEGION"
-          ]
-        },
-        "SHADOWSUN": {
-          "alpha": [
-            "!",
-            "No Psyker",
-            "Min 4 hits",
-            "Power",
-            "Melee"
-          ],
-          "beta": [
-            "!",
-            "No Bolter",
-            "No Piercing",
-            "No Summons"
-          ],
-          "gamma": [
-            "!",
-            "No Piercing",
-            "Min 3 hits",
-            "Power"
-          ]
-        },
-        "THANNEK": {
-          "alpha": [
-            "!",
-            "No Psychic",
-            "Power"
-          ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Flying",
-            "Power",
-            "No Psyker"
-          ]
-        }
-      },
-      "melee": {
-        "hits": 4,
-        "pierce": 0.4,
-        "type": "power"
-      },
-      "passive": [
-        49.0
-      ],
-      "traits": [
-        "contagions of nurgle",
-        "resilient",
-        "healer"
       ]
     },
     "Neurothrope": {
@@ -5544,6 +6678,7 @@
           ],
           "beta": [
             "!",
+            "Max 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -5574,6 +6709,116 @@
         "psyker",
         "shadow in the warp",
         "synapse"
+      ]
+    },
+    "Nicodemus": {
+      "active": [
+        50.0
+      ],
+      "alliance": "Imperial",
+      "armour": 23.0,
+      "damage": 23.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Blood Angels",
+      "health": 90.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 3,
+        "pierce": 0.2,
+        "type": "chain"
+      },
+      "passive": [
+        15.0,
+        22.0
+      ],
+      "traits": [
+        "rapid assault",
+        "healer"
       ]
     },
     "Njal": {
@@ -5666,7 +6911,7 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
+            "Max 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -5692,20 +6937,155 @@
         "unstoppable"
       ]
     },
+    "Parasite of Mortrex": {
+      "active": [
+        63.0,
+        11.0,
+        15.0
+      ],
+      "alliance": "Xenos",
+      "armour": 17.0,
+      "damage": 45.0,
+      "equipment": {
+        "crit": 2,
+        "defense": 1
+      },
+      "faction": "Tyranids",
+      "health": 90.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Max 1 hit",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Flying",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "No Psyker",
+            "Max 2 Hits"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 1,
+        "pierce": 0.7,
+        "type": "toxic"
+      },
+      "passive": [
+        63.0,
+        11.0,
+        15.0
+      ],
+      "traits": [
+        "flying",
+        "synapse"
+      ]
+    },
     "Pestillian": {
       "active": [
-        20.0
+        28.0
       ],
       "alliance": "Chaos",
-      "armour": 33.0,
-      "damage": 35.0,
+      "armour": 27.0,
+      "damage": 40.0,
       "equipment": {
         "crit": 1,
         "crit_booster": 1,
         "defense": 1
       },
       "faction": "Death Guard",
-      "health": 109.8,
+      "health": 120.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -5795,8 +7175,8 @@
       },
       "melee": {
         "hits": 1,
-        "pierce": 1.0,
-        "type": "direct"
+        "pierce": 0.7,
+        "type": "toxic"
       },
       "passive": [
         30.0
@@ -5804,25 +7184,24 @@
       "traits": [
         "contagions of nurgle",
         "resilient",
-        "putrid explosion"
+        "explodes"
       ]
     },
     "Ragnar": {
       "active": [
-        16.0,
-        26.0,
-        20.0
+        15.0,
+        16.0
       ],
       "alliance": "Imperial",
-      "armour": 26.0,
-      "damage": 15.0,
+      "armour": 24.0,
+      "damage": 14.0,
       "equipment": {
         "block": 1,
         "crit": 1,
         "crit_booster": 1
       },
       "faction": "Space Wolves",
-      "health": 110.0,
+      "health": 100.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
@@ -5900,7 +7279,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -5916,9 +7294,9 @@
         8.0
       ],
       "traits": [
-        "beast snagga",
+        "beast slayer",
         "final vengeance",
-        "raid assault"
+        "rapid assault"
       ]
     },
     "Re'vas": {
@@ -6025,7 +7403,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate"
           ],
           "gamma": [
@@ -6152,7 +7529,7 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
+            "Max 2 hits",
             "Bolter",
             "No Infiltrate",
             "No Summons"
@@ -6175,6 +7552,126 @@
       },
       "traits": [
         "act of faith"
+      ]
+    },
+    "Rotbone": {
+      "active": [
+        35.0
+      ],
+      "alliance": "Chaos",
+      "armour": 27.0,
+      "damage": 14.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Death Guard",
+      "health": 120.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "Power",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Min 4 hits",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Min 3 hits",
+            "Power"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "Power",
+            "No Psyker"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 4,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "passive": [
+        49.0
+      ],
+      "traits": [
+        "contagions of nurgle",
+        "resilient",
+        "healer"
       ]
     },
     "Sarquael": {
@@ -6273,6 +7770,7 @@
           ],
           "beta": [
             "!",
+            "Max 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -6402,7 +7900,7 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
+            "Max 2 hits",
             "No Summons"
           ],
           "gamma": [
@@ -6423,7 +7921,7 @@
       ],
       "ranged": {
         "hits": 2,
-        "pierce": 0.7,
+        "pierce": 0.75,
         "type": "melta"
       },
       "traits": [
@@ -6536,6 +8034,7 @@
           ],
           "beta": [
             "!",
+            "Max 2 hits",
             "Piercing",
             "No Infiltrate"
           ],
@@ -6662,6 +8161,7 @@
           ],
           "beta": [
             "!",
+            "Max 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -6687,19 +8187,19 @@
     },
     "Snappawrecka": {
       "active": [
-        26.0,
-        32.0
+        20.0,
+        25.0
       ],
       "alliance": "Xenos",
-      "armour": 15.0,
-      "damage": 20.0,
+      "armour": 20.0,
+      "damage": 23.0,
       "equipment": {
         "crit": 1,
         "crit_booster": 1,
         "defense": 1
       },
       "faction": "Orks",
-      "health": 80.0,
+      "health": 90.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [],
@@ -6707,12 +8207,10 @@
             "!",
             "Mechanical",
             "No Resilient",
-            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
-            "Physical",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -6721,7 +8219,6 @@
         "JAIN ZAR": {
           "alpha": [
             "!",
-            "Physical",
             "Ranged",
             "Max 3 hits",
             "No Summons"
@@ -6751,11 +8248,11 @@
           "beta": [
             "!",
             "Min 3 hits",
-            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "No Physical",
             "No BLACK LEGION"
           ]
         },
@@ -6788,7 +8285,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -6801,13 +8297,12 @@
         }
       },
       "melee": {
-        "hits": 2,
+        "hits": 3,
         "pierce": 0.2,
         "type": "chain"
       },
       "passive": [
-        8.0,
-        4.0
+        5.0
       ],
       "ranged": {
         "hits": 3,
@@ -6818,7 +8313,7 @@
         "mechanical",
         "big target",
         "explodes",
-        "dakka"
+        "get stuck in"
       ]
     },
     "Snotflogga": {
@@ -6827,15 +8322,15 @@
         33.0
       ],
       "alliance": "Xenos",
-      "armour": 25.0,
-      "damage": 25.0,
+      "armour": 18.0,
+      "damage": 30.0,
       "equipment": {
         "crit": 1,
         "crit_booster": 1,
         "defense": 1
       },
       "faction": "Orks",
-      "health": 110.0,
+      "health": 120.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [],
@@ -6916,7 +8411,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate"
           ],
           "gamma": [
@@ -6937,37 +8431,37 @@
         22.0
       ],
       "traits": [
-        "beast snagga"
+        "beast slayer",
+        "get stuck in"
       ]
     },
-    "Godswyl": {
+    "Tan Gi'da": {
       "active": [
-        60.0,
-        65.0
+        11.0
       ],
       "alliance": "Imperial",
-      "armour": 24.0,
-      "damage": 60.0,
+      "armour": 17.0,
+      "damage": 35.0,
       "equipment": {
+        "block": 1,
         "crit": 1,
-        "crit_booster": 1,
-        "defense": 1
+        "crit_booster": 1
       },
-      "faction": "Black templars",
-      "health": 95.0,
+      "faction": "Adeptus Mechanicus",
+      "health": 85.0,
       "legendary-event": {
         "AUN'SHI": {
           "alpha": [
             "!",
-            "Melee",
-            "Max 2 hits",
-            "No Physical"
+            "Max 2 hits"
           ],
           "beta": [],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
+            "No Power",
             "Max 1 hit"
           ]
         },
@@ -6975,57 +8469,49 @@
           "alpha": [],
           "beta": [
             "!",
-            "Power",
             "No Blast",
-            "Max 2 hits",
-            "No Summons"
+            "Max 2 hits"
           ],
           "gamma": [
             "!",
-            "No Mechanical",
             "No Flying"
           ]
         },
         "MAUGAN RA": {
           "alpha": [
             "!",
-            "Melee",
-            "Max 2 hits",
-            "Power"
+            "Max 2 hits"
           ],
           "beta": [],
           "gamma": [
             "!",
             "No Overwatch",
             "Max 1 hit",
-            "No Summons"
+            "Ranged"
           ]
         },
         "RAGNAR": {
           "alpha": [
             "!",
-            "Max 3 Hits",
-            "Melee"
+            "Ranged",
+            "Max 3 Hits"
           ],
           "beta": [
             "!",
-            "Power",
-            "No Summons"
+            "Physical"
           ],
           "gamma": []
         },
         "SHADOWSUN": {
           "alpha": [
             "!",
-            "No Psyker",
-            "Power",
-            "Melee"
+            "No Psyker"
           ],
           "beta": [
             "!",
+            "Mechanical",
             "No Bolter",
-            "No Piercing",
-            "No Summons"
+            "No Piercing"
           ],
           "gamma": []
         },
@@ -7033,37 +8519,42 @@
           "alpha": [
             "!",
             "No Psychic",
+            "Ranged",
             "Max 1 Hit",
-            "Power",
             "No Resilient"
           ],
           "beta": [
             "!",
-            "No Infiltrate",
-            "No Summons"
+            "Max 2 hits",
+            "No Infiltrate"
           ],
           "gamma": []
         }
       },
       "melee": {
-        "hits": 1,
-        "pierce": 0.4,
-        "type": "power"
+        "hits": 2,
+        "pierce": 0.01,
+        "type": "physical"
       },
       "passive": [
-        25.0,
-        35.0,
-        10.0
+        49.0,
+        9.5,
+        21.0
       ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 0.7,
+        "type": "toxic"
+      },
       "traits": [
-        "parry",
-        "raid assault"
+        "mechanical"
       ]
     },
     "Tanksmasha": {
       "active": [
-        11.0,
-        13.0
+        12.0,
+        15.0,
+        1.0
       ],
       "alliance": "Xenos",
       "armour": 15.0,
@@ -7161,7 +8652,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -7176,18 +8666,18 @@
       "melee": {
         "hits": 3,
         "pierce": 0.5,
-        "type": "eviscerate"
+        "type": "eviscerating"
       },
       "passive": [
-        10.0
+        6.0
       ],
       "traits": [
+        "get stuck in",
         "unstoppable",
-        "beast slayer",
-        "get stuck in"
+        "beast slayer"
       ]
     },
-    "Thaddeus noble": {
+    "Thaddeus": {
       "active": [
         30.0,
         32.0
@@ -7277,7 +8767,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -7414,6 +8903,259 @@
         "psyker"
       ]
     },
+    "The Patermine": {
+      "active": [
+        10.0,
+        12.0,
+        45.0,
+        21.0,
+        12.0
+      ],
+      "alliance": "Xenos",
+      "armour": 16.0,
+      "damage": 14.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "Genestealer Cults",
+      "health": 100.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "No Summons"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Min 4 hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Min 3 hits"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "No Psyker"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 5,
+        "pierce": 0.5,
+        "type": "eviscerating"
+      },
+      "passive": [
+        40.0
+      ],
+      "traits": [
+        "infiltrate",
+        "synapse",
+        "terrifying",
+        "unstoppable"
+      ]
+    },
+    "Thoread": {
+      "active": [
+        100.0,
+        20.0
+      ],
+      "alliance": "Imperial",
+      "armour": 22.0,
+      "damage": 33.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Black templars",
+      "health": 100.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Power",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Max 2 hits",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Max 3 Hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Power",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 2,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "passive": [
+        75.0
+      ],
+      "traits": [
+        "final vengeance",
+        "parry"
+      ]
+    },
     "Thutmose": {
       "active": [
         24.0,
@@ -7509,7 +9251,7 @@
           "alpha": [],
           "beta": [
             "!",
-            "Min 2 hits",
+            "Max 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -7538,6 +9280,240 @@
       },
       "traits": [
         "living metal"
+      ]
+    },
+    "Tigurius": {
+      "active": [
+        25.0,
+        30.0,
+        3.0
+      ],
+      "alliance": "Imperial",
+      "armour": 14.0,
+      "damage": 30.0,
+      "equipment": {
+        "crit": 1,
+        "crit_booster": 1,
+        "defense": 1
+      },
+      "faction": "Ultramarines",
+      "health": 65.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Physical",
+            "No Flying",
+            "No Overwatch",
+            "No Power",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "Physical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 1 Hit",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "passive": [
+        6.0,
+        12.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 1.0,
+        "type": "psychic"
+      },
+      "traits": [
+        "psyker"
+      ]
+    },
+    "Titus": {
+      "active": [
+        40.0,
+        50.0,
+        10.0,
+        25.0,
+        36.0
+      ],
+      "alliance": "Imperial",
+      "armour": 23.0,
+      "damage": 25.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "Ultramarines",
+      "health": 95.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Blast",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "Min 3 hits",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Min 4 hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 4,
+        "pierce": 0.2,
+        "type": "chain"
+      },
+      "passive": [
+        2.0,
+        44.0
+      ],
+      "traits": [
+        "final vengeance"
       ]
     },
     "Tjark": {
@@ -7633,7 +9609,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Summons"
           ],
           "gamma": []
@@ -7921,17 +9896,18 @@
             "!",
             "Piercing",
             "Melee",
-            "Max 2 hits",
-            "No Physical"
+            "Max 2 hits"
           ],
           "beta": [
             "!",
             "No Resilient",
             "Melee",
+            "Physical",
             "No Summons"
           ],
           "gamma": [
             "!",
+            "Physical",
             "No Flying",
             "No Overwatch",
             "No Power"
@@ -7940,6 +9916,7 @@
         "JAIN ZAR": {
           "alpha": [
             "!",
+            "Physical",
             "Max 3 hits",
             "No Summons"
           ],
@@ -8008,7 +9985,7 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
+            "Max 2 hits",
             "Piercing",
             "No Infiltrate",
             "No Summons"
@@ -8132,7 +10109,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "Piercing",
             "No Infiltrate",
             "No Summons"
@@ -8152,125 +10128,6 @@
       "traits": [
         "final vengeance",
         "unstoppable"
-      ]
-    },
-    "Tigurius": {
-      "active": [
-        25.0,
-        30.0,
-        3.0
-      ],
-      "alliance": "Imperial",
-      "armour": 14.0,
-      "damage": 30.0,
-      "equipment": {
-        "crit": 1,
-        "crit_booster": 1,
-        "defense": 1
-      },
-      "faction": "Ultramarines",
-      "health": 65.0,
-      "legendary-event": {
-        "AUN'SHI": {
-          "alpha": [
-            "!",
-            "Max 2 hits"
-          ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "Physical",
-            "No Flying",
-            "No Overwatch",
-            "No Power",
-            "Max 1 hit"
-          ]
-        },
-        "JAIN ZAR": {
-          "alpha": [],
-          "beta": [
-            "!",
-            "No Blast",
-            "Max 2 hits",
-            "No Summons"
-          ],
-          "gamma": [
-            "!",
-            "No Mechanical",
-            "No Flying"
-          ]
-        },
-        "MAUGAN RA": {
-          "alpha": [
-            "!",
-            "Psychic",
-            "Max 2 hits"
-          ],
-          "beta": [],
-          "gamma": [
-            "!",
-            "No Overwatch",
-            "Max 1 hit",
-            "Ranged",
-            "No Summons"
-          ]
-        },
-        "RAGNAR": {
-          "alpha": [
-            "!",
-            "Ranged",
-            "Max 3 Hits"
-          ],
-          "beta": [
-            "!",
-            "Physical",
-            "No Summons"
-          ],
-          "gamma": []
-        },
-        "SHADOWSUN": {
-          "alpha": [
-            "!"
-          ],
-          "beta": [
-            "!",
-            "No Bolter",
-            "No Piercing",
-            "No Summons"
-          ],
-          "gamma": []
-        },
-        "THANNEK": {
-          "alpha": [
-            "!",
-            "Ranged",
-            "Max 1 Hit",
-            "No Resilient"
-          ],
-          "beta": [
-            "!",
-            "No Infiltrate",
-            "No Summons"
-          ],
-          "gamma": []
-        }
-      },
-      "melee": {
-        "hits": 1,
-        "pierce": 0.01,
-        "type": "physical"
-      },
-      "passive": [
-        6.0,
-        12.0
-      ],
-      "ranged": {
-        "hits": 1,
-        "pierce": 1.0,
-        "type": "psychic"
-      },
-      "traits": [
-        "psyker"
       ]
     },
     "Vindicta": {
@@ -8365,7 +10222,6 @@
           ],
           "beta": [
             "!",
-            "Min 2 hits",
             "No Infiltrate",
             "No Summons"
           ],
@@ -8388,6 +10244,129 @@
       "traits": [
         "act of faith",
         "heavy weapon"
+      ]
+    },
+    "Vitruvius": {
+      "active": [
+        45.0,
+        55.0
+      ],
+      "alliance": "Imperial",
+      "armour": 18.0,
+      "damage": 59.0,
+      "equipment": {
+        "block": 1,
+        "crit": 1,
+        "crit_booster": 1
+      },
+      "faction": "Adeptus Mechanicus",
+      "health": 90.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "Max 1 hit"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Power",
+            "No Blast",
+            "Max 2 hits",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "Power"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Max 1 hit",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 Hits"
+          ],
+          "beta": [
+            "!",
+            "Power",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Power"
+          ],
+          "beta": [
+            "!",
+            "Mechanical",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Max 1 Hit",
+            "Power",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 1,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "passive": [
+        75.0
+      ],
+      "ranged": {
+        "hits": 1,
+        "pierce": 0.6,
+        "type": "molecular"
+      },
+      "traits": [
+        "mechanic",
+        "mechanical"
       ]
     },
     "Volk": {
@@ -8542,8 +10521,7 @@
           "beta": [
             "!",
             "No Resilient",
-            "Melee",
-            "No Summons"
+            "Melee"
           ],
           "gamma": [
             "!",
@@ -8553,8 +10531,7 @@
         },
         "JAIN ZAR": {
           "alpha": [
-            "!",
-            "No Summons"
+            "!"
           ],
           "beta": [],
           "gamma": [
@@ -8573,13 +10550,11 @@
             "No Power",
             "No Let the Galaxy Burn",
             "Min 4 hits",
-            "No Mechanical",
-            "No Summons"
+            "No Mechanical"
           ],
           "gamma": [
             "!",
-            "No Overwatch",
-            "No Summons"
+            "No Overwatch"
           ]
         },
         "RAGNAR": {
@@ -8589,6 +10564,126 @@
             "Min 3 hits",
             "Flying"
           ],
+          "gamma": [
+            "!",
+            "Melee",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Min 4 hits",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Min 3 hits"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "No Infiltrate"
+          ],
+          "gamma": [
+            "!",
+            "No Death Guard",
+            "No Psyker"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 6,
+        "pierce": 0.3,
+        "type": "bio"
+      },
+      "passive": [
+        30.0,
+        22.0,
+        6.0
+      ],
+      "traits": [
+        "synapse",
+        "flying",
+        "final vengeance"
+      ]
+    },
+    "Wrask": {
+      "active": [
+        35.0,
+        42.0
+      ],
+      "alliance": "Chaos",
+      "armour": 28.0,
+      "damage": 20.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
+      "faction": "World Eaters",
+      "health": 95.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Melee",
+            "Min 3 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "Melee",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying",
+            "Min 4 hits"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "Min 4 hits",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": []
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Melee"
+          ],
+          "beta": [],
           "gamma": [
             "!",
             "Melee",
@@ -8621,32 +10716,286 @@
             "No Psychic",
             "No Resilient"
           ],
-          "beta": [
-            "!",
-            "Min 2 hits",
-            "No Infiltrate"
-          ],
+          "beta": [],
           "gamma": [
             "!",
+            "No Flying",
             "No Death Guard",
             "No Psyker"
           ]
         }
       },
       "melee": {
-        "hits": 6,
-        "pierce": 0.3,
-        "type": "bio"
+        "hits": 4,
+        "pierce": 0.25,
+        "type": "flame"
+      },
+      "passive": [
+        40.0
+      ],
+      "traits": [
+        "blessings of khorne",
+        "deep strike",
+        "rapid assault",
+        "terminator armour",
+        "unstoppable"
+      ]
+    },
+    "Xybia": {
+      "active": [
+        8.0
+      ],
+      "alliance": "Xenos",
+      "armour": 11.0,
+      "damage": 15.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
+      "faction": "Genestealer Cults",
+      "health": 55.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [
+            "!",
+            "No Resilient",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch",
+            "No Power"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "Max 3 hits",
+            "No Summons"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Psychic",
+            "Max 2 hits"
+          ],
+          "beta": [
+            "!",
+            "No Power",
+            "No Let the Galaxy Burn",
+            "No Mechanical",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Overwatch",
+            "Ranged",
+            "No Summons"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Physical",
+            "No BLACK LEGION"
+          ]
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!"
+          ],
+          "beta": [
+            "!",
+            "No Bolter",
+            "No Piercing",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Piercing",
+            "Ranged"
+          ]
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "Ranged",
+            "No Resilient"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "No Infiltrate",
+            "No Summons"
+          ],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Death Guard",
+            "Max 2 Hits"
+          ]
+        }
+      },
+      "melee": {
+        "hits": 2,
+        "pierce": 1.0,
+        "type": "psychic"
       },
       "passive": [
         30.0,
-        22.0,
+        24.0,
         6.0
       ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0,
+        "type": "psychic"
+      },
       "traits": [
-        "synapse",
-        "flying",
-        "final vengeance"
+        "ambush",
+        "psyker"
+      ]
+    },
+    "Yarrick": {
+      "active": [
+        40.0,
+        24.0,
+        8.0
+      ],
+      "alliance": "Imperial",
+      "armour": 17.0,
+      "damage": 30.0,
+      "equipment": {
+        "block": 1,
+        "block_booster": 1,
+        "crit": 1
+      },
+      "faction": "Astra militarum",
+      "health": 75.0,
+      "legendary-event": {
+        "AUN'SHI": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "No Physical"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "No Flying",
+            "No Overwatch"
+          ]
+        },
+        "JAIN ZAR": {
+          "alpha": [],
+          "beta": [
+            "!",
+            "Power",
+            "Bolter",
+            "No Blast",
+            "Max 2 hits"
+          ],
+          "gamma": [
+            "!",
+            "No Mechanical",
+            "Bolter",
+            "No Flying"
+          ]
+        },
+        "MAUGAN RA": {
+          "alpha": [
+            "!",
+            "Max 2 hits",
+            "Power",
+            "Resilient"
+          ],
+          "beta": [],
+          "gamma": [
+            "!",
+            "Bolter",
+            "No Overwatch",
+            "Ranged"
+          ]
+        },
+        "RAGNAR": {
+          "alpha": [
+            "!",
+            "Resilient",
+            "Ranged",
+            "Max 3 Hits",
+            "Bolter"
+          ],
+          "beta": [
+            "!",
+            "Power"
+          ],
+          "gamma": []
+        },
+        "SHADOWSUN": {
+          "alpha": [
+            "!",
+            "No Psyker",
+            "Power"
+          ],
+          "beta": [
+            "!",
+            "ASTRA MILITARUM",
+            "No Piercing"
+          ],
+          "gamma": []
+        },
+        "THANNEK": {
+          "alpha": [
+            "!",
+            "No Psychic",
+            "Ranged",
+            "Power"
+          ],
+          "beta": [
+            "!",
+            "Max 2 hits",
+            "Bolter",
+            "No Infiltrate"
+          ],
+          "gamma": []
+        }
+      },
+      "melee": {
+        "hits": 3,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "passive": [
+        4.0,
+        2.0
+      ],
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.2,
+        "type": "bolter"
+      },
+      "traits": [
+        "resilient"
       ]
     },
     "Yazaghor": {
@@ -8795,6 +11144,7 @@
           "Black Legion",
           "Death Guard",
           "Thousand Sons",
+          "World Eaters",
           "Necrons",
           "Aeldari"
         ],
@@ -8880,6 +11230,7 @@
           "Black templars",
           "Dark Angels",
           "Death Guard",
+          "Genestealer Cults",
           "Orks",
           "Necrons",
           "Aeldari",
@@ -8887,6 +11238,7 @@
           "Thousand Sons",
           "Tyranids",
           "Ultramarines",
+          "World Eaters",
           "Space Wolves"
         ],
         "legendary": {
@@ -9020,6 +11372,7 @@
           "Black templars",
           "Dark Angels",
           "Death Guard",
+          "Genestealer Cults",
           "Orks",
           "Necrons",
           "Aeldari",
@@ -9027,7 +11380,8 @@
           "Space Wolves",
           "Thousand Sons",
           "Tyranids",
-          "Ultramarines"
+          "Ultramarines",
+          "World Eaters"
         ],
         "legendary": {
           "block": [
@@ -9095,12 +11449,15 @@
           "Astra militarum",
           "Black Legion",
           "Black templars",
+          "Blood Angels",
           "Dark Angels",
           "Death Guard",
+          "Genestealer Cults",
           "Orks",
           "Space Wolves",
           "Thousand Sons",
-          "Ultramarines"
+          "Ultramarines",
+          "World Eaters"
         ],
         "legendary": {
           "crit-dmg": [
@@ -9160,12 +11517,14 @@
           ]
         },
         "factions": [
+          "Genestealer Cults",
           "Tyranids",
           "Astra militarum",
           "Aeldari",
           "T'au Empire",
           "Thousand Sons",
-          "Adeptus Mechanicus"
+          "Adeptus Mechanicus",
+          "World Eaters"
         ],
         "legendary": {
           "crit-dmg": [
@@ -9241,9 +11600,11 @@
           "Adeptus Mechanicus",
           "Astra militarum",
           "Black templars",
+          "Blood Angels",
           "Dark Angels",
           "Space Wolves",
           "Ultramarines",
+          "World Eaters",
           "Black Legion",
           "Death Guard",
           "Thousand Sons",
@@ -9336,16 +11697,19 @@
           "Adeptus Mechanicus",
           "Astra militarum",
           "Black templars",
+          "Blood Angels",
           "Dark Angels",
           "Space Wolves",
           "Ultramarines",
           "Black Legion",
           "Death Guard",
           "Thousand Sons",
+          "World Eaters",
           "Necrons",
           "Orks",
           "Aeldari",
           "T'au Empire",
+          "Genestealer Cults",
           "Tyranids"
         ],
         "legendary": {
@@ -9427,16 +11791,20 @@
           "Necrons",
           "T'au Empire",
           "Adepta Sororitas",
+          "Adeptus Mechanicus",
           "Astra militarum",
           "Black Legion",
           "Black templars",
+          "Blood Angels",
           "Dark Angels",
           "Death Guard",
+          "Genestealer Cults",
           "Orks",
           "Aeldari",
           "Space Wolves",
           "Thousand Sons",
-          "Ultramarines"
+          "Ultramarines",
+          "World Eaters"
         ],
         "legendary": {
           "armour": [
@@ -9449,7 +11817,8 @@
             322,
             344,
             367,
-            389
+            389,
+            437
           ],
           "health": [
             0,
@@ -9541,12 +11910,15 @@
         },
         "factions": [
           "Black templars",
+          "Blood Angels",
           "Dark Angels",
           "Space Wolves",
           "Ultramarines",
           "Adepta Sororitas",
+          "Adeptus Mechanicus",
           "Astra militarum",
           "Aeldari",
+          "Genestealer Cults",
           "Tyranids",
           "Black Legion",
           "Death Guard",
@@ -9564,7 +11936,8 @@
             233,
             249,
             266,
-            282
+            282,
+            317
           ],
           "health": [
             188,
@@ -9699,33 +12072,33 @@
       "alpha": {
         "!": [
           29,
-          62
+          81
         ],
         "Max 2 hits": [
           70,
-          31
+          42
         ],
         "Melee": [
           80,
-          27
+          40
         ],
         "Min 3 hits": [
           70,
-          31
+          39
         ],
         "No Physical": [
           40,
-          51
+          66
         ],
         "Piercing": [
           115,
-          10
+          11
         ]
       },
       "beta": {
         "!": [
           53,
-          39
+          48
         ],
         "Mechanical": [
           105,
@@ -9733,45 +12106,45 @@
         ],
         "Melee": [
           85,
-          16
+          23
         ],
         "No Resilient": [
           40,
-          33
+          40
         ],
         "No Summons": [
           45,
-          29
+          36
         ],
         "Physical": [
           100,
-          9
+          10
         ]
       },
       "gamma": {
         "!": [
           40,
-          52
+          67
         ],
         "Max 1 hit": [
           125,
-          10
+          17
         ],
         "No Flying": [
           40,
-          43
+          56
         ],
         "No Overwatch": [
           40,
-          46
+          61
         ],
         "No Power": [
           50,
-          38
+          50
         ],
         "Physical": [
           120,
-          14
+          16
         ]
       }
     },
@@ -9779,11 +12152,11 @@
       "alpha": {
         "!": [
           42,
-          24
+          29
         ],
         "Max 3 hits": [
           45,
-          17
+          21
         ],
         "Necrons": [
           110,
@@ -9791,7 +12164,7 @@
         ],
         "No Summons": [
           60,
-          18
+          21
         ],
         "Physical": [
           100,
@@ -9799,13 +12172,13 @@
         ],
         "Ranged": [
           60,
-          14
+          16
         ]
       },
       "beta": {
         "!": [
           40,
-          28
+          38
         ],
         "Bolter": [
           96,
@@ -9813,25 +12186,25 @@
         ],
         "Max 2 hits": [
           70,
-          14
+          20
         ],
         "No Blast": [
           50,
-          24
+          33
         ],
         "No Summons": [
           60,
-          24
+          33
         ],
         "Power": [
           95,
-          12
+          15
         ]
       },
       "gamma": {
         "!": [
           29,
-          62
+          81
         ],
         "Bolter": [
           95,
@@ -9839,19 +12212,19 @@
         ],
         "Min 4 hits": [
           90,
-          16
+          21
         ],
         "No Flying": [
           45,
-          49
+          66
         ],
         "No Mechanical": [
           45,
-          54
+          70
         ],
         "Piercing": [
           100,
-          10
+          11
         ]
       }
     },
@@ -9859,59 +12232,59 @@
       "alpha": {
         "!": [
           45,
-          62
+          81
         ],
         "Max 2 hits": [
           65,
-          29
+          41
         ],
         "Melee": [
           50,
-          29
+          42
         ],
         "Power": [
           70,
-          21
+          24
         ],
         "Psychic": [
           95,
-          10
+          12
         ],
         "Resilient": [
           95,
-          8
+          11
         ]
       },
       "beta": {
         "!": [
           45,
-          39
+          48
         ],
         "Min 4 hits": [
           115,
-          12
+          15
         ],
         "No Let the Galaxy Burn": [
           65,
-          34
+          43
         ],
         "No Mechanical": [
           75,
-          31
+          40
         ],
         "No Power": [
           70,
-          30
+          39
         ],
         "No Summons": [
           50,
-          29
+          36
         ]
       },
       "gamma": {
         "!": [
           45,
-          52
+          67
         ],
         "Bolter": [
           100,
@@ -9919,19 +12292,19 @@
         ],
         "Max 1 hit": [
           120,
-          10
+          17
         ],
         "No Overwatch": [
           45,
-          46
+          61
         ],
         "No Summons": [
           40,
-          42
+          54
         ],
         "Ranged": [
           70,
-          28
+          34
         ]
       }
     },
@@ -9939,7 +12312,7 @@
       "alpha": {
         "!": [
           24,
-          43
+          57
         ],
         "Bolter": [
           95,
@@ -9947,67 +12320,67 @@
         ],
         "Max 3 Hits": [
           40,
-          33
+          43
         ],
         "Melee": [
           70,
-          20
+          30
         ],
         "Ranged": [
           65,
-          23
+          27
         ],
         "Resilient": [
           105,
-          8
+          11
         ]
       },
       "beta": {
         "!": [
           30,
-          52
+          67
         ],
         "Flying": [
           100,
-          9
+          11
         ],
         "Min 3 hits": [
           60,
-          29
+          33
         ],
         "No Summons": [
           35,
-          41
+          54
         ],
         "Physical": [
           90,
-          15
+          16
         ],
         "Power": [
           90,
-          14
+          17
         ]
       },
       "gamma": {
         "!": [
           34,
-          39
+          48
         ],
         "Melee": [
           85,
-          16
+          23
         ],
         "No BLACK LEGION": [
           35,
-          34
+          43
         ],
         "No Physical": [
           45,
-          29
+          38
         ],
         "Piercing": [
           105,
-          8
+          9
         ],
         "Power": [
           105,
@@ -10019,7 +12392,7 @@
       "alpha": {
         "!": [
           35,
-          62
+          81
         ],
         "Big Target": [
           115,
@@ -10027,25 +12400,25 @@
         ],
         "Melee": [
           60,
-          29
+          42
         ],
         "Min 4 hits": [
           80,
-          15
+          20
         ],
         "No Psyker": [
           40,
-          52
+          69
         ],
         "Power": [
           80,
-          21
+          24
         ]
       },
       "beta": {
         "!": [
           19,
-          67
+          86
         ],
         "ASTRA MILITARUM": [
           120,
@@ -10053,25 +12426,25 @@
         ],
         "Mechanical": [
           90,
-          10
+          13
         ],
         "No Bolter": [
           50,
-          56
+          75
         ],
         "No Piercing": [
           50,
-          57
+          75
         ],
         "No Summons": [
           65,
-          53
+          69
         ]
       },
       "gamma": {
         "!": [
           18,
-          39
+          48
         ],
         "BLACK LEGION": [
           120,
@@ -10079,11 +12452,11 @@
         ],
         "Min 3 hits": [
           50,
-          22
+          25
         ],
         "No Piercing": [
           40,
-          31
+          39
         ],
         "Power": [
           100,
@@ -10091,7 +12464,7 @@
         ],
         "Ranged": [
           65,
-          23
+          25
         ]
       }
     },
@@ -10099,49 +12472,49 @@
       "alpha": {
         "!": [
           24,
-          62
+          81
         ],
         "Max 1 Hit": [
           120,
-          17
+          25
         ],
         "No Psychic": [
           40,
-          52
+          69
         ],
         "No Resilient": [
           35,
-          54
+          70
         ],
         "Power": [
           105,
-          21
+          24
         ],
         "Ranged": [
           75,
-          33
+          39
         ]
       },
       "beta": {
         "!": [
           30,
-          52
+          67
         ],
         "Bolter": [
           105,
           10
         ],
-        "Min 2 hits": [
+        "Max 2 hits": [
           75,
-          42
+          34
         ],
         "No Infiltrate": [
           30,
-          46
+          59
         ],
         "No Summons": [
           50,
-          41
+          54
         ],
         "Piercing": [
           115,
@@ -10151,23 +12524,23 @@
       "gamma": {
         "!": [
           34,
-          39
+          48
         ],
         "Max 2 Hits": [
           110,
-          17
+          23
         ],
         "No Death Guard": [
           35,
-          34
+          43
         ],
         "No Flying": [
           60,
-          29
+          37
         ],
         "No Psyker": [
           45,
-          32
+          40
         ],
         "Power": [
           125,
@@ -10176,307 +12549,58 @@
       }
     }
   },
-  "summons": {
-    "Bloodletter": {
-      "alliance": "",
-      "armour": 0,
-      "damage": 25.0,
-      "faction": "Black Legion",
-      "health": 39.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.8,
-        "type": "piercing"
-      },
-      "traits": [
-        "daemon",
-        "summon"
-      ]
-    },
-    "Blue Horror": {
-      "alliance": "",
-      "armour": 0,
-      "damage": 18.0,
-      "faction": "Thousand Sons",
-      "health": 21.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.01,
-        "type": "physical"
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 0.25,
-        "type": "flame"
-      },
-      "traits": [
-        "weaver of fates",
-        "daemon",
-        "summon"
-      ]
-    },
-    "Cadian Guardsman": {
-      "alliance": "",
-      "armour": 8.0,
-      "damage": 24.0,
-      "faction": "Astra militarum",
-      "health": 40.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.01,
-        "type": "physical"
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 0.1,
-        "type": "las"
-      },
-      "traits": [
-        "battle fatigue",
-        "summon"
-      ]
-    },
-    "Colour Sergeant Kell": {
-      "alliance": "",
-      "armour": 15.0,
-      "damage": 18.0,
-      "faction": "Astra militarum",
-      "health": 90.0,
-      "melee": {
-        "hits": 2,
-        "pierce": 0.4,
-        "type": "power"
-      },
-      "traits": [
-        "summon"
-      ]
-    },
-    "Command-Link Drone": {
-      "alliance": "",
-      "armour": 10.0,
-      "damage": 14.0,
-      "faction": "T'au Empire",
-      "health": 30.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.01,
-        "type": "physical"
-      },
-      "traits": [
-        "flying",
-        "mechanical",
-        "summon"
-      ]
-    },
-    "Geminae Superia": {
-      "alliance": "",
-      "armour": 20.0,
-      "damage": 25.0,
-      "faction": "Adepta Sororitas",
-      "health": 48.0,
-      "melee": {
-        "hits": 2,
-        "pierce": 0.4,
-        "type": "power"
-      },
-      "traits": [
-        "flying",
-        "summon"
-      ]
-    },
-    "Grot": {
-      "alliance": "",
-      "armour": 0,
-      "damage": 33.0,
-      "faction": "Orks",
-      "health": 65.5,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.15,
-        "type": "projectile"
-      },
-      "traits": [
-        "diminutive",
-        "battle fatigue",
-        "summon"
-      ]
-    },
-    "Grot Tank": {
-      "alliance": "",
-      "armour": 20.0,
-      "damage": 25.0,
-      "faction": "Orks",
-      "health": 70.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.01,
-        "type": "physical"
-      },
-      "ranged": {
-        "hits": 3,
-        "pierce": 0.15,
-        "type": "blast"
-      },
-      "traits": [
-        "mechanical",
-        "battle fatigue",
-        "vehicle",
-        "summon"
-      ]
-    },
-    "Inceptor": {
-      "alliance": "",
-      "armour": 12.0,
-      "damage": 10.0,
-      "faction": "Ultramarines",
-      "health": 55.0,
-      "melee": {
-        "hits": 6,
-        "pierce": 0.2,
-        "type": "bolter"
-      },
-      "traits": [
-        "flying",
-        "mk x gravis",
-        "summon"
-      ]
-    },
-    "MV71 Sniper Drone": {
-      "alliance": "",
-      "armour": 5.0,
-      "damage": 28.0,
-      "faction": "T'au Empire",
-      "health": 20.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.01,
-        "type": "physical"
-      },
-      "ranged": {
-        "hits": 1,
-        "pierce": 0.8,
-        "type": "piercing"
-      },
-      "traits": [
-        "flying",
-        "mechanical",
-        "close combat weakness",
-        "summon"
-      ]
-    },
-    "Necron warrior": {
-      "alliance": "",
-      "armour": 15.0,
-      "damage": 20.0,
-      "faction": "Necrons",
-      "health": 60.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.01,
-        "type": "physical"
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 0.6,
-        "type": "molecular"
-      },
-      "traits": [
-        "living metal",
-        "summon"
-      ]
-    },
-    "Pink Horror": {
-      "alliance": "",
-      "armour": 0,
-      "damage": 9.0,
-      "faction": "Thousand Sons",
-      "health": 36.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.01,
-        "type": "physical"
-      },
-      "ranged": {
-        "hits": 2,
-        "pierce": 1.0,
-        "type": "psychic"
-      },
-      "traits": [
-        "weaver of fates",
-        "daemon",
-        "psyker",
-        "summon"
-      ]
-    },
-    "Pox Walkers": {
-      "alliance": "",
-      "armour": 0,
-      "damage": 35.0,
-      "faction": "Death Guard",
-      "health": 30.0,
-      "melee": {
-        "hits": 2,
-        "pierce": 0.01,
-        "type": "physical"
-      },
-      "traits": [
-        "contagions of nurgle",
-        "summon"
-      ]
-    },
-    "Scarab Swarm": {
-      "alliance": "",
-      "armour": 0,
-      "damage": 10.0,
-      "faction": "Necrons",
-      "health": 20.0,
-      "melee": {
-        "hits": 5,
-        "pierce": 0.3,
-        "type": "energy"
-      },
-      "traits": [
-        "living metal",
-        "flying",
-        "swarm",
-        "summon"
-      ]
-    },
-    "Screamer of Tzeentch": {
-      "alliance": "",
-      "armour": 0,
-      "damage": 18.0,
-      "faction": "Thousand Sons",
-      "health": 45.0,
-      "melee": {
-        "hits": 3,
-        "pierce": 0.4,
-        "type": "power"
-      },
-      "traits": [
-        "weaver of fates",
-        "daemon",
-        "flying",
-        "summon"
-      ]
-    },
-    "Shield Drone": {
-      "alliance": "",
-      "armour": 15.0,
-      "damage": 14.0,
-      "faction": "T'au Empire",
-      "health": 40.0,
-      "melee": {
-        "hits": 1,
-        "pierce": 0.01,
-        "type": "physical"
-      },
-      "traits": [
-        "flying",
-        "mechanical",
-        "summon"
-      ]
-    }
-  },
-  "version": "Beta 0.4.6.4"
+  "summons": {},
+  "titus_ability_factor": [
+    2.0,
+    3.0,
+    4.0,
+    5.0,
+    6.0,
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0,
+    17.0,
+    18.0,
+    19.0,
+    20.0,
+    21.0,
+    22.0,
+    23.0,
+    24.0,
+    25.0,
+    26.0,
+    27.0,
+    28.0,
+    29.0,
+    31.0,
+    33.0,
+    35.0,
+    38.0,
+    40.0,
+    42.0,
+    45.0,
+    47.0,
+    49.0,
+    51.0,
+    54.0,
+    57.0,
+    61.0,
+    66.0,
+    71.0,
+    77.0,
+    87.0,
+    97.0,
+    108.0,
+    118.0,
+    128.0,
+    138.0
+  ],
+  "version": "0.5.4"
 }

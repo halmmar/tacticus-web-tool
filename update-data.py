@@ -10,7 +10,35 @@ import copy
 from collections import OrderedDict
 from io import StringIO
 
-file = 'EN Labs T.A.C.T.I.C.U.S - Beta 0.4.6.4.xlsx'
+file = 'TACTICUS-0.5.4.xlsx'
+
+# Map between Towen and SP names
+nameMap = {
+    "Abaddon the despolier": "Abaddon",
+    "Aun'shi": "Aun'Shi",
+    "Aleph-null": "Aleph-Null",
+    "Ancient Thoread": "Thoread",
+    "Boss Gulgortz": "Gulgortz",
+    "Brother Burchard": "Burchard",
+    "Brother Jaeger": "Jaeger",
+    "Castellan creed": "Creed",
+    "Command-Link drone": "Command-Link Drone",
+    "Commissar Yarrick": "Yarrick",
+    "Exitor-Rho-1.15/x": "Exitor-Rho",
+    "Haarken Worldclaimer": "Haarken",
+    "High Marshal Helbrecht": "Helbrecht",
+    "Kut skoden": "Kut",
+    "Marneus Calgar": "Calgar",
+    "Nauseous rotbone": "Rotbone", # Also modified in the Javascript since SP named him "Nauseus"
+    "Parasite Of Mortrex": "Parasite of Mortrex",
+    "Re'Vas": "Re'vas",
+    "ShadowSun": "Shadowsun",
+    "Sho'Syl": "Sho'syl",
+    "Sword Brother Godswyl": "Godswyl",
+    "Tan Gi’da": "Tan Gi'da",
+    "Thaddeus noble": "Thaddeus",
+    "Varro Tigurius": "Tigurius"
+}
 
 def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
     """ Get a single rectangular region from the specified file.
@@ -69,25 +97,27 @@ def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
 bossSummons = ["Stormboy"]
 
 tb_Characters = data_frame_from_xlsx(file, 'tb_Characters', 1)
-tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$X$2:$Y$22', True)
-tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$I$4:$M$21', True)
+tb_Pierce = data_frame_from_xlsx(file, 'UL_Tables!$Z$2:$AA$24', True)
+tb_Gear = data_frame_from_xlsx(file, 'UL_Tables!$K$4:$O$21', True)
 
 # Updated for new factions; also update the faction map below
-tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AT$151', 2)
+tb_Equipment = data_frame_from_xlsx(file, 'Equipment!$B$3:$AX$151', 2)
 # Updated for new characters
 tb_CharacterAbilities = data_frame_from_xlsx(file, 'wb_abilities!$A$4:$U$89', True) # Passives
 
-tb_Abilities = data_frame_from_xlsx(file, 'UL_Tables!$AG$3:$AI$52', True) # Not updated for new characters
-tb_Abilities_1_50 = [level for (level,factor,archi) in tb_Abilities.itertuples(index=False)]
-tb_SummonsList = data_frame_from_xlsx(file, 'SummonData!$A$2:$A$18', False)
+tb_Abilities = data_frame_from_xlsx(file, 'UL_Tables!$AI$3:$AM$52', True) # Not updated for new characters
+tb_Abilities_1_50 = [level for (level,factor,archi,azkor,titus) in tb_Abilities.itertuples(index=False)]
+# tb_SummonsList = data_frame_from_xlsx(file, 'SummonData!$A$2:$A$30', False)
 
 for i in range(1,51):
     if tb_Abilities_1_50[i-1] != i:
         raise Exception("Did not find the correct table. i=%d, tb_Abilities=%d" % ( i, tb_Abilities_1_50[i-1]))
-tb_Abilities_factor = [factor for (level,factor,archi) in tb_Abilities.itertuples(index=False)]
-tb_Abilities_factor_archimatos = [factor for (level,factor,archi) in tb_Abilities.itertuples(index=False)]
+tb_Abilities_factor = [factor for (level,factor,archi,azkor,titus) in tb_Abilities.itertuples(index=False)]
+tb_Abilities_factor_archimatos = [archi for (level,factor,archi,azkor,titus) in tb_Abilities.itertuples(index=False)]
+tb_Abilities_factor_azkor = [azkor for (level,factor,archi,azkor,titus) in tb_Abilities.itertuples(index=False)]
+tb_Abilities_factor_titus = [titus for (level,factor,archi,azkor,titus) in tb_Abilities.itertuples(index=False)]
 summonsNames = set()
-for index, row in tb_SummonsList.iterrows():
+for index, row in []: # tb_SummonsList.iterrows():
     if row[0] and not row[0] in bossSummons:
         if row[0] == "Command-Link drone":
             row[0] = "Command-Link Drone"
@@ -134,6 +164,7 @@ while indexLegendaryEvent in tb_LegendaryEvent and tb_LegendaryEvent[indexLegend
             continue
         if not isinstance(row[0],str):
             continue
+        row[0] = nameMap.get(row[0], row[0])
         if row[0] not in legendaryEventCharacters:
             legendaryEventCharacters[row[0]] = {}
         characterAlpha = []
@@ -288,18 +319,24 @@ gear = [(rank,int(gearLevel)) for (rarity,rank,rankMetal,rankLevel,gearLevel) in
 
 factionMap = {
     "Adepta Sororitas": "Adepta Sororitas",
+    "ADEPTA SORORITAS": "Adepta Sororitas",
     "Adeptus Mechanicus": "Adeptus Mechanicus",
     "ADEPTUS MECHANICUS": "Adeptus Mechanicus",
     "ASTRA MILITARUM": "Astra militarum",
     "Astra Miltarum": "Astra militarum",
+    "Astra Militarum": "Astra militarum",
     "BLACK LEGION": "Black Legion",
     "Black Legion": "Black Legion",
     "BLACK TEMPLARS": "Black templars",
     "Black Templars": "Black templars",
+    "BLOOD ANGELS": "Blood Angels",
+    "Blood Angels": "Blood Angels",
     "DARK ANGELS": "Dark Angels",
     "Dark Angels": "Dark Angels",
     "Death guard": "Death Guard",
     "DEATH GUARD": "Death Guard",
+    "Genestealer Cults": "Genestealer Cults",
+    "GENESTEALER CULTS": "Genestealer Cults",
     "ORKS": "Orks",
     "Orks": "Orks",
     "Ork": "Orks",
@@ -317,39 +354,19 @@ factionMap = {
     "Tyranids": "Tyranids",
     "TYRANIDS": "Tyranids",
     "Ultramarines": "Ultramarines",
-    "ULTRAMARINES": "Ultramarines"
+    "ULTRAMARINES": "Ultramarines",
+    "WORLD EATERS": "World Eaters"
 }
 allianceMap = {
     "XENOS": "Xenos",
     "Xenos": "Xenos",
+    "Xenons": "Xenos",
     "CHAOS": "Chaos",
     "Chaos": "Chaos",
     "IMPERIAL": "Imperial",
     "Imperial": "Imperial",
     None: "",
     0: ""
-}
-nameMap = {
-    "Abaddon the despolier": "Abaddon",
-    "Aun'shi": "Aun'Shi",
-    "Aleph-null": "Aleph-Null",
-    "Ancient Thoread": "Thoread",
-    "Boss Gulgortz": "Gulgortz",
-    "Brother Burchard": "Burchard",
-    "Brother Jaeger": "Jaeger",
-    "Castellan creed": "Creed",
-    "Command-Link drone": "Command-Link Drone",
-    "Commissar Yarrick": "Yarrick",
-    "Haarken Worldclaimer": "Haarken",
-    "High Marshal Helbrecht": "Helbrecht",
-    "Kut skoden": "Kut",
-    "Marneus Calgar": "Calgar",
-    "Nauseous rotbone": "Rotbone",
-    "Re'Vas": "Re'vas",
-    "ShadowSun": "Shadowsun",
-    "Sho'Syl": "Sho'syl",
-    "Sword Brother Godswyl": "Godswyl",
-    "Varro Tigurius": "Tigurius"
 }
 
 eqDict = {}
@@ -381,8 +398,8 @@ for index, eq in tb_Equipment.iterrows():
     itemChance = itemType[chance]
     rarityStr = eq["Rarity"].lower()
     if rarityStr not in itemChance:
-        stat1 = [int(x) for x in eq[23:34] if not np.isnan(x)]
-        stat2 = [int(x) for x in eq[35:46] if not np.isnan(x)]
+        stat1 = [int(x) for x in eq[26:37] if not np.isnan(x)]
+        stat2 = [int(x) for x in eq[38:49] if not np.isnan(x)]
         if itemTypeStr=="defense":
             itemChance[rarityStr] = {
                 "health": stat1,
@@ -403,8 +420,15 @@ def toJSON(rows):
     bosses = {}
     summons = {}
     bossNames = ["TERVIGON", "Tervigon"]
+    foundMobs = False
     for index, row in rows.iterrows():
-        row.Name = nameMap.get(row.Name, row.Name)
+        if row[0] == "Mobs":
+            foundMobs = True
+        if row[0] == "Summons":
+            foundMobs = False
+        if foundMobs:
+            continue
+        name = nameMap.get(row.Name, row.Name)
         if row.Faction in bossNames:
             continue
         if row.Alliance in bossNames:
@@ -426,8 +450,10 @@ def toJSON(rows):
             if traitStripped in traits:
                 continue
             traits += [traitStripped]
-        if row.Name == "Shield Drone" and "summon" not in traits:
+        if row.Name in ["Shield Drone","Termagant"] and "summon" not in traits:
             traits += ["summon"]
+        if "summon" in traits:
+            continue # TODO: Fix summons
         toDelete = []
         for key in eqCount.keys():
             if not eqCount[key]:
@@ -447,8 +473,8 @@ def toJSON(rows):
             data["passive"] = passiveData
             data["active"] = activeData
             data["equipment"] = eqCount
-            data["legendary-event"] = legendaryEventCharacters[row.Name]
-            characters[row.Name] = data
+            data["legendary-event"] = legendaryEventCharacters[name]
+            characters[name] = data
         elif row.Name[0:2] in ["L1", "L2", "L3", "L4"]:
             bosses[row.Name] = data
         elif "summon" in traits:
@@ -463,6 +489,6 @@ def toJSON(rows):
     for name in summonsNames:
         if name not in summons:
             raise Exception("%s is not in the list of summons" % name)
-    return {"characters": characters, "bosses": bossStats, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "archimatos_ability_factor": tb_Abilities_factor_archimatos, "equipment": eqDict, "legendary-events": legendaryEvents, "latest-legendary-event": latestLegendaryEvent, "version": file.split("-")[1].strip().replace(".xlsx", "")}
+    return {"characters": characters, "bosses": bossStats, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "archimatos_ability_factor": tb_Abilities_factor_archimatos, "azkor_ability_factor": tb_Abilities_factor_azkor, "titus_ability_factor": tb_Abilities_factor_titus, "equipment": eqDict, "legendary-events": legendaryEvents, "latest-legendary-event": latestLegendaryEvent, "version": file.split("-")[1].strip().replace(".xlsx", "")}
 with open("tacticus.json", "w") as fout:
     fout.write(json.dumps(toJSON(tb_Characters), sort_keys=True, indent=2))

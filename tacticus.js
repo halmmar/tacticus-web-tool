@@ -927,7 +927,7 @@ var updateTable = function() {
         case 'Snappawrecka':
         case 'Snotflogga':
         case 'Thaumachus':
-        case 'Thaddeus noble':
+        case 'Thaddeus':
         case 'Thutmose':
         case 'Toth':
         case 'Typhus':
@@ -952,6 +952,12 @@ var updateTable = function() {
             var eqCount = char.equipment[eqKey];
             var curEq = tb_equipment[eqKey];
             var curChance = Object.keys(curEq).filter(function (chance) { return curEq[chance]["factions"].includes(char.faction) && curEq[chance][equipmentRarity]; });
+
+            if (curChance.length == 0) {
+              comment += "Faction does not have " + eqKey + " equipment?";
+              return;
+            }
+
             if (preferEqCritDmg && eqKey=="crit") {
               selectedChance = Math.min(...curChance);
             } else {
