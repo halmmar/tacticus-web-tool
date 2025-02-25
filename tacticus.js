@@ -222,7 +222,7 @@ var updateAbaddon = function(skipUpdate) {
   }
   var level = document.getElementById("abaddon-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("abaddon-buff-rarity").value*0.2);
-  document.getElementById("abaddon-buff-dmg").innerHTML = Math.round(tb_chars["Abaddon the despolier"].passive[0]*factor);
+  document.getElementById("abaddon-buff-dmg").innerHTML = Math.round(tb_chars["Abaddon"].passive[0]*factor);
   if (1 != skipUpdate) updateTable();
 };
 var updateThaddeus = function(skipUpdate) {
@@ -273,8 +273,8 @@ var updateCalgar = function(skipUpdate) {
   }
   var level = document.getElementById("calgar-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("calgar-buff-rarity").value*0.2);
-  document.getElementById("calgar-buff-all").innerHTML = Math.round(tb_chars["Marneus Calgar"].passive[0]*factor);
-  document.getElementById("calgar-buff-imperial").innerHTML = Math.round(tb_chars["Marneus Calgar"].passive[1]*factor);
+  document.getElementById("calgar-buff-all").innerHTML = Math.round(tb_chars["Calgar"].passive[0]*factor);
+  document.getElementById("calgar-buff-imperial").innerHTML = Math.round(tb_chars["Calgar"].passive[1]*factor);
   if (1 != skipUpdate) updateTable();
 }
 var updateAethana = function(skipUpdate) {
@@ -322,7 +322,7 @@ var updateHelbrecht = function(skipUpdate) {
   }
   var level = document.getElementById("helbrecht-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById("helbrecht-buff-rarity").value*0.2);
-  document.getElementById("helbrecht-buff-dmg").innerHTML = Math.round(tb_chars["High Marshal Helbrecht"].passive[0]*factor);
+  document.getElementById("helbrecht-buff-dmg").innerHTML = Math.round(tb_chars["Helbrecht"].passive[0]*factor);
   if (1 != skipUpdate) updateTable();
 }
 
@@ -601,10 +601,8 @@ var insertIcon = function(name) {
 }
 
 var updateTable = function() {
-    updateModeVisible(document.getElementsByClassName("non-api-only"), document.getElementById("gearlevel").value == "api" ? "none" : "");
-    var starlevel = document.getElementById("starlevel").value;
-    var gearlevel = document.getElementById("gearlevel").value;
-    var levelStatFactor = Math.pow(1.25205, gearlevel)*(1+0.1*starlevel);
+    var isAPI = document.getElementById("gearlevel").value == "api";
+    updateModeVisible(document.getElementsByClassName("non-api-only"), isAPI ? "none" : "");
     var opponentarmor = +document.getElementById("opponent-armour").value;
     var opponentMeleeDamage = +document.getElementById("opponent-melee-damage").innerHTML;
     var opponentMeleeHits = +document.getElementById("opponent-melee-hits").innerHTML;
@@ -658,6 +656,24 @@ var updateTable = function() {
     
     Object.keys(tb_chars_and_summons).forEach(function callback(key) {
         var comment = "";
+        var starlevel = 0;
+        var gearlevel = 0;
+        if (isAPI && key in playerUnits) {
+          var progression = playerUnits[key].progressionIndex;
+          var rarity = apiProgressionIndexToRarity[progression];
+          starlevel = progression - rarity;
+          gearlevel = playerUnits[key].rank;
+        } else if (!isAPI) {
+          starlevel = document.getElementById("starlevel").value;
+          gearlevel = document.getElementById("gearlevel").value;
+        } else if (key in playerUnitShards) {
+          comment += "Not unlocked";
+        } else {
+          comment += "API name mismatch in DB and API";
+        }
+        
+        var levelStatFactor = Math.pow(1.25205, gearlevel)*(1+0.1*starlevel);
+
         entryId = characterTableEntryId(key);
         var char = tb_chars[key];
         var passiveFactor = passiveFactorCharacter(key);
@@ -683,7 +699,7 @@ var updateTable = function() {
         var calgardamageModifiedByFaction = (char.alliance == "Imperial" ? calgarBonusDmgImperial : calgarBonusDmg)
         var aethanadamageModifiedByFaction = aethanaBonusDmg + (char.faction == "Aeldari" ? aethanaBonusDmgAeldar : 0.0);
         var shadowsunBonusDmg = key.includes("ShadowSun") ? 0 : shadowsunBonusDmgRaw;
-        var ltgbHits = (abaddonPassive || key=="Abaddon the despolier") ? 2 : 1;
+        var ltgbHits = (abaddonPassive || key=="Abaddon") ? 2 : 1;
         var aunshiBonusDmg = key.includes("Aun'Shi")  ? 0 : aunshiBonusDmgRawData;
         var darkstriderBonusDmg = (key.includes("Darkstrider") || !opponentHasMarkerlight) ? 0 : darkstriderBonusDmgRawData;
         var helbrechtBonusDmg = key.includes("Helbrecht") ? 0 : helbrechtBonusDmgRawData;
@@ -807,7 +823,7 @@ var updateTable = function() {
           armour *= incisusFactor;
           dmg *= incisusFactor;
           break;
-        case 'High Marshal Helbrecht':
+        case 'Helbrecht':
           if (opponentIsPsyker && !opponentPunishesMelee) {
             helbrechtBonusDmg += passiveFactor*char.passive[0];
             comment += "psyker +" + Math.round(helbrechtBonusDmg);
@@ -820,22 +836,22 @@ var updateTable = function() {
             comment += "psyker +" + Math.round(buffDmg);
           }
           break;
-        case 'Kut skoden':
+        case 'Kut':
         case 'Angrax':
           if (madeContact) {
-            var passiveDmg = char.passive[key=="Kut skoden" ? 0 : 2] * passiveFactor;
+            var passiveDmg = char.passive[key=="Kut" ? 0 : 2] * passiveFactor;
             buffDmg += passiveDmg;
             comment += "contact (+" + Math.round(passiveDmg) + ")";
           }
           break;
-        case 'Sword Brother Godswyl':
+        case 'Godswyl':
           var passiveDmg = char.passive[0] * passiveFactor;
           critDamage += passiveDmg;
           break;
-        case 'Abaddon the despolier':
+        case 'Abaddon':
           abaddonBonusDmgModifiedByFaction = 0;
           break;
-        case 'Marneus Calgar':
+        case 'Calgar':
           calgardamageModifiedByFaction = 0;
           break;
         case 'Aethana':
@@ -851,32 +867,32 @@ var updateTable = function() {
           buffDmgMelee += passiveFactor*char.passive[0];
           break;
         case 'Abraxas':
-        case 'Aleph-null':
-        case 'Ancient Thoread':
+        case 'Aleph-Null':
+        case 'Thoread':
         case 'Anuphet':
         case 'Archimatos':
         case 'Arjac':
-        case "Aun'shi":
+        case "Aun'Shi":
         case "Azrael":
         case 'Bellator':
         case 'Blue Horror':
-        case 'Boss Gulgortz':
-        case 'Brother Jaeger':
+        case 'Gulgortz':
+        case 'Jaeger':
         case 'Cadian Guardsman':
         case 'Command-Link Drone':
         case 'Colour Sergeant Kell':
         case 'Calandis':
-        case 'Castellan creed':
+        case 'Creed':
         case 'Celestine':
         case 'Certus':
-        case 'Commissar Yarrick':
+        case 'Yarrick':
         case 'Corrodius':
         case 'Darkstrider':
         case 'Geminae Superia':
         case 'Gibbascrapz':
         case 'Grot':
         case 'Grot Tank':
-        case 'Haarken Worldclaimer':
+        case 'Haarken':
         case 'Imospekh':
         case 'Inceptor':
         case 'Isabella':
@@ -887,16 +903,16 @@ var updateTable = function() {
         case 'Morvenn Vahl':
         case 'MV71 Sniper Drone':
         case 'Necron warrior':  
-        case 'Nauseous rotbone':
+        case 'Rotbone':
         case 'Pink Horror':
         case 'Pox Walkers':
-        case "Re'Vas":
+        case "Re'vas":
         case "Sarquael":
         case "Scarab Swarm":
         case "Screamer of Tzeentch":
-        case "ShadowSun":
+        case "Shadowsun":
         case "Shield Drone":
-        case "Sho'Syl":
+        case "Sho'syl":
         case 'Sibyll':
         case 'Snappawrecka':
         case 'Snotflogga':
@@ -906,9 +922,10 @@ var updateTable = function() {
         case 'Toth':
         case 'Typhus':
         case 'Ulf':
-        case 'Varro Tigurius':
+        case 'Tigurius':
         case 'Vindicta':
         case 'Volk':
+        case 'Winged Prime':
         case 'Yazaghor':
           break;
         case 'Eldryon':
@@ -973,7 +990,7 @@ var updateTable = function() {
         if (!opponentPunishesMelee) {
           totalDmg = calcDmg(dmg+buffDmg+buffDmgMelee, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits + (meleeHits / 2) * getStuckInChance, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
           switch (key) {
-            case 'Boss Gulgortz':
+            case 'Gulgortz':
               totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
               break;
           }
@@ -1161,6 +1178,7 @@ function sortTable(n) {
 
 playerDataAPI = null;
 playerUnits = null;
+playerUnitShards = null; // Used to figure out the names of characters in the API
 apiProgressionIndexToRarity = [
   0, // 0=common
   0,
@@ -1191,7 +1209,8 @@ function loadPlayerDataAPI() {
   d = new Date(1000 * playerDataAPI.metaData.lastUpdatedOn);
   document.getElementById("player-data-last-updated").innerHTML = d;
   document.getElementById("gearlevel").value = "api";
-  playerUnits = Object.fromEntries(playerDataAPI.player.units.map(obj => [obj.name, obj]));
+  playerUnits = Object.fromEntries(playerDataAPI.player.units.map(obj => [obj.name.replace("Nauseous","Rotbone"), obj]));
+  playerUnitShards = Object.fromEntries(playerDataAPI.player.inventory.shards.map(obj => [obj.name.replace(" Shards",""), obj]));
   console.log(playerUnits);
   ["Ragnar"].map(it => loadCharacterAbilities(it, isPassive=0));
   ["Abaddon","Aethana","Aun'Shi","Calgar","Darkstrider","Eldryon","Helbrecht","Shadowsun","Thaddeus"].map(it => loadCharacterAbilities(it, isPassive=1));

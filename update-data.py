@@ -329,6 +329,28 @@ allianceMap = {
     None: "",
     0: ""
 }
+nameMap = {
+    "Abaddon the despolier": "Abaddon",
+    "Aun'shi": "Aun'Shi",
+    "Aleph-null": "Aleph-Null",
+    "Ancient Thoread": "Thoread",
+    "Boss Gulgortz": "Gulgortz",
+    "Brother Burchard": "Burchard",
+    "Brother Jaeger": "Jaeger",
+    "Castellan creed": "Creed",
+    "Command-Link drone": "Command-Link Drone",
+    "Commissar Yarrick": "Yarrick",
+    "Haarken Worldclaimer": "Haarken",
+    "High Marshal Helbrecht": "Helbrecht",
+    "Kut skoden": "Kut",
+    "Marneus Calgar": "Calgar",
+    "Nauseous rotbone": "Rotbone",
+    "Re'Vas": "Re'vas",
+    "ShadowSun": "Shadowsun",
+    "Sho'Syl": "Sho'syl",
+    "Sword Brother Godswyl": "Godswyl",
+    "Varro Tigurius": "Tigurius"
+}
 
 eqDict = {}
 for index, eq in tb_Equipment.iterrows():
@@ -382,8 +404,7 @@ def toJSON(rows):
     summons = {}
     bossNames = ["TERVIGON", "Tervigon"]
     for index, row in rows.iterrows():
-        if row.Name == "Command-Link drone":
-            row.Name = "Command-Link Drone"
+        row.Name = nameMap.get(row.Name, row.Name)
         if row.Faction in bossNames:
             continue
         if row.Alliance in bossNames:
