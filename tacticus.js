@@ -64,8 +64,8 @@ function(err, data) {
       [1,2].forEach(function (weight) {
         legendaryEventFactors[event][weight] = sumPoints / pointsAndOccurances.map(po => po[0]*calculateLegendaryEventWeight(po[1],weight)).reduce((partialSum, a) => partialSum + a, 0);
       });
-      console.log(pointsAndOccurances);
-      console.log(sumPoints);
+      // console.log(pointsAndOccurances);
+      // console.log(sumPoints);
       
       // legendaryEventFactors
     });
@@ -774,6 +774,7 @@ var updateTable = function() {
                 dmgFactorMelee *= 1.25;
               }
               break;
+            case "ambush":
             case "battle fatigue":
             case "blessings of khorne":
             case "diminutive":
