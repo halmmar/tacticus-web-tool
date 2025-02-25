@@ -1161,10 +1161,12 @@ function sortTable(n) {
 async function setAPICache(event) {
   event.preventDefault();
 
-  apiKey = document.getElementById("api-key").value;
+  const apiKey = document.getElementById("api-key").value;
   localStorage.setItem("api-key", apiKey);
   try {
-    response = await fetch("https://api.tacticusgame.com/api/v1/player", {
+    const origUrl = "https://api.tacticusgame.com/api/v1/player";
+    const url = 'https://proxy.cors.sh/' + origUrl;
+    response = await fetch(url, {
       method: "GET",
       withCredentials: true,
       headers: {
