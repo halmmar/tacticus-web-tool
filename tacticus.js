@@ -691,7 +691,6 @@ var updateTable = function() {
         var critDamageRanged = 0;
         var blockChance = 0;
         var block = 0;
-        var dakka = 0;
         var buffDmg = 0;
         var dmgFactor = 1.0;
         var dmgFactorMelee = 1.0;
@@ -739,9 +738,6 @@ var updateTable = function() {
         
         char.traits.forEach(function (trait) {
           switch (trait) {
-            case "dakka":
-              dakka = 2;
-              break;
             case "beast slayer":
             case "beast snagga":
               if (opponentBeastSnagga) {
@@ -780,7 +776,11 @@ var updateTable = function() {
               numArmourReduction += 1;
               commentSurvival = "gravis";
               break;
+            case "get stuck in":
+              break;
+            case "ambush":
             case "battle fatigue":
+            case "blessings of khorne":
             case "diminutive":
             case "let the galaxy burn":
             case "terminator armour":
@@ -1002,10 +1002,10 @@ var updateTable = function() {
         // Melee damage
         var totalDmg = 0;
         if (!opponentPunishesMelee) {
-          totalDmg = calcDmg(dmg+buffDmg+buffDmgMelee, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits + (meleeHits / 2) * getStuckInChance, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
+          totalDmg = calcDmg(dmg+buffDmg+buffDmgMelee, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits + (meleeHits / 2 | 0) * getStuckInChance, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
           switch (key) {
             case 'Gulgortz':
-              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
+              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3 + getStuckInChance, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
               break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
@@ -1016,18 +1016,21 @@ var updateTable = function() {
         }
         if (char.hasOwnProperty("ranged") && !opponentPunishesRanged) {
           // Ranged damage
-          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
+          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + (char.ranged.hits / 2 | 0) * getStuckInChance, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
           if (shadowsunPassive && char.faction.includes("T'au") && key != "ShadowSun") {
             rangedDmg = [0.2,0.3,0.4,0.5,0.6].map(function(round) {
-              var rangedDmgTauProc = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + dakka + 1, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
+              var rangedDmgTauProc = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + 1, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
               return (1-round) * rangedDmg + round * rangedDmgTauProc;
             }).reduce((a,b) => a+b) / 5;
             comment += "Shadowsun+T'au";
           }
           switch (key) {
+            case 'Gulgortz':
+              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3 + getStuckInChance, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
+              break;
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
-            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor*dmgFactorRanged, 0, char.ranged.hits + dakka, opponentarmor, char.ranged.pierce + 0.2, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
+            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor*dmgFactorRanged, 0, char.ranged.hits, opponentarmor, char.ranged.pierce + 0.2, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
             comment += "passive (+"+Math.round(volkDamageBuff)+")";
             rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
             break;
@@ -1047,9 +1050,6 @@ var updateTable = function() {
           }
           if (rangedDmg > totalDmg) {
             totalDmg = rangedDmg;
-            if (dakka) {
-              comment += "dakka";
-            }
             comment = insertIcon("boltgun") + commentRanged + comment;
           } else {
             comment = "⚔" + commentMelee + comment;
