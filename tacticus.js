@@ -22,7 +22,7 @@ tb_gear = [];
 tb_abilities_factor = [];
 tb_archimatos_ability_factor = [];
 tb_equipment = {};
-tb_legendary_events = {};
+// tb_legendary_events = {};
 intToRarity = ["common", "uncommon", "rare", "epic", "legendary"]
 gearLevelToText = ["Stone 1","Stone 2","Stone 3","Iron 1","Iron 2","Iron 3","Bronze 1","Bronze 2","Bronze 3","Silver 1","Silver 2","Silver 3","Gold 1","Gold 2","Gold 3","Diamond 1","Diamond 2","Diamond 3"]
 opponentRevoltingResilience = 0;
@@ -52,9 +52,10 @@ function(err, data) {
     tb_abilities_factor = data.abilities_factor;
     tb_archimatos_ability_factor = data.archimatos_ability_factor;
     tb_equipment = data.equipment;
+    tb_chars_and_summons = Object.assign(tb_chars,tb_summons);
+    /*
     tb_legendary_events = data["legendary-events"];
     latest_legendary_event = data["latest-legendary-event"];
-    tb_chars_and_summons = Object.assign(tb_chars,tb_summons);
     Object.keys(tb_legendary_events).forEach(function (event) {
       var pointsAndOccurances = Object.values(tb_legendary_events[event]).map(Object.values).flat(1);
       var points = pointsAndOccurances.map(po => po[0]);
@@ -69,12 +70,13 @@ function(err, data) {
       
       // legendaryEventFactors
     });
+    */
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
     ["eldryon-buff", "thaddeus-buff", "shadowsun-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "helbrecht-buff", "ragnar-buff", "equipment"].forEach(function (key) {
       document.getElementById(key + "-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     });
-    addLegendaryEvents(latest_legendary_event);
+    // addLegendaryEvents(latest_legendary_event);
     addTable();
     updateEldryon(1);
     updateAhriman(1);
@@ -133,6 +135,7 @@ var updateFilter = function() {
         style.display = "none";
       }
       return;
+    /*
     case 'legendary':
       if (tb_chars_and_summons[key].traits.includes("summon")) return;
       var style = document.getElementById("legendary-"+id).style;
@@ -162,6 +165,7 @@ var updateFilter = function() {
       });
       style.display = filteredOut ? "none" : "";
       break;
+    */
     }
   });
 }
@@ -502,6 +506,7 @@ var addTable = function() {
   var resLegOverview = '<tr><th onClick="sortTable()">Name</th>';
   var resLegOverviewRow2 = '';
   var i = 1;
+  /*
   Object.keys(tb_legendary_events).forEach(function(event) {
     if (event in obsoleteEvents) {
       return;
@@ -513,11 +518,13 @@ var addTable = function() {
   resLegOverview += '<th onClick="sortTable('+(i)+')">Total</th>\n';
   resLegOverview += '<th onClick="sortTable('+(i+1)+')">Points</th>';
   resLegOverview += '</tr>\n';
+  */
   Object.keys(tb_chars).forEach(function callback(key) {
     var id = characterTableEntryId(key);
     resDmg += '<tr id="'+id+'"><td id="'+id+'-name">'+key+'</td><td class="statCell" id="'+id+'-dmg"></td><td class="statCell" id="'+id+'-crit-chance"></td><td class="statCell" id="'+id+'-crit-dmg"></td><td class="statCell" id="'+id+'-dmg-dealt"></td><td id="'+id+'-comment"></td></tr>';
     resSurvival += '<tr id="survival-'+id+'"><td>'+key+'</td><td class="statCell" id="'+id+'-health"></td><td class="statCell" id="'+id+'-armour"></td><td class="statCell" id="'+id+'-block-chance"></td><td class="statCell" id="'+id+'-block"></td><td class="statCell" id="'+id+'-worst-case-percentage"></td><td class="statCell" id="'+id+'-worst-case-attacks"></td><td id="'+id+'-comment-survival"></td></tr>';
     if (!tb_chars[key].traits.includes("summon")) {
+      /*
       resLeg += '<tr id="legendary-'+id+'"><td>'+key+'</td><td id="'+id+'-leg-alpha" /><td id="'+id+'-leg-alpha-1" /><td id="'+id+'-leg-alpha-2" /><td id="'+id+'-leg-alpha-3" /><td id="'+id+'-leg-alpha-4" /><td id="'+id+'-leg-alpha-5" /><td id="'+id+'-leg-beta" /><td id="'+id+'-leg-beta-1" /><td id="'+id+'-leg-beta-2" /><td id="'+id+'-leg-beta-3" /><td id="'+id+'-leg-beta-4" /><td id="'+id+'-leg-beta-5" /><td id="'+id+'-leg-gamma" /><td id="'+id+'-leg-gamma-1" /><td id="'+id+'-leg-gamma-2" /><td id="'+id+'-leg-gamma-3" /><td id="'+id+'-leg-gamma-4" /><td id="'+id+'-leg-gamma-5" /><td id="'+id+'-leg-total" /></tr>';
       resLegOverview += '<tr id="legendary-overview-'+id+'"><td>'+key+'</td>';
       Object.keys(tb_legendary_events).forEach(function(event) {
@@ -529,12 +536,15 @@ var addTable = function() {
         resLegOverview += '<td id="'+charID+'-num" class="statCell">x</td><td id="'+charID+'-points" class="statCell">1</td>';
       });
       resLegOverview += '<td id="'+id+'-leg-ov-total-num" class="statCell">x</td><td id="'+id+'-leg-ov-total-points" class="statCell">1</td></tr>\n';
+      */
     }
   });
   document.getElementById("damage-table").innerHTML += resDmg;
   document.getElementById("survival-table").innerHTML += resSurvival;
+  /*
   document.getElementById("legendary-table").innerHTML += resLeg;
   document.getElementById("legendary-overview-table").innerHTML += resLegOverview;
+  */
   updateMode(1);
   updateTable();
 }

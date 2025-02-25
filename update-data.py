@@ -473,7 +473,7 @@ def toJSON(rows):
             data["passive"] = passiveData
             data["active"] = activeData
             data["equipment"] = eqCount
-            data["legendary-event"] = legendaryEventCharacters[name]
+            # data["legendary-event"] = legendaryEventCharacters[name]
             characters[name] = data
         elif row.Name[0:2] in ["L1", "L2", "L3", "L4"]:
             bosses[row.Name] = data
@@ -489,6 +489,6 @@ def toJSON(rows):
     for name in summonsNames:
         if name not in summons:
             raise Exception("%s is not in the list of summons" % name)
-    return {"characters": characters, "bosses": bossStats, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "archimatos_ability_factor": tb_Abilities_factor_archimatos, "azkor_ability_factor": tb_Abilities_factor_azkor, "titus_ability_factor": tb_Abilities_factor_titus, "equipment": eqDict, "legendary-events": legendaryEvents, "latest-legendary-event": latestLegendaryEvent, "version": file.split("-")[1].strip().replace(".xlsx", "")}
+    return {"characters": characters, "bosses": bossStats, "summons": summons, "gear": gear, "abilities_factor": tb_Abilities_factor, "archimatos_ability_factor": tb_Abilities_factor_archimatos, "azkor_ability_factor": tb_Abilities_factor_azkor, "titus_ability_factor": tb_Abilities_factor_titus, "equipment": eqDict, "version": file.split("-")[1].strip().replace(".xlsx", "")} # , "legendary-events": legendaryEvents, "latest-legendary-event": latestLegendaryEvent,
 with open("tacticus.json", "w") as fout:
     fout.write(json.dumps(toJSON(tb_Characters), sort_keys=True, indent=2))
