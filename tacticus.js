@@ -601,6 +601,7 @@ var insertIcon = function(name) {
 }
 
 var updateTable = function() {
+    updateModeVisible(document.getElementsByClassName("non-api-only"), document.getElementById("gearlevel").value == "api" ? "none" : "");
     var starlevel = document.getElementById("starlevel").value;
     var gearlevel = document.getElementById("gearlevel").value;
     var levelStatFactor = Math.pow(1.25205, gearlevel)*(1+0.1*starlevel);
@@ -1159,11 +1160,42 @@ function sortTable(n) {
 }
 
 playerDataAPI = null;
+playerUnits = null;
+apiProgressionIndexToRarity = [
+  0, // 0=common
+  0,
+  0,
+  1, // 3=uncommon
+  1,
+  1,
+  2, // 6=rare
+  2,
+  2,
+  3, // 9=epic
+  3,
+  3,
+  4, // 12=legendary
+  4,
+  4,
+  4
+];
+
+function loadCharacterAbilities(char, isPassive) {
+  id = char.toLowerCase().replace("'","");
+  document.getElementById(id+"-buff-rarity").value = apiProgressionIndexToRarity[playerUnits[char].progressionIndex];
+  document.getElementById(id+"-buff-level").value = playerUnits[char].abilities[isPassive].level;
+};
 
 function loadPlayerDataAPI() {
   if (playerDataAPI == null) return;
-  console.log(typeof playerDataAPI);
-  document.getElementById("player-data-last-updated").value = playerDataAPI.metaData.lastUpdatedOn;
+  d = new Date(1000 * playerDataAPI.metaData.lastUpdatedOn);
+  document.getElementById("player-data-last-updated").innerHTML = d;
+  document.getElementById("gearlevel").value = "api";
+  playerUnits = Object.fromEntries(playerDataAPI.player.units.map(obj => [obj.name, obj]));
+  console.log(playerUnits);
+  ["Ragnar"].map(it => loadCharacterAbilities(it, isPassive=0));
+  ["Abaddon","Aethana","Aun'Shi","Calgar","Darkstrider","Eldryon","Helbrecht","Shadowsun","Thaddeus"].map(it => loadCharacterAbilities(it, isPassive=1));
+  updateTable();
 };
 
 function setAPICache(event) {
@@ -1187,9 +1219,9 @@ function setAPICache(event) {
       };
       return response.json();
     }).then(json => {
-      console.log(json);
       localStorage.setItem("api-key", apiKey);
       localStorage.setItem("playerData", JSON.stringify(json));
+      playerDataAPI = json;
       loadPlayerDataAPI();
     });
   } catch (error) {

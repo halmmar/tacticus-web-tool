@@ -92,9 +92,10 @@
     <option value="15">Diamond Rank I</option>
     <option value="16">Diamond Rank II</option>
     <option value="17" selected="selected">Diamond Rank III</option>
+    <option value="api">Characters synched from API</option>
   </select>
 
-  <select onchange="updateTable()" name="rarity-level" id="rarity-level">
+  <select onchange="updateTable()" name="rarity-level" id="rarity-level" class="non-api-only">
     <option value="0">Common</option>
     <option value="1">Uncommon</option>
     <option value="2">Rare</option>
@@ -102,7 +103,7 @@
     <option selected="selected" value="4">Legendary</option>
   </select>
 
-    <select onChange="updateTable()" id="starlevel">
+    <select onChange="updateTable()" id="starlevel" class="non-api-only">
       <option value="1">1 gold star</option>
       <option value="2">2 gold star</option>
       <option value="3">3 gold star</option>
@@ -115,22 +116,22 @@
       <option value="10">5 red star</option>
       <option selected="selected" value="11">1 winged star</option>
     </select>
-    <label>Skill level</label>
-    <input onChange="updateTable()" type="number" id="skill-level" min="1" max="50" value="50">
-    <br>
-    <label>Equipment</label>
-    <input onChange="updateTable()" type="checkbox" id="equipment-enabled" checked></input>
-    <select onchange="updateTable()" name="equipment-rarity" id="equipment-rarity">
+    <label class="non-api-only">Skill level</label>
+    <input onChange="updateTable()" type="number" id="skill-level" min="1" max="50" value="50" class="non-api-only">
+    <br class="non-api-only">
+    <label class="non-api-only">Equipment</label>
+    <input onChange="updateTable()" type="checkbox" id="equipment-enabled" checked class="non-api-only"></input>
+    <select onchange="updateTable()" name="equipment-rarity" id="equipment-rarity" class="non-api-only">
     </select>
-    <input onChange="updateTable()" type="number" id="equipment-level" min="0" max="11" value="11">
-    <select onChange="updateTable()" id="prefer-eq-crit-dmg">
+    <input onChange="updateTable()" type="number" id="equipment-level" min="0" max="11" value="11" class="non-api-only">
+    <select onChange="updateTable()" id="prefer-eq-crit-dmg" class="non-api-only">
       <option value="0" selected>Gun</option>
       <option value="1">Knife</option>
     </select>
-    <select onChange="updateTable()" id="prefer-block-chance">
+    <select onChange="updateTable()" id="prefer-block-chance" class="non-api-only">
       <option value="0" selected>Block %</option>
     </select>
-    <select onChange="updateTable()" id="prefer-eq-armour">
+    <select onChange="updateTable()" id="prefer-eq-armour" class="non-api-only">
       <option value="0" selected>Health</option>
     </select>
     </fieldset>
@@ -215,10 +216,10 @@
     TODO: Abraxas missing
     <br>
     <label>Ahriman</label>
-    <input onChange="updateAhriman()" type="checkbox" id="ahriman-buff-enabled"></input>
+    <input onChange="updateAhriman()" type="checkbox" id="ahriman-buff-enabled" disabled></input>
     <select onchange="updateAhriman()" id="ahriman-buff-rarity">
     </select>
-    <input onChange="updateAhriman()" type="number" id="ahriman-buff-level" min="0" max="50" value="50" disabled>
+    <input onChange="updateAhriman()" type="number" id="ahriman-buff-level" min="0" max="50" value="50" disabled">
     +<span id="ahriman-buff-percent">50</span>% damage [Psychic/Fire], max <span id="ahriman-buff-max">5483</span>
     <br>
     <label>Aethana</label>
