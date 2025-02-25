@@ -1158,31 +1158,48 @@ function sortTable(n) {
   }
 }
 
-async function setAPICache(event) {
+playerDataAPI = null;
+
+function loadPlayerDataAPI() {
+  if (playerDataAPI == null) return;
+  console.log(typeof playerDataAPI);
+  document.getElementById("player-data-last-updated").value = playerDataAPI.metaData.lastUpdatedOn;
+};
+
+function setAPICache(event) {
   event.preventDefault();
 
   const apiKey = document.getElementById("api-key").value;
-  localStorage.setItem("api-key", apiKey);
   try {
     const origUrl = "https://api.tacticusgame.com/api/v1/player";
     const url = 'https://proxy.cors.sh/' + origUrl;
-    response = await fetch(url, {
+    fetch(url, {
       method: "GET",
       withCredentials: true,
       headers: {
         "accept": "application/json",
         "X-API-KEY": apiKey
       }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      };
+      return response.json();
+    }).then(json => {
+      console.log(json);
+      localStorage.setItem("api-key", apiKey);
+      localStorage.setItem("playerData", JSON.stringify(json));
+      loadPlayerDataAPI();
     });
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
   } catch (error) {
     alert(error.message);
   }
   return false;
-}
+};
 
 function loadAPICache() {
   document.getElementById("api-key").value = localStorage.getItem("api-key");
-}
+  playerDataAPI = JSON.parse(localStorage.getItem("playerData"));
+  loadPlayerDataAPI();
+};
