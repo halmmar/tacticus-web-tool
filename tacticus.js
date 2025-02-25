@@ -924,8 +924,6 @@ var updateTable = function() {
         case "Shield Drone":
         case "Sho'syl":
         case 'Sibyll':
-        case 'Snappawrecka':
-        case 'Snotflogga':
         case 'Thaumachus':
         case 'Thaddeus':
         case 'Thutmose':
