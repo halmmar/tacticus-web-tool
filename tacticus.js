@@ -177,19 +177,15 @@ var levelToRarityInt = function(level) {
   return Math.min(Math.floor(level / 9), 4);
 }
 
-var passiveFactorActiveCharacterWithTable = function(tb_factor) {
-  var level = +document.getElementById("skill-level").value;
-  var rarity = +document.getElementById("rarity-level").value;
+var passiveFactorActiveCharacterWithTable = function(tb_factor, level, rarity) {
   return tb_factor[level-1] * (1 + rarity*0.2);
 }
 
-var passiveFactorCharacter = function(name) {
-  switch (name) {
-    case 'Bloodletter':
-    case 'Archimatos':
-      return passiveFactorActiveCharacterWithTable(tb_archimatos_ability_factor);
-  }
-  return passiveFactorActiveCharacterWithTable(tb_abilities_factor);
+var passiveFactorCharacter = function(name, level, rarity) {
+  tb = name in ['Bloodletter','Archimatos'] ? tb_archimatos_ability_factor : tb_abilities_factor;
+  factor = passiveFactorActiveCharacterWithTable(tb_abilities_factor, level, rarity);
+  console.log(name,level,rarity,factor);
+  return factor;
 }
 
 var updateEldryon = function(skipUpdate) {
@@ -658,14 +654,20 @@ var updateTable = function() {
         var comment = "";
         var starlevel = 0;
         var gearlevel = 0;
+        var rarity = 0;
+        var passiveSkillLevel = 0;
+
         if (isAPI && key in playerUnits) {
           var progression = playerUnits[key].progressionIndex;
-          var rarity = apiProgressionIndexToRarity[progression];
+          rarity = apiProgressionIndexToRarity[progression];
           starlevel = progression - rarity;
           gearlevel = playerUnits[key].rank;
+          passiveSkillLevel = playerUnits[key].abilities[1].level;
         } else if (!isAPI) {
-          starlevel = document.getElementById("starlevel").value;
-          gearlevel = document.getElementById("gearlevel").value;
+          rarity = +document.getElementById("rarity-level").value;
+          starlevel = +document.getElementById("starlevel").value;
+          gearlevel = +document.getElementById("gearlevel").value;
+          passiveSkillLevel = +document.getElementById("skill-level").value;
         } else if (key in playerUnitShards) {
           comment += "Not unlocked";
         } else {
@@ -676,7 +678,7 @@ var updateTable = function() {
 
         entryId = characterTableEntryId(key);
         var char = tb_chars[key];
-        var passiveFactor = passiveFactorCharacter(key);
+        var passiveFactor = passiveFactorCharacter(key, passiveSkillLevel, rarity);
         var levelStatFactorCurUnit = char.traits.includes("summon") ? passiveFactor : levelStatFactor;
         var health = char.health*levelStatFactorCurUnit;
         var armour = char.armour*levelStatFactorCurUnit;
