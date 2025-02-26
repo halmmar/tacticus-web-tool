@@ -424,92 +424,49 @@ var updateMode = function(skipUpdateTable) {
 }
 
 var updateOpponentPreset = function(skipUpdateTable) {
-  var ablativePlating = false;
-  var mech = false;
-  var psyker = false;
-  var markerlight = false;
-  var bigtarget = false;
-  var revoltingresilience = false;
-  var melee = false;
   var ltgb = true;
   var preset = document.getElementById("opponent-preset").value;
   var level = +document.getElementById("opponent-preset-level").value;
   var checkbox = document.getElementById("opponent-checkbox").checked;
-  switch (preset.split(" ")[0]) {
-    case 'rogal-dorn':
-      ablativePlating = true;
-    case "szarekh":
-    case "ghazghkull":
-      mech = true;
-      bigtarget = true;
-      break;
-    case "mortarion":
-      // demon = true;
-      revoltingresilience = true;
-      melee = true;
-      ltgb = false;
-    case "hive":
-    case "tervigon":
-      psyker = true;
-      bigtarget = true;
-      break;
-    case 'screamer-killer':
-    case 'tyranid':
-    case 'triarchal menhir':
-      bigtarget = true;
-      break;
-  }
   var updateOpponentPresetStat = function(stat) {
     if (!(preset in tb_bosses)) {
       console.log("Couldn't find boss " + preset);
     }
     var tb = tb_bosses[preset][stat];
+    console.log(stat,tb)
     var statLevel = tb[level-1];
     var statMax = tb.filter(x => x != null).slice(-1)[0];
+    console.log(statLevel,statMax);
     if (statLevel || statMax) {
       var statUsed = statLevel || statMax;
-      var statScale = tb_bosses[preset]["checkbox"][stat];
+      var statScale = tb_bosses[preset].checkbox;
       var scale = 1.0;
       if (checkbox && statScale) {
         scale *= statScale
       }
-      document.getElementById("opponent-" + stat).value = Math.round(statUsed[0]*scale);
-      var season = '<abbr title="Guild raid season the data comes from">S' + statUsed[1] + '</abbr>';
+      document.getElementById("opponent-" + stat).value = Math.round(statUsed*scale);
       if (!statLevel) {
-        document.getElementById("opponent-preset-comment").innerHTML = "Not found; using L" + (tb.findIndex(statLevel => statLevel == statMax) + 1) + " (" + season + ")";
+        document.getElementById("opponent-preset-comment").innerHTML = "Not found; using L" + (tb.findIndex(statLevel => statLevel == statMax) + 1);
       } else {
-        document.getElementById("opponent-preset-comment").innerHTML = season;
+        document.getElementById("opponent-preset-comment").innerHTML = "";
       }
     } else {
       document.getElementById("opponent-preset-comment").innerHTML = stat + " unknown.";
     }
   }
   updateOpponentPresetStat("armour");
-  updateOpponentPresetStat("damage");
 
-  ["melee","ranged"].forEach(function x(it) {
-    if (tb_bosses[preset][it]) {
-      var extraHits = +(checkbox ? tb_bosses[preset]["checkbox"]["hits"] || 0 : 0);
-      document.getElementById("opponent-"+it+"-hits").innerHTML = tb_bosses[preset][it]["hits"] + extraHits;
-      document.getElementById("opponent-"+it+"-damage").innerHTML = document.getElementById("opponent-damage").value;
-      document.getElementById("opponent-"+it+"-damage").value = document.getElementById("opponent-damage").value;
-      document.getElementById("opponent-"+it+"-pierce").innerHTML = tb_bosses[preset][it]["pierce"];
-    } else {
-      document.getElementById("opponent-"+it+"-hits").innerHTML = 0;
-      document.getElementById("opponent-"+it+"-damage").innerHTML = 0;
-      document.getElementById("opponent-"+it+"-pierce").innerHTML = 0;
-    }
-  });
+  console.log(preset,tb_bosses[preset])
 
-  console.log(preset.split(" ")[0],revoltingresilience,melee);
-  document.getElementById("opponent-is-mech").checked = mech;
-  document.getElementById("opponent-is-psyker").checked = psyker;
-  document.getElementById("opponent-has-markerlight").checked = markerlight;
-  document.getElementById("opponent-beast-snagga").checked = bigtarget;
-  document.getElementById("opponent-revolting-resilience").checked = revoltingresilience;
-  document.getElementById("opponent-punishes-melee").checked = melee;
-  document.getElementById("opponent-punishes-ranged").checked = false;
-  document.getElementById("opponent-ablative-plating").checked = ablativePlating;
+  document.getElementById("opponent-is-mech").checked = tb_bosses[preset].traits.includes("mech");
+  document.getElementById("opponent-is-psyker").checked = tb_bosses[preset].traits.includes("psyker");
+  document.getElementById("opponent-has-markerlight").checked = false;
+  document.getElementById("opponent-beast-snagga").checked = tb_bosses[preset].traits.includes("big");
+  document.getElementById("opponent-revolting-resilience").checked = tb_bosses[preset].traits.includes("revoltingly resilient");
+  document.getElementById("opponent-punishes-melee").checked = tb_bosses[preset].traits.includes("punishes melee");
+  document.getElementById("opponent-punishes-ranged").checked = tb_bosses[preset].traits.includes("punishes ranged");
+  document.getElementById("opponent-ablative-plating").checked = tb_bosses[preset].traits.includes("ablative plating");
+  document.getElementById("weaker-rear-enabled").checked = tb_bosses[preset].traits.includes("weaker rear");
   document.getElementById("ltgb-enabled").checked = ltgb;
   if (!skipUpdateTable) updateTable();
 }
@@ -568,6 +525,13 @@ var addTable = function() {
   });
   document.getElementById("damage-table").innerHTML += resDmg;
   document.getElementById("survival-table").innerHTML += resSurvival;
+
+  bossHTML = ""
+  Object.keys(tb_bosses).forEach(boss => {
+    bossHTML += '<option value="'+boss+'">'+boss+'</option>\n'
+  });
+  document.getElementById("opponent-preset").innerHTML = bossHTML;
+  document.getElementById("opponent-preset").value = "Avatar";
   /*
   document.getElementById("legendary-table").innerHTML += resLeg;
   document.getElementById("legendary-overview-table").innerHTML += resLegOverview;
@@ -630,12 +594,6 @@ var updateTable = function() {
     var isAPI = document.getElementById("gearlevel").value == "api";
     updateModeVisible(document.getElementsByClassName("non-api-only"), isAPI ? "none" : "");
     var opponentarmor = +document.getElementById("opponent-armour").value;
-    var opponentMeleeDamage = +document.getElementById("opponent-melee-damage").innerHTML;
-    var opponentMeleeHits = +document.getElementById("opponent-melee-hits").innerHTML;
-    var opponentMeleePierce = +document.getElementById("opponent-melee-pierce").innerHTML;
-    var opponentRangedDamage = +document.getElementById("opponent-ranged-damage").innerHTML;
-    var opponentRangedHits = +document.getElementById("opponent-ranged-hits").innerHTML;
-    var opponentRangedPierce = +document.getElementById("opponent-ranged-pierce").innerHTML;
     var preferEqCritDmg = +document.getElementById("prefer-eq-crit-dmg").value;
     // Tyrant max debuff is 60%
     var eldryondamage = +document.getElementById("eldryon-buff-all").innerHTML;
@@ -1130,9 +1088,6 @@ var updateTable = function() {
           res = damageArmourOrPierce(res,armour,pierce,"Boss",numArmourReduction);
           return res*hits;
         };
-        opponentDmgPerAttack = Math.max(
-          dmgFactorMeleeTaken*calcOpponentDamageWorstCase(opponentMeleeDamage, opponentMeleeHits, opponentMeleePierce),
-          calcOpponentDamageWorstCase(opponentRangedDamage, opponentRangedHits, opponentRangedPierce));
         
         if (charLegData) {
           var allEventsEligible = 0;
@@ -1202,8 +1157,6 @@ var updateTable = function() {
         document.getElementById(entryId+"-block").innerHTML=block;
         document.getElementById(entryId+"-comment").innerHTML=comment;
         document.getElementById(entryId+"-comment-survival").innerHTML=commentSurvival;
-        document.getElementById(entryId+"-worst-case-percentage").innerHTML=Math.round(100 * opponentDmgPerAttack / health);
-        document.getElementById(entryId+"-worst-case-attacks").innerHTML=Math.floor(health / opponentDmgPerAttack);
     });
 }
 

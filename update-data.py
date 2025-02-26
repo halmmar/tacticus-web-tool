@@ -197,125 +197,55 @@ while indexLegendaryEvent in tb_LegendaryEvent and tb_LegendaryEvent[indexLegend
 # Boss stats
 bossStats = {
   # Stats are an array [0]=L1, etc. The first element is the stat and the second, the season which the data was collected from
-  "ghazghkull": {
-      "armour": [[151/0.5,15],None,[330/0.5,16],[504/0.5,18]],
-      "damage": [None,None,[778/0.5,15],[1189/0.5,18]],
-      "melee": {"hits": 4, "pierce": 0.4},
-      "ranged": {"hits": 6, "pierce": 0.15},
-      "checkbox": {
-          "armour": 0.5,
-          "damage": 0.5 # ??? Confirm this
-      }
+  "Avatar": {
+      "armour": [None,1029,1288,1697,2231],
+      "checkbox": 0.7,
+      "traits": ["big","daemon"]
   },
-  "mortarion": {
-      "armour": [None,None,None,[6701,"beta"]],
-      "damage": [None,None,None,[2234,"beta"]],
-      "melee": {"hits": 7, "pierce": 0.15},
-      "ranged": {"hits": 3, "pierce": 1.00},
-      "checkbox": {
-          "armour": 0.1,
-          "damage": 0.75
-      }
+  "Magnus": {
+      "armour": [None,None,989,1303,1713],
+      "checkbox": 1.0,
+      "traits": ["big","daemon","flying","psyker"]
   },
-  "gibbascrapz": {
-      "armour": [None, None, [2297,16], [3510,18]],
-      "damage": [None, None, [1874,16], [2864,18]],
-      "melee": {"hits": 4, "pierce": 0.01},
-      "checkbox": {}
+  "Cawl": {
+      "armour": [None,880,1102,None,None],
+      "checkbox": 0.7,
+      "traits": ["big","mech"]
   },
-  "tervigon gorgon": {
-      "armour": [None, None, None, None],
-      "damage": [None, None, None, None],
-      "checkbox": {
-          "armour": 0.4
-      }
+  "Ghazghkull": {
+      "armour": [352,465,582,660,1008],
+      "checkbox": 0.5,
+      "traits": ["big","mech"]
   },
-  "tervigon leviathan": {
-      "armour": [None, None, None, [403/0.4,16]],
-      "damage": [None, None, None, [2379,16]],
-      "melee": {"hits": 3, "pierce": 0.3},
-      "ranged": {"hits": 2, "pierce": 1.0 },
-      "checkbox": {
-          "armour": 0.4
-      }
+  "Mortarion": {
+      "armour": [2337,4385,None,5095,6698],
+      "checkbox": 0.1,
+      "traits": ["big","daemon","psyker","revoltingly resilient","punishes melee"]
   },
-  "tervigon kronos": {
-      "armour": [None, None, None, None],
-      "damage": [None, None, None, None],
-      "checkbox": {
-          "armour": 0.4
-      }
+  "Tervigon": { # Gorgon
+      "armour": [666, 1020, 1559, 1559, 1559],
+      "checkbox": 0.4,
+      "traits": ["big","psyker","flying"]
   },
-  "hive tyrant gorgon": {
-      "armour": [None, None, None, None],
-      "damage": [None, None, None, None],
-      "checkbox": {
-          "armour": 0.4
-      }
+  "Hive Tyrant": { # Gorgon
+      "armour": [666, 720, 1559, 1559, 1559],
+      "checkbox": 0.4,
+      "traits": ["big","psyker","flying"]
   },
-  "hive tyrant leviathan": {
-      "armour": [None, None, None, None],
-      "damage": [None, None, None, None],
-      "checkbox": {
-          "armour": 0.4
-      }
+  "Szarekh": {
+      "armour": [367, 485, None, 800, 1052],
+      "checkbox": 0.35,
+      "traits": ["big","mech"]
   },
-  "hive tyrant kronos": {
-      "armour": [None, None, None, None],
-      "damage": [None, None, None, None],
-      "checkbox": {
-          "armour": 0.4
-      }
+  "Screamer-Killer": {
+      "armour": [830, 1323, None, 1809, 2379],
+      "checkbox": 0.85,
+      "traits": ["big"]
   },
-  "szarekh": {
-      "armour": [[110/0.4,16], None, None, [368/0.4,15]],
-      "damage": [[110/0.4,16], None, None, [368/0.4,15]],
-      "checkbox": {
-          "armour": 0.4,
-          "damage": 0.4, # ???
-      }
-  },
-  "stormboy": {
-      "armour": [None, None, [502,15], [797,18]],
-      "damage": [None, None, [1003,16], [1595,18]],
-      "melee": {"hits": 2, "pierce": 0.01},
-      "checkbox": {
-          "hits": 1
-      }
-    },
-  "triarchal menhir": {
-      "armour": [[573,17], None, None, [1910,15]],
-      "damage": [[859,17], None, None, [2864,15]],
-      "melee": {"hits": 1, "pierce": 0.8},
-      "ranged": {"hits": 1, "pierce": 0.8},
-      "checkbox": {}
-  },
-  "tyranid prime": {
-      "armour": [None, None, None, [488,16]],
-      "damage": [None, None, None, [2882,16]],
-      "melee": {"hits": 3, "pierce": 0.01},
-      "ranged": {"hits": 3, "pierce": 0.3},
-      "checkbox": {}
-  },
-  "screamer-killer": {
-      "armour": [None, None, None, [2434/0.85,32]],
-      "damage": [None, None, None, [2022/0.85,32]],
-      "melee": {"hits": 5, "pierce": 0.01},
-      "ranged": {"hits": 4, "pierce": 0.65},
-      "checkbox": {
-          "armour": 0.85,
-          "damage": 0.85
-      }
-  },
-  "rogal-dorn": {
-      "armour": [[1326,40], [2489,40], [3805,40], [3805,40]],
-      "damage": [[997,40], [1872,40], [2864,40], [2864,40]],
-      "melee": {"hits": 2, "pierce": 0.15},
-      "ranged": {"hits": 2, "pierce": 0.15},
-      "checkbox": {
-          "armour": 0.7,
-          "damage": 0.4
-      }
+  "Rogal Dorn": {
+      "armour": [998,1319,2861,2861,2861],
+      "checkbox": 0.7,
+      "traits": ["big","mech","ablative plating","weaker rear"]
   }
 }
 

@@ -139,7 +139,6 @@
       <legend>Opponent</legend>
       <fieldset><legend>Preset</legend>
       <select onChange="updateOpponentPreset()" id="opponent-preset">
-        <option value="gibbascrapz">Gibbascrapz</option>
         <option value="ghazghkull">Ghazghkull</option>
         <option value="hive tyrant gorgon">Hive Tyrant Gorgon</option>
         <option value="hive tyrant kronos">Hive Tyrant Kronos</option>
@@ -147,7 +146,6 @@
         <option value="mortarion">Mortarion</option>
         <option value="rogal-dorn" selected>Rogal Dorn</option>
         <option value="screamer-killer">Screamer-Killer</option>
-        <option value="stormboy">Stormboy</option>
         <option value="szarekh">Szarekh</option>
         <option value="tervigon gorgon">Tervigon Gorgon</option>
         <option value="tervigon kronos">Tervigon Kronos</option>
@@ -158,7 +156,8 @@
         <option value="1">L1</option>
         <option value="2">L2</option>
         <option value="3">L3</option>
-        <option value="4" selected>L4</option>
+        <option value="4">L4</option>
+        <option value="5" selected>L5</option>
       </select>
       <input title="The primes have been killed, debuffing armour. For summons, activates some abilities such as Stormboy buffs." onChange="updateOpponentPreset()" type="checkbox" id="opponent-checkbox" checked></input>
       <br>
@@ -167,7 +166,7 @@
       <fieldset class="damage-mode-only"><legend>Armour</legend>
         <input class="armourBox" onChange="updateTable()" type="number" id="opponent-armour" min="0" max="3000" value="300" size="4">
       </fieldset>
-      <fieldset class="survival-mode-only"><legend>Damage</legend>
+      <!-- <fieldset class="survival-mode-only"><legend>Damage</legend>
         <input class="damageBox" onChange="updateTable()" type="number" id="opponent-damage" min="0" max="3000" value="300" size="4">
       </fieldset>
       <fieldset class="survival-mode-only"><legend>Hits</legend>
@@ -175,21 +174,16 @@
         <br />
         <span id="opponent-ranged"><img class="damage-icon" src="images/boltgun.png" /> <span id="opponent-ranged-hits"></span>x<span id="opponent-ranged-damage"></span> (<span id="opponent-ranged-pierce"></span> pierce)</span>
       </fieldset>
+      -->
       <fieldset class="damage-mode-only"><legend>Mech</legend>
       <input onChange="updateTable()" type="checkbox" id="opponent-is-mech"></input>
       </fieldset>
       <fieldset class="damage-mode-only"><legend>Psyker</legend>
       <input onChange="updateTable()" type="checkbox" id="opponent-is-psyker"></input>
       </fieldset>
-      <fieldset class="damage-mode-only"><legend>Markerlight</legend>
-      <input onChange="updateTable()" type="checkbox" id="opponent-has-markerlight"></input>
-      </fieldset>
       <fieldset class="damage-mode-only"><legend>Big Target</legend>
         <input title="Big Target and Vehicle are prime targets for Beast Snagga" onChange="updateTable()" type="checkbox" id="opponent-beast-snagga" checked></input>
         </fieldset>
-      <fieldset class="damage-mode-only"><legend>Get Stuck In</legend>
-        <input title="Surrounded by 2 orks or 4 friends" onChange="updateTable()" type="checkbox" id="opponent-get-stuck-in" checked></input>
-      </fieldset>  
       <fieldset class="damage-mode-only"><legend>Revolting Resilience</legend>
       <input title="Each hit after the first deals 50% less damage (compounding)" onChange="updateTable()" type="checkbox" id="opponent-revolting-resilience" checked></input>
       </fieldset>
@@ -201,6 +195,9 @@
       </fieldset>
       <fieldset class="damage-mode-only"><legend>Ablative Plating</legend>
         <input title="Any incoming Damage less than 60% Pierce Ratio must go through Armour three times. Does not apply to Crits." onChange="updateTable()" type="checkbox" id="opponent-ablative-plating" checked></input>
+      </fieldset>
+      <fieldset><legend>Weaker Rear Armour</legend>
+        <input title="+50% crit chance" onChange="updateTable()" type="checkbox" id="weaker-rear-enabled"></input>
       </fieldset>
     </fieldset>
     
@@ -300,15 +297,22 @@
     </fieldset>
     <fieldset class="damage-mode-only">
     <legend>Conditional</legend>
-    <label>Heavy Weapon</label>
-    <input title="Heavy Weapon and similar passives (Maugan Ra) are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
-    <label>Charging</label>
-    <input title="Made contact with the target this turn (does not work well on bosses that you pin down or that reduce the number of hits when moving into contact)" onChange="updateTable()" type="checkbox" id="made-contact"></input>
-    <label>LtGB</label>
-    <input title="Let the Galaxy Burn can be disabled since it often hits allies instead of the intended target" onChange="updateTable()" type="checkbox" id="ltgb-enabled" checked></input>
-    <label>Weaker Rear Armour</label>
-    <input title="+50% crit chance" onChange="updateTable()" type="checkbox" id="weaker-rear-enabled"></input>
+    <fieldset><legend>Heavy Weapon</legend>
+      <input title="Heavy Weapon and similar passives (Maugan Ra) are enabled" onChange="updateTable()" type="checkbox" id="heavy-weapon-enabled" checked></input>
     </fieldset>
+    <fieldset><legend>Charging</legend>
+      <input title="Made contact with the target this turn (does not work well on bosses that you pin down or that reduce the number of hits when moving into contact)" onChange="updateTable()" type="checkbox" id="made-contact"></input>
+    </fieldset>
+    <fieldset><legend>LTGB</legend>
+      <input title="Let the Galaxy Burn can be disabled since it often hits allies instead of the intended target" onChange="updateTable()" type="checkbox" id="ltgb-enabled" checked></input>
+    </fieldset>
+    <fieldset><legend>Markerlight</legend>
+      <input onChange="updateTable()" type="checkbox" id="opponent-has-markerlight"></input>
+     </fieldset>
+    <fieldset><legend>Get Stuck In</legend>
+      <input title="Surrounded by 2 orks or 4 friends" onChange="updateTable()" type="checkbox" id="opponent-get-stuck-in" checked></input>
+    </fieldset>  
+   </fieldset>
     <fieldset class="legendary-mode-only">
       <legend>Filter</legend>
       <select onChange="updateLegendaryEvent()" id="legendary-event-select">
