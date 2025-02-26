@@ -3979,127 +3979,6 @@
       "0": {
         "common": {
           "armour": [
-            6,
-            9,
-            14
-          ],
-          "health": [
-            0,
-            0,
-            0
-          ]
-        },
-        "epic": {
-          "armour": [
-            60,
-            78,
-            95,
-            112,
-            130,
-            147,
-            166,
-            212,
-            257
-          ],
-          "health": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        "factions": [
-          "Necrons",
-          "T'au Empire",
-          "Adepta Sororitas",
-          "Adeptus Mechanicus",
-          "Astra militarum",
-          "Black Legion",
-          "Black templars",
-          "Blood Angels",
-          "Dark Angels",
-          "Death Guard",
-          "Genestealer Cults",
-          "Orks",
-          "Aeldari",
-          "Space Wolves",
-          "Thousand Sons",
-          "Ultramarines",
-          "World Eaters"
-        ],
-        "legendary": {
-          "armour": [
-            145,
-            165,
-            209,
-            254,
-            277,
-            299,
-            322,
-            344,
-            367,
-            389,
-            437
-          ],
-          "health": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        "rare": {
-          "armour": [
-            28,
-            34,
-            40,
-            45,
-            52,
-            60,
-            77
-          ],
-          "health": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        "uncommon": {
-          "armour": [
-            12,
-            16,
-            20,
-            25,
-            30
-          ],
-          "health": [
-            0,
-            0,
-            0,
-            0,
-            0
-          ]
-        }
-      },
-      "1": {
-        "common": {
-          "armour": [
             4,
             6,
             10
@@ -4144,12 +4023,15 @@
           "Adeptus Mechanicus",
           "Astra militarum",
           "Aeldari",
-          "Genestealer Cults",
-          "Tyranids",
+          "Necrons",
+          "T'au Empire",
           "Black Legion",
           "Death Guard",
+          "Genestealer Cults",
           "Orks",
-          "Thousand Sons"
+          "Thousand Sons",
+          "World Eaters",
+          "Tyranids"
         ],
         "legendary": {
           "armour": [
@@ -4292,7 +4174,525 @@
       17
     ]
   ],
-  "summons": {},
+  "summons": {
+    "Bloodletter A": {
+      "alliance": "Chaos",
+      "armour": 3.0,
+      "damage": 25.0,
+      "faction": "Black Legion",
+      "health": 39.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.8,
+        "type": "piercing"
+      },
+      "summoner": "Archimatos",
+      "summonerAbility": "active",
+      "traits": [
+        "daemon",
+        "summon"
+      ]
+    },
+    "Bloodletter P": {
+      "alliance": "Chaos",
+      "armour": 0,
+      "damage": 25.0,
+      "faction": "Black Legion",
+      "health": 39.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.8,
+        "type": "piercing"
+      },
+      "summoner": "Archimatos",
+      "summonerAbility": "passive",
+      "traits": [
+        "daemon",
+        "summon"
+      ]
+    },
+    "Blue Horror": {
+      "alliance": "Chaos",
+      "armour": 0,
+      "damage": 18,
+      "faction": "Thousand Sons",
+      "health": 21,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.25,
+        "type": "flame"
+      },
+      "summoner": "Abraxas",
+      "summonerAbility": "active",
+      "traits": [
+        "weaver of fates",
+        "daemon",
+        "summon"
+      ]
+    },
+    "Cadian (Creed)": {
+      "alliance": "Imperial",
+      "armour": 8.0,
+      "damage": 24.0,
+      "faction": "Astra militarum",
+      "health": 40.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.1,
+        "type": "las"
+      },
+      "summoner": "Creed",
+      "summonerAbility": "active",
+      "traits": [
+        "battle fatigue",
+        "summon"
+      ]
+    },
+    "Cadian (Yarrick)": {
+      "alliance": "Imperial",
+      "armour": 8.0,
+      "damage": 24.0,
+      "faction": "Astra militarum",
+      "health": 40.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.1,
+        "type": "las"
+      },
+      "summoner": "Yarrick",
+      "summonerAbility": "active",
+      "traits": [
+        "battle fatigue",
+        "summon"
+      ]
+    },
+    "Colour Sergeant Kell": {
+      "alliance": "Imperial",
+      "armour": 15.0,
+      "damage": 18.0,
+      "faction": "Astra militarum",
+      "health": 90.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "summoner": "Creed",
+      "summonerAbility": "passive",
+      "traits": [
+        "summon"
+      ]
+    },
+    "Command-Link Drone": {
+      "alliance": "Xenos",
+      "armour": 10,
+      "damage": 14,
+      "faction": "T'au Empire",
+      "health": 30,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "summoner": "Shadowsun",
+      "summonerAbility": "active",
+      "traits": [
+        "flying",
+        "mechanical",
+        "summon"
+      ]
+    },
+    "Geminae Superia": {
+      "alliance": "Imperial",
+      "armour": 20.0,
+      "damage": 25.0,
+      "faction": "Adepta Sororitas",
+      "health": 48.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "summoner": "Celestine",
+      "summonerAbility": "passive",
+      "traits": [
+        "flying",
+        "summon"
+      ]
+    },
+    "Grot A": {
+      "alliance": "Xenos",
+      "armour": 0,
+      "damage": 33.0,
+      "faction": "Orks",
+      "health": 65.5,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.15,
+        "type": "projectile"
+      },
+      "summoner": "Snotflogga",
+      "summonerAbility": "active",
+      "traits": [
+        "diminutive",
+        "battle fatigue",
+        "summon"
+      ]
+    },
+    "Grot P": {
+      "alliance": "Xenos",
+      "armour": 0,
+      "damage": 22.0,
+      "faction": "Orks",
+      "health": 18.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.15,
+        "type": "projectile"
+      },
+      "summoner": "Snotflogga",
+      "summonerAbility": "passive",
+      "traits": [
+        "diminutive",
+        "battle fatigue",
+        "summon"
+      ]
+    },
+    "Grot Tank": {
+      "alliance": "Xenos",
+      "armour": 20.0,
+      "damage": 25.0,
+      "faction": "Orks",
+      "health": 70.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.15,
+        "type": "blast"
+      },
+      "summoner": "Gibbascrapz",
+      "summonerAbility": "active",
+      "traits": [
+        "mechanical",
+        "battle fatigue",
+        "vehicle",
+        "summon"
+      ]
+    },
+    "Hormagaunt": {
+      "alliance": "Xenos",
+      "armour": 6.0,
+      "damage": 22.0,
+      "faction": "Tyranids",
+      "health": 30.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "summoner": "Winged Prime",
+      "summonerAbility": "passive",
+      "traits": [
+        "instinctive behaviour",
+        "battle fatigue",
+        "summon"
+      ]
+    },
+    "Inceptor": {
+      "alliance": "",
+      "armour": 12.0,
+      "damage": 10.0,
+      "faction": "Ultramarines",
+      "health": 55.0,
+      "melee": {
+        "hits": 6,
+        "pierce": 0.2,
+        "type": "bolter"
+      },
+      "summoner": "Bellator",
+      "summonerAbility": "active",
+      "traits": [
+        "flying",
+        "mk x gravis",
+        "summon"
+      ]
+    },
+    "Jump Pack Intercessor": {
+      "alliance": "Imperial",
+      "armour": 18.0,
+      "damage": 18.0,
+      "faction": "Blood Angels",
+      "health": 50.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.2,
+        "type": "chain"
+      },
+      "summoner": "Mataneo",
+      "summonerAbility": "passive",
+      "traits": [
+        "rapid assault",
+        "flying",
+        "summon"
+      ]
+    },
+    "MV71 Sniper Drone": {
+      "alliance": "Xenos",
+      "armour": 5.0,
+      "damage": 28.0,
+      "faction": "T'au Empire",
+      "health": 20.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "ranged": {
+        "hits": 1,
+        "pierce": 0.8,
+        "type": "piercing"
+      },
+      "summoner": "Sho'syl",
+      "summonerAbility": "passive",
+      "traits": [
+        "flying",
+        "mechanical",
+        "close combat weakness",
+        "summon"
+      ]
+    },
+    "Necron Warrior": {
+      "alliance": "Xenos",
+      "armour": 0,
+      "damage": 10.0,
+      "faction": "Necrons",
+      "health": 20.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 0.6,
+        "type": "molecular"
+      },
+      "summoner": "Aleph-Null",
+      "summonerAbility": "active",
+      "traits": [
+        "living metal",
+        "summon"
+      ]
+    },
+    "Pink Horror": {
+      "alliance": "Chaos",
+      "armour": 0,
+      "damage": 9,
+      "faction": "Thousand Sons",
+      "health": 36,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "ranged": {
+        "hits": 2,
+        "pierce": 1.0,
+        "type": "psychic"
+      },
+      "summoner": "Abraxas",
+      "summonerAbility": "active",
+      "traits": [
+        "weaver of fates",
+        "daemon",
+        "psyker",
+        "summon"
+      ]
+    },
+    "Pox Walkers": {
+      "alliance": "Chaos",
+      "armour": 15.0,
+      "damage": 35.0,
+      "faction": "Death Guard",
+      "health": 30.0,
+      "melee": {
+        "hits": 2,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "summoner": "Corrodius",
+      "summonerAbility": "active",
+      "traits": [
+        "contagions of nurgle",
+        "summon"
+      ]
+    },
+    "Ripper Swarm A": {
+      "alliance": "Xenos",
+      "armour": 15.0,
+      "damage": 11.0,
+      "faction": "Tyranids",
+      "health": 63.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "summoner": "Parasite of Mortrex",
+      "summonerAbility": "active",
+      "traits": [
+        "instinctive behaviour",
+        "swarm",
+        "battle fatigue",
+        "summon"
+      ]
+    },
+    "Ripper Swarm P": {
+      "alliance": "Xenos",
+      "armour": 15.0,
+      "damage": 11.0,
+      "faction": "Tyranids",
+      "health": 63.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "summoner": "Parasite of Mortrex",
+      "summonerAbility": "passive",
+      "traits": [
+        "instinctive behaviour",
+        "swarm",
+        "battle fatigue",
+        "summon"
+      ]
+    },
+    "Scarab Swarm": {
+      "alliance": "Xenos",
+      "armour": 0,
+      "damage": 10.0,
+      "faction": "Necrons",
+      "health": 20.0,
+      "melee": {
+        "hits": 5,
+        "pierce": 0.3,
+        "type": "energy"
+      },
+      "summoner": "Aleph-Null",
+      "summonerAbility": "active",
+      "traits": [
+        "living metal",
+        "flying",
+        "swarm",
+        "summon"
+      ]
+    },
+    "Screamer": {
+      "alliance": "Chaos",
+      "armour": 0,
+      "damage": 18,
+      "faction": "Thousand Sons",
+      "health": 45,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.4,
+        "type": "power"
+      },
+      "summoner": "Abraxas",
+      "summonerAbility": "active",
+      "traits": [
+        "weaver of fates",
+        "daemon",
+        "flying",
+        "summon"
+      ]
+    },
+    "Shield Drone": {
+      "alliance": "Xenos",
+      "armour": 15.0,
+      "damage": 14.0,
+      "faction": "T'au Empire",
+      "health": 40.0,
+      "melee": {
+        "hits": 1,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "summoner": "Re'vas",
+      "summonerAbility": "active",
+      "traits": [
+        "flying",
+        "mechanical",
+        "summon"
+      ]
+    },
+    "Skitarii Vanguard": {
+      "alliance": "Imperial",
+      "armour": 21.0,
+      "damage": 9.5,
+      "faction": "Adeptus Mechanicus",
+      "health": 49.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.7,
+        "type": "toxic"
+      },
+      "summoner": "Tan Gi'da",
+      "summonerAbility": "passive",
+      "traits": [
+        "mechanical",
+        "summon"
+      ]
+    },
+    "Tyranid Warrior": {
+      "alliance": "Xenos",
+      "armour": 16.0,
+      "damage": 30.0,
+      "faction": "Tyranids",
+      "health": 80.0,
+      "melee": {
+        "hits": 3,
+        "pierce": 0.01,
+        "type": "physical"
+      },
+      "ranged": {
+        "hits": 3,
+        "pierce": 0.3,
+        "type": "bio"
+      },
+      "summoner": "Winged Prime",
+      "summonerAbility": "active",
+      "traits": [
+        "synapse",
+        "shadow in the warp",
+        "summon"
+      ]
+    }
+  },
   "titus_ability_factor": [
     2.0,
     3.0,

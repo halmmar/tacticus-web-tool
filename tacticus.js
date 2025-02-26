@@ -686,20 +686,25 @@ var updateTable = function() {
         var starlevel = 0;
         var gearlevel = 0;
         var rarity = 0;
-        var passiveSkillLevel = 0;
+        var passiveSkillLevel = 1;
+        var activeSkillLevel = 1;
+        var char = tb_chars[key];
+        var nameOfBaseChar = char.summoner || key;
 
-        if (isAPI && key in playerUnits) {
-          var progression = playerUnits[key].progressionIndex;
+        if (isAPI && nameOfBaseChar in playerUnits) {
+          var progression = playerUnits[nameOfBaseChar].progressionIndex;
           rarity = apiProgressionIndexToRarity[progression];
           starlevel = progression - rarity;
-          gearlevel = playerUnits[key].rank;
-          passiveSkillLevel = playerUnits[key].abilities[1].level;
+          gearlevel = playerUnits[nameOfBaseChar].rank;
+          activeSkillLevel = playerUnits[nameOfBaseChar].abilities[0].level;
+          passiveSkillLevel = playerUnits[nameOfBaseChar].abilities[1].level;
         } else if (!isAPI) {
           rarity = +document.getElementById("rarity-level").value;
           starlevel = +document.getElementById("starlevel").value;
           gearlevel = +document.getElementById("gearlevel").value;
           passiveSkillLevel = +document.getElementById("skill-level").value;
-        } else if (key in playerUnitShards) {
+          activeSkillLevel = passiveSkillLevel;
+        } else if (nameOfBaseChar in playerUnitShards) {
           comment += "Not unlocked";
         } else {
           comment += "API name mismatch in DB and API";
@@ -708,8 +713,7 @@ var updateTable = function() {
         var levelStatFactor = Math.pow(1.25205, gearlevel)*(1+0.1*starlevel);
 
         entryId = characterTableEntryId(key);
-        var char = tb_chars[key];
-        var passiveFactor = passiveFactorCharacter(key, passiveSkillLevel, rarity);
+        var passiveFactor = passiveFactorCharacter(key, char.summonerAbility=="active" ? activeSkillLevel : passiveSkillLevel, rarity);
         var levelStatFactorCurUnit = char.traits.includes("summon") ? passiveFactor : levelStatFactor;
         var health = char.health*levelStatFactorCurUnit;
         var armour = char.armour*levelStatFactorCurUnit;
@@ -830,6 +834,7 @@ var updateTable = function() {
             case "act of faith":
             case "big target":
             case "infiltrate":
+            case "instinctive behaviour":
             case "healer":
             case "suppressive fire":
             case "indirect fire":
@@ -860,7 +865,12 @@ var updateTable = function() {
 
         switch (key) {
         case "Bloodletter":
+        case "Bloodletter A":
+        case "Bloodletter P":
           if (opponentIsPsyker) {
+            meleeHits += 1;
+          }
+          if (madeContact) {
             meleeHits += 1;
           }
           break;
@@ -912,12 +922,6 @@ var updateTable = function() {
         case 'Aethana':
           aethanadamageModifiedByFaction = 0;
           break;
-        case 'Bloodletter':
-        case 'Bloodletter (v1.6)':
-          if (madeContact) {
-            meleeHits += 1;
-          }
-          break;
         case 'Tanksmasha':
           buffDmgMelee += passiveFactor*char.passive[0];
           break;
@@ -934,6 +938,8 @@ var updateTable = function() {
         case 'Gulgortz':
         case 'Jaeger':
         case 'Cadian Guardsman':
+        case 'Cadian (Creed)':
+        case 'Cadian (Yarrick)':
         case 'Command-Link Drone':
         case 'Colour Sergeant Kell':
         case 'Calandis':
@@ -945,29 +951,35 @@ var updateTable = function() {
         case 'Darkstrider':
         case 'Geminae Superia':
         case 'Gibbascrapz':
-        case 'Grot':
+        case 'Grot A':
+        case 'Grot P':
         case 'Grot Tank':
         case 'Haarken':
+        case 'Hormagaunt': // Has a passive, but need several of them and it's hard to count this
         case 'Imospekh':
         case 'Inceptor':
         case 'Isabella':
         case 'Jain Zar':
+        case 'Jump Pack Intercessor':
         case 'Kharn':
         case 'Makhotep':
         case 'Maladus':
         case 'Maugan Ra':
         case 'Morvenn Vahl':
         case 'MV71 Sniper Drone':
-        case 'Necron warrior':  
+        case 'Necron Warrior':  
         case 'Rotbone':
         case 'Pink Horror':
         case 'Pox Walkers':
         case "Re'vas":
+        case "Ripper Swarm A":
+        case "Ripper Swarm P":
         case "Sarquael":
         case "Scarab Swarm":
-        case "Screamer of Tzeentch":
+        case "Screamer":
         case "Shadowsun":
         case "Shield Drone":
+        case "Skitarii Vanguard":
         case "Sho'syl":
         case 'Sibyll':
         case 'Snotflogga':
@@ -976,6 +988,7 @@ var updateTable = function() {
         case 'Thutmose':
         case 'Toth':
         case 'Typhus':
+        case 'Tyranid Warrior':
         case 'Ulf':
         case 'Tigurius':
         case 'Vindicta':
@@ -1174,7 +1187,11 @@ var updateTable = function() {
         }
           
 
-        document.getElementById(entryId+"-name").innerHTML='<abbr title="'+key+': '+intToRarity[rarity]+', '+gearLevelToText[gearlevel]+', P'+passiveSkillLevel+'">'+key+"</abbr>";
+        if (char.summoner) {
+          document.getElementById(entryId+"-name").innerHTML='<abbr title="'+key+': Summoned by '+char.summoner+" "+intToRarity[rarity]+" "+passiveSkillLevel+'">'+key+"</abbr>";
+        } else {
+          document.getElementById(entryId+"-name").innerHTML='<abbr title="'+key+': '+intToRarity[rarity]+', '+gearLevelToText[gearlevel]+', P'+passiveSkillLevel+'">'+key+"</abbr>";
+        }
         document.getElementById(entryId+"-health").innerHTML=Math.round(health);
         document.getElementById(entryId+"-armour").innerHTML=Math.round(armour);
         document.getElementById(entryId+"-dmg").innerHTML=Math.round(dmg);

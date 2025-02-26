@@ -37,7 +37,12 @@ nameMap = {
     "Sword Brother Godswyl": "Godswyl",
     "Tan Gi’da": "Tan Gi'da",
     "Thaddeus noble": "Thaddeus",
-    "Varro Tigurius": "Tigurius"
+    "Varro Tigurius": "Tigurius",
+    "Necron warrior": "Necron Warrior",
+    "Screamer of Tzeentch": "Screamer",
+    "Hormagunt": "Hormagaunt",
+    "Skitarii Vanguards": "Skitarii Vanguard",
+    "Cadian Guardsman": "Cadian"
 }
 
 def data_frame_from_xlsx(xlsx_file, range_name, headerColumn=None):
@@ -381,7 +386,7 @@ for index, eq in tb_Equipment.iterrows():
     for faction in factionMap.keys():
         if faction in eq and eq[faction]:
             factions += [factionMap[faction]]
-    itemInternalType = eq[0:1][0] # Gun, Knife, Both
+    itemInternalType = eq[0:1].iloc(0) # Gun, Knife, Both
     chance = eq["Chance"]
     if np.isnan(chance):
         chance = int("Both"==itemInternalType)
@@ -415,6 +420,31 @@ for index, eq in tb_Equipment.iterrows():
                 }[itemTypeStr]: stat1
             }
 
+summonMap = {
+    "Inceptor": {"characters": ["Bellator"], "ability": "active"},
+    "Bloodletter": {"characters": ["Archimatos"], "ability": "both"},
+    "Grot": {"characters": ["Snotflogga"], "ability": "both"},
+    "Grot Tank": {"characters": ["Gibbascrapz"], "ability": "active"},
+    "Scarab Swarm": {"characters": ["Aleph-Null"], "ability": "active"},
+    "Necron Warrior": {"characters": ["Aleph-Null"], "ability": "active"},
+    "Cadian": {"characters": ["Yarrick","Creed"], "ability": "active"},
+    "Colour Sergeant Kell": {"characters": ["Creed"], "ability": "passive"},
+    "Geminae Superia": {"characters": ["Celestine"], "ability": "passive"},
+    "Pox Walkers": {"characters": ["Corrodius"], "ability": "active"},
+    "Shield Drone": {"characters": ["Re'vas"], "ability": "active"},
+    "MV71 Sniper Drone": {"characters": ["Sho'syl"], "ability": "passive"},
+    "Command-Link Drone": {"characters": ["Shadowsun"], "ability": "active", "stats": [30,14,10]},
+    "Pink Horror": {"characters": ["Abraxas"], "ability": "active", "stats": [36,9,0]},
+    "Blue Horror": {"characters": ["Abraxas"], "ability": "active", "stats": [21,18,0]},
+    "Screamer": {"characters": ["Abraxas"], "ability": "active", "stats": [45,18,0]},
+    "Tyranid Warrior": {"characters": ["Winged Prime"], "ability": "active"},
+    "Hormagaunt": {"characters": ["Winged Prime"], "ability": "passive"},
+    "Termagant": {"characters": []}, # Why is this in Towen's sheet?
+    "Ripper Swarm": {"characters": ["Parasite of Mortrex"], "ability": "both"},
+    "Skitarii Vanguard": {"characters": ["Tan Gi'da"], "ability": "passive"},
+    "Jump Pack Intercessor": {"characters": ["Mataneo"], "ability": "passive"},
+}
+
 def toJSON(rows):
     characters = {}
     bosses = {}
@@ -422,9 +452,9 @@ def toJSON(rows):
     bossNames = ["TERVIGON", "Tervigon"]
     foundMobs = False
     for index, row in rows.iterrows():
-        if row[0] == "Mobs":
+        if row.iloc(0) in ["Mobs","GRBosses"]:
             foundMobs = True
-        if row[0] == "Summons":
+        if row.iloc(0) == "Summons":
             foundMobs = False
         if foundMobs:
             continue
@@ -452,8 +482,6 @@ def toJSON(rows):
             traits += [traitStripped]
         if row.Name in ["Shield Drone","Termagant"] and "summon" not in traits:
             traits += ["summon"]
-        if "summon" in traits:
-            continue # TODO: Fix summons
         toDelete = []
         for key in eqCount.keys():
             if not eqCount[key]:
@@ -475,15 +503,30 @@ def toJSON(rows):
             data["equipment"] = eqCount
             # data["legendary-event"] = legendaryEventCharacters[name]
             characters[name] = data
-        elif row.Name[0:2] in ["L1", "L2", "L3", "L4"]:
-            bosses[row.Name] = data
+        #elif row.Name[0:2] in ["L1", "L2", "L3", "L4"]:
+        #    bosses[row.Name] = data
         elif "summon" in traits:
-            if row.Name not in characterAbilities:
-                raise Exception(row.Name + " " + str(characterAbilities.keys()))
-            data["health"] = passiveData[0]
-            data["damage"] = passiveData[1]
-            data["armour"] = passiveData[2] if len(passiveData)==3 else 0
-            summons[row.Name] = data
+            if name not in summonMap:
+                raise Exception(name + " " + str(summonMap.keys()) + "\n" + str(row))
+            for character in summonMap[name]["characters"]:
+                abilityUsed = summonMap[name]["ability"]
+                for ability in ["active","passive"]:
+                    if not (abilityUsed=="both" or abilityUsed==ability):
+                        continue
+                    stats = summonMap[name].get("stats",[])
+                    if len(stats)==0:
+                        stats = characters[character][ability]
+                    data["health"] = stats[0]
+                    data["damage"] = stats[1]
+                    data["armour"] = stats[2] if len(stats)>=3 else 0
+                    data["summoner"] = character
+                    data["summonerAbility"] = ability
+                    summonName = name
+                    if len(summonMap[name]["characters"]) > 1:
+                        summonName += " ("+character+")"
+                    if abilityUsed == "both":
+                        summonName += " " + ability[0].upper()
+                    summons[summonName] = data.copy()
         else:
             continue
     for name in summonsNames:
