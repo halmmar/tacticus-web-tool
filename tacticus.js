@@ -73,7 +73,7 @@ function(err, data) {
     */
     // updateGear(); // Hard-coded into the HTML
     document.getElementById("tacticus-version").innerHTML=data.version;
-    ["eldryon-buff", "thaddeus-buff", "shadowsun-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "gulgortz-buff", "helbrecht-buff", "ragnar-buff", "equipment"].forEach(function (key) {
+    ["eldryon-buff", "thaddeus-buff", "shadowsun-buff", "calgar-buff", "abaddon-buff", "aethana-buff", "aunshi-buff", "darkstrider-buff", "gulgortz-buff", "helbrecht-buff", "ragnar-buff", "vitruvius-buff", "equipment"].forEach(function (key) {
       document.getElementById(key + "-rarity").innerHTML=document.getElementById("rarity-level").innerHTML;
     });
     // addLegendaryEvents(latest_legendary_event);
@@ -91,6 +91,7 @@ function(err, data) {
     updateOpponentPreset(1);
     updateRagnar(1);
     updateActiveAbility("Gulgortz",1);
+    updatePassiveAbility("Vitruvius",1);
     updateTable();
   }
 });
@@ -217,7 +218,7 @@ var updatePassiveAbility = function(name, skipUpdate) {
   }
   var level = document.getElementById(nameLower+"-buff-level").value;
   var factor = tb_abilities_factor[level-1] * (1 + document.getElementById(nameLower+"-buff-rarity").value*0.2);
-  document.getElementById(nameLower+"-buff-value").innerHTML = Math.round(tb_chars[name].passive[factorIndex]*factor);
+  document.getElementById(nameLower+"-buff-value").innerHTML = Math.round(tb_chars[name].passive[0]*factor);
   if (1 != skipUpdate) updateTable();
 };
 
@@ -559,7 +560,7 @@ var damageArmourOrPierce = function(dmg, armour, pierce, type, numArmourReductio
 var ragnarBonusCritChance = 0;
 var ragnarBonusDmg = 0;
 
-var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit, type) {
+var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, vitruviusMaxDmg, armour, pierce, critChance, crit, type) {
   critChance = Math.min(critChance,1);
   numRounds = (aunshiBonusDmg > 0 ? 3 : 1) * (ragnarBonusCritChance > 0 ? 5 : 1);
   var total = 0;
@@ -572,19 +573,23 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, armour
     var perCrit =  (damageArmourOrPierce(dmgLow+crit, armour, pierce, type, 1) + damageArmourOrPierce(dmgHigh+crit, armour, pierce, type, 1))*0.5;
     var numRevoltingResilience = opponentRevoltingResilience;
     var critChanceThisRound = Math.min(1.0, critChance + ragnarBonusCritChance/100.0);
-    for (n=1; n<=hits; n++) {
+    for (n=1; n<=hits+(vitruviusMaxDmg ? 1 : 0); n++) {
       var critCurHit = Math.pow(critChanceThisRound, n);
-      total += perCrit * critCurHit + perNonCrit * (1-critCurHit) * opponentRevoltingResilienceScaling;
+      var dmgThisRound = dmgFactor * perCrit * critCurHit + perNonCrit * (1-critCurHit) * opponentRevoltingResilienceScaling;
+      if (n == hits+1) {
+        dmgThisRound = Math.min(vitruviusMaxDmg, dmgThisRound);
+      }
+      total += dmgThisRound;
       if (opponentRevoltingResilience && (numRevoltingResilience-- <= 0)) {
         opponentRevoltingResilienceScaling *= 0.5;
       }
     };
   }
-  return Math.round(dmgFactor*total) / numRounds;
+  return Math.round(total / numRounds);
 };
 
-var calcDmg = function(dmg, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit, type) {
-  return calcDmgLowHigh(dmg*0.8, dmg*1.2, dmgFactor, aunshiBonusDmg, hits, armour, pierce, critChance, crit, type);
+var calcDmg = function(dmg, dmgFactor, aunshiBonusDmg, hits, vitruviusMaxDmg,  armour, pierce, critChance, crit, type) {
+  return calcDmgLowHigh(dmg*0.8, dmg*1.2, dmgFactor, aunshiBonusDmg, hits, vitruviusMaxDmg, armour, pierce, critChance, crit, type);
 }
 var insertIcon = function(name) {
   return '<img class="damage-icon" src="images/'+name+'.png" />'
@@ -612,6 +617,7 @@ var updateTable = function() {
     var opponentHasMarkerlight = document.getElementById("opponent-has-markerlight").checked;
     var opponentBeastSnagga = document.getElementById("opponent-beast-snagga").checked;
     var opponentGetStuckIn = document.getElementById("opponent-get-stuck-in").checked;
+    var haveHighGround = document.getElementById("have-high-ground").checked;
     var weakerRearEnabled = document.getElementById("weaker-rear-enabled").checked;
     opponentAblativePlating = document.getElementById("opponent-ablative-plating").checked;
     opponentRevoltingResilience = document.getElementById("opponent-revolting-resilience").checked ? (document.getElementById("opponent-checkbox") ? 3 : 1) : 0;
@@ -635,6 +641,7 @@ var updateTable = function() {
     var opponentPunishesMelee = document.getElementById("opponent-punishes-melee").checked;
     var opponentPunishesRanged = document.getElementById("opponent-punishes-ranged").checked;
     var gulgortzBonusDmg = +document.getElementById("gulgortz-buff-value").innerHTML;
+    var vitruviusMaxDmg = +document.getElementById("vitruvius-buff-value").innerHTML;
     ahrimanEnabled = document.getElementById("ahriman-buff-enabled").checked;
     ahrimanPercent = 1+(ahrimanEnabled ? (document.getElementById("ahriman-buff-percent").innerHTML / 100) : 0);
     ahrimanMax = ahrimanEnabled ? (+document.getElementById("ahriman-buff-max").innerHTML) : 0;
@@ -699,6 +706,7 @@ var updateTable = function() {
         var helbrechtBonusDmg = key.includes("Helbrecht") ? 0 : helbrechtBonusDmgRawData;
         var buffDmgRanged = 0;
         var buffDmgMelee = 0;
+        var buffDmgMeleeAlsoAbilities = 0;
         var commentRanged = "";
         var commentMelee = "";
         var commentSurvival = "";
@@ -715,6 +723,9 @@ var updateTable = function() {
         }
         if (weakerRearEnabled) {
           critChance += 0.5;
+        }
+        if (haveHighGround) {
+          dmgFactor *= 1.5;
         }
 
         buffDmgMelee += gulgortzBonusDmg;
@@ -772,10 +783,10 @@ var updateTable = function() {
               break;
             case "rapid assault":
             case "raid assault":
-              if (madeContact) {
+              /*if (madeContact) {
                 dmgFactorMelee *= 1.25;
-              }
-              comment += "Assumes first hit of the battle";
+                comment += "Assumes first hit of the battle";
+              }*/
               break;
             case "ambush":
             case "battle fatigue":
@@ -1014,48 +1025,48 @@ var updateTable = function() {
         }
 
         buffDmg += eldryondamageModifiedByFaction + calgardamageModifiedByFaction + abaddonBonusDmgModifiedByFaction + aethanadamageModifiedByFaction;
-        buffDmgMelee += helbrechtBonusDmg;
+        buffDmgMeleeAlsoAbilities += helbrechtBonusDmg;
         buffDmgRanged += darkstriderBonusDmg + shadowsunBonusDmg;
        
         // Melee damage
         var totalDmg = 0;
         if (!opponentPunishesMelee) {
-          totalDmg = calcDmg(dmg+buffDmg+buffDmgMelee, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits + (meleeHits / 2 | 0) * getStuckInChance, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
+          totalDmg = calcDmg(dmg+buffDmg+buffDmgMelee+buffDmgMeleeAlsoAbilities, dmgFactor*dmgFactorMelee, aunshiBonusDmg, meleeHits + (meleeHits / 2 | 0) * getStuckInChance, vitruviusMaxDmg, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
           switch (key) {
             case 'Gulgortz':
-              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3 + getStuckInChance, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
+              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0]+buffDmgMeleeAlsoAbilities, passiveFactor*char.passive[1]+buffDmgMeleeAlsoAbilities, dmgFactor, 0, 3 + getStuckInChance, vitruviusMaxDmg, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
               break;
             case 'Kharn':
-              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 4, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
+              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0]+buffDmgMeleeAlsoAbilities, passiveFactor*char.passive[1]+buffDmgMeleeAlsoAbilities, dmgFactor, 0, 4, vitruviusMaxDmg, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
               comment += "Assumes no kills";
               break;
             case 'Snotflogga':
-              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 2 + getStuckInChance, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
+              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0]+buffDmgMeleeAlsoAbilities, passiveFactor*char.passive[1]+buffDmgMeleeAlsoAbilities, dmgFactor, 0, 2 + getStuckInChance, vitruviusMaxDmg, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
               break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
-            var galaxyDmg = calcDmg(dmg+buffDmg+buffDmgMelee, dmgFactor*dmgFactorMelee, 0, ltgbHits, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
+            var galaxyDmg = calcDmg(dmg+buffDmg+buffDmgMelee+buffDmgMeleeAlsoAbilities, dmgFactor*dmgFactorMelee, 0, ltgbHits, 0, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
             totalDmg += galaxyDmg * 0.5;
             // comment += "LtGB assumes hits on target"
           }
         }
         if (char.hasOwnProperty("ranged") && !opponentPunishesRanged) {
           // Ranged damage
-          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + (char.ranged.hits / 2 | 0) * getStuckInChance, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
+          var rangedDmg = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + (char.ranged.hits / 2 | 0) * getStuckInChance, vitruviusMaxDmg, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
           if (shadowsunPassive && char.faction.includes("T'au") && key != "ShadowSun") {
             rangedDmg = [0.2,0.3,0.4,0.5,0.6].map(function(round) {
-              var rangedDmgTauProc = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + 1, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
+              var rangedDmgTauProc = calcDmg(dmg+buffDmg+buffDmgRanged, dmgFactor*dmgFactorRanged, aunshiBonusDmg, char.ranged.hits + 1, vitruviusMaxDmg, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
               return (1-round) * rangedDmg + round * rangedDmgTauProc;
             }).reduce((a,b) => a+b) / 5;
             comment += "Shadowsun+T'au";
           }
           switch (key) {
           case 'Gulgortz':
-              rangedDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3 + getStuckInChance, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
+              rangedDmg += calcDmgLowHigh(passiveFactor*char.passive[0], passiveFactor*char.passive[1], dmgFactor, 0, 3 + getStuckInChance, vitruviusMaxDmg, opponentarmor, char.ranged.pierce, critChance, critDamage, char.ranged.type);
               break;
           case 'Volk':
             var volkDamageBuff = passiveFactor*char.passive[0];
-            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor*dmgFactorRanged, 0, char.ranged.hits, opponentarmor, char.ranged.pierce + 0.2, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
+            var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor*dmgFactorRanged, 0, char.ranged.hits, vitruviusMaxDmg, opponentarmor, char.ranged.pierce + 0.2, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
             comment += "passive (+"+Math.round(volkDamageBuff)+")";
             rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
             break;
@@ -1063,14 +1074,14 @@ var updateTable = function() {
             var revasPassiveDmgLow = passiveFactor*char.passive[0];
             var revasPassiveDmgHigh = passiveFactor*char.passive[1];
             var revasPassiveOverload = (opponentHasMarkerlight || opponentIsMech) ? passiveFactor*char.passive[2] : 0;
-            var revasPassiveDmg = calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor*dmgFactorRanged, 0, 3, opponentarmor, 0.35, critChance + critChanceRanged, critDamage + critDamageRanged, "Particle");
+            var revasPassiveDmg = calcDmgLowHigh(revasPassiveDmgLow+revasPassiveOverload, revasPassiveDmgHigh+revasPassiveOverload, dmgFactor*dmgFactorRanged, 0, 3, 0, opponentarmor, 0.35, critChance + critChanceRanged, critDamage + critDamageRanged, "Particle");
             rangedDmg += revasPassiveDmg;
             totalDmg += revasPassiveDmg*dmgFactorMelee;
             comment += "3x "+Math.round(revasPassiveDmgLow)+"-"+Math.round(revasPassiveDmgHigh)+" +" +Math.round(revasPassiveOverload);
             break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
-            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorRanged, aunshiBonusDmg, ltgbHits, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
+            var galaxyDmg = calcDmg(dmg+buffDmg, dmgFactor*dmgFactorRanged, aunshiBonusDmg, ltgbHits, 0, opponentarmor, char.ranged.pierce, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
             rangedDmg += galaxyDmg * 0.5;
           }
           if (rangedDmg > totalDmg) {
@@ -1239,6 +1250,7 @@ apiProgressionIndexToRarity = [
 
 function loadCharacterAbilities(char, isPassive) {
   id = char.toLowerCase().replace("'","");
+  if (!document.getElementById(id+"-buff-rarity")) return;
   document.getElementById(id+"-buff-rarity").value = apiProgressionIndexToRarity[playerUnits[char].progressionIndex];
   document.getElementById(id+"-buff-level").value = playerUnits[char].abilities[isPassive].level;
 };
@@ -1252,7 +1264,8 @@ function loadPlayerDataAPI() {
   playerUnitShards = Object.fromEntries(playerDataAPI.player.inventory.shards.map(obj => [obj.name.replace(" Shards",""), obj]));
   console.log(playerUnits);
   ["Ragnar"].map(it => loadCharacterAbilities(it, isPassive=0));
-  ["Abaddon","Aethana","Aun'Shi","Calgar","Darkstrider","Eldryon","Helbrecht","Shadowsun","Thaddeus"].map(it => loadCharacterAbilities(it, isPassive=1));
+  
+  Object.keys(playerUnits).forEach(it => loadCharacterAbilities(it, isPassive=1));
   updateTable();
 };
 

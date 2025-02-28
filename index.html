@@ -294,7 +294,17 @@
     </select>
     <input onChange="updateThaddeus()" type="number" id="thaddeus-buff-level" min="0" max="50" value="50">
     +<span id="thaddeus-buff-dmg"></span> damage [Heavy Weapon]
+    <br>
+    <label>Vitruvius</label>
+    <input onChange="updatePassiveAbility('Vitruvius')" type="checkbox" id="vitruvius-buff-enabled"></input>
+    <select onChange="updatePassiveAbility('Vitruvius')" name="vitruvius-buff-rarity" id="vitruvius-buff-rarity">
+    </select>
+    <input onChange="updatePassiveAbility('Vitruvius')" type="number" id="vitruvius-buff-level" min="0" max="50" value="50">
+    +1 hit, max <span id="vitruvius-buff-value"></span> damage
     </fieldset>
+
+
+
     <fieldset class="damage-mode-only">
     <legend>Conditional</legend>
     <fieldset><legend>Heavy Weapon</legend>
@@ -309,8 +319,11 @@
     <fieldset><legend>Markerlight</legend>
       <input onChange="updateTable()" type="checkbox" id="opponent-has-markerlight"></input>
      </fieldset>
-    <fieldset><legend>Get Stuck In</legend>
+     <fieldset><legend>Get Stuck In</legend>
       <input title="Surrounded by 2 orks or 4 friends" onChange="updateTable()" type="checkbox" id="opponent-get-stuck-in" checked></input>
+    </fieldset>  
+    <fieldset><legend>High Ground</legend>
+      <input title="Attacking from high ground (x1.5)" onChange="updateTable()" type="checkbox" id="have-high-ground" checked></input>
     </fieldset>  
    </fieldset>
     <fieldset class="legendary-mode-only">
