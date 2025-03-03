@@ -1273,7 +1273,7 @@ function loadPlayerDataAPI() {
   console.log(playerUnits);
   var activeUnits = ["Ragnar","Gulgortz"];
   
-  Object.keys(playerUnits).forEach(it => loadCharacterAbilities(it, isPassive=activeUnits.includes(it)));
+  Object.keys(playerUnits).forEach(it => loadCharacterAbilities(it, isPassive=activeUnits.includes(it) ? 0 : 1));
   updateTable();
 };
 
