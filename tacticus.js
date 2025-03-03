@@ -931,6 +931,7 @@ var updateTable = function() {
         case 'Jain Zar':
         case 'Jump Pack Intercessor':
         case 'Kharn':
+        case 'Lucien':
         case 'Makhotep':
         case 'Maladus':
         case 'Maugan Ra':
@@ -1040,6 +1041,9 @@ var updateTable = function() {
               totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0]+buffDmgMeleeAlsoAbilities, passiveFactor*char.passive[1]+buffDmgMeleeAlsoAbilities, dmgFactor, 0, 4, vitruviusMaxDmg, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
               comment += "Assumes no kills";
               break;
+            case 'Lucien':
+              totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0]+buffDmgMeleeAlsoAbilities, passiveFactor*char.passive[1]+buffDmgMeleeAlsoAbilities, dmgFactor, 0, 2, vitruviusMaxDmg, opponentarmor, 0.2, critChance, critDamage, "bolter");
+              break;
             case 'Snotflogga':
               totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0]+buffDmgMeleeAlsoAbilities, passiveFactor*char.passive[1]+buffDmgMeleeAlsoAbilities, dmgFactor, 0, 2 + getStuckInChance, vitruviusMaxDmg, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
               break;
@@ -1069,6 +1073,9 @@ var updateTable = function() {
             var volkDamage = calcDmg(dmg+buffDmg+volkDamageBuff, dmgFactor*dmgFactorRanged, 0, char.ranged.hits, vitruviusMaxDmg, opponentarmor, char.ranged.pierce + 0.2, critChance + critChanceRanged, critDamage + critDamageRanged, char.ranged.type);
             comment += "passive (+"+Math.round(volkDamageBuff)+")";
             rangedDmg = rangedDmg*0.7 + volkDamage*0.3;
+            break;
+          case 'Lucien':
+            totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0]+buffDmgMeleeAlsoAbilities, passiveFactor*char.passive[1]+buffDmgMeleeAlsoAbilities, dmgFactor, 0, 2, vitruviusMaxDmg, opponentarmor, 0.2, critChance, critDamage, "bolter");
             break;
           case "Re'Vas":
             var revasPassiveDmgLow = passiveFactor*char.passive[0];
@@ -1249,10 +1256,11 @@ apiProgressionIndexToRarity = [
 ];
 
 function loadCharacterAbilities(char, isPassive) {
-  id = char.toLowerCase().replace("'","");
+  var id = char.toLowerCase().replace("'","");
   if (!document.getElementById(id+"-buff-rarity")) return;
+  var abilities = playerUnits[char].abilities;
   document.getElementById(id+"-buff-rarity").value = apiProgressionIndexToRarity[playerUnits[char].progressionIndex];
-  document.getElementById(id+"-buff-level").value = playerUnits[char].abilities[isPassive].level;
+  document.getElementById(id+"-buff-level").value = abilities[isPassive].level;
 };
 
 function loadPlayerDataAPI() {
@@ -1263,9 +1271,9 @@ function loadPlayerDataAPI() {
   playerUnits = Object.fromEntries(playerDataAPI.player.units.map(obj => [obj.name.replace("Nauseous","Rotbone"), obj]));
   playerUnitShards = Object.fromEntries(playerDataAPI.player.inventory.shards.map(obj => [obj.name.replace(" Shards",""), obj]));
   console.log(playerUnits);
-  ["Ragnar"].map(it => loadCharacterAbilities(it, isPassive=0));
+  var activeUnits = ["Ragnar","Gulgortz"];
   
-  Object.keys(playerUnits).forEach(it => loadCharacterAbilities(it, isPassive=1));
+  Object.keys(playerUnits).forEach(it => loadCharacterAbilities(it, isPassive=activeUnits.includes(it)));
   updateTable();
 };
 
