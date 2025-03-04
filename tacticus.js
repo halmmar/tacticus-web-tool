@@ -575,7 +575,7 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, vitruv
     var critChanceThisRound = Math.min(1.0, critChance + ragnarBonusCritChance/100.0);
     for (n=1; n<=hits+(vitruviusMaxDmg ? 1 : 0); n++) {
       var critCurHit = Math.min(1, Math.pow(critChanceThisRound, n));
-      var dmgThisRoundCrit = dmgFactor * perCrit * critCurHit * opponentRevoltingResilienceScaling;
+      var dmgThisRoundCrit = dmgFactor * perCrit * opponentRevoltingResilienceScaling;
       var dmgThisRoundNonCrit = dmgFactor * perNonCrit * opponentRevoltingResilienceScaling;
       if (n == hits+1) {
         dmgThisRoundCrit = Math.min(vitruviusMaxDmg, dmgThisRoundCrit);
@@ -644,6 +644,7 @@ var updateTable = function() {
     var opponentPunishesMelee = document.getElementById("opponent-punishes-melee").checked;
     var opponentPunishesRanged = document.getElementById("opponent-punishes-ranged").checked;
     var gulgortzBonusDmg = +document.getElementById("gulgortz-buff-value").innerHTML;
+    var numMechAttacks = +document.getElementById("num-mech-attacks").value;
     var vitruviusMaxDmg = +document.getElementById("vitruvius-buff-value").innerHTML;
     ahrimanEnabled = document.getElementById("ahriman-buff-enabled").checked;
     ahrimanPercent = 1+(ahrimanEnabled ? (document.getElementById("ahriman-buff-percent").innerHTML / 100) : 0);
@@ -921,6 +922,7 @@ var updateTable = function() {
         case 'Yarrick':
         case 'Corrodius':
         case 'Darkstrider':
+        case 'Exitor-Rho':
         case 'Geminae Superia':
         case 'Gibbascrapz':
         case 'Grot A':
@@ -1049,6 +1051,11 @@ var updateTable = function() {
               break;
             case 'Snotflogga':
               totalDmg += calcDmgLowHigh(passiveFactor*char.passive[0]+buffDmgMeleeAlsoAbilities, passiveFactor*char.passive[1]+buffDmgMeleeAlsoAbilities, dmgFactor, 0, 2 + getStuckInChance, vitruviusMaxDmg, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
+              break;
+            case 'Exitor-Rho':
+              var rhoPassiveDmg = calcDmgLowHigh(passiveFactor*char.passive[0]+buffDmgMeleeAlsoAbilities, passiveFactor*char.passive[1]+buffDmgMeleeAlsoAbilities, dmgFactor, 0, 2, vitruviusMaxDmg, opponentarmor, char.melee.pierce, critChance, critDamage, char.melee.type);
+              totalDmg += numMechAttacks * rhoPassiveDmg;
+              comment += rhoPassiveDmg + " dmg each passive trigger";
               break;
           }
           if (ltgbEnabled && char.traits.includes("let the galaxy burn")) {
