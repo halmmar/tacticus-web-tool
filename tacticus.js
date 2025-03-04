@@ -574,11 +574,14 @@ var calcDmgLowHigh = function(low, high, dmgFactor, aunshiBonusDmg, hits, vitruv
     var numRevoltingResilience = opponentRevoltingResilience;
     var critChanceThisRound = Math.min(1.0, critChance + ragnarBonusCritChance/100.0);
     for (n=1; n<=hits+(vitruviusMaxDmg ? 1 : 0); n++) {
-      var critCurHit = Math.pow(critChanceThisRound, n);
-      var dmgThisRound = dmgFactor * perCrit * critCurHit + perNonCrit * (1-critCurHit) * opponentRevoltingResilienceScaling;
+      var critCurHit = Math.min(1, Math.pow(critChanceThisRound, n));
+      var dmgThisRoundCrit = dmgFactor * perCrit * critCurHit * opponentRevoltingResilienceScaling;
+      var dmgThisRoundNonCrit = dmgFactor * perNonCrit * opponentRevoltingResilienceScaling;
       if (n == hits+1) {
-        dmgThisRound = Math.min(vitruviusMaxDmg, dmgThisRound);
+        dmgThisRoundCrit = Math.min(vitruviusMaxDmg, dmgThisRoundCrit);
+        dmgThisRoundNonCrit = Math.min(vitruviusMaxDmg, dmgThisRoundNonCrit);
       }
+      var dmgThisRound = dmgThisRoundCrit * critCurHit + dmgThisRoundNonCrit * (1-critCurHit);
       total += dmgThisRound;
       if (opponentRevoltingResilience && (numRevoltingResilience-- <= 0)) {
         opponentRevoltingResilienceScaling *= 0.5;
