@@ -1293,7 +1293,9 @@ async function setAPICache(event) {
   const apiKey = document.getElementById("api-key").value;
   
   const origUrl = "https://api.tacticusgame.com/api/v1/player";
-  const proxy = document.getElementById("use-cors-proxy").checked ? 'https://proxy.cors.sh/' : '';
+  // const proxyUrl = 'https://proxy.cors.sh/';
+  const proxyUrl = 'http://tacticusproxy.duckdns.org:8083/?url=';
+  const proxy = document.getElementById("use-cors-proxy").checked ? proxyUrl : '';
     
   const url = proxy + origUrl;
   try {
